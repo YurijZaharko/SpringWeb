@@ -1,15 +1,9 @@
 <%--
   Created by IntelliJ IDEA.
-  User: SCIP
-  Date: 16.08.2016
-  Time: 22:22
+  User: SC
+  Date: 17.08.2016
+  Time: 19:11
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-
-<body>
-    <h4>Product list</h4>
-
-</body>
-</html>
+<h2>Header</h2>

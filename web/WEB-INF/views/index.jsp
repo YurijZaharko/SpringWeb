@@ -7,9 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>Trader</title>
-  </head>
+
   <body>
   <a href="/payment">Payment</a>
   <p></p>
@@ -18,9 +16,6 @@
   <a href="/contact">Contacts</a>
   <p></p>
       <a href="/category">Category</a>
-
-
-
     ${key}
   </body>
 </html>
