@@ -10,6 +10,6 @@ import proj.entity.ListOfPropertiesInteger;
  */
 public interface ListOfPropertiesIntegerRepository extends JpaRepository<ListOfPropertiesInteger, Integer> {
 
-    @Query("SELECT listOfPropertiesInteger FROM ListOfPropertiesInteger listOfPropertiesInteger JOIN FETCH listOfPropertiesInteger.category category WHERE category.name=:name")
+    @Query("SELECT listOfPropertiesInteger FROM ListOfPropertiesInteger listOfPropertiesInteger JOIN listOfPropertiesInteger.category category WHERE category.name=:name")
     ListOfPropertiesInteger findByCategoryName(@Param("name") String name);
 }
