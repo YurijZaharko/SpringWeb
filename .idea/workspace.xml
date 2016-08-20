@@ -1,198 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fc130499-1687-4530-aa22-04b9c6cdcea2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/control/Control.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/control/Scann.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/controller/CategoryController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/controller/ContactController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/controller/DeliveryController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/controller/IndexController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/controller/PaymentController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/controller/ProductController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/dao/BrandDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/dao/CategoryDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/dao/CountryDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/dao/GenericDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/dao/IntegerPropertiesDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/dao/ListOfPropertiesIntegerDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/dao/ListOfPropertiesStringDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/dao/ProductDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/dao/StringPropertiesDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/dao/ValueOfIntegerPropertiesDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/dao/ValueOfStringPropertiesDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/dao/implementation/BrandDaoImplementation.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/dao/implementation/CategoryDaoImplementation.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/dao/implementation/CountryDaoImplementation.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/dao/implementation/GenericDaoImplementation.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/dao/implementation/IntegerPropertiesDaoImplementation.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/dao/implementation/ListOfPropertiesIntegerDaoImplementation.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/dao/implementation/ListOfPropertiesStringDaoImplementation.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/dao/implementation/ProductDaoImplementation.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/dao/implementation/StringPropertiesDaoImplementation.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/dao/implementation/ValueOfIntegerPropertiesDaoImplement.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/dao/implementation/ValueOfStringPropertiesDaoImplement.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/entity/Brand.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/entity/Brand_.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/entity/Category.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/entity/Category_.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/entity/Country.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/entity/Country_.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/entity/IntegerProperties.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/entity/IntegerProperties_.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/entity/ListOfPropertiesInteger.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/entity/ListOfPropertiesInteger_.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/entity/ListOfPropertiesString.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/entity/ListOfPropertiesString_.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/entity/Product.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/entity/Product_.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/entity/StringProperties.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/entity/StringProperties_.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/entity/ValueOfIntegerProperties.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/entity/ValueOfIntegerProperties_.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/entity/ValueOfStringProperties.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/entity/ValueOfStringProperties_.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/repository/BrandRepository.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/repository/CategoryRepository.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/repository/CountryRepository.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/repository/IntegerPropertiesRepository.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/repository/ListOfPropertiesIntegerRepository.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/repository/ListOfPropertiesStringRepository.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/repository/ProductRepository.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/repository/StringPropertiesRepository.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/repository/ValueOfIntegerPropertiesRepository.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/repository/ValueOfStringPropertiesRepository.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/service/BrandService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/service/CategoryService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/service/CountryService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/service/IntegerPropertiesService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/service/ListOfPropertiesIntegerService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/service/StringPropertiesService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/service/ValueOfIntegerPropertiesService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/service/ValueOfStringPropertiesService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/service/implementation/BrandServiceImplement.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/service/implementation/CategoryServiceImplement.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/service/implementation/CountryServiceImplement.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/service/implementation/IntegerPropertiesImplement.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/service/implementation/ListOfPropertiesIntegerImplement.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/service/implementation/StringPropertiesImplement.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/service/implementation/ValueOfIntegerPropertiesImplement.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/service/implementation/ValueOfStringPropertiesImplement.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/servlet/CategoryServlet.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/servlet/IndexServlet.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/servlet/PaymentServlet.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/servlet/RegistrationServlet.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/classes/proj/user/User.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/activation-1.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/antlr-2.7.7.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/aopalliance-1.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/aspectjrt-1.8.9.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/c3p0-0.9.2.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/cdi-api-1.1-PFD.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/classmate-1.0.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/commons-beanutils-1.8.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/commons-digester-2.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/commons-fileupload-1.3.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/commons-io-2.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/commons-lang3-3.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/commons-logging-1.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/dom4j-1.6.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/el-api-2.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/geronimo-jta_1.1_spec-1.1.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/hibernate-c3p0-5.2.1.Final.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/hibernate-commons-annotations-5.0.1.Final.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/hibernate-core-5.2.1.Final.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/hibernate-entitymanager-5.2.1.Final.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/hibernate-jpa-2.1-api-1.0.0.Final.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/hibernate-jpamodelgen-5.1.0.Final.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/hibernate-validator-5.1.0.Final.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/jackson-annotations-2.6.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/jackson-core-2.6.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/jackson-databind-2.6.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/jackson-jaxrs-base-2.6.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/jandex-2.0.0.Final.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/javassist-3.20.0-GA.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/javax.inject-1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/javax.servlet-api-3.1.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/jboss-interceptors-api_1.1_spec-1.0.0.Beta1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/jboss-logging-3.3.0.Final.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/jcl-over-slf4j-1.7.19.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/jsp-api-2.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/jsr250-api-1.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/jstl-1.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/jta-1.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/mail-1.4.7.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/mchange-commons-java-0.2.3.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/mysql-connector-java-5.1.39.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/slf4j-api-1.7.19.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/spring-aop-4.3.1.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/spring-aspects-4.3.1.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/spring-beans-4.3.1.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/spring-context-4.3.1.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/spring-context-support-4.3.1.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/spring-core-4.3.1.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/spring-data-commons-1.12.1.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/spring-data-jpa-1.10.1.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/spring-expression-4.2.2.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/spring-expression-4.3.1.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/spring-instrument-4.3.1.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/spring-instrument-tomcat-4.3.1.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/spring-jdbc-4.2.4.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/spring-jdbc-4.3.1.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/spring-jms-4.3.1.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/spring-messaging-4.3.1.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/spring-orm-4.3.1.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/spring-oxm-4.3.1.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/spring-security-acl-4.0.3.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/spring-security-config-4.0.3.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/spring-security-core-4.0.3.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/spring-security-taglibs-4.0.3.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/spring-security-web-4.0.3.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/spring-test-4.3.1.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/spring-tx-4.3.1.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/spring-web-4.3.1.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/spring-webmvc-4.3.1.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/spring-webmvc-portlet-4.3.1.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/tiles-api-3.0.5.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/tiles-autotag-core-runtime-1.1.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/tiles-core-3.0.5.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/tiles-jsp-3.0.5.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/tiles-request-api-1.0.6.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/tiles-request-jsp-1.0.6.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/tiles-request-servlet-1.0.6.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/tiles-servlet-3.0.5.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/tiles-template-3.0.5.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/lib/validation-api-1.1.0.Final.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/views/fonts/FontAwesome.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/views/fonts/fontawesome-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/views/fonts/fontawesome-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/views/fonts/fontawesome-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/views/fonts/fontawesome-webfont.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/META-INF/MANIFEST.MF" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/applicationContext.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/db.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/dispatcher-servlet.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/views/admin.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/views/category.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/views/contact.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/views/delivery.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/views/index.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/views/payment.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/views/product.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/views/registration.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/SpringWeb_war_exploded/WEB-INF/web.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Main.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/views/css/font-awesome.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/views/css/font-awesome.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/views/css/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/views/fonts/fontawesome-webfont.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/controller/CategoryController.java" afterPath="$PROJECT_DIR$/src/main/java/proj/controller/CategoryController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/repository/ListOfPropertiesIntegerRepository.java" afterPath="$PROJECT_DIR$/src/main/java/proj/repository/ListOfPropertiesIntegerRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/views/category.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/views/category.jsp" />
-    </list>
+    <list default="true" id="fc130499-1687-4530-aa22-04b9c6cdcea2" name="Default" comment="" />
     <ignored path=".idea/dataSources.local.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -1188,12 +997,20 @@
       <workItem from="1471450040706" duration="4874000" />
       <workItem from="1471536433018" duration="5001000" />
       <workItem from="1471620364161" duration="22000" />
-      <workItem from="1471674798256" duration="373000" />
+      <workItem from="1471674798256" duration="571000" />
     </task>
+    <task id="LOCAL-00001" summary="1">
+      <created>1471675198667</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1471675198667</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10270000" />
+    <option name="totallyTimeSpent" value="10468000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1270,6 +1087,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
