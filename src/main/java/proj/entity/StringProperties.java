@@ -15,22 +15,22 @@ public class StringProperties {
     private String propertyName;
 
     @ManyToMany
-    @JoinTable(name = "listOfPropertiesString_stringProperties", joinColumns =
-    @JoinColumn(name = "fk_stringProperties"), inverseJoinColumns =
-    @JoinColumn(name = "fk_listOfPropertiesString"))
-    private List<ListOfPropertiesString> listOfPropertiesStrings = new ArrayList<>();
+    @JoinTable(name = "Category_StringProperties",joinColumns =
+    @JoinColumn(name = "fk_Category"), inverseJoinColumns =
+    @JoinColumn(name = "fk_StringProperties"))
+    private List<Category> categoryList = new ArrayList<>();
 
     @ManyToMany
-    @JoinTable(name = "valueOfStringProperties_stringProperties", joinColumns =
-    @JoinColumn(name = "fk_stringProperties"), inverseJoinColumns =
-    @JoinColumn(name = "fk_valueOfStringProperties"))
-    private List<ValueOfStringProperties> valueOfStringPropertiesList = new ArrayList<>();
+    @JoinTable(name = "ListOfPropertyAndValueString_StringProperties", joinColumns =
+    @JoinColumn(name = "fk_StringProperties"), inverseJoinColumns =
+    @JoinColumn(name = "fk_ListOfPropertyAndValueString"))
+    private List<ListOfPropertyAndValueString> listOfPropertyAndValueStrings = new ArrayList<>();
 
     public StringProperties() {
     }
 
-    public StringProperties(String propertyName) {
-        this.propertyName = propertyName;
+    public StringProperties(String name) {
+
     }
 
     public int getId() {
@@ -49,19 +49,29 @@ public class StringProperties {
         this.propertyName = propertyName;
     }
 
-    public List<ListOfPropertiesString> getListOfPropertiesStrings() {
-        return listOfPropertiesStrings;
+    public List<Category> getCategoryList() {
+        return categoryList;
     }
 
-    public void setListOfPropertiesStrings(List<ListOfPropertiesString> listOfPropertiesStrings) {
-        this.listOfPropertiesStrings = listOfPropertiesStrings;
+    public void setCategoryList(List<Category> categoryList) {
+        this.categoryList = categoryList;
     }
 
-    public List<ValueOfStringProperties> getValueOfStringPropertiesList() {
-        return valueOfStringPropertiesList;
+    public List<ListOfPropertyAndValueString> getListOfPropertyAndValueStrings() {
+        return listOfPropertyAndValueStrings;
     }
 
-    public void setValueOfStringPropertiesList(List<ValueOfStringProperties> valueOfStringPropertiesList) {
-        this.valueOfStringPropertiesList = valueOfStringPropertiesList;
+    public void setListOfPropertyAndValueStrings(List<ListOfPropertyAndValueString> listOfPropertyAndValueStrings) {
+        this.listOfPropertyAndValueStrings = listOfPropertyAndValueStrings;
+    }
+
+    @Override
+    public String toString() {
+        return "StringProperties{" +
+                "id=" + id +
+                ", propertyName='" + propertyName + '\'' +
+                ", categoryList=" + categoryList +
+                ", listOfPropertyAndValueStrings=" + listOfPropertyAndValueStrings +
+                '}';
     }
 }

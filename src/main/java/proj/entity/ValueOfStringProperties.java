@@ -15,22 +15,16 @@ public class ValueOfStringProperties {
     private String stringValue;
 
     @ManyToMany
-    @JoinTable(name = "valueOfStringProperties_product", joinColumns =
-    @JoinColumn(name = "fk_valueOfStringProperties"), inverseJoinColumns =
-    @JoinColumn(name = "fk_product"))
-    private List<Product> productList = new ArrayList<Product>();
-
-    @ManyToMany
-    @JoinTable(name = "valueOfStringProperties_stringProperties", joinColumns =
-    @JoinColumn(name = "fk_valueOfStringProperties"), inverseJoinColumns =
-    @JoinColumn(name = "fk_stringProperties"))
-    private List<StringProperties> stringPropertiesList = new ArrayList<StringProperties>();
+    @JoinTable(name = "ListOfPropertyAndValueString_ValueOfStringProperties", joinColumns =
+    @JoinColumn(name = "fk_ValueOfStringProperties"), inverseJoinColumns =
+    @JoinColumn(name = "fk_ListOfPropertyAndValueString"))
+    private List<ListOfPropertyAndValueString> listOfPropertyAndValueStrings = new ArrayList<>();
 
     public ValueOfStringProperties() {
     }
 
     public ValueOfStringProperties(String stringValue) {
-        this.stringValue = stringValue;
+
     }
 
     public int getId() {
@@ -49,19 +43,11 @@ public class ValueOfStringProperties {
         this.stringValue = stringValue;
     }
 
-    public List<Product> getProductList() {
-        return productList;
+    public List<ListOfPropertyAndValueString> getListOfPropertyAndValueStrings() {
+        return listOfPropertyAndValueStrings;
     }
 
-    public void setProductList(List<Product> productList) {
-        this.productList = productList;
-    }
-
-    public List<StringProperties> getStringPropertiesList() {
-        return stringPropertiesList;
-    }
-
-    public void setStringPropertiesList(List<StringProperties> stringPropertiesList) {
-        this.stringPropertiesList = stringPropertiesList;
+    public void setListOfPropertyAndValueStrings(List<ListOfPropertyAndValueString> listOfPropertyAndValueStrings) {
+        this.listOfPropertyAndValueStrings = listOfPropertyAndValueStrings;
     }
 }

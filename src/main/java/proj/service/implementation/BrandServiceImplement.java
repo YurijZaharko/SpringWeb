@@ -12,7 +12,7 @@ import java.util.List;
  * Created by SC on 10.08.2016.
  */
 @Service
-public class BrandServiceImplement implements BrandService {
+public class BrandServiceImplement implements BrandService{
 
     @Autowired
     private BrandRepository brandRepository;

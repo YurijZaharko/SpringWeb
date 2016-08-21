@@ -14,21 +14,26 @@ public class Category {
     private int id;
     private String name;
 
-    @OneToMany(mappedBy = "parentId")
-    private
-    List<Category> childId = new ArrayList<Category>();
-
     @ManyToOne(fetch = FetchType.LAZY)
     private Category parentId;
+
+    @OneToMany
+    private List<Category> categoryChild = new ArrayList<>();
 
     @OneToMany(mappedBy = "category")
     private List<Product> productList = new ArrayList<Product>();
 
-    @OneToMany(mappedBy = "category")
-    private List<ListOfPropertiesString> listOfPropertiesStrings = new ArrayList<ListOfPropertiesString>();
+    @ManyToMany
+    @JoinTable(name = "Category_IntegerProperties", joinColumns =
+    @JoinColumn(name = "fk_Category"), inverseJoinColumns =
+    @JoinColumn(name = "fk_IntegerProperties"))
+    private List<IntegerProperties> integerPropertiesList = new ArrayList<>();
 
-    @OneToMany(mappedBy = "category")
-    private List<ListOfPropertiesInteger> listOfPropertiesIntegers = new ArrayList<ListOfPropertiesInteger>();
+    @ManyToMany
+    @JoinTable(name = "Category_StringProperties",joinColumns =
+    @JoinColumn(name = "fk_Category"), inverseJoinColumns =
+    @JoinColumn(name = "fk_StringProperties"))
+    private List<StringProperties> stringPropertiesList = new ArrayList<>();
 
     public Category() {
     }
@@ -54,16 +59,8 @@ public class Category {
         return name;
     }
 
-    public void setName(String categoryName) {
-        this.name = categoryName;
-    }
-
-    public List<Category> getChildId() {
-        return childId;
-    }
-
-    public void setChildId(List<Category> childId) {
-        this.childId = childId;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Category getParentId() {
@@ -74,6 +71,14 @@ public class Category {
         this.parentId = parentId;
     }
 
+    public List<Category> getCategoryChild() {
+        return categoryChild;
+    }
+
+    public void setCategoryChild(List<Category> categoryChild) {
+        this.categoryChild = categoryChild;
+    }
+
     public List<Product> getProductList() {
         return productList;
     }
@@ -82,26 +87,32 @@ public class Category {
         this.productList = productList;
     }
 
-    public List<ListOfPropertiesString> getListOfPropertiesStrings() {
-        return listOfPropertiesStrings;
+    public List<IntegerProperties> getIntegerPropertiesList() {
+        return integerPropertiesList;
     }
 
-    public void setListOfPropertiesStrings(List<ListOfPropertiesString> listOfPropertiesStrings) {
-        this.listOfPropertiesStrings = listOfPropertiesStrings;
+    public void setIntegerPropertiesList(List<IntegerProperties> integerPropertiesList) {
+        this.integerPropertiesList = integerPropertiesList;
     }
 
-    public List<ListOfPropertiesInteger> getListOfPropertiesIntegers() {
-        return listOfPropertiesIntegers;
+    public List<StringProperties> getStringPropertiesList() {
+        return stringPropertiesList;
     }
 
-    public void setListOfPropertiesIntegers(List<ListOfPropertiesInteger> listOfPropertiesIntegers) {
-        this.listOfPropertiesIntegers = listOfPropertiesIntegers;
+    public void setStringPropertiesList(List<StringProperties> stringPropertiesList) {
+        this.stringPropertiesList = stringPropertiesList;
     }
 
     @Override
     public String toString() {
         return "Category{" +
-                "categoryName='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", parentId=" + parentId +
+                ", categoryChild=" + categoryChild +
+                ", productList=" + productList +
+                ", integerPropertiesList=" + integerPropertiesList +
+                ", stringPropertiesList=" + stringPropertiesList +
                 '}';
     }
 }

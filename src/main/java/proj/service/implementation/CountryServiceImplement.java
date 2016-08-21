@@ -12,7 +12,7 @@ import java.util.List;
  * Created by SCIP on 11.08.2016.
  */
 @Service
-public class CountryServiceImplement implements CountryService{
+public class CountryServiceImplement implements CountryService {
 
     @Autowired
     CountryRepository countryRepository;

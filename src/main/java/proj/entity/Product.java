@@ -1,8 +1,6 @@
 package proj.entity;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by SCIP on 26.07.2016.
@@ -13,12 +11,12 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Category category;
-
     private int price;
     private String productName;
     private String partNumber;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Category category;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Brand brand;
@@ -26,25 +24,16 @@ public class Product {
     @ManyToOne(fetch = FetchType.LAZY)
     private Country country;
 
-    @ManyToMany
-    @JoinTable(name = "valueOfStringProperties_product", joinColumns =
-    @JoinColumn(name = "fk_product"), inverseJoinColumns =
-    @JoinColumn(name = "fk_valueOfStringProperties"))
-    private List<ValueOfStringProperties> valueOfStringPropertiesList = new ArrayList<ValueOfStringProperties>();
+    @ManyToOne(fetch = FetchType.LAZY)
+    private ProductProperty productProperty;
 
-    @ManyToMany
-    @JoinTable(name = "integerProperties_valueOfIntegerProperties", joinColumns =
-    @JoinColumn(name = "integerProperties"), inverseJoinColumns =
-    @JoinColumn(name = "valueOfIntegerProperties"))
-    private List<ValueOfIntegerProperties> valueOfIntegerPropertiesList = new ArrayList<ValueOfIntegerProperties>();
-
-    public Product() {
-    }
+    public Product() {}
 
     public Product(int price, String productName, String partNumber) {
         this.price = price;
         this.productName = productName;
         this.partNumber = partNumber;
+        productProperty = new ProductProperty(this);
     }
 
     public int getId() {
@@ -53,14 +42,6 @@ public class Product {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
     }
 
     public int getPrice() {
@@ -87,6 +68,14 @@ public class Product {
         this.partNumber = partNumber;
     }
 
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
     public Brand getBrand() {
         return brand;
     }
@@ -103,32 +92,11 @@ public class Product {
         this.country = country;
     }
 
-    public List<ValueOfStringProperties> getValueOfStringPropertiesList() {
-        return valueOfStringPropertiesList;
+    public ProductProperty getProductProperty() {
+        return productProperty;
     }
 
-    public void setValueOfStringPropertiesList(List<ValueOfStringProperties> valueOfStringPropertiesList) {
-        this.valueOfStringPropertiesList = valueOfStringPropertiesList;
-    }
-
-    public List<ValueOfIntegerProperties> getValueOfIntegerPropertiesList() {
-        return valueOfIntegerPropertiesList;
-    }
-
-    public void setValueOfIntegerPropertiesList(List<ValueOfIntegerProperties> valueOfIntegerPropertiesList) {
-        this.valueOfIntegerPropertiesList = valueOfIntegerPropertiesList;
-    }
-
-    @Override
-    public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", category=" + category +
-                ", price=" + price +
-                ", productName='" + productName + '\'' +
-                ", partNumber='" + partNumber + '\'' +
-                ", brand=" + brand +
-                ", country=" + country +
-                '}';
+    public void setProductProperty(ProductProperty productProperty) {
+        this.productProperty = productProperty;
     }
 }

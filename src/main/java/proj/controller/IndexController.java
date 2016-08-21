@@ -19,18 +19,18 @@ public class IndexController {
     public String showIndex(){return  "index";}
 
     @RequestMapping("/admin")
-    public String showAdmin(){return "/admin";}
+    public String showAdmin(){return "admin";}
 
     @RequestMapping("/payment")
     public String showPayment(){
-        return "/payment";
+        return "payment";
     }
 
     @RequestMapping("/registration")
-    public String showRegistration(){return "/registration";}
+    public String showRegistration(){return "registration";}
 
     @RequestMapping("/contact")
-    public String showContact(){return "/contact";}
+    public String showContact(){return "contact";}
 
     @RequestMapping("/category")
     public String showCategory(Model model){

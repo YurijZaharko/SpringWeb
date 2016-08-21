@@ -14,14 +14,14 @@ import java.util.List;
  */
 public class Main {
 
-    static final ConfigurableApplicationContext CONTEXT = new ClassPathXmlApplicationContext("/META-INF/applicationContext.xml");
-    static final BrandService BRAND_SERVICE = CONTEXT.getBean(BrandService.class);
-    static final CountryService COUNTRY_SERVICE = CONTEXT.getBean(CountryService.class);
-    static final CategoryService CATEGORY_SERVICE = CONTEXT.getBean(CategoryService.class);
-    static final StringPropertiesService STRING_PROPERTIES_SERVICE = CONTEXT.getBean(StringPropertiesService.class);
-    static final IntegerPropertiesService INTEGER_PROPERTIES_SERVICE = CONTEXT.getBean(IntegerPropertiesService.class);
-    static final ValueOfIntegerPropertiesService VALUE_OF_INTEGER_PROPERTIES_SERVICE = CONTEXT.getBean(ValueOfIntegerPropertiesService.class);
-    static final ValueOfStringPropertiesService VALUE_OF_STRING_PROPERTIES_SERVICE = CONTEXT.getBean(ValueOfStringPropertiesService.class);
+    private static final ConfigurableApplicationContext CONTEXT = new ClassPathXmlApplicationContext("/META-INF/applicationContext.xml");
+    private static final BrandService BRAND_SERVICE = CONTEXT.getBean(BrandService.class);
+    private static final CountryService COUNTRY_SERVICE = CONTEXT.getBean(CountryService.class);
+    private static final CategoryService CATEGORY_SERVICE = CONTEXT.getBean(CategoryService.class);
+    private static final StringPropertiesService STRING_PROPERTIES_SERVICE = CONTEXT.getBean(StringPropertiesService.class);
+    private static final IntegerPropertiesService INTEGER_PROPERTIES_SERVICE = CONTEXT.getBean(IntegerPropertiesService.class);
+    private static final ValueOfIntegerPropertiesService VALUE_OF_INTEGER_PROPERTIES_SERVICE = CONTEXT.getBean(ValueOfIntegerPropertiesService.class);
+    private static final ValueOfStringPropertiesService VALUE_OF_STRING_PROPERTIES_SERVICE = CONTEXT.getBean(ValueOfStringPropertiesService.class);
 
     public static void main(String[] args) {
 
@@ -186,8 +186,7 @@ public class Main {
                             default:{
                                 addValue = false;
                             }
-                            integerProperties.getValueOfIntegerPropertiesList().add(valueOfIntegerProperties);
-                            INTEGER_PROPERTIES_SERVICE.save(propertyName);
+
                         }
                     }
                     break;

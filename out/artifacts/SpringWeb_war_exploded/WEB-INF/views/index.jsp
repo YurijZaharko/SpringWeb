@@ -9,13 +9,10 @@
 <html>
 
   <body>
-  <a href="/payment">Payment</a>
-  <p></p>
-  <a href="/registration">Registration</a>
-  <p></p>
-  <a href="/contact">Contacts</a>
-  <p></p>
-      <a href="/category">Category</a>
-    ${key}
+  <p><a href="/payment">Payment</a></p>
+  <p><a href="/registration">Registration</a></p>
+  <p><a href="/contact">Contacts</a></p>
+  <p><a href="/category">Category</a></p>
+  <p><a href="/admin">Admin</a></p>
   </body>
 </html>

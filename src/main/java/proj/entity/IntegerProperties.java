@@ -15,53 +15,21 @@ public class IntegerProperties {
     private String name;
 
     @ManyToMany
-    @JoinTable(name = "listOfPropertiesInteger_integerProperties", joinColumns =
-    @JoinColumn(name = "fk_integerProperties"), inverseJoinColumns =
-    @JoinColumn(name = "fk_listOfPropertiesInteger"))
-    private List<ListOfPropertiesInteger> listOfPropertiesIntegers = new ArrayList<ListOfPropertiesInteger>();
+    @JoinTable(name = "Category_IntegerProperties", joinColumns =
+    @JoinColumn(name = "fk_IntegerProperties"), inverseJoinColumns =
+    @JoinColumn(name = "fk_Category"))
+    private List<Category> categoryList = new ArrayList<>();
 
     @ManyToMany
-    @JoinTable(name = "integerProperties_valueOfIntegerProperties", joinColumns =
-    @JoinColumn(name = "integerProperties"), inverseJoinColumns =
-    @JoinColumn(name = "valueOfIntegerProperties"))
-    private List<ValueOfIntegerProperties> valueOfIntegerPropertiesList = new ArrayList<ValueOfIntegerProperties>();
+    @JoinTable(name = "ListOfPropertyAndValueInteger_IntegerProperties", joinColumns =
+    @JoinColumn(name = "fk_IntegerProperties"), inverseJoinColumns =
+    @JoinColumn(name = "fk_ListOfPropertyAndValueInteger"))
+    private List<ListOfPropertyAndValueInteger> listOfPropertyAndValueInteger = new ArrayList<>();
 
     public IntegerProperties() {
     }
 
     public IntegerProperties(String name) {
         this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String propertyName) {
-        this.name = propertyName;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public List<ListOfPropertiesInteger> getListOfPropertiesIntegers() {
-        return listOfPropertiesIntegers;
-    }
-
-    public void setListOfPropertiesIntegers(List<ListOfPropertiesInteger> listOfPropertiesIntegers) {
-        this.listOfPropertiesIntegers = listOfPropertiesIntegers;
-    }
-
-    public List<ValueOfIntegerProperties> getValueOfIntegerPropertiesList() {
-        return valueOfIntegerPropertiesList;
-    }
-
-    public void setValueOfIntegerPropertiesList(List<ValueOfIntegerProperties> valueOfIntegerPropertiesList) {
-        this.valueOfIntegerPropertiesList = valueOfIntegerPropertiesList;
     }
 }

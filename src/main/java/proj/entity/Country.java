@@ -14,7 +14,7 @@ public class Country {
     private int id;
     private String name;
     @OneToMany(mappedBy = "country")
-    List<Product> productList = new ArrayList<Product>();
+    private List<Product> productList = new ArrayList<Product>();
 
     public Country() {
     }
@@ -39,11 +39,20 @@ public class Country {
         this.name = name;
     }
 
+    public List<Product> getProductList() {
+        return productList;
+    }
+
+    public void setProductList(List<Product> productList) {
+        this.productList = productList;
+    }
+
     @Override
     public String toString() {
         return "Country{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", productList=" + productList +
                 '}';
     }
 }

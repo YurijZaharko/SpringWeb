@@ -2,7 +2,6 @@ package proj.service.implementation;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import proj.entity.Product;
 import proj.entity.ValueOfStringProperties;
 import proj.repository.ValueOfStringPropertiesRepository;
 import proj.service.ValueOfStringPropertiesService;
@@ -29,7 +28,7 @@ public class ValueOfStringPropertiesImplement implements ValueOfStringProperties
 
     @Override
     public void delete(String stringValue) {
-        List<Product> productList = valueOfStringPropertiesRepository.findByStringValue(stringValue).getProductList();
+
 
     }
 

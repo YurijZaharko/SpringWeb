@@ -15,22 +15,16 @@ public class ValueOfIntegerProperties {
     private Integer value;
 
     @ManyToMany
-    @JoinTable(name = "valueOfIntegerProperties_product", joinColumns =
-    @JoinColumn(name = "valueOfIntegerProperties"), inverseJoinColumns =
-    @JoinColumn(name = "product"))
-    private List<Product> productList = new ArrayList<Product>();
-
-    @ManyToMany
-    @JoinTable(name = "integerProperties_valueOfIntegerProperties", joinColumns =
-    @JoinColumn(name = "valueOfIntegerProperties"), inverseJoinColumns =
-    @JoinColumn(name = "integerProperties"))
-    private List<IntegerProperties> integerPropertiesList = new ArrayList<IntegerProperties>();
+    @JoinTable(name = "ListOfPropertyAndValueInteger_ValueOfIntegerProperties", joinColumns =
+    @JoinColumn(name = "fk_ValueOfIntegerProperties"), inverseJoinColumns =
+    @JoinColumn(name = "fk_ListOfPropertyAndValueInteger"))
+    private List<ListOfPropertyAndValueInteger> listOfPropertyAndValueInteger = new ArrayList<>();
 
     public ValueOfIntegerProperties() {
     }
 
-    public ValueOfIntegerProperties(Integer value) {
-        this.value = value;
+    public ValueOfIntegerProperties(Integer integerValue) {
+
     }
 
     public int getId() {
@@ -49,19 +43,20 @@ public class ValueOfIntegerProperties {
         this.value = value;
     }
 
-    public List<Product> getProductList() {
-        return productList;
+    public List<ListOfPropertyAndValueInteger> getListOfPropertyAndValueInteger() {
+        return listOfPropertyAndValueInteger;
     }
 
-    public void setProductList(List<Product> productList) {
-        this.productList = productList;
+    public void setListOfPropertyAndValueInteger(List<ListOfPropertyAndValueInteger> listOfPropertyAndValueInteger) {
+        this.listOfPropertyAndValueInteger = listOfPropertyAndValueInteger;
     }
 
-    public List<IntegerProperties> getIntegerPropertiesList() {
-        return integerPropertiesList;
-    }
-
-    public void setIntegerPropertiesList(List<IntegerProperties> integerPropertiesList) {
-        this.integerPropertiesList = integerPropertiesList;
+    @Override
+    public String toString() {
+        return "ValueOfIntegerProperties{" +
+                "id=" + id +
+                ", value=" + value +
+                ", listOfPropertyAndValueInteger=" + listOfPropertyAndValueInteger +
+                '}';
     }
 }
