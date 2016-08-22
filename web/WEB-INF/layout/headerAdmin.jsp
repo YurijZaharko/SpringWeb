@@ -27,7 +27,6 @@
                         <ul class="dropdown-menu">
                             <li><a href="/WEB-INF/views/Admin/adminCreateProduct.jsp">Create product</a></li>
                             <li><a href="">Load product from xls</a></li>
-
                         </ul>
                     </li>
                 </ul>
@@ -35,6 +34,5 @@
         </div><!-- /.container-fluid -->
     </nav>
 </div>
-
 
 
