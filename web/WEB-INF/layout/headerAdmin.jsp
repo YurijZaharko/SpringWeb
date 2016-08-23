@@ -14,7 +14,12 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
 
 <div class="container-fluid">
     <nav class="navbar navbar-default">
@@ -35,4 +40,33 @@
     </nav>
 </div>
 
+<ul class='nav'>
+    <li class='active'>
+        Home
+    </li>
+    <li>
+        <div class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                Personal asset loans
+            </a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
 
+                <li>
+                    <a href="#">
+                        asds
+                    </a>
+                </li>
+                <li class="divider"></li>
+            </ul>
+        </div>
+    </li>
+    <li>
+        Payday loans
+    </li>
+    <li>
+        About
+    </li>
+    <li>
+        Contact
+    </li>
+</ul>
