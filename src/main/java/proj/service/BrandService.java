@@ -11,7 +11,7 @@ import java.util.List;
 public interface BrandService {
     void save(String name);
     Brand findByName(String name);
-    void delete(String name);
+    void delete(int id);
     List<Brand> findAll();
 
 }

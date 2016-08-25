@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SpringWeb.iml" filepath="$PROJECT_DIR$/SpringWeb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/target/generated-sources/generated-sources.iml" filepath="$PROJECT_DIR$/target/generated-sources/generated-sources.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sq.iml" filepath="$PROJECT_DIR$/sq.iml" />
     </modules>
   </component>
 </project>

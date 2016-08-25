@@ -31,8 +31,8 @@ public class BrandServiceImplement implements BrandService{
     }
 
     @Override
-    public void delete(String name) {
-        brandRepository.deleteByName(name);
+    public void delete(int id) {
+        brandRepository.deleteById(id);
     }
 
     @Override

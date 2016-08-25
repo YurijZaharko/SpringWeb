@@ -10,11 +10,14 @@ import proj.entity.Brand;
 /**
  * Created by SC on 10.08.2016.
  */
+
 public interface BrandRepository extends JpaRepository<Brand,Integer> {
     Brand findByName(String name);
 
     @Modifying
     @Transactional
-    @Query("DELETE FROM Brand brand WHERE brand.name=:name" )
-    void deleteByName(@Param("name") String name);
+    @Query("DELETE FROM Brand brand WHERE brand.id=:id" )
+    void deleteById(@Param("id") int id);
+
+
 }

@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<body>
-    <h3>Create product</h3>
-</body>
 
+
+<h1>Welcome</h1>
+<h3>Create product</h3>

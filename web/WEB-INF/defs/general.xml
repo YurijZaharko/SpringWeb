@@ -6,37 +6,44 @@
     <!-- Some templates -->
     <definition name="common" template="/WEB-INF/layout/classic.jsp">
         <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
-        <put-attribute name="header" value="/WEB-INF/layout/header.jsp" />
     </definition>
 
     <definition name="index" extends="common">
         <put-attribute name="title" value="index" />
+        <put-attribute name="header" value="/WEB-INF/layout/header.jsp" />
         <put-attribute name="body" value="/WEB-INF/views/index.jsp" />
     </definition>
     <definition name="category" extends="common">
         <put-attribute name="title" value="category" />
+        <put-attribute name="header" value="/WEB-INF/layout/header.jsp" />
         <put-attribute name="body" value="/WEB-INF/views/category.jsp" />
     </definition>
     <definition name="product" extends="common">
         <put-attribute name="title" value="product" />
+        <put-attribute name="header" value="/WEB-INF/layout/header.jsp" />
         <put-attribute name="body" value="/WEB-INF/views/product.jsp" />
     </definition>
 
 
+    <!--<definition name="common" template="/WEB-INF/layout/adminClassic.jsp">-->
+        <!--<put-attribute name="headerAdmin" value="/WEB-INF/layout/headerAdmin.jsp"/>-->
+        <!--<put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />-->
+    <!--</definition>-->
 
-    <definition name="commonAdmin" template="/WEB-INF/layout/adminClassic.jsp">
-        <put-attribute name="header" value="/WEB-INF/layout/headerAdmin.jsp"/>
-    </definition>
-
-    <definition name="admin" extends="commonAdmin">
+    <definition name="admin" extends="common">
         <put-attribute name="title" value="admin"/>
+        <put-attribute name="header" value="/WEB-INF/layout/headerAdmin.jsp" />
         <put-attribute name="body" value="/WEB-INF/views/admin.jsp"/>
     </definition>
-
-    <definition name="adminCreateProd" extends="commonAdmin">
-        <put-attribute name="title" value="adminCreateProd"/>
-        <put-attribute name="body" value="/WEB-INF/views/Admin/adminCreateProduct.jsp"/>
+    <definition name="adminCreateProduct" extends="common">
+        <put-attribute name="title" value="adminCreateProduct"/>
+        <put-attribute name="header" value="/WEB-INF/layout/headerAdmin.jsp" />
+        <put-attribute name="body" value="/WEB-INF/views/adminCreateProduct.jsp"/>
     </definition>
-
+    <definition name="adminBrand" extends="common">
+        <put-attribute name="title" value="adminBrand"/>
+        <put-attribute name="header" value="/WEB-INF/layout/headerAdmin.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/views/adminBrand.jsp"/>
+    </definition>
 
 </tiles-definitions>

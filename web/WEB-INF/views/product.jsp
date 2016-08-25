@@ -10,6 +10,21 @@
 
 <body>
     <h4>Product list</h4>
-
+    <form>
+        <table>
+            <tr>
+                <td><input type="submit"></td>
+            </tr>
+        </table>
+    </form>
+    <table>
+        <td>Id</td>
+        <td>ProductName</td>
+        <td>PartNumber</td>
+        <td>Category</td>
+        <td>Brand</td>
+        <td>Country</td>
+        <td>Price</td>
+    </table>
 </body>
 </html>
