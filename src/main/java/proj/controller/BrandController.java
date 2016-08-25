@@ -15,6 +15,7 @@ public class BrandController {
     @Autowired
     BrandService brandService;
 
+
     @RequestMapping("/admin/adminBrand")
     public String showBrand(Model model){
         model.addAttribute("Brands", brandService.findAll());
