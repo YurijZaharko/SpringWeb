@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="48a5e6c2-c25f-4614-b027-9cbc4adf19f2" name="Default" comment="1">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/controller/BrandController.class" afterPath="$PROJECT_DIR$/target/classes/proj/controller/BrandController.class" />
+    <list default="true" id="48a5e6c2-c25f-4614-b027-9cbc4adf19f2" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/controller/CategoryController.class" afterPath="$PROJECT_DIR$/target/classes/proj/controller/CategoryController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/repository/CategoryRepository.class" afterPath="$PROJECT_DIR$/target/classes/proj/repository/CategoryRepository.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/service/CategoryService.class" afterPath="$PROJECT_DIR$/target/classes/proj/service/CategoryService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/service/implementation/CategoryServiceImplement.class" afterPath="$PROJECT_DIR$/target/classes/proj/service/implementation/CategoryServiceImplement.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/controller/BrandController.java" afterPath="$PROJECT_DIR$/src/main/java/proj/controller/BrandController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/controller/CategoryController.java" afterPath="$PROJECT_DIR$/src/main/java/proj/controller/CategoryController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/repository/CategoryRepository.java" afterPath="$PROJECT_DIR$/src/main/java/proj/repository/CategoryRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/CategoryService.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/CategoryService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/implementation/CategoryServiceImplement.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/CategoryServiceImplement.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/defs/general.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/defs/general.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/layout/headerAdmin.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/layout/headerAdmin.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/views/adminBrand.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/views/adminBrand.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/views/index.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/views/index.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/WEB-INF/views/category.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/views/adminCategory.jsp" />
     </list>
     <ignored path="SpringWeb.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1051,7 +1043,7 @@
       <workItem from="1472147700321" duration="147000" />
       <workItem from="1472148098788" duration="57000" />
       <workItem from="1472148181002" duration="716000" />
-      <workItem from="1472200523610" duration="7362000" />
+      <workItem from="1472200523610" duration="7792000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1472147761510</created>
@@ -1088,11 +1080,18 @@
       <option name="project" value="LOCAL" />
       <updated>1472148761043</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="1">
+      <created>1472222461856</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1472222461856</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8643000" />
+    <option name="totallyTimeSpent" value="9073000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
