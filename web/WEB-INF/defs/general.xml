@@ -16,7 +16,7 @@
     <definition name="category" extends="common">
         <put-attribute name="title" value="category" />
         <put-attribute name="header" value="/WEB-INF/layout/header.jsp" />
-        <put-attribute name="body" value="/WEB-INF/views/category.jsp" />
+        <put-attribute name="body" value="/WEB-INF/views/adminCategory.jsp" />
     </definition>
     <definition name="product" extends="common">
         <put-attribute name="title" value="product" />
@@ -44,6 +44,11 @@
         <put-attribute name="title" value="adminBrand"/>
         <put-attribute name="header" value="/WEB-INF/layout/headerAdmin.jsp"/>
         <put-attribute name="body" value="/WEB-INF/views/adminBrand.jsp"/>
+    </definition>
+    <definition name="adminCategory" extends="common">
+        <put-attribute name="title" value="adminCategory"/>
+        <put-attribute name="header" value="/WEB-INF/layout/headerAdmin.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/views/adminCategory.jsp"/>
     </definition>
 
 </tiles-definitions>

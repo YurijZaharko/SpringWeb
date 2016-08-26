@@ -18,7 +18,11 @@ public class CategoryServiceImplement implements CategoryService {
 
     @Override
     public void save(String name) {
-        categoryRepository.save(new Category(name));
+        if (categoryRepository.findByName(name) == null){
+            Category category = new Category(name);
+            categoryRepository.save(category);
+        }
+
     }
 
     @Override
@@ -37,8 +41,8 @@ public class CategoryServiceImplement implements CategoryService {
     }
 
     @Override
-    public void delete(String name) {
-        categoryRepository.deleteByName(name);
+    public void deleteById(int id) {
+        categoryRepository.deleteById(id);
     }
 
     @Override

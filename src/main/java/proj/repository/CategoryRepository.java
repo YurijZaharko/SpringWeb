@@ -13,10 +13,10 @@ import proj.entity.Category;
 public interface CategoryRepository extends JpaRepository<Category, Integer> {
     Category findByName(String name);
 
+    Category findById(int id);
+
     @Modifying
     @Transactional
-    @Query("DELETE FROM Category category WHERE category.name=:name")
-    void deleteByName(@Param("name") String name);
-
-    Category findById(int id);
+    @Query("DELETE FROM Category category WHERE category.id=:id")
+    void deleteById(@Param("id") int id);
 }

@@ -13,6 +13,6 @@ public interface CategoryService {
     void save(String name, String parentName);
     Category findByName(String name);
     Category findById(int id);
-    void delete(String name);
+    void deleteById(int id);
     List<Category> findAll();
 }
