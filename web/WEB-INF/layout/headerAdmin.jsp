@@ -15,7 +15,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Product <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/admin/adminCreateProduct">Create product</a></li>
+                            <li><a href="/admin/adminProduct">Create product</a></li>
                             <li><a href="">Load product from xls</a></li>
                         </ul>
                     </li>

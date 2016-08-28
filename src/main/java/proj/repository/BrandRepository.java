@@ -20,4 +20,5 @@ public interface BrandRepository extends JpaRepository<Brand,Integer> {
     void deleteById(@Param("id") int id);
 
 
+    Brand findById(int id);
 }
