@@ -14,7 +14,7 @@
     <form action="/admin/adminBrand" method="post" class="form-inline">
         <div class="form-group">
             <input name="name" placeholder="Name">
-            <input type="submit" class="btn btn-primary" placeholder="Create">
+            <input type="submit" class="btn btn-primary" value="Create">
         </div>
     </form>
 
