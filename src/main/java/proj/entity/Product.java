@@ -33,7 +33,6 @@ public class Product {
         this.price = price;
         this.productName = productName;
         this.partNumber = partNumber;
-        productProperty = new ProductProperty(this);
     }
 
     public int getId() {

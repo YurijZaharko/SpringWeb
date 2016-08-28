@@ -18,5 +18,5 @@ public interface CountryRepository extends JpaRepository<Country, Integer> {
     @Query("DELETE FROM Country country WHERE country.id=:id")
     void deleteById(@Param("id") int id);
 
-
+    Country findById(int id);
 }

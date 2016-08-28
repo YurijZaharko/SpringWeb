@@ -9,8 +9,14 @@ import java.util.List;
  */
 
 public interface CountryService  {
+
     void save(String name);
+
     Country findByName(String name);
+
     void deleteById(int id);
+
     List<Country> findAll();
+
+    Country findById(int id);
 }

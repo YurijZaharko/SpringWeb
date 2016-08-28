@@ -31,6 +31,11 @@ public class BrandServiceImplement implements BrandService{
     }
 
     @Override
+    public Brand findById(int id) {
+        return brandRepository.findById(id);
+    }
+
+    @Override
     public void delete(int id) {
         brandRepository.deleteById(id);
     }

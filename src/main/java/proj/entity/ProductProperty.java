@@ -31,10 +31,6 @@ public class ProductProperty {
     public ProductProperty() {
     }
 
-    public ProductProperty(Product product) {
-        productList.add(product);
-    }
-
     public int getId() {
         return id;
     }

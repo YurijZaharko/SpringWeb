@@ -1,7 +1,9 @@
 package proj.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +24,9 @@ public class BrandController {
         model.addAttribute("Brands", brandService.findAll());
         return "adminBrand";
     }
+
+    @Modifying
+    @Transactional
     @RequestMapping("/admin/adminBrand/delete/{id}")
     public String deleteBrand(@PathVariable int id){
         brandService.delete(id);

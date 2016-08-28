@@ -35,10 +35,10 @@
         <put-attribute name="header" value="/WEB-INF/layout/headerAdmin.jsp" />
         <put-attribute name="body" value="/WEB-INF/views/admin.jsp"/>
     </definition>
-    <definition name="adminCreateProduct" extends="common">
-        <put-attribute name="title" value="adminCreateProduct"/>
+    <definition name="adminProduct" extends="common">
+        <put-attribute name="title" value="adminProduct"/>
         <put-attribute name="header" value="/WEB-INF/layout/headerAdmin.jsp" />
-        <put-attribute name="body" value="/WEB-INF/views/adminCreateProduct.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/views/adminProduct.jsp"/>
     </definition>
     <definition name="adminBrand" extends="common">
         <put-attribute name="title" value="adminBrand"/>
