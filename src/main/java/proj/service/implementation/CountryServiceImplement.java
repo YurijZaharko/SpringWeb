@@ -18,7 +18,10 @@ public class CountryServiceImplement implements CountryService {
     CountryRepository countryRepository;
     @Override
     public void save(String name) {
-        countryRepository.save(new Country(name));
+        if(countryRepository.findByName(name) == null){
+            Country country = new Country(name);
+            countryRepository.save(country);
+        }
     }
 
     @Override
@@ -27,12 +30,12 @@ public class CountryServiceImplement implements CountryService {
     }
 
     @Override
-    public void delete(String name) {
-        countryRepository.deleteByName(name);
+    public void deleteById(int id) {
+        countryRepository.deleteById(id);
     }
 
     @Override
     public List<Country> findAll() {
-        return null;
+        return countryRepository.findAll();
     }
 }

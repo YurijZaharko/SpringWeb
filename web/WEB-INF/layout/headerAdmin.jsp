@@ -42,7 +42,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Country <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="">Create Country</a></li>
+                            <li><a href="/admin/adminCountry">Create Country</a></li>
                             <li><a href="">Second</a></li>
                         </ul>
                     </li>
