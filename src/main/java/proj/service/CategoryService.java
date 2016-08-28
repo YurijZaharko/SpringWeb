@@ -8,7 +8,7 @@ import java.util.List;
  * Created by SCIP on 11.08.2016.
  */
 
-public interface CategoryService {
+public interface CategoryService{
     void save(String name);
     void save(String name, String parentName);
     Category findByName(String name);

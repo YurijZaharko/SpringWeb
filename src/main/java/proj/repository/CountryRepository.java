@@ -15,6 +15,8 @@ public interface CountryRepository extends JpaRepository<Country, Integer> {
 
     @Modifying
     @Transactional
-    @Query("DELETE FROM Country country WHERE country.name=:name")
-    void deleteByName(@Param("name") String name);
+    @Query("DELETE FROM Country country WHERE country.id=:id")
+    void deleteById(@Param("id") int id);
+
+
 }
