@@ -5,8 +5,10 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.RequestParam;
+
 import proj.entity.Product;
+
+import java.util.List;
 
 /**
  * Created by SC on 10.08.2016.
@@ -20,4 +22,8 @@ public interface ProductRepository extends JpaRepository<Product,Integer> {
     @Transactional
     @Query("DELETE FROM Product product WHERE product.id=:id")
     void deleteById(@Param("id") int id);
+
+//    @Query("SELECT DISTINCT * FROM  product LEFT JOIN Product ON product.brand_id = brand.id LEFT JOIN country ON product.country_id = country.id")
+    @Query("SELECT product FROM Product product LEFT JOIN FETCH product.brand LEFT JOIN FETCH product.country LEFT JOIN FETCH product.category")
+    List<Product> findAll();
 }
