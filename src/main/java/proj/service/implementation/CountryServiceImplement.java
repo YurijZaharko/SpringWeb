@@ -43,4 +43,11 @@ public class CountryServiceImplement implements CountryService {
     public Country findById(int id) {
         return countryRepository.findById(id);
     }
+
+    @Override
+    public void save(Country country) {
+        if (countryRepository.findByName(country.getName()) == null ){
+            countryRepository.save(country);
+        }
+    }
 }

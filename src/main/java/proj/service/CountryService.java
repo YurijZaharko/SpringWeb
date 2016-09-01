@@ -19,4 +19,6 @@ public interface CountryService  {
     List<Country> findAll();
 
     Country findById(int id);
+
+    void save(Country country);
 }

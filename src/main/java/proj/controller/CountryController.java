@@ -5,10 +5,8 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+import proj.entity.Country;
 import proj.service.CountryService;
 
 /**
@@ -24,9 +22,17 @@ public class CountryController {
         model.addAttribute("Countries", countryService.findAll());
         return "adminCountry";
     }
+
+//    @RequestMapping(value = "/admin/adminCountry", method = RequestMethod.POST)
+//    public String showCountry(@ModelAttribute("country") Country country){
+//        countryService.save(country);
+//        return "redirect:/admin/adminCountry";
+//    }
+
+
     @RequestMapping(value = "/admin/adminCountry", method = RequestMethod.POST)
-    public String save(@RequestParam("name") String name){
-        countryService.save(name);
+    public String save(@ModelAttribute("country") Country country){
+        countryService.save(country);
         return "redirect:/admin/adminCountry";
     }
 
@@ -37,4 +43,17 @@ public class CountryController {
         countryService.deleteById(id);
         return "redirect:/admin/adminCountry";
     }
+
+    @ModelAttribute("country")
+    public Country getCountry(){
+        return new Country();
+    }
+
+
+    @RequestMapping("/admin/adminCountry/update/{id}")
+    public String updateCountry(@PathVariable int id, Model model){
+        model.addAttribute("country",  countryService.findById(id));
+        return "adminCountry";
+    }
+
 }

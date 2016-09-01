@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: SC
@@ -9,12 +10,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <div class="container">
-    <form action="/admin/adminCountry" method="post" class="form-inline">
+    <form:form action="/admin/adminCountry" method="post" class="form-inline" modelAttribute="country">
+        <form:hidden path="id"/>
         <div class="form-group">
-            <input name="name" placeholder="Name">
-            <input type="submit" value="Create" class="btn btn-primary">
+            <%--<input name="name" placeholder="Name">--%>
+            <form:errors path="name"/>
+            <form:input path="name"/>
+                <input type="submit" value="Create" class="btn btn-primary">
         </div>
-    </form>
+    </form:form>
     <table class="table table-hover">
         <tr>
             <td>#</td>
@@ -24,7 +28,8 @@
             <tr>
                 <td>${country.id}</td>
                 <td>${country.name}</td>
-                <td><a href="/admin/adminCountry/delete/${country.id}" class="btn  btn-danger">Delete</a></td>
+                <td><a href="/admin/adminCountry/delete/${country.id}" class="btn btn-danger">Delete</a></td>
+                <td><a href="/admin/adminCountry/update/${country.id}" class="btn btn-danger">Update</a></td>
             </tr>
         </c:forEach>
     </table>

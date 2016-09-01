@@ -15,21 +15,21 @@
             <input name="name" placeholder="Name">
             <input name="partNumber" placeholder="Part number">
             <input name="price" placeholder="Price">
-            <select name="brandId">
+            <select name="brandId" class="form-control">
                 <c:forEach items="${brands}" var="brand">
                     <option value="${brand.id}">
                         ${brand.name}
                     </option>
                 </c:forEach>
             </select>
-            <select name="countryId">
+            <select name="countryId" class="form-control">
                 <c:forEach items="${countries}" var="country">
                     <option value="${country.id}">
                         ${country.name}
                     </option>
                 </c:forEach>
             </select>
-            <select name="categoryId">
+            <select name="categoryId" class="form-control">
                 <c:forEach items="${categories}" var="category">
                     <option value="${category.id}">
                         ${category.name}
