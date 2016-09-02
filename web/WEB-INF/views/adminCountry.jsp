@@ -10,7 +10,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <div class="container">
-    <form:form action="/admin/adminCountry" method="post" class="form-inline" modelAttribute="country">
+    <form:form action="/admin/adminCountry" method="post" class="form-inline" modelAttribute="Country">
         <form:hidden path="id"/>
         <div class="form-group">
             <%--<input name="name" placeholder="Name">--%>
@@ -29,7 +29,7 @@
                 <td>${country.id}</td>
                 <td>${country.name}</td>
                 <td><a href="/admin/adminCountry/delete/${country.id}" class="btn btn-danger">Delete</a></td>
-                <td><a href="/admin/adminCountry/update/${country.id}" class="btn btn-danger">Update</a></td>
+                <td><a href="/admin/adminCountry/update/${country.id}" class="btn btn-warning">Update</a></td>
             </tr>
         </c:forEach>
     </table>

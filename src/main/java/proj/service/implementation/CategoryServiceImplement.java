@@ -49,4 +49,11 @@ public class CategoryServiceImplement implements CategoryService {
     public List<Category> findAll() {
         return categoryRepository.findAll();
     }
+
+    @Override
+    public void save(Category category) {
+        if (categoryRepository.findByName(category.getName()) == null){
+            categoryRepository.save(category);
+        }
+    }
 }

@@ -44,4 +44,11 @@ public class BrandServiceImplement implements BrandService{
     public List<Brand> findAll() {
         return brandRepository.findAll();
     }
+
+    @Override
+    public void save(Brand brand) {
+        if (brandRepository.findByName(brand.getName()) == null){
+            brandRepository.save(brand);
+        }
+    }
 }

@@ -15,4 +15,5 @@ public interface BrandService {
     void delete(int id);
     List<Brand> findAll();
 
+    void save(Brand brand);
 }

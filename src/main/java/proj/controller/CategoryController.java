@@ -5,10 +5,8 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+import proj.entity.Category;
 import proj.service.CategoryService;
 
 /**
@@ -25,6 +23,12 @@ public class CategoryController {
         return "adminCategory";
     }
 
+    @RequestMapping(value = "/admin/adminCategory", method = RequestMethod.POST)
+    public String save(@ModelAttribute("Category") Category category){
+        categoryService.save(category);
+        return "redirect:/admin/adminCategory";
+    }
+
     @Modifying
     @Transactional
     @RequestMapping("/admin/adminCategory/delete/{id}")
@@ -33,11 +37,14 @@ public class CategoryController {
         return "redirect:/admin/adminCategory";
     }
 
-    @RequestMapping(value = "/admin/adminCategory", method = RequestMethod.POST)
-    public String save(@RequestParam("name") String name){
-        categoryService.save(name);
-        return "redirect:/admin/adminCategory";
+    @ModelAttribute("Category")
+    public Category getCategory(){
+        return new Category();
     }
 
-
+    @RequestMapping("/admin/adminCategory/update/{id}")
+    public String updateCategory(@PathVariable int id, Model model){
+        model.addAttribute("Category", categoryService.findById(id));
+        return "adminCategory";
+    }
 }

@@ -7,13 +7,17 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <div class="container">
-    <form action="/admin/adminCategory" method="post" class="form-inline">
+    <form:form action="/admin/adminCategory" method="post" class="form-inline" modelAttribute="Category">
+        <form:hidden path="id"/>
         <div class="form-group">
-            <input name="name" placeholder="Name">
+            <%--<input name="name" placeholder="Name">--%>
+            <form:errors path="name"/>
+            <form:input path="name"/>
             <input type="submit" class="btn btn-primary" placeholder="Create">
         </div>
-    </form>
+    </form:form>
 
     <table class="table table-hover">
 
@@ -26,7 +30,7 @@
                 <td>${category.id}</td>
                 <td>${category.name}</td>
                 <td><a href="/admin/adminCategory/delete/${category.id}" class="btn btn-danger">Delete</a> </td>
-                <td></td>
+                <td><a href="/admin/adminCategory/update/${category.id}" class="btn btn-warning">Update</a></td>
             </tr>
         </c:forEach>
     </table>

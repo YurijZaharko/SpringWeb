@@ -23,13 +23,6 @@ public class CountryController {
         return "adminCountry";
     }
 
-//    @RequestMapping(value = "/admin/adminCountry", method = RequestMethod.POST)
-//    public String showCountry(@ModelAttribute("country") Country country){
-//        countryService.save(country);
-//        return "redirect:/admin/adminCountry";
-//    }
-
-
     @RequestMapping(value = "/admin/adminCountry", method = RequestMethod.POST)
     public String save(@ModelAttribute("country") Country country){
         countryService.save(country);
@@ -48,7 +41,6 @@ public class CountryController {
     public Country getCountry(){
         return new Country();
     }
-
 
     @RequestMapping("/admin/adminCountry/update/{id}")
     public String updateCountry(@PathVariable int id, Model model){

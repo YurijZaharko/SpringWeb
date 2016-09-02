@@ -15,4 +15,6 @@ public interface CategoryService{
     Category findById(int id);
     void deleteById(int id);
     List<Category> findAll();
+
+    void save(Category category);
 }

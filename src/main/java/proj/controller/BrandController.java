@@ -5,10 +5,8 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+import proj.entity.Brand;
 import proj.service.BrandService;
 
 /**
@@ -25,6 +23,12 @@ public class BrandController {
         return "adminBrand";
     }
 
+    @RequestMapping(value = "/admin/adminBrand", method = RequestMethod.POST)
+    public String save(@ModelAttribute("brand") Brand brand){
+        brandService.save(brand);
+        return "redirect:/admin/adminBrand";
+    }
+
     @Modifying
     @Transactional
     @RequestMapping("/admin/adminBrand/delete/{id}")
@@ -33,9 +37,14 @@ public class BrandController {
         return "redirect:/admin/adminBrand";
     }
 
-    @RequestMapping(value = "/admin/adminBrand", method = RequestMethod.POST)
-    public String save(@RequestParam("name") String name){
-        brandService.save(name);
-        return "redirect:/admin/adminBrand";
+    @ModelAttribute("brand")
+    public Brand getBrand(){
+        return new Brand();
+    }
+
+    @RequestMapping("/admin/adminBrand/update/{id}")
+    public String updateBrand(@PathVariable int id, Model model ){
+        model.addAttribute("brand", brandService.findById(id));
+        return "adminBrand";
     }
 }
