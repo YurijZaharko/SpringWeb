@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: SCIP
@@ -10,35 +11,52 @@
 
 
 <div class="container">
-    <form action="/admin/adminProduct" method="post" class="form-inline">
+    <form:form action="/admin/adminProduct" method="post" class="form-inline">
+        <form:hidden path="id"/>
         <div class="form-group">
-            <input name="name" placeholder="Name">
-            <input name="partNumber" placeholder="Part number">
-            <input name="price" placeholder="Price">
-            <select name="brandId" class="form-control">
+            <form:input path="name" placeholder="Name"/>
+            <form:input path="partNumber" placeholder="Part number"/>
+            <form:input path="price" placeholder="Price"/>
+            <form:select path="brand" class="form-control">
                 <c:forEach items="${brands}" var="brand">
-                    <option value="${brand.id}">
-                        ${brand.name}
-                    </option>
+                    <c:choose>
+                        <c:when test="${brand.id eq productForm.brand.id}">
+                            <option value="${brand.id}" selected="selected">${brand.name}</option>
+                        </c:when>
+                        <c:otherwise>
+                            <option value="${brand.id}">${brand.name}</option>
+                        </c:otherwise>
+                    </c:choose>
+
                 </c:forEach>
-            </select>
-            <select name="countryId" class="form-control">
+            </form:select>
+            <form:select path="country" class="form-control">
                 <c:forEach items="${countries}" var="country">
-                    <option value="${country.id}">
-                        ${country.name}
-                    </option>
+                    <c:choose>
+                        <c:when test="${country.id eq productForm.country.id}">
+                            <option value="${country.id}" selected="selected">${country.name}</option>
+                        </c:when>
+                        <c:otherwise>
+                            <option value="${country.id}">${country.name}</option>
+                        </c:otherwise>
+                    </c:choose>
                 </c:forEach>
-            </select>
-            <select name="categoryId" class="form-control">
+            </form:select>
+            <form:select path="category" class="form-control">
                 <c:forEach items="${categories}" var="category">
-                    <option value="${category.id}">
-                        ${category.name}
-                    </option>
+                    <c:choose>
+                        <c:when test="${category.id eq productForm.category.id}">
+                            <option value="${category.id}" selected ="selected">${category.name}</option>
+                        </c:when>
+                        <c:otherwise>
+                            <option value="${category.id}">${category.name}</option>
+                        </c:otherwise>
+                    </c:choose>
                 </c:forEach>
-            </select>
+            </form:select>
             <input type="submit" class="btn btn-primary" value="Create product">
         </div>
-    </form>
+    </form:form>
     <table class="table table-hover">
         <tr>
             <td>#</td>

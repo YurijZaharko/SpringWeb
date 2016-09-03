@@ -9,7 +9,7 @@
 <html>
 
 <body>
-    <h4>Product list</h4>
+
     <form>
         <table>
             <tr>

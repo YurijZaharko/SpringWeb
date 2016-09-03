@@ -5,18 +5,18 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.*;
 import proj.entity.Brand;
 import proj.entity.Category;
 import proj.entity.Country;
 import proj.entity.Product;
+import proj.form.ProductForm;
 import proj.service.BrandService;
 import proj.service.CategoryService;
 import proj.service.CountryService;
 import proj.service.ProductService;
+import proj.service.implementation.editor.ProductEditor;
 
 /**
  * Created by SCIP on 16.08.2016.
@@ -32,6 +32,11 @@ public class ProductController {
     @Autowired
     CategoryService categoryService;
 
+    @InitBinder("productForm")
+    protected void initBinder(WebDataBinder webDataBinder){
+        webDataBinder.registerCustomEditor(Product.class, new ProductEditor(productService));
+    }
+
     @RequestMapping("/admin/adminProduct")
     public String showProduct(Model model){
         model.addAttribute("Products", productService.findAll());
@@ -42,15 +47,21 @@ public class ProductController {
     }
 
 
-    @RequestMapping(value = "/admin/adminProduct", method = RequestMethod.POST)
-    public String save(@RequestParam("price") int price,
-                       @RequestParam("name") String productName,
-                       @RequestParam("partNumber") String partNumber,
-                       @RequestParam("brandId") int brandId,
-                       @RequestParam("countryId") int countryId,
-                       @RequestParam("categoryId") int categoryId){
-        productService.save(price, productName, partNumber, brandId, countryId, categoryId);
+//    @RequestMapping(value = "/admin/adminProduct", method = RequestMethod.POST)
+//    public String save(@RequestParam("price") int price,
+//                       @RequestParam("name") String productName,
+//                       @RequestParam("partNumber") String partNumber,
+//                       @RequestParam("brandId") int brandId,
+//                       @RequestParam("countryId") int countryId,
+//                       @RequestParam("categoryId") int categoryId){
+//        productService.save(price, productName, partNumber, brandId, countryId, categoryId);
+//
+//        return "redirect:/admin/adminProduct";
+//    }
 
+    @RequestMapping(value = "/admin/adminProduct", method = RequestMethod.POST)
+    public  String save(@ModelAttribute("productForm") ProductForm productForm){
+        productService.save(productForm);
         return "redirect:/admin/adminProduct";
     }
 

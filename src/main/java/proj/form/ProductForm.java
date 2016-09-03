@@ -1,40 +1,29 @@
-package proj.entity;
+package proj.form;
 
-import javax.persistence.*;
-import java.math.BigDecimal;
+import proj.entity.Brand;
+import proj.entity.Category;
+import proj.entity.Country;
+import proj.entity.ProductProperty;
 
 /**
- * Created by SCIP on 26.07.2016.
+ * Created by SCIP on 03.09.2016.
  */
-@Entity
-public class Product {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class ProductForm {
     private int id;
 
-    private BigDecimal price;
+    private String price;
+
     private String productName;
+
     private String partNumber;
 
-    @ManyToOne(fetch = FetchType.LAZY)
     private Category category;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Brand brand;
-
-    @ManyToOne(fetch = FetchType.LAZY)
     private Country country;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    private Brand brand;
+
     private ProductProperty productProperty;
-
-    public Product() {}
-
-    public Product(BigDecimal price, String productName, String partNumber) {
-        this.price = price;
-        this.productName = productName;
-        this.partNumber = partNumber;
-    }
 
     public int getId() {
         return id;
@@ -44,11 +33,11 @@ public class Product {
         this.id = id;
     }
 
-    public BigDecimal getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
@@ -76,20 +65,20 @@ public class Product {
         this.category = category;
     }
 
-    public Brand getBrand() {
-        return brand;
-    }
-
-    public void setBrand(Brand brand) {
-        this.brand = brand;
-    }
-
     public Country getCountry() {
         return country;
     }
 
     public void setCountry(Country country) {
         this.country = country;
+    }
+
+    public Brand getBrand() {
+        return brand;
+    }
+
+    public void setBrand(Brand brand) {
+        this.brand = brand;
     }
 
     public ProductProperty getProductProperty() {
