@@ -11,10 +11,10 @@
 
 
 <div class="container">
-    <form:form action="/admin/adminProduct" method="post" class="form-inline">
+    <form:form action="/admin/adminProduct" method="post" modelAttribute="productForm" class="form-inline">
         <form:hidden path="id"/>
         <div class="form-group">
-            <form:input path="name" placeholder="Name"/>
+            <form:input path="productName" placeholder="Name"/>
             <form:input path="partNumber" placeholder="Part number"/>
             <form:input path="price" placeholder="Price"/>
             <form:select path="brand" class="form-control">
@@ -76,6 +76,8 @@
                 <td>${product.brand.name}</td>
                 <td>${product.country.name}</td>
                 <td>${product.category.name}</td>
+                <td><a href="/admin/adminProduct/delete/${product.id}" class="btn btn-danger">Delete</a> </td>
+                <td><a href="/admin/adminProduct/update/${product.id}" class="btn btn-warning">Update</a> </td>
             </tr>
         </c:forEach>
     </table>

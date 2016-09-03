@@ -37,6 +37,11 @@ public class ProductController {
         webDataBinder.registerCustomEditor(Product.class, new ProductEditor(productService));
     }
 
+    @ModelAttribute("productForm")
+    public ProductForm getProductForm(){
+        return new ProductForm();
+    }
+
     @RequestMapping("/admin/adminProduct")
     public String showProduct(Model model){
         model.addAttribute("Products", productService.findAll());
@@ -63,6 +68,15 @@ public class ProductController {
     public  String save(@ModelAttribute("productForm") ProductForm productForm){
         productService.save(productForm);
         return "redirect:/admin/adminProduct";
+    }
+
+    @RequestMapping("/admin/adminProduct/update/{id}")
+    public String update(@PathVariable("id") int id, Model model){
+        model.addAttribute("productForm", productService.findForForm(id));
+        model.addAttribute("brands", brandService.findAll());
+        model.addAttribute("countries", countryService.findAll());
+        model.addAttribute("categories", categoryService.findAll());
+        return "adminProduct";
     }
 
     @Modifying
