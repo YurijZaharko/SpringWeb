@@ -66,13 +66,5 @@ public class ListOfPropertyAndValueString {
         this.valueOfStringPropertiesList = valueOfStringPropertiesList;
     }
 
-    @Override
-    public String toString() {
-        return "ListOfPropertyAndValueString{" +
-                "id=" + id +
-                ", productProperties=" + productProperties +
-                ", stringPropertiesList=" + stringPropertiesList +
-                ", valueOfStringPropertiesList=" + valueOfStringPropertiesList +
-                '}';
-    }
+
 }

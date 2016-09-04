@@ -2,12 +2,11 @@ package proj.service.implementation;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import proj.entity.Product;
+import proj.entity.ProductProperty;
 import proj.form.ProductForm;
-import proj.repository.BrandRepository;
-import proj.repository.CategoryRepository;
-import proj.repository.CountryRepository;
-import proj.repository.ProductRepository;
+import proj.repository.*;
 import proj.service.BrandService;
 import proj.service.CategoryService;
 import proj.service.CountryService;
@@ -30,6 +29,8 @@ public class ProductServiceImplement implements ProductService {
     CountryRepository countryRepository;
     @Autowired
     CategoryRepository categoryRepository;
+    @Autowired
+    ProductPropertyRepository productPropertyRepository;
 
 //    @Override
 //    public void save(BigDecimal price, String name, String partNumber, int brandId, int countryId, int categoryId) {
@@ -46,13 +47,19 @@ public class ProductServiceImplement implements ProductService {
     @Override
     public void save(ProductForm productForm) {
         Product product = new Product();
-        product.setPrice(BigDecimal.valueOf(Double.parseDouble(productForm.getPrice())));
+        product.setPrice(new BigDecimal(productForm.getPrice()));
         product.setProductName(productForm.getProductName());
         product.setPartNumber(productForm.getPartNumber());
         product.setCategory(productForm.getCategory());
         product.setBrand(productForm.getBrand());
         product.setCountry(productForm.getCountry());
         product.setProductProperty(productForm.getProductProperty());
+        product.setId(productForm.getId());
+        brandRepository.save(product.getBrand());
+        categoryRepository.save(product.getCategory());
+        countryRepository.save(product.getCountry());
+//        productPropertyRepository.save(product.getProductProperty());
+        productRepository.save(product);
     }
 
     @Override

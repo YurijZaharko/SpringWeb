@@ -39,11 +39,5 @@ public class Brand {
         this.name = brandName;
     }
 
-    @Override
-    public String toString() {
-        return "Brand{" +
-                "id=" + id +
-                ", brandName='" + name + '\'' +
-                '}';
-    }
+
 }

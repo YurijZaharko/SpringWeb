@@ -65,13 +65,5 @@ public class StringProperties {
         this.listOfPropertyAndValueStrings = listOfPropertyAndValueStrings;
     }
 
-    @Override
-    public String toString() {
-        return "StringProperties{" +
-                "id=" + id +
-                ", propertyName='" + propertyName + '\'' +
-                ", categoryList=" + categoryList +
-                ", listOfPropertyAndValueStrings=" + listOfPropertyAndValueStrings +
-                '}';
-    }
+
 }

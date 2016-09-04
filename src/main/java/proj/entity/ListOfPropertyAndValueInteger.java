@@ -72,13 +72,5 @@ public class ListOfPropertyAndValueInteger {
         this.valueOfIntegerPropertiesList = valueOfIntegerPropertiesList;
     }
 
-    @Override
-    public String toString() {
-        return "ListOfPropertyAndValueInteger{" +
-                "id=" + id +
-                ", productPropertyList=" + productPropertyList +
-                ", integerPropertiesList=" + integerPropertiesList +
-                ", valueOfIntegerPropertiesList=" + valueOfIntegerPropertiesList +
-                '}';
-    }
+
 }

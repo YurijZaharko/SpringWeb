@@ -70,9 +70,11 @@ public class ProductController {
         return "redirect:/admin/adminProduct";
     }
 
+
     @RequestMapping("/admin/adminProduct/update/{id}")
     public String update(@PathVariable("id") int id, Model model){
         model.addAttribute("productForm", productService.findForForm(id));
+        model.addAttribute("Products", productService.findAll());
         model.addAttribute("brands", brandService.findAll());
         model.addAttribute("countries", countryService.findAll());
         model.addAttribute("categories", categoryService.findAll());

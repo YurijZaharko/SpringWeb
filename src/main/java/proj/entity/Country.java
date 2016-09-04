@@ -47,12 +47,5 @@ public class Country {
         this.productList = productList;
     }
 
-    @Override
-    public String toString() {
-        return "Country{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", productList=" + productList +
-                '}';
-    }
+
 }

@@ -69,7 +69,7 @@
       </key>
       <foreign-key id="36" parent="9" name="FKd83ohe4fmyctgci1g5oe8m6t1">
         <columns>parentId_id</columns>
-        <ref-key>PRIMARY</ref-key>
+        <ref-key>~.brand.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>

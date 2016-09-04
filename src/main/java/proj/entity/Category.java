@@ -103,16 +103,5 @@ public class Category {
         this.stringPropertiesList = stringPropertiesList;
     }
 
-    @Override
-    public String toString() {
-        return "Category{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", parentId=" + parentId +
-                ", categoryChild=" + categoryChild +
-                ", productList=" + productList +
-                ", integerPropertiesList=" + integerPropertiesList +
-                ", stringPropertiesList=" + stringPropertiesList +
-                '}';
-    }
+
 }
