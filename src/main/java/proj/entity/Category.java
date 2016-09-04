@@ -21,7 +21,7 @@ public class Category {
     private List<Category> categoryChild = new ArrayList<>();
 
     @OneToMany(mappedBy = "category")
-    private List<Product> productList = new ArrayList<Product>();
+    private List<Product> productList = new ArrayList<>();
 
     @ManyToMany
     @JoinTable(name = "Category_IntegerProperties", joinColumns =

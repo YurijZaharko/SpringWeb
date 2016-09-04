@@ -13,7 +13,9 @@ public class Product {
     private int id;
 
     private BigDecimal price;
+
     private String productName;
+
     private String partNumber;
 
     @ManyToOne(fetch = FetchType.LAZY)
