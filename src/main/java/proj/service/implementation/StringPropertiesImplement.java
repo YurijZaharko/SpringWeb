@@ -35,4 +35,19 @@ public class StringPropertiesImplement implements StringPropertiesService {
     public List<StringProperties> findAll() {
         return stringPropertiesRepository.findAll();
     }
+
+    @Override
+    public StringProperties findById(int id) {
+        return stringPropertiesRepository.findById(id);
+    }
+
+    @Override
+    public void save(StringProperties stringProperties) {
+        stringPropertiesRepository.save(stringProperties);
+    }
+
+    @Override
+    public void deleteById(int id) {
+        stringPropertiesRepository.delete(id);
+    }
 }

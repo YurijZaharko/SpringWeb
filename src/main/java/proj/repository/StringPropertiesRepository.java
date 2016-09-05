@@ -15,4 +15,6 @@ public interface StringPropertiesRepository extends JpaRepository<StringProperti
     @Modifying
     @Query("DELETE FROM StringProperties stringProperties WHERE stringProperties.propertyName=:name")
     void deleteByName(@Param("name") String name);
+
+    StringProperties findById(int id);
 }

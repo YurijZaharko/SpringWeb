@@ -17,6 +17,11 @@ public class BrandController {
     @Autowired
     BrandService brandService;
 
+    @ModelAttribute("brand")
+    public Brand getBrand(){
+        return new Brand();
+    }
+
     @RequestMapping("/admin/adminBrand")
     public String showBrand(Model model){
         model.addAttribute("Brands", brandService.findAll());
@@ -35,11 +40,6 @@ public class BrandController {
     public String deleteBrand(@PathVariable int id){
         brandService.delete(id);
         return "redirect:/admin/adminBrand";
-    }
-
-    @ModelAttribute("brand")
-    public Brand getBrand(){
-        return new Brand();
     }
 
     @RequestMapping("/admin/adminBrand/update/{id}")

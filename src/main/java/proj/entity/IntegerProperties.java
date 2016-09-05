@@ -32,4 +32,36 @@ public class IntegerProperties {
     public IntegerProperties(String name) {
         this.name = name;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public List<Category> getCategoryList() {
+        return categoryList;
+    }
+
+    public void setCategoryList(List<Category> categoryList) {
+        this.categoryList = categoryList;
+    }
+
+    public List<ListOfPropertyAndValueInteger> getListOfPropertyAndValueInteger() {
+        return listOfPropertyAndValueInteger;
+    }
+
+    public void setListOfPropertyAndValueInteger(List<ListOfPropertyAndValueInteger> listOfPropertyAndValueInteger) {
+        this.listOfPropertyAndValueInteger = listOfPropertyAndValueInteger;
+    }
 }

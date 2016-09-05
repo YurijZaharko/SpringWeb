@@ -12,4 +12,8 @@ public interface IntegerPropertiesService {
     IntegerProperties findByName(String name);
     void delete(String name);
     List<IntegerProperties> findAll();
+
+    void deleteById(int id);
+
+    IntegerProperties findById(int id);
 }

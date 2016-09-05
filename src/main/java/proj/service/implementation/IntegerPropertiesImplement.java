@@ -35,4 +35,14 @@ public class IntegerPropertiesImplement implements IntegerPropertiesService {
     public List<IntegerProperties> findAll() {
         return integerPropertiesRepository.findAll();
     }
+
+    @Override
+    public void deleteById(int id) {
+        integerPropertiesRepository.delete(id);
+    }
+
+    @Override
+    public IntegerProperties findById(int id) {
+        return integerPropertiesRepository.findOne(id);
+    }
 }
