@@ -19,7 +19,7 @@ public class CountryController {
 
     @RequestMapping("/admin/adminCountry")
     public String showCountry(Model model){
-        model.addAttribute("Countries", countryService.findAll());
+        model.addAttribute("Country", countryService.findAll());
         return "adminCountry";
     }
 

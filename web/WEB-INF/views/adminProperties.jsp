@@ -11,7 +11,7 @@
 
 <div class="container">
     <div class="col-lg-6">
-        <form:form action="/admin/adminProperties" method="post" class="form-inline" modelAttribute="stringProperty">
+        <form:form action="/admin/adminProperties" method="post" class="form-inline" modelAttribute="stringProperties">
             <form:hidden path="id"/>
             <div class="form-group">
                 <form:errors path="name"/>
@@ -35,8 +35,8 @@
         </table>
     </div>
     <%--<div class="col-lg-6">--%>
-        <%--<form:form action="/admin/adminProperties" method="post" class="form-inline" modelAttribute="integerProperty">--%>
-            <%--<form:hidden path="idInteger"/>--%>
+        <%--<form:form action="/admin/adminProperties" method="post" class="form-inline" modelAttribute="integerProperties">--%>
+            <%--<form:hidden path="id"/>--%>
             <%--<div class="form-group">--%>
                 <%--<form:errors path="nameinteger"/>--%>
                 <%--<form:input path="nameinteger"/>--%>

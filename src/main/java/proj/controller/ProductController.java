@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import proj.entity.Brand;
@@ -17,6 +18,9 @@ import proj.service.CategoryService;
 import proj.service.CountryService;
 import proj.service.ProductService;
 import proj.service.implementation.editor.ProductEditor;
+import proj.service.implementation.validator.ProductFormValidator;
+
+import javax.validation.Valid;
 
 /**
  * Created by SCIP on 16.08.2016.
@@ -35,6 +39,7 @@ public class ProductController {
     @InitBinder("productForm")
     protected void initBinder(WebDataBinder webDataBinder){
         webDataBinder.registerCustomEditor(Product.class, new ProductEditor(productService));
+        webDataBinder.setValidator(new ProductFormValidator(productService));
     }
 
     @ModelAttribute("productForm")
@@ -45,6 +50,7 @@ public class ProductController {
     @RequestMapping("/admin/adminProduct")
     public String showProduct(Model model){
         model.addAttribute("Products", productService.findAll());
+        System.out.println();
         model.addAttribute("brands", brandService.findAll());
         model.addAttribute("countries", countryService.findAll());
         model.addAttribute("categories", categoryService.findAll());
@@ -65,7 +71,15 @@ public class ProductController {
 //    }
 
     @RequestMapping(value = "/admin/adminProduct", method = RequestMethod.POST)
-    public  String save(@ModelAttribute("productForm") ProductForm productForm){
+    public String save(@ModelAttribute("productForm") @Valid ProductForm productForm, BindingResult bindingResult,
+                        Model model){
+        if(bindingResult.hasErrors()){
+            model.addAttribute("Products", productService.findAll());
+            model.addAttribute("brands", brandService.findAll());
+            model.addAttribute("countries", countryService.findAll());
+            model.addAttribute("categories", categoryService.findAll());
+            return "adminProduct";
+        }
         productService.save(productForm);
         return "redirect:/admin/adminProduct";
     }

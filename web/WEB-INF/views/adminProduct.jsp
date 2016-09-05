@@ -12,11 +12,18 @@
 
 <div class="container">
     <form:form action="/admin/adminProduct" method="post" modelAttribute="productForm" class="form-inline">
+        <%--<form:errors path="*"/>--%>
         <form:hidden path="id"/>
         <div class="form-group">
+            <form:errors path="productName"/>
             <form:input path="productName" placeholder="Name"/>
+
+            <form:errors path="partNumber"/>
             <form:input path="partNumber" placeholder="Part number"/>
+
+            <form:errors path="price"/>
             <form:input path="price" placeholder="Price"/>
+
             <form:select path="brand" class="form-control">
                 <c:forEach items="${brands}" var="brand">
                     <c:choose>

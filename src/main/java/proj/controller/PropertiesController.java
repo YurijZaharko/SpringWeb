@@ -31,6 +31,7 @@ public class PropertiesController {
         return new IntegerProperties();
     }
 
+
     @RequestMapping("/admin/adminProperties")
     public String showProperties(Model model){
         model.addAttribute("stringProperties", stringPropertiesService.findAll());
