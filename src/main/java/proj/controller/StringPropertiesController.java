@@ -15,34 +15,27 @@ import proj.service.implementation.editor.StringPropertiesEditor;
  * Created by SC on 04.09.2016.
  */
 @Controller
-public class PropertiesController {
+public class StringPropertiesController {
     @Autowired
     StringPropertiesService stringPropertiesService;
     @Autowired
     IntegerPropertiesService integerPropertiesService;
 
-    @ModelAttribute("stringProperties")
+    @ModelAttribute("stringProperty")
     public StringProperties getStringProperties(){
         return new StringProperties();
     }
 
-    @ModelAttribute("integerProperties")
-    public IntegerProperties getIntegerProperties(){
-        return new IntegerProperties();
-    }
-
-
-    @RequestMapping("/admin/adminProperties")
+    @RequestMapping("/admin/adminStringProperties")
     public String showProperties(Model model){
         model.addAttribute("stringProperties", stringPropertiesService.findAll());
-        model.addAttribute("integerProperties", integerPropertiesService.findAll());
-        return "adminProperties";
+        return "adminStringProperties";
     }
 
-    @RequestMapping(value = "/admin/adminProperties", method = RequestMethod.POST)
+    @RequestMapping(value = "/admin/adminStringProperties", method = RequestMethod.POST)
     public String save(@ModelAttribute("stringProperty") StringProperties stringProperties){
         stringPropertiesService.save(stringProperties);
-        return "redirect:/admin/adminProperties";
+        return "redirect:/admin/adminStringProperties";
     }
 
     @RequestMapping("/admin/adminProperties/deleteStringProperty/{id}")
@@ -51,19 +44,12 @@ public class PropertiesController {
         return "redirect:/admin/adminProperties";
     }
 
-    @RequestMapping("/admin/adminProperties/deleteIntegerProperty/{id}")
-    public String deleteIntegerProperty(@PathVariable("id") int id){
-        integerPropertiesService.deleteById(id);
-        return "redirect:/admin/adminProperties";
-    }
-    @RequestMapping("/admin/adminProperties/updateStringProperty/{id}")
+
+
+    @RequestMapping("/admin/adminStringProperties/updateStringProperty/{id}")
     public String updateStringProperty(@PathVariable("id") int id, Model model){
         model.addAttribute("stringProperty", stringPropertiesService.findById(id));
-        return "redirect:/admin/adminProperties";
+        return "redirect:/admin/adminStringProperties";
     }
-    @RequestMapping("/admin/adminProperties/updateIntegerProperty/{id}")
-    public String updateIntegerProperty(@PathVariable("id") int id, Model model){
-        model.addAttribute("integerProperty", integerPropertiesService.findById(id));
-        return "redirect:/admin/adminProperties";
-    }
+
 }

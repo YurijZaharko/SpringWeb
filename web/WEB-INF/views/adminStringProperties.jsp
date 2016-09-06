@@ -11,11 +11,11 @@
 
 <div class="container">
     <div class="col-lg-6">
-        <form:form action="/admin/adminProperties" method="post" class="form-inline" modelAttribute="stringProperties">
+        <form:form action="/admin/adminStringProperties" method="post" class="form-inline" modelAttribute="stringProperty">
             <form:hidden path="id"/>
             <div class="form-group">
-                <form:errors path="name"/>
-                <form:input path="name"/>
+                <form:errors path="propertyName"/>
+                <form:input path="propertyName"/>
                 <input type="submit" class="btn btn-primary" value="Create">
             </div>
         </form:form>
@@ -27,7 +27,7 @@
             <c:forEach items="${stringProperties}" var="stringProperty">
                 <tr>
                     <td>${stringProperty.id}</td>
-                    <td>${stringProperty.name}</td>
+                    <td>${stringProperty.propertyName}</td>
                     <td><a href="/admin/adminProperties/deleteStringProperty/${stringProperty.id}" class="btn btn-danger">Delete</a> </td>
                     <td><a href="/admin/adminProperties/updateStringProperty/${stringProperty.id}" class="btn btn-warning">Update</a> </td>
                 </tr>

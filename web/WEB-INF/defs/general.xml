@@ -55,10 +55,10 @@
         <put-attribute name="header" value="/WEB-INF/layout/headerAdmin.jsp"/>
         <put-attribute name="body" value="/WEB-INF/views/adminCountry.jsp"/>
     </definition>
-    <definition name="adminProperties" extends="common">
-        <put-attribute name="title" value="adminProperties"/>
+    <definition name="adminStringProperties" extends="common">
+        <put-attribute name="title" value="adminStringProperties"/>
         <put-attribute name="header" value="/WEB-INF/layout/headerAdmin.jsp"/>
-        <put-attribute name="body" value="/WEB-INF/views/adminProperties.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/views/adminStringProperties.jsp"/>
     </definition>
 
 </tiles-definitions>
