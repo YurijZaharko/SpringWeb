@@ -34,7 +34,8 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Category <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="/admin/adminCategory">Create Category</a></li>
-                            <li><a href="/admin/adminProperties">Create Properties</a></li>
+                            <li><a href="/admin/adminStringProperties">Create string Properties</a></li>
+                            <li><a href="">Create Integer Property</a></li>
                         </ul>
                     </li>
                 </ul>
