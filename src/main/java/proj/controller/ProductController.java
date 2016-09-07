@@ -50,7 +50,6 @@ public class ProductController {
     @RequestMapping("/admin/adminProduct")
     public String showProduct(Model model){
         model.addAttribute("Products", productService.findAll());
-        System.out.println();
         model.addAttribute("brands", brandService.findAll());
         model.addAttribute("countries", countryService.findAll());
         model.addAttribute("categories", categoryService.findAll());
@@ -74,10 +73,7 @@ public class ProductController {
     public String save(@ModelAttribute("productForm") @Valid ProductForm productForm, BindingResult bindingResult,
                         Model model){
         if(bindingResult.hasErrors()){
-            model.addAttribute("Products", productService.findAll());
-            model.addAttribute("brands", brandService.findAll());
-            model.addAttribute("countries", countryService.findAll());
-            model.addAttribute("categories", categoryService.findAll());
+            add(model);
             return "adminProduct";
         }
         productService.save(productForm);
@@ -88,10 +84,7 @@ public class ProductController {
     @RequestMapping("/admin/adminProduct/update/{id}")
     public String update(@PathVariable("id") int id, Model model){
         model.addAttribute("productForm", productService.findForForm(id));
-        model.addAttribute("Products", productService.findAll());
-        model.addAttribute("brands", brandService.findAll());
-        model.addAttribute("countries", countryService.findAll());
-        model.addAttribute("categories", categoryService.findAll());
+        add(model);
         return "adminProduct";
     }
 
@@ -101,5 +94,12 @@ public class ProductController {
     public String delete(@PathVariable("id") int id){
         productService.delete(id);
         return "redirect:/admin/adminProduct";
+    }
+
+    private void add(Model model){
+        model.addAttribute("Products", productService.findAll());
+        model.addAttribute("brands", brandService.findAll());
+        model.addAttribute("countries", countryService.findAll());
+        model.addAttribute("categories", categoryService.findAll());
     }
 }

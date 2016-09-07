@@ -10,7 +10,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <div class="container">
-    <form:form action="/admin/adminCountry" method="post" class="form-inline" modelAttribute="Country">
+    <form:form action="/admin/adminCountry" method="post" class="form-inline" modelAttribute="country">
         <form:hidden path="id"/>
         <div class="form-group">
             <%--<input name="name" placeholder="Name">--%>
@@ -24,7 +24,7 @@
             <td>#</td>
             <td>Name</td>
         </tr>
-        <c:forEach items="${Countries}" var="country">
+        <c:forEach items="${countries}" var="country">
             <tr>
                 <td>${country.id}</td>
                 <td>${country.name}</td>

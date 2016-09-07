@@ -32,11 +32,4 @@ public class IndexController {
     @RequestMapping("/contact")
     public String showContact(){return "contact";}
 
-    @RequestMapping("/category")
-    public String showCategory(Model model){
-        model.addAttribute("categories", categoryService.findAll());
-        return "category";
-    }
-
-
 }

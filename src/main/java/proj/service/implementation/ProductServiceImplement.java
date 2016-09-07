@@ -3,6 +3,7 @@ package proj.service.implementation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import proj.entity.Brand;
 import proj.entity.Product;
 import proj.entity.ProductProperty;
 import proj.form.ProductForm;
@@ -50,14 +51,14 @@ public class ProductServiceImplement implements ProductService {
         product.setPrice(new BigDecimal(productForm.getPrice()));
         product.setProductName(productForm.getProductName());
         product.setPartNumber(productForm.getPartNumber());
-        product.setCategory(productForm.getCategory());
-        product.setBrand(productForm.getBrand());
-        product.setCountry(productForm.getCountry());
+        product.setCategory(categoryRepository.findById(Integer.valueOf(productForm.getCategory().getName())));
+        product.setBrand(brandRepository.findById(Integer.valueOf(productForm.getBrand().getName())));
+        product.setCountry(countryRepository.findById(Integer.valueOf(productForm.getCountry().getName())));
         product.setProductProperty(productForm.getProductProperty());
         product.setId(productForm.getId());
-        brandRepository.save(product.getBrand());
-        categoryRepository.save(product.getCategory());
-        countryRepository.save(product.getCountry());
+//        brandRepository.save(productForm.getBrand());
+//        categoryRepository.save(productForm.getCategory());
+//        countryRepository.save(productForm.getCountry());
 //        productPropertyRepository.save(product.getProductProperty());
         productRepository.save(product);
     }

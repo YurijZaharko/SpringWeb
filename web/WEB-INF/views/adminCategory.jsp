@@ -9,7 +9,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <div class="container">
-    <form:form action="/admin/adminCategory" method="post" class="form-inline" modelAttribute="Category">
+    <form:form action="/admin/adminCategory" method="post" class="form-inline" modelAttribute="category">
         <form:hidden path="id"/>
         <div class="form-group">
             <%--<input name="name" placeholder="Name">--%>
@@ -25,7 +25,7 @@
             <td>#</td>
             <td>Name</td>
         </tr>
-        <c:forEach items="${Categories}" var="category">
+        <c:forEach items="${categories}" var="category">
             <tr>
                 <td>${category.id}</td>
                 <td>${category.name}</td>

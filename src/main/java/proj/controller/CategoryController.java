@@ -19,12 +19,12 @@ public class CategoryController {
 
     @RequestMapping("/admin/adminCategory")
     public String showCategory(Model model){
-        model.addAttribute("Categories", categoryService.findAll());
+        model.addAttribute("categories", categoryService.findAll());
         return "adminCategory";
     }
 
     @RequestMapping(value = "/admin/adminCategory", method = RequestMethod.POST)
-    public String save(@ModelAttribute("Category") Category category){
+    public String save(@ModelAttribute("category") Category category){
         categoryService.save(category);
         return "redirect:/admin/adminCategory";
     }
@@ -37,14 +37,14 @@ public class CategoryController {
         return "redirect:/admin/adminCategory";
     }
 
-    @ModelAttribute("Category")
+    @ModelAttribute("category")
     public Category getCategory(){
         return new Category();
     }
 
     @RequestMapping("/admin/adminCategory/update/{id}")
     public String updateCategory(@PathVariable int id, Model model){
-        model.addAttribute("Category", categoryService.findById(id));
+        model.addAttribute("category", categoryService.findById(id));
         return "adminCategory";
     }
 }
