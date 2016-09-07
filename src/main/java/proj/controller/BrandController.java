@@ -5,9 +5,15 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import proj.entity.Brand;
 import proj.service.BrandService;
+import proj.service.implementation.editor.BrandEditor;
+import proj.service.implementation.validator.BrandValidator;
+
+import javax.validation.Valid;
 
 /**
  * Created by SCIP on 25.08.2016.
@@ -16,6 +22,12 @@ import proj.service.BrandService;
 public class BrandController {
     @Autowired
     BrandService brandService;
+
+    @InitBinder("brand")
+    protected void initBinder(WebDataBinder webDataBinder){
+//        webDataBinder.registerCustomEditor(Brand.class, new BrandEditor(brandService));
+        webDataBinder.setValidator(new BrandValidator(brandService));
+    }
 
     @ModelAttribute("brand")
     public Brand getBrand(){
@@ -29,7 +41,13 @@ public class BrandController {
     }
 
     @RequestMapping(value = "/admin/adminBrand", method = RequestMethod.POST)
-    public String save(@ModelAttribute("brand") Brand brand){
+    public String save(@ModelAttribute("brand") @Valid Brand brand, BindingResult bindingResult, Model model){
+        if (bindingResult.hasErrors()){
+            model.addAttribute("Brands", brandService.findAll());
+            return "adminBrand";
+        }
+//        BrandValidator brandValidator = new BrandValidator(brandService);
+//        brandValidator.validate(brand,bindingResult );
         brandService.save(brand);
         return "redirect:/admin/adminBrand";
     }
