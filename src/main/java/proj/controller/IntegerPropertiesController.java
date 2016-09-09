@@ -3,8 +3,7 @@ package proj.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import proj.entity.IntegerProperties;
 import proj.service.IntegerPropertiesService;
 
@@ -23,5 +22,23 @@ public class IntegerPropertiesController {
     public String showProperties(Model model){
         model.addAttribute("integerProperties", integerPropertiesService.findAll());
         return "adminIntegerProperties";
+    }
+
+    @RequestMapping(value = "/admin/adminIntegerProperties", method = RequestMethod.POST)
+    public String save(@ModelAttribute("integerProperty") IntegerProperties integerProperties){
+        integerPropertiesService.save(integerProperties);
+        return "redirect:/admin/adminIntegerProperties";
+    }
+
+    @RequestMapping("/admin/adminIntegerProperties/delete/{id}")
+    public String delete(@PathVariable("id") int id){
+        integerPropertiesService.deleteById(id);
+        return "redirect:/admin/adminIntegerProperties";
+    }
+
+    @RequestMapping("/admin/adminIntegerProperties/update/{id}")
+    public String update(@PathVariable("id") int id, Model model){
+        model.addAttribute("integerProperty" , integerPropertiesService.findById(id));
+        return "redirect:/admin/adminIntegerProperties";
     }
 }
