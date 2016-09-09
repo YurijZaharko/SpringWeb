@@ -8,6 +8,7 @@ import java.util.List;
  * Created by SCIP on 26.07.2016.
  */
 @Entity
+@Table(indexes = {@Index(columnList = "name")})
 public class Country {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

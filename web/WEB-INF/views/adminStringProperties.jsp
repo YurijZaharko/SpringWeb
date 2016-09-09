@@ -34,29 +34,6 @@
             </c:forEach>
         </table>
     </div>
-    <%--<div class="col-lg-6">--%>
-        <%--<form:form action="/admin/adminProperties" method="post" class="form-inline" modelAttribute="integerProperties">--%>
-            <%--<form:hidden path="id"/>--%>
-            <%--<div class="form-group">--%>
-                <%--<form:errors path="nameinteger"/>--%>
-                <%--<form:input path="nameinteger"/>--%>
-                <%--<button type="submit" class="btn btn-primary">Create</button>--%>
-            <%--</div>--%>
-        <%--</form:form>--%>
-        <%--<table class="table table-hover">--%>
-            <%--<tr>--%>
-                <%--<td>#</td>--%>
-                <%--<td>Property Integer</td>--%>
-            <%--</tr>--%>
-            <%--<c:forEach items="${integerProperties}" var="integerProperty">--%>
-                <%--<tr>--%>
-                    <%--<td>${integerProperty.id}</td>--%>
-                    <%--<td>${integerProperty.name}</td>--%>
-                    <%--<td><a href="/admin/adminProperties/deleteIntegerProperty/${integerProperty.id}" class="btn btn-danger">Delete</a> </td>--%>
-                    <%--<td><a href="/admin/adminProperties/updateIntegerProperty/${integerProperty.id}" class="btn btn-warning">Update</a> </td>--%>
-                <%--</tr>--%>
-            <%--</c:forEach>--%>
-        <%--</table>--%>
-    <%--</div>--%>
+
 </div>
 

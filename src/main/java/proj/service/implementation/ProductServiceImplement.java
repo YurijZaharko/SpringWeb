@@ -51,9 +51,12 @@ public class ProductServiceImplement implements ProductService {
         product.setPrice(new BigDecimal(productForm.getPrice()));
         product.setProductName(productForm.getProductName());
         product.setPartNumber(productForm.getPartNumber());
-        product.setCategory(categoryRepository.findById(Integer.valueOf(productForm.getCategory().getName())));
-        product.setBrand(brandRepository.findById(Integer.valueOf(productForm.getBrand().getName())));
-        product.setCountry(countryRepository.findById(Integer.valueOf(productForm.getCountry().getName())));
+        product.setCategory(productForm.getCategory());
+        product.setBrand(productForm.getBrand());
+        product.setCountry(productForm.getCountry());
+//        product.setCategory(categoryRepository.findById(Integer.valueOf(productForm.getCategory().getName())));
+//        product.setBrand(brandRepository.findById(Integer.valueOf(productForm.getBrand().getName())));
+//        product.setCountry(countryRepository.findById(Integer.valueOf(productForm.getCountry().getName())));
         product.setProductProperty(productForm.getProductProperty());
         product.setId(productForm.getId());
 //        brandRepository.save(productForm.getBrand());

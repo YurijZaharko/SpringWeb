@@ -60,5 +60,10 @@
         <put-attribute name="header" value="/WEB-INF/layout/headerAdmin.jsp"/>
         <put-attribute name="body" value="/WEB-INF/views/adminStringProperties.jsp"/>
     </definition>
+    <definition name="adminIntegerProperties" extends="common">
+        <put-attribute name="title" value="adminIntegerProperties"/>
+        <put-attribute name="header" value="/WEB-INF/layout/headerAdmin.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/views/adminIntegerProperties.jsp"/>
+    </definition>
 
 </tiles-definitions>

@@ -8,6 +8,7 @@ import java.util.List;
  * Created by SCIP on 31.07.2016.
  */
 @Entity
+@Table(indexes = {@Index(columnList = "stringValue")})
 public class ValueOfStringProperties {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

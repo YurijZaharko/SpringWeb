@@ -7,6 +7,7 @@ import java.math.BigDecimal;
  * Created by SCIP on 26.07.2016.
  */
 @Entity
+@Table(indexes = {@Index(columnList = "price"), @Index(columnList = "productName"), @Index(columnList = "partNumber")})
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -8,12 +8,18 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
+import proj.entity.Brand;
+import proj.entity.Category;
+import proj.entity.Country;
 import proj.entity.Product;
 import proj.form.ProductForm;
 import proj.service.BrandService;
 import proj.service.CategoryService;
 import proj.service.CountryService;
 import proj.service.ProductService;
+import proj.service.implementation.editor.BrandEditor;
+import proj.service.implementation.editor.CategoryEditor;
+import proj.service.implementation.editor.CountryEditor;
 import proj.service.implementation.editor.ProductEditor;
 import proj.service.implementation.validator.ProductFormValidator;
 
@@ -35,7 +41,9 @@ public class ProductController {
 
     @InitBinder("productForm")
     protected void initBinder(WebDataBinder webDataBinder){
-        webDataBinder.registerCustomEditor(Product.class, new ProductEditor(productService));
+        webDataBinder.registerCustomEditor(Brand.class, new BrandEditor(brandService));
+        webDataBinder.registerCustomEditor(Category.class, new CategoryEditor(categoryService));
+        webDataBinder.registerCustomEditor(Country.class, new CountryEditor(countryService));
         webDataBinder.setValidator(new ProductFormValidator(productService));
     }
 

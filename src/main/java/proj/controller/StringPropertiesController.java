@@ -18,8 +18,6 @@ import proj.service.implementation.editor.StringPropertiesEditor;
 public class StringPropertiesController {
     @Autowired
     StringPropertiesService stringPropertiesService;
-    @Autowired
-    IntegerPropertiesService integerPropertiesService;
 
     @ModelAttribute("stringProperty")
     public StringProperties getStringProperties(){
