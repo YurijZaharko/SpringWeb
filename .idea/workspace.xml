@@ -2,33 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48a5e6c2-c25f-4614-b027-9cbc4adf19f2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/controller/IntegerPropertiesController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/views/adminIntegerProperties.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/controller/BrandController.class" afterPath="$PROJECT_DIR$/target/classes/proj/controller/BrandController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/controller/ProductController.class" afterPath="$PROJECT_DIR$/target/classes/proj/controller/ProductController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/entity/Brand.class" afterPath="$PROJECT_DIR$/target/classes/proj/entity/Brand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/entity/Category.class" afterPath="$PROJECT_DIR$/target/classes/proj/entity/Category.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/entity/Country.class" afterPath="$PROJECT_DIR$/target/classes/proj/entity/Country.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/entity/IntegerProperties.class" afterPath="$PROJECT_DIR$/target/classes/proj/entity/IntegerProperties.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/entity/Product.class" afterPath="$PROJECT_DIR$/target/classes/proj/entity/Product.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/entity/StringProperties.class" afterPath="$PROJECT_DIR$/target/classes/proj/entity/StringProperties.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/entity/ValueOfIntegerProperties.class" afterPath="$PROJECT_DIR$/target/classes/proj/entity/ValueOfIntegerProperties.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/entity/ValueOfStringProperties.class" afterPath="$PROJECT_DIR$/target/classes/proj/entity/ValueOfStringProperties.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/service/implementation/ProductServiceImplement.class" afterPath="$PROJECT_DIR$/target/classes/proj/service/implementation/ProductServiceImplement.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/controller/ProductController.java" afterPath="$PROJECT_DIR$/src/main/java/proj/controller/ProductController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/controller/StringPropertiesController.java" afterPath="$PROJECT_DIR$/src/main/java/proj/controller/StringPropertiesController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/entity/Brand.java" afterPath="$PROJECT_DIR$/src/main/java/proj/entity/Brand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/entity/Category.java" afterPath="$PROJECT_DIR$/src/main/java/proj/entity/Category.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/entity/Country.java" afterPath="$PROJECT_DIR$/src/main/java/proj/entity/Country.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/entity/IntegerProperties.java" afterPath="$PROJECT_DIR$/src/main/java/proj/entity/IntegerProperties.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/entity/Product.java" afterPath="$PROJECT_DIR$/src/main/java/proj/entity/Product.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/entity/StringProperties.java" afterPath="$PROJECT_DIR$/src/main/java/proj/entity/StringProperties.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/entity/ValueOfIntegerProperties.java" afterPath="$PROJECT_DIR$/src/main/java/proj/entity/ValueOfIntegerProperties.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/entity/ValueOfStringProperties.java" afterPath="$PROJECT_DIR$/src/main/java/proj/entity/ValueOfStringProperties.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/implementation/ProductServiceImplement.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/ProductServiceImplement.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/defs/general.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/defs/general.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/views/adminStringProperties.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/views/adminStringProperties.jsp" />
     </list>
     <ignored path="SpringWeb.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1407,7 +1381,7 @@
       <workItem from="1472466368265" duration="7829000" />
       <workItem from="1472482616884" duration="18255000" />
       <workItem from="1473091654145" duration="378000" />
-      <workItem from="1473092510562" duration="8973000" />
+      <workItem from="1473092510562" duration="9029000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1472147761510</created>
@@ -1493,15 +1467,22 @@
       <option name="project" value="LOCAL" />
       <updated>1473099001861</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="1">
+      <created>1473423803303</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1473423803303</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47749000" />
+    <option name="totallyTimeSpent" value="47805000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2482353" sideWeight="0.50214595" order="7" side_tool="true" content_ui="tabs" />
