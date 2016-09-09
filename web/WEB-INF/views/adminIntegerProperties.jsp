@@ -10,12 +10,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="container">
     <div class="col-lg-6">
-        <form:form action="/admin/adminProperties" method="post" class="form-inline" modelAttribute="integerProperties">
+        <form:form action="/admin/adminIntegerProperties" method="post" class="form-inline" modelAttribute="integerProperty">
             <form:hidden path="id"/>
             <div class="form-group">
-                <form:errors path="nameinteger"/>
-                <form:input path="nameinteger"/>
-                <button type="submit" class="btn btn-primary">Create</button>
+                <form:errors path="name"/>
+                <form:input path="name"/>
+                <input type="submit" class="btn btn-primary" value="Create">
             </div>
         </form:form>
         <table class="table table-hover">

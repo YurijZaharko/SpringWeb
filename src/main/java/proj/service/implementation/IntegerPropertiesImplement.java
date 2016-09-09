@@ -45,4 +45,9 @@ public class IntegerPropertiesImplement implements IntegerPropertiesService {
     public IntegerProperties findById(int id) {
         return integerPropertiesRepository.findOne(id);
     }
+
+    @Override
+    public void save(IntegerProperties integerProperties) {
+        integerPropertiesRepository.save(integerProperties);
+    }
 }

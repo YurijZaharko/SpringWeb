@@ -35,7 +35,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="/admin/adminCategory">Create Category</a></li>
                             <li><a href="/admin/adminStringProperties">Create string Properties</a></li>
-                            <li><a href="">Create Integer Property</a></li>
+                            <li><a href="/admin/adminIntegerProperties">Create Integer Property</a></li>
                         </ul>
                     </li>
                 </ul>

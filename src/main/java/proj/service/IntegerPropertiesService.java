@@ -16,4 +16,7 @@ public interface IntegerPropertiesService {
     void deleteById(int id);
 
     IntegerProperties findById(int id);
+
+    void save(IntegerProperties integerProperties);
+
 }

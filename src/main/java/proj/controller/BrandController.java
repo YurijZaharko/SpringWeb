@@ -46,8 +46,6 @@ public class BrandController {
             model.addAttribute("Brands", brandService.findAll());
             return "adminBrand";
         }
-//        BrandValidator brandValidator = new BrandValidator(brandService);
-//        brandValidator.validate(brand,bindingResult );
         brandService.save(brand);
         return "redirect:/admin/adminBrand";
     }
