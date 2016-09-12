@@ -20,5 +20,4 @@ public interface IntegerPropertiesService {
 
     void save(IntegerProperties integerProperties);
 
-    List<IntegerProperties> findAll(Pageable pageable);
 }

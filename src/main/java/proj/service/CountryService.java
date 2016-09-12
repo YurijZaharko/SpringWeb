@@ -1,6 +1,9 @@
 package proj.service;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import proj.entity.Country;
+import proj.form.CountryFilterForm;
 
 import java.util.List;
 
@@ -21,4 +24,6 @@ public interface CountryService  {
     Country findById(int id);
 
     void save(Country country);
+
+    Page<Country> findAll(Pageable pageable, CountryFilterForm countryFilterForm);
 }

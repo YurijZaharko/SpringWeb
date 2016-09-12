@@ -52,10 +52,5 @@ public class IntegerPropertiesImplement implements IntegerPropertiesService {
         integerPropertiesRepository.save(integerProperties);
     }
 
-    @Override
-    public List<IntegerProperties> findAll(Pageable pageable) {
-        return integerPropertiesRepository.findAll(pageable);
-    }
-
 
 }

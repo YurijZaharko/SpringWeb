@@ -18,5 +18,4 @@ public interface IntegerPropertiesRepository extends JpaRepository<IntegerProper
     @Query("DELETE FROM IntegerProperties integerProperty WHERE  integerProperty.name=:name")
     void deleteByName(@Param("name") String name);
 
-    Page<IntegerProperties> findAll(Pageable pageable);
 }
