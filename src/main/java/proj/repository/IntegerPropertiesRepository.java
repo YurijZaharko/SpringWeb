@@ -1,5 +1,7 @@
 package proj.repository;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -16,4 +18,5 @@ public interface IntegerPropertiesRepository extends JpaRepository<IntegerProper
     @Query("DELETE FROM IntegerProperties integerProperty WHERE  integerProperty.name=:name")
     void deleteByName(@Param("name") String name);
 
+    Page<IntegerProperties> findAll(Pageable pageable);
 }

@@ -1,5 +1,6 @@
 package proj.service;
 
+import org.springframework.data.domain.Pageable;
 import proj.entity.IntegerProperties;
 
 import java.util.List;
@@ -19,4 +20,5 @@ public interface IntegerPropertiesService {
 
     void save(IntegerProperties integerProperties);
 
+    List<IntegerProperties> findAll(Pageable pageable);
 }

@@ -1,6 +1,8 @@
 package proj.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +13,7 @@ import proj.service.IntegerPropertiesService;
  * Created by SC on 07.09.2016.
  */
 @Controller
+
 public class IntegerPropertiesController {
     @Autowired
     IntegerPropertiesService integerPropertiesService;
@@ -19,8 +22,8 @@ public class IntegerPropertiesController {
     public IntegerProperties getIntegerProperties(){return new IntegerProperties();}
 
     @RequestMapping("/admin/adminIntegerProperties")
-    public String showProperties(Model model){
-        model.addAttribute("integerProperties", integerPropertiesService.findAll());
+    public String showProperties(Model model, @PageableDefault(5)Pageable pageable){
+        model.addAttribute("integerProperties", integerPropertiesService.findAll(pageable));
         return "adminIntegerProperties";
     }
 
