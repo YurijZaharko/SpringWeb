@@ -3,6 +3,7 @@ package proj.repository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -13,7 +14,7 @@ import proj.service.implementation.specification.CountryFilterAdapter;
 /**
  * Created by SC on 10.08.2016.
  */
-public interface CountryRepository extends JpaRepository<Country, Integer> {
+public interface CountryRepository extends JpaRepository<Country, Integer>, JpaSpecificationExecutor<Country> {
     Country findByName(String name);
 
     @Modifying
@@ -23,5 +24,5 @@ public interface CountryRepository extends JpaRepository<Country, Integer> {
 
     Country findById(int id);
 
-    Page<Country> findAll(CountryFilterAdapter countryFilterAdapter, Pageable pageable);
+
 }

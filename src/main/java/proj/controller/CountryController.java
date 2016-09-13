@@ -9,10 +9,15 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import proj.entity.Country;
 import proj.form.CountryFilterForm;
 import proj.service.CountryService;
+import proj.service.implementation.validator.CountryValidator;
+
+import javax.validation.Valid;
 
 /**
  * Created by SCIP on 27.08.2016.
@@ -20,16 +25,21 @@ import proj.service.CountryService;
 @Controller
 public class CountryController {
     @Autowired
-    CountryService countryService;
+    private CountryService countryService;
 
     @ModelAttribute("country")
-    public Country getCountry(){
+    public Country getForm(){
         return new Country();
     }
 
     @ModelAttribute("filter")
-    public CountryFilterForm getCountryFilterForm(){
+    public CountryFilterForm getFilter(){
         return new CountryFilterForm();
+    }
+
+    @InitBinder("country")
+    protected void initBinder(WebDataBinder webDataBinder){
+        webDataBinder.setValidator(new CountryValidator(countryService));
     }
 
     @RequestMapping("/admin/adminCountry")
@@ -40,8 +50,6 @@ public class CountryController {
         return "adminCountry";
     }
 
-    @Modifying
-    @Transactional
     @RequestMapping("/admin/adminCountry/delete/{id}")
     public String delete(@PathVariable int id,
                          @PageableDefault(5) Pageable pageable,
@@ -50,19 +58,32 @@ public class CountryController {
         return "redirect:/admin/adminCountry" + getParams(pageable, countryFilterForm);
     }
 
-    @RequestMapping(value = "/admin/adminCountry", method = RequestMethod.POST)
-    public String save(@ModelAttribute("country") Country country){
-        countryService.save(country);
-        return "redirect:/admin/adminCountry";
-    }
-
     @RequestMapping("/admin/adminCountry/update/{id}")
-    public String updateCountry(@PathVariable int id, Model model){
+    public String updateCountry(@PathVariable int id, Model model,
+                                @PageableDefault(5) Pageable pageable,
+                                @ModelAttribute(value = "filter") CountryFilterForm countryFilterForm){
         model.addAttribute("country",  countryService.findById(id));
+        model.addAttribute("page", countryService.findAll(pageable, countryFilterForm));
         return "adminCountry";
     }
 
-    private String getParams(Pageable pageable, CountryFilterForm form){
+    @RequestMapping(value = "/admin/adminCountry", method = RequestMethod.POST)
+    public String save(@ModelAttribute("country") @Valid Country country,
+                       BindingResult bindingResult,
+                       @PageableDefault(5) Pageable pageable,
+                       @ModelAttribute(value = "filter") CountryFilterForm countryFilterForm,
+                       Model model){
+        if(bindingResult.hasErrors()){
+            model.addAttribute("page", countryService.findAll(pageable, countryFilterForm));
+            return "adminCountry";
+        }
+        countryService.save(country);
+        return "redirect:/admin/adminCountry" + getParams(pageable, countryFilterForm);
+    }
+
+
+
+    private String getParams(Pageable pageable, CountryFilterForm countryFilterForm){
         StringBuilder buffer = new StringBuilder();
         buffer.append("?page=");
         buffer.append(String.valueOf(pageable.getPageNumber()+1));
@@ -73,12 +94,12 @@ public class CountryController {
             Sort sort = pageable.getSort();
             sort.forEach((order)->{
                 buffer.append(order.getProperty());
-                if(order.getDirection()!=Direction.ASC)
+                if(order.getDirection()!= Sort.Direction.ASC)
                     buffer.append(",desc");
             });
         }
         buffer.append("&search=");
-        buffer.append(form.getSearch());
+        buffer.append(countryFilterForm.getSearch());
         return buffer.toString();
     }
 

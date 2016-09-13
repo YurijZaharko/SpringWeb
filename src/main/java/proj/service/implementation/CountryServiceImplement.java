@@ -56,6 +56,11 @@ public class CountryServiceImplement implements CountryService {
     }
 
     @Override
+    public Page<Country> findAll(Pageable pageable) {
+        return countryRepository.findAll(pageable);
+    }
+
+    @Override
     public Page<Country> findAll(Pageable pageable, CountryFilterForm countryFilterForm) {
         return countryRepository.findAll(new CountryFilterAdapter(countryFilterForm), pageable);
     }

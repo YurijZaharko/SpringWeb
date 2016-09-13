@@ -25,5 +25,7 @@ public interface CountryService  {
 
     void save(Country country);
 
+    Page<Country> findAll(Pageable pageable);
+
     Page<Country> findAll(Pageable pageable, CountryFilterForm countryFilterForm);
 }

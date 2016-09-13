@@ -1,6 +1,7 @@
 package proj.service.implementation;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import proj.entity.IntegerProperties;
@@ -50,6 +51,11 @@ public class IntegerPropertiesImplement implements IntegerPropertiesService {
     @Override
     public void save(IntegerProperties integerProperties) {
         integerPropertiesRepository.save(integerProperties);
+    }
+
+    @Override
+    public Page<IntegerProperties> findAll(Pageable pageable) {
+        return null;
     }
 
 

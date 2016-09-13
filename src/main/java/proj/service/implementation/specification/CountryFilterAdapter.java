@@ -4,10 +4,7 @@ import org.springframework.data.jpa.domain.Specification;
 import proj.entity.Country;
 import proj.form.CountryFilterForm;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
+import javax.persistence.criteria.*;
 
 /**
  * Created by SC on 12.09.2016.
@@ -25,6 +22,7 @@ public class CountryFilterAdapter implements Specification<Country> {
         if (criteriaQuery.getResultType() != Long.class && criteriaQuery.getResultType() != long.class){
 
         }
-        return criteriaBuilder.like(criteriaBuilder.upper(root.<String>get("name")), search.toUpperCase() + "%");
+        Expression<String> exp = root.get("name");
+        return criteriaBuilder.like(criteriaBuilder.upper(exp), search.toUpperCase() + "%");
     }
 }
