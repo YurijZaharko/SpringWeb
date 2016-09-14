@@ -36,7 +36,9 @@
         </c:forEach>
         <table class="table table-hover">
             <tr>
-                <td><form:input path="search" placeholder="Search"/><input type="submit" value="ok"></td>
+                <td><form:errors path="search"/>
+                    <form:input path="search" placeholder="Search"/>
+                    <button type="submit" class="btn btn-primary">OK</button></td>
             </tr>
         </table>
     </form:form>

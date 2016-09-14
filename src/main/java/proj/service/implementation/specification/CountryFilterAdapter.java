@@ -19,9 +19,9 @@ public class CountryFilterAdapter implements Specification<Country> {
 
     @Override
     public Predicate toPredicate(Root<Country> root, CriteriaQuery<?> criteriaQuery, CriteriaBuilder criteriaBuilder) {
-        if (criteriaQuery.getResultType() != Long.class && criteriaQuery.getResultType() != long.class){
-
-        }
+//        if (criteriaQuery.getResultType() != Long.class && criteriaQuery.getResultType() != long.class){
+//
+//        }
         Expression<String> exp = root.get("name");
         return criteriaBuilder.like(criteriaBuilder.upper(exp), search.toUpperCase() + "%");
     }

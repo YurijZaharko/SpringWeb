@@ -33,7 +33,7 @@ public class CountryController {
     }
 
     @ModelAttribute("filter")
-    public CountryFilterForm getFilter(){
+    public CountryFilterForm CountryFilterForm(){
         return new CountryFilterForm();
     }
 
