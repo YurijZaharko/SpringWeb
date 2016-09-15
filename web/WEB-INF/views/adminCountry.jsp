@@ -26,7 +26,7 @@
             <input type="submit" value="Create" class="btn btn-primary">
         </div>
     </form:form>
-    <form:form action="/admin/country" method="get" modelAttribute="filter">
+    <form:form action="/admin/adminCountry" method="get" modelAttribute="filter">
         <c:forEach items="${param}" var="parameter">
             <c:forEach items="${parameter.value}" var="value">
                 <c:if test="${parameter.key ne 'search'}">
