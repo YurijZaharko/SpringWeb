@@ -11,37 +11,38 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <div class="container">
-    <form:form action="/admin/adminCountry" method="post" class="form-inline" modelAttribute="country">
-        <form:hidden path="id"/>
-        <c:forEach items="${param}" var="parameter">
-            <c:forEach items="${parameter.value}" var="value">
-                <c:if test="${parameter.key ne 'name' and parameter.key ne 'id'}">
-                    <input type="hidden" name="${parameter.key}" value="${value}">
-                </c:if>
-            </c:forEach>
-        </c:forEach>
-        <div class="form-group">
-            <form:errors path="name"/>
-            <form:input path="name"/>
-            <input type="submit" value="Create" class="btn btn-primary">
+    <div class="col-md-6">
+        <form:form action="/admin/adminCountry" method="post" class="form-inline" modelAttribute="country">
+            <form:hidden path="id" />
+            <custom:hiddenInputs excludeParams="name, id"/>
+            <div class="form-group">
+                <label for="name"><form:errors path="name" /></label>
+                <form:input id="name" path="name" placeholder="country name"/>
+                <button type="submit" class="btn btn-primary">Create country</button>
+            </div>
+        </form:form>
+        <form:form action="/admin/adminCountry" method="get" modelAttribute="filter" cssClass="form-inline">
+            <custom:hiddenInputs excludeParams="search"/>
+            <div class="form-group">
+                <form:input path="search" placeholder="search" />
+                <button type="submit" class="btn btn-primary">Ok</button>
+            </div>
+        </form:form>
+    </div>
+    <div class="col-md-3">
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Sort <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <custom:sort innerHtml="Name asc" paramValue="name"/>
+                <custom:sort innerHtml="Name desc" paramValue="name,desc"/>
+            </ul>
         </div>
-    </form:form>
-    <form:form action="/admin/adminCountry" method="get" modelAttribute="filter">
-        <c:forEach items="${param}" var="parameter">
-            <c:forEach items="${parameter.value}" var="value">
-                <c:if test="${parameter.key ne 'search'}">
-                    <input type="hidden" name="${parameter.key}" value="${value}">
-                </c:if>
-            </c:forEach>
-        </c:forEach>
-        <table class="table table-hover">
-            <tr>
-                <td><form:errors path="search"/>
-                    <form:input path="search" placeholder="Search"/>
-                    <button type="submit" class="btn btn-primary">OK</button></td>
-            </tr>
-        </table>
-    </form:form>
+    </div>
+    <div class="col-md-3">
+        <custom:size posibleSizes="1,2,5,10" size="${page.size}" title="Page size"/>
+    </div>
+
     <table class="table table-hover">
         <tr>
             <td>#</td>
@@ -51,23 +52,23 @@
             <tr>
                 <td>${country.id}</td>
                 <td>${country.name}</td>
-                <td><a href="/admin/adminCountry/delete/${country.id}?page=${page.number+1}&size=${page.size}&sort=${param['sort']}&search=${param['search']}" class="btn btn-danger">Delete</a></td>
-                <td><a href="/admin/adminCountry/update/${country.id}?page=${page.number+1}&size=${page.size}&sort=${param['sort']}&search=${param['search']}" class="btn btn-warning">Update</a></td>
+                <td><a href="/admin/country/delete/${country.id}<custom:allParams/>" class="btn btn-danger">Delete</a></td>
+                <td><a href="/admin/country/update/${country.id}<custom:allParams/>" class="btn btn-warning">Update</a></td>
             </tr>
         </c:forEach>
-        <tr>
-            <td><a href="?page=1&size=1&sort=${param['sort']}&search=${param['search']}">1</a></td>
-            <td><a href="?page=1&size=5&sort=${param['sort']}&search=${param['search']}">5</a></td>
-            <td><a href="?page=1&size=10&sort=${param['sort']}&search=${param['search']}">10</a></td>
-            <td><a href="?page=1&size=20&sort=${param['sort']}&search=${param['search']}">20</a></td>
-        </tr>
-        <tr>
-            <td><a href="?page=1&size=${page.size}&sort=name&search=${param['search']}">Name asc</a></td>
-            <td><a href="?page=1&size=${page.size}&sort=name,desc&search=${param['search']}">Name desc</a></td>
-        </tr>
+        <%--<tr>--%>
+            <%--<td><a href="?page=1&size=1&sort=${param['sort']}&search=${param['search']}">1</a></td>--%>
+            <%--<td><a href="?page=1&size=5&sort=${param['sort']}&search=${param['search']}">5</a></td>--%>
+            <%--<td><a href="?page=1&size=10&sort=${param['sort']}&search=${param['search']}">10</a></td>--%>
+            <%--<td><a href="?page=1&size=20&sort=${param['sort']}&search=${param['search']}">20</a></td>--%>
+        <%--</tr>--%>
+        <%--<tr>--%>
+            <%--<td><a href="?page=1&size=${page.size}&sort=name&search=${param['search']}">Name asc</a></td>--%>
+            <%--<td><a href="?page=1&size=${page.size}&sort=name,desc&search=${param['search']}">Name desc</a></td>--%>
+        <%--</tr>--%>
     </table>
     <div class="col-md-12 text-center">
-        <custom:pageable page="${page}" cell="<li></li>" container="<ul class='pagination'></ul>"/>
+        <custom:pageable page="${page}" cell="<li></li>" container="<ul class='pagination'></ul>" />
     </div>
 </div>
 

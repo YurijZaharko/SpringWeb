@@ -1,6 +1,9 @@
 package proj.service;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import proj.entity.Brand;
+import proj.form.BrandFilterForm;
 
 import java.util.List;
 
@@ -16,4 +19,6 @@ public interface BrandService {
     List<Brand> findAll();
 
     void save(Brand brand);
+
+    Page<Brand> findAll(Pageable pageable, BrandFilterForm brandFilterForm);
 }

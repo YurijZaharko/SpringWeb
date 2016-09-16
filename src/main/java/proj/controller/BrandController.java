@@ -1,7 +1,9 @@
 package proj.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -9,6 +11,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import proj.entity.Brand;
+import proj.form.BrandFilterForm;
 import proj.service.BrandService;
 import proj.service.implementation.editor.BrandEditor;
 import proj.service.implementation.validator.BrandValidator;
@@ -34,9 +37,16 @@ public class BrandController {
         return new Brand();
     }
 
+    @ModelAttribute("brandFilterForm")
+    public BrandFilterForm getBrandFilterForm(){
+        return new BrandFilterForm();
+    }
+
     @RequestMapping("/admin/adminBrand")
-    public String showBrand(Model model){
-        model.addAttribute("Brands", brandService.findAll());
+    public String showBrand(Model model,
+                            @PageableDefault(5) Pageable pageable,
+                            @ModelAttribute(value = "brandFilterForm") BrandFilterForm brandFilterForm){
+        model.addAttribute("page", brandService.findAll(pageable, brandFilterForm));
         return "adminBrand";
     }
 
@@ -63,4 +73,6 @@ public class BrandController {
         model.addAttribute("brand", brandService.findById(id));
         return "adminBrand";
     }
+
+
 }

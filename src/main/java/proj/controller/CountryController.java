@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
+import proj.controller.staticMethod.CommonMethod;
 import proj.entity.Country;
 import proj.form.CountryFilterForm;
 import proj.service.CountryService;
@@ -55,7 +56,7 @@ public class CountryController {
                          @PageableDefault(5) Pageable pageable,
                          @ModelAttribute(value = "filter") CountryFilterForm countryFilterForm){
         countryService.deleteById(id);
-        return "redirect:/admin/adminCountry" + getParams(pageable, countryFilterForm);
+        return "redirect:/admin/adminCountry" + CommonMethod.getParams(pageable, countryFilterForm);
     }
 
     @RequestMapping("/admin/adminCountry/update/{id}")
@@ -78,29 +79,11 @@ public class CountryController {
             return "adminCountry";
         }
         countryService.save(country);
-        return "redirect:/admin/adminCountry" + getParams(pageable, countryFilterForm);
+        return "redirect:/admin/adminCountry" + CommonMethod.getParams(pageable, countryFilterForm);
     }
 
 
 
-    private String getParams(Pageable pageable, CountryFilterForm countryFilterForm){
-        StringBuilder buffer = new StringBuilder();
-        buffer.append("?page=");
-        buffer.append(String.valueOf(pageable.getPageNumber()+1));
-        buffer.append("&size=");
-        buffer.append(String.valueOf(pageable.getPageSize()));
-        if(pageable.getSort()!=null){
-            buffer.append("&sort=");
-            Sort sort = pageable.getSort();
-            sort.forEach((order)->{
-                buffer.append(order.getProperty());
-                if(order.getDirection()!= Sort.Direction.ASC)
-                    buffer.append(",desc");
-            });
-        }
-        buffer.append("&search=");
-        buffer.append(countryFilterForm.getSearch());
-        return buffer.toString();
-    }
+
 
 }

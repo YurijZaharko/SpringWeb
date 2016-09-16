@@ -8,7 +8,7 @@ import proj.entity.ProductProperty;
 /**
  * Created by SCIP on 03.09.2016.
  */
-public class ProductForm {
+public class ProductForm{
     private int id;
 
     private String price;
