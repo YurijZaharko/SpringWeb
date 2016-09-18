@@ -1,7 +1,9 @@
 package proj.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -12,6 +14,7 @@ import proj.entity.Brand;
 import proj.entity.Category;
 import proj.entity.Country;
 import proj.entity.Product;
+import proj.form.Filter.ProductFilterForm;
 import proj.form.ProductForm;
 import proj.service.BrandService;
 import proj.service.CategoryService;
@@ -39,6 +42,14 @@ public class ProductController {
     @Autowired
     CategoryService categoryService;
 
+    @ModelAttribute("productForm")
+    public ProductForm getProductForm(){
+        return new ProductForm();
+    }
+
+    @ModelAttribute("productFilterForm")
+    public ProductFilterForm getProductFilterForm(){return new ProductFilterForm();}
+
     @InitBinder("productForm")
     protected void initBinder(WebDataBinder webDataBinder){
         webDataBinder.registerCustomEditor(Brand.class, new BrandEditor(brandService));
@@ -47,14 +58,11 @@ public class ProductController {
         webDataBinder.setValidator(new ProductFormValidator(productService));
     }
 
-    @ModelAttribute("productForm")
-    public ProductForm getProductForm(){
-        return new ProductForm();
-    }
-
     @RequestMapping("/admin/adminProduct")
-    public String showProduct(Model model){
-        model.addAttribute("Products", productService.findAll());
+    public String showProduct(Model model,
+                              @PageableDefault(5) Pageable pageable,
+                              @ModelAttribute(value = "productFilterForm") ProductFilterForm productFilterForm){
+        model.addAttribute("Products", productService.findAll(pageable, productFilterForm));
         model.addAttribute("brands", brandService.findAll());
         model.addAttribute("countries", countryService.findAll());
         model.addAttribute("categories", categoryService.findAll());

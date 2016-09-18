@@ -12,9 +12,8 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import proj.controller.staticMethod.CommonMethod;
 import proj.entity.Brand;
-import proj.form.BrandFilterForm;
+import proj.form.Filter.BrandFilterForm;
 import proj.service.BrandService;
-import proj.service.implementation.editor.BrandEditor;
 import proj.service.implementation.validator.BrandValidator;
 
 import javax.validation.Valid;

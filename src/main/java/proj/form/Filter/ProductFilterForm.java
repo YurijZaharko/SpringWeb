@@ -1,4 +1,4 @@
-package proj.form;
+package proj.form.Filter;
 
 
 import proj.entity.Brand;
@@ -21,20 +21,20 @@ public class ProductFilterForm {
 
     private int minInt = 0;
 
-    private static final Pattern patern = Pattern.compile("^[0-9]{1,9}$");
-
-    private List<Integer> categoryId = new ArrayList<>();
+    private static final Pattern pattern = Pattern.compile("^[0-9]{1,9}$");
 
     private List<Brand> brandId = new ArrayList<>();
 
-    private List<Country> counrtriId = new ArrayList<>();
+    private List<Country> countryId = new ArrayList<>();
+
+    private List<Integer> categoryId = new ArrayList<>();
 
     public String getMaxString() {
         return maxString;
     }
 
     public void setMaxString(String maxString) {
-        if(patern.matcher(maxString).matches()){
+        if(pattern.matcher(maxString).matches()){
             maxInt = Integer.valueOf(maxString);
         }
         this.maxString = maxString;
@@ -45,7 +45,7 @@ public class ProductFilterForm {
     }
 
     public void setMinString(String minString) {
-        if(patern.matcher(minString).matches()){
+        if(pattern.matcher(minString).matches()){
             minInt = Integer.valueOf(minString);
         }
         this.minString = minString;
@@ -83,11 +83,11 @@ public class ProductFilterForm {
         this.brandId = brandId;
     }
 
-    public List<Country> getCounrtriId() {
-        return counrtriId;
+    public List<Country> getCountryId() {
+        return countryId;
     }
 
-    public void setCounrtriId(List<Country> counrtriId) {
-        this.counrtriId = counrtriId;
+    public void setCountryId(List<Country> countryId) {
+        this.countryId = countryId;
     }
 }

@@ -1,6 +1,9 @@
 package proj.service;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import proj.entity.Product;
+import proj.form.Filter.ProductFilterForm;
 import proj.form.ProductForm;
 
 import java.math.BigDecimal;
@@ -23,4 +26,9 @@ public interface ProductService {
     List<Product> findAll();
 
     ProductForm findForForm(int id);
+
+    Page<Product> findAll(Pageable pageable);
+
+    Page<Product> findAll(Pageable pageable, ProductFilterForm productFilterForm);
+
 }

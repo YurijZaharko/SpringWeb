@@ -3,7 +3,7 @@ package proj.service;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import proj.entity.Brand;
-import proj.form.BrandFilterForm;
+import proj.form.Filter.BrandFilterForm;
 
 import java.util.List;
 

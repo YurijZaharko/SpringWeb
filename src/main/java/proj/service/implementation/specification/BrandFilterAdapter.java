@@ -2,7 +2,7 @@ package proj.service.implementation.specification;
 
 import org.springframework.data.jpa.domain.Specification;
 import proj.entity.Brand;
-import proj.form.BrandFilterForm;
+import proj.form.Filter.BrandFilterForm;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;

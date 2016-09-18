@@ -5,7 +5,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import proj.entity.Brand;
-import proj.form.BrandFilterForm;
+import proj.form.Filter.BrandFilterForm;
 import proj.repository.BrandRepository;
 import proj.service.BrandService;
 import proj.service.implementation.specification.BrandFilterAdapter;

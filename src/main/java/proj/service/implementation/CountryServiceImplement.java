@@ -5,7 +5,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import proj.entity.Country;
-import proj.form.CountryFilterForm;
+import proj.form.Filter.CountryFilterForm;
 import proj.repository.CountryRepository;
 import proj.service.CountryService;
 import proj.service.implementation.specification.CountryFilterAdapter;

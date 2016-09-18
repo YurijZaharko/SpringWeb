@@ -1,9 +1,12 @@
-package proj.form;
+package proj.form.Filter;
+
+import proj.form.FilterForm;
 
 /**
- * Created by SCIP on 15.09.2016.
+ * Created by SC on 12.09.2016.
  */
-public class BrandFilterForm implements FilterForm{
+public class CountryFilterForm implements FilterForm {
+
     private String search = "";
 
     public String getSearch() {

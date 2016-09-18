@@ -1,17 +1,21 @@
 package proj.service.implementation;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import proj.entity.Brand;
 import proj.entity.Product;
 import proj.entity.ProductProperty;
+import proj.form.Filter.ProductFilterForm;
 import proj.form.ProductForm;
 import proj.repository.*;
 import proj.service.BrandService;
 import proj.service.CategoryService;
 import proj.service.CountryService;
 import proj.service.ProductService;
+import proj.service.implementation.specification.ProductFilterAdapter;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -103,6 +107,16 @@ public class ProductServiceImplement implements ProductService {
         productForm.setCountry(product.getCountry());
         productForm.setProductProperty(product.getProductProperty());
         return productForm;
+    }
+
+    @Override
+    public Page<Product> findAll(Pageable pageable) {
+        return productRepository.findAll(pageable);
+    }
+
+    @Override
+    public Page<Product> findAll(Pageable pageable, ProductFilterForm productFilterForm) {
+        return productRepository.findAll(new ProductFilterAdapter(productFilterForm), pageable);
     }
 
 

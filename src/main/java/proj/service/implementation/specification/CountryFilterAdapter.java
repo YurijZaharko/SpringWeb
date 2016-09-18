@@ -2,7 +2,7 @@ package proj.service.implementation.specification;
 
 import org.springframework.data.jpa.domain.Specification;
 import proj.entity.Country;
-import proj.form.CountryFilterForm;
+import proj.form.Filter.CountryFilterForm;
 
 import javax.persistence.criteria.*;
 
