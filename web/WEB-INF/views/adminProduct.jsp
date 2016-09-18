@@ -8,7 +8,12 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<script>
+    $(function() {
+        $('select[name=system]').chosen();
+        $('select[name=ingredient]').chosen();
+    });
+</script>
 
 <div class="container">
     <form:form action="/admin/adminProduct" method="post" modelAttribute="productForm" class="form-inline">

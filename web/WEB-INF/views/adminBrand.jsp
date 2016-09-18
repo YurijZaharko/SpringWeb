@@ -10,7 +10,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="container">
-    <div class="col-md-6">
+    <div class="col-md-4">
         <form:form action="/admin/adminBrand" method="post"  modelAttribute="brand">
             <form:hidden path="id"/>
             <div class="form-group">
@@ -24,9 +24,19 @@
             <form:input path="search"/><button type="submit" class="btn btn-primary">Search</button>
         </form:form>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-1">
         <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Sort <span class="caret"></span>
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Sort ID <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <custom:sort innerHtml="ID asc" paramValue="id"/>
+                <custom:sort innerHtml="ID desc" paramValue="id,desc"/>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-1">
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Sort name <span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
                 <custom:sort innerHtml="Name asc" paramValue="name"/>
@@ -34,8 +44,10 @@
             </ul>
         </div>
     </div>
-    <div class="col-md-3">
-        <custom:size posibleSizes="1,2,5,10" size="${page.size}" title="Page size"/>
+    <div class="col-md-2">
+        <div class="container">
+            <custom:size posibleSizes="1,2,5,10" size="${page.size}" title="Page size"/>
+        </div>
     </div>
     <table class="table table-hover">
 

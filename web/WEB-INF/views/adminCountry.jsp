@@ -11,13 +11,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <div class="container">
-    <div class="col-md-6">
+    <div class="col-md-5">
         <form:form action="/admin/adminCountry" method="post" class="form-inline" modelAttribute="country">
             <form:hidden path="id" />
             <custom:hiddenInputs excludeParams="name, id"/>
             <div class="form-group">
                 <label for="name"><form:errors path="name" /></label>
-                <form:input id="name" path="name" placeholder="country name"/>
+                <form:input path="name" placeholder="country name"/>
                 <button type="submit" class="btn btn-primary">Create country</button>
             </div>
         </form:form>
@@ -29,9 +29,19 @@
             </div>
         </form:form>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-1">
         <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Sort <span class="caret"></span>
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Sort ID <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <custom:sort innerHtml="ID asc" paramValue="id"/>
+                <custom:sort innerHtml="ID desc" paramValue="id,desc"/>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-1">
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Sort name <span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
                 <custom:sort innerHtml="Name asc" paramValue="name"/>
@@ -39,8 +49,10 @@
             </ul>
         </div>
     </div>
-    <div class="col-md-3">
-        <custom:size posibleSizes="1,2,5,10" size="${page.size}" title="Page size"/>
+    <div class="col-md-1">
+        <div class="container">
+            <custom:size posibleSizes="1,2,5,10" size="${page.size}" title="Page size"/>
+        </div>
     </div>
 
     <table class="table table-hover">
@@ -52,8 +64,8 @@
             <tr>
                 <td>${country.id}</td>
                 <td>${country.name}</td>
-                <td><a href="/admin/country/delete/${country.id}<custom:allParams/>" class="btn btn-danger">Delete</a></td>
-                <td><a href="/admin/country/update/${country.id}<custom:allParams/>" class="btn btn-warning">Update</a></td>
+                <td><a href="/admin/adminCountry/delete/${country.id}<custom:allParams/>" class="btn btn-danger">Delete</a></td>
+                <td><a href="/admin/adminCountry/update/${country.id}<custom:allParams/>" class="btn btn-warning">Update</a></td>
             </tr>
         </c:forEach>
         <%--<tr>--%>

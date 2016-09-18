@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
+import proj.controller.staticMethod.CommonMethod;
 import proj.entity.Brand;
 import proj.form.BrandFilterForm;
 import proj.service.BrandService;
@@ -50,29 +51,34 @@ public class BrandController {
         return "adminBrand";
     }
 
-    @RequestMapping(value = "/admin/adminBrand", method = RequestMethod.POST)
-    public String save(@ModelAttribute("brand") @Valid Brand brand, BindingResult bindingResult, Model model){
-        if (bindingResult.hasErrors()){
-            model.addAttribute("Brands", brandService.findAll());
-            return "adminBrand";
-        }
-        brandService.save(brand);
-        return "redirect:/admin/adminBrand";
-    }
-
     @Modifying
     @Transactional
     @RequestMapping("/admin/adminBrand/delete/{id}")
-    public String deleteBrand(@PathVariable int id){
+    public String deleteBrand(@PathVariable int id,
+                              @PageableDefault(5) Pageable pageable,
+                              @ModelAttribute(value = "brandFilterForm") BrandFilterForm brandFilterForm){
         brandService.delete(id);
-        return "redirect:/admin/adminBrand";
+        return "redirect:/admin/adminBrand" + CommonMethod.getParams(pageable, brandFilterForm);
     }
 
     @RequestMapping("/admin/adminBrand/update/{id}")
-    public String updateBrand(@PathVariable int id, Model model ){
+    public String updateBrand(@PathVariable int id, Model model,
+                              @PageableDefault(5) Pageable pageable,
+                              @ModelAttribute(value = "brandFilterForm") BrandFilterForm brandFilterForm){
         model.addAttribute("brand", brandService.findById(id));
+        model.addAttribute("page", brandService.findAll(pageable, brandFilterForm));
         return "adminBrand";
     }
 
-
+    @RequestMapping(value = "/admin/adminBrand", method = RequestMethod.POST)
+    public String save(@ModelAttribute("brand") @Valid Brand brand, BindingResult bindingResult, Model model,
+                       @PageableDefault(5) Pageable pageable,
+                       @ModelAttribute(value = "brandFilterForm") BrandFilterForm brandFilterForm){
+        if (bindingResult.hasErrors()){
+            model.addAttribute("page", brandService.findAll(pageable, brandFilterForm));
+            return "adminBrand";
+        }
+        brandService.save(brand);
+        return "redirect:/admin/adminBrand" + CommonMethod.getParams(pageable, brandFilterForm);
+    }
 }
