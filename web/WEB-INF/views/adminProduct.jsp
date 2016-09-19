@@ -20,6 +20,9 @@
     <div class="col-md-3">
         <form:form action="/admin/adminProduct" cssClass="form-horizontal" method="get" modelAttribute="productFilterForm">
             <div class="form-group">
+                <button type="submit" class="btn btn-primary">Ok</button>
+            </div>
+            <div class="form-group">
                 <form:input path="minString" placeholder="min" class="form-control"/>
                 <form:input path="maxString" placeholder="max" class="form-control"/>
             </div>

@@ -23,9 +23,9 @@ public class ProductFilterForm {
 
     private static final Pattern pattern = Pattern.compile("^[0-9]{1,9}$");
 
-    private List<Brand> brandId = new ArrayList<>();
+    private List<Integer> brandId = new ArrayList<>();
 
-    private List<Country> countryId = new ArrayList<>();
+    private List<Integer> countryId = new ArrayList<>();
 
     private List<Integer> categoryId = new ArrayList<>();
 
@@ -75,19 +75,19 @@ public class ProductFilterForm {
         this.categoryId = categoryId;
     }
 
-    public List<Brand> getBrandId() {
+    public List<Integer> getBrandId() {
         return brandId;
     }
 
-    public void setBrandId(List<Brand> brandId) {
+    public void setBrandId(List<Integer> brandId) {
         this.brandId = brandId;
     }
 
-    public List<Country> getCountryId() {
+    public List<Integer> getCountryId() {
         return countryId;
     }
 
-    public void setCountryId(List<Country> countryId) {
+    public void setCountryId(List<Integer> countryId) {
         this.countryId = countryId;
     }
 }
