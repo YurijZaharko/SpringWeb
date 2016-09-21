@@ -44,6 +44,7 @@
             <div class="form-group">
                 <form:checkboxes path="categoryId" items="${categories}" itemLabel="name" itemValue="id"/>
             </div>
+
         </form:form>
     </div>
     <div class="col-md-9">
