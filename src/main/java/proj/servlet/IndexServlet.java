@@ -2,7 +2,7 @@ package proj.servlet;
 
 
 
-import proj.user.User;
+import proj.entity.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -37,7 +37,7 @@ public class IndexServlet extends HttpServlet{
                     "    <a href=\"\">Доставка</a>\n" +
                     "    <a href=\"\">Контакти</a>\n" +
                     "    <a href=\"\">Про нас</a>\n" +
-                    "    <a href=\"profile.jsp\">Welcome "+ user.getName() + "</a>";
+                    "    <a href=\"profile.jsp\">Welcome "+  "</a>";
             req.setAttribute("key", test);
         }else {
         String test = "<a href=\"payment.jsp\">Оплата</a>\n" +

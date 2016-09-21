@@ -21,15 +21,9 @@ public class IndexController {
     @RequestMapping("/admin")
     public String showAdmin(){return "admin";}
 
-    @RequestMapping("/payment")
-    public String showPayment(){
-        return "payment";
+    @RequestMapping("/login")
+    public String showLogin() {
+        return "login";
     }
-
-    @RequestMapping("/registration")
-    public String showRegistration(){return "registration";}
-
-    @RequestMapping("/contact")
-    public String showContact(){return "contact";}
 
 }
