@@ -1,3 +1,5 @@
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: SCIP
@@ -47,6 +49,23 @@
                             <li><a href="">Second</a></li>
                         </ul>
                     </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <%--     <security:authentication property="principal.password"/> --%>
+                    <li><a>${authUser.login}</a></li>
+                    <security:authorize access="isAuthenticated()">
+                        <li>
+                            <form:form action="/logout" method="post"
+                                       class="navbar-form navbar-right">
+                                <button type="submit" class="btn btn-default">Logout</button>
+                            </form:form>
+                        </li>
+                    </security:authorize>
+                    <security:authorize access="!isAuthenticated()">
+                        <li>
+                            <a class="btn btn-default" href="/login">Login</a>
+                        </li>
+                    </security:authorize>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
