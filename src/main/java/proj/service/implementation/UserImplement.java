@@ -11,6 +11,8 @@ import proj.entity.User;
 import proj.repository.UserRepository;
 import proj.service.UserService;
 
+import javax.annotation.PostConstruct;
+
 /**
  * Created by SCIP on 20.09.2016.
  */
@@ -41,7 +43,20 @@ public class UserImplement implements UserService, UserDetailsService {
     }
 
     @Override
-    public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
-        return null;
+    public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
+        return userRepository.findByLogin(login);
+    }
+
+    @PostConstruct
+    public void saveAdmin() {
+        User user = userRepository.findOne(1);
+        if (user == null) {
+            user = new User();
+            user.setRole(Role.ROLE_ADMIN);
+            user.setPassword(bCryptPasswordEncoder.encode("admin"));
+            user.setLogin("admin");
+            user.setId(1);
+            userRepository.save(user);
+        }
     }
 }

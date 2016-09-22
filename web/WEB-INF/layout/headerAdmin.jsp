@@ -50,7 +50,7 @@
                         </ul>
                     </li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav col-md-3 col-md-offset-3">
                     <%--     <security:authentication property="principal.password"/> --%>
                     <li><a>${authUser.login}</a></li>
                     <security:authorize access="isAuthenticated()">
