@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: SCIP
@@ -7,3 +8,9 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
+<form:form action="/admin/adminCategory/categoryAddStringProperties" method="get" modelAttribute="categoryAddStringProperties">
+    <div class="form-group">
+        <form:checkboxes path="stringPropertiesList" items="${brands}" itemLabel="name" itemValue="id"/>
+    </div>
+
+</form:form>

@@ -29,7 +29,7 @@
             <tr>
                 <td>${category.id}</td>
                 <td>${category.name}</td>
-                <td><a href="" class="btn btn-primary">Add String Property</a></td>
+                <td><a href="/admin/adminCategory/categoryAddStringProperties/${category.id}" class="btn btn-primary">Add String Property</a></td>
                 <td><a href="" class="btn btn-primary">Add Integer Property</a></td>
                 <td><a href="/admin/adminCategory/delete/${category.id}" class="btn btn-danger">Delete</a> </td>
                 <td><a href="/admin/adminCategory/update/${category.id}" class="btn btn-warning">Update</a></td>

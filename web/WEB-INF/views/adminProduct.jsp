@@ -11,8 +11,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <script>
     $(function() {
-        $('select[name=system]').chosen();
-        $('select[name=ingredient]').chosen();
+        $('select[name=brand]').chosen();
+        $('select[name=country]').chosen();
+        $('select[name=category]').chosen();
     });
 </script>
 

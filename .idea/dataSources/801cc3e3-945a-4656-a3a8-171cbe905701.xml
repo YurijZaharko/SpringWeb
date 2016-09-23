@@ -1,0 +1,604 @@
+<dataSource name="MySQL - sys@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="sys">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="information_schema" />
+    <schema id="3" name="mysql" />
+    <schema id="4" name="performance_schema" />
+    <schema id="5" name="second" />
+    <schema id="6" name="test" />
+    <table id="7" parent="1" name="brand" />
+    <table id="8" parent="1" name="category" />
+    <table id="9" parent="1" name="category_category" />
+    <table id="10" parent="1" name="category_integerproperties" />
+    <table id="11" parent="1" name="category_stringproperties" />
+    <table id="12" parent="1" name="country" />
+    <table id="13" parent="1" name="integerproperties" />
+    <table id="14" parent="1" name="integerproperties_valueofintegerproperties" />
+    <table id="15" parent="1" name="listofpropertiesinteger" />
+    <table id="16" parent="1" name="listofpropertiesinteger_integerproperties" />
+    <table id="17" parent="1" name="listofpropertiesstring" />
+    <table id="18" parent="1" name="listofpropertiesstring_stringproperties" />
+    <table id="19" parent="1" name="listofpropertyandvalueinteger" />
+    <table id="20" parent="1" name="listofpropertyandvalueinteger_integerproperties" />
+    <table id="21" parent="1" name="listofpropertyandvalueinteger_valueofintegerproperties" />
+    <table id="22" parent="1" name="listofpropertyandvaluestring" />
+    <table id="23" parent="1" name="listofpropertyandvaluestring_stringproperties" />
+    <table id="24" parent="1" name="listofpropertyandvaluestring_valueofstringproperties" />
+    <table id="25" parent="1" name="product" />
+    <table id="26" parent="1" name="productproperty" />
+    <table id="27" parent="1" name="productproperty_listofpropertyandvalueinteger" />
+    <table id="28" parent="1" name="productproperty_listofpropertyandvaluestring" />
+    <table id="29" parent="1" name="stringproperties" />
+    <table id="30" parent="1" name="valueofintegerproperties" />
+    <table id="31" parent="1" name="valueofintegerproperties_product" />
+    <table id="32" parent="1" name="valueofstringproperties" />
+    <table id="33" parent="1" name="valueofstringproperties_product" />
+    <table id="34" parent="1" name="valueofstringproperties_stringproperties" />
+    <column id="35" parent="7" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="36" parent="7" name="name">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <key id="37" parent="7" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="38" parent="8" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="39" parent="8" name="name">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="40" parent="8" name="parentId_id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="41" parent="8" name="FKd83ohe4fmyctgci1g5oe8m6t1">
+      <columns>parentId_id</columns>
+      <desc-columns />
+    </index>
+    <key id="42" parent="8" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="43" parent="8" name="FKd83ohe4fmyctgci1g5oe8m6t1">
+      <columns>parentId_id</columns>
+      <ref-key>PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="44" parent="9" name="Category_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="45" parent="9" name="categoryChild_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="46" parent="9" name="FKtopivt1asqd7kg0gw47noc3bi">
+      <columns>Category_id</columns>
+      <desc-columns />
+    </index>
+    <index id="47" parent="9" name="UK_t5dw3kcdgjrchvw25i4smspxa">
+      <columns>categoryChild_id</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <key id="48" parent="9" name="UK_t5dw3kcdgjrchvw25i4smspxa">
+      <columns>categoryChild_id</columns>
+      <underlying-index>UK_t5dw3kcdgjrchvw25i4smspxa</underlying-index>
+    </key>
+    <foreign-key id="49" parent="9" name="FKtopivt1asqd7kg0gw47noc3bi">
+      <columns>Category_id</columns>
+      <ref-key>~.category.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="50" parent="9" name="FKriennrp20f93ig7iv7ca80om0">
+      <columns>categoryChild_id</columns>
+      <ref-key>~.category.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="51" parent="10" name="fk_Category">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="52" parent="10" name="fk_IntegerProperties">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="53" parent="10" name="FK1ab6eudwqbd5wivo0qntkoq2w">
+      <columns>fk_IntegerProperties</columns>
+      <desc-columns />
+    </index>
+    <index id="54" parent="10" name="FKb1jdgk45sy6x9api417yq0ata">
+      <columns>fk_Category</columns>
+      <desc-columns />
+    </index>
+    <foreign-key id="55" parent="10" name="FKb1jdgk45sy6x9api417yq0ata">
+      <columns>fk_Category</columns>
+      <ref-key>~.category.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="56" parent="10" name="FK1ab6eudwqbd5wivo0qntkoq2w">
+      <columns>fk_IntegerProperties</columns>
+      <ref-key>~.integerproperties.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="57" parent="11" name="fk_Category">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="58" parent="11" name="fk_StringProperties">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="59" parent="11" name="FK2qbnmtqm1ayn9kr1vosm4k129">
+      <columns>fk_StringProperties</columns>
+      <desc-columns />
+    </index>
+    <index id="60" parent="11" name="FKqcorse3gcldi8rya1l3gglm8e">
+      <columns>fk_Category</columns>
+      <desc-columns />
+    </index>
+    <foreign-key id="61" parent="11" name="FKqcorse3gcldi8rya1l3gglm8e">
+      <columns>fk_Category</columns>
+      <ref-key>~.category.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="62" parent="11" name="FK2qbnmtqm1ayn9kr1vosm4k129">
+      <columns>fk_StringProperties</columns>
+      <ref-key>~.stringproperties.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="63" parent="12" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="64" parent="12" name="name">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <key id="65" parent="12" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="66" parent="13" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="67" parent="13" name="name">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <key id="68" parent="13" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="69" parent="14" name="valueOfIntegerProperties">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="70" parent="14" name="integerProperties">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="71" parent="14" name="FKaxukyf3udp2gmfu2w9tmvym88">
+      <columns>integerProperties</columns>
+      <desc-columns />
+    </index>
+    <index id="72" parent="14" name="FKr09bacpfhs41vwrbai8k39gmf">
+      <columns>valueOfIntegerProperties</columns>
+      <desc-columns />
+    </index>
+    <foreign-key id="73" parent="14" name="FKr09bacpfhs41vwrbai8k39gmf">
+      <columns>valueOfIntegerProperties</columns>
+      <ref-key>~.valueofintegerproperties.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="74" parent="14" name="FKaxukyf3udp2gmfu2w9tmvym88">
+      <columns>integerProperties</columns>
+      <ref-key>~.integerproperties.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="75" parent="15" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="76" parent="15" name="category_id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="77" parent="15" name="FKbnxoy9u9ognil6c4d258hkn6i">
+      <columns>category_id</columns>
+      <desc-columns />
+    </index>
+    <key id="78" parent="15" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="79" parent="15" name="FKbnxoy9u9ognil6c4d258hkn6i">
+      <columns>category_id</columns>
+      <ref-key>~.category.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="80" parent="16" name="fk_integerProperties">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="81" parent="16" name="fk_listOfPropertiesInteger">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="82" parent="16" name="FKpb85pls36lxx9e1bu1i7bh8w3">
+      <columns>fk_listOfPropertiesInteger</columns>
+      <desc-columns />
+    </index>
+    <foreign-key id="83" parent="16" name="FKpb85pls36lxx9e1bu1i7bh8w3">
+      <columns>fk_listOfPropertiesInteger</columns>
+      <ref-key>~.listofpropertiesinteger.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="84" parent="17" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="85" parent="17" name="category_id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <key id="86" parent="17" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="87" parent="18" name="fk_stringProperties">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="88" parent="18" name="fk_listOfPropertiesString">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="89" parent="19" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <key id="90" parent="19" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="91" parent="20" name="fk_IntegerProperties">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="92" parent="20" name="fk_ListOfPropertyAndValueInteger">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="93" parent="20" name="FKbssrrk63bum7a8o5fufwf7a1i">
+      <columns>fk_IntegerProperties</columns>
+      <desc-columns />
+    </index>
+    <index id="94" parent="20" name="FKecl4kqlngdsopbyu74tene2e9">
+      <columns>fk_ListOfPropertyAndValueInteger</columns>
+      <desc-columns />
+    </index>
+    <foreign-key id="95" parent="20" name="FKbssrrk63bum7a8o5fufwf7a1i">
+      <columns>fk_IntegerProperties</columns>
+      <ref-key>~.integerproperties.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="96" parent="20" name="FKecl4kqlngdsopbyu74tene2e9">
+      <columns>fk_ListOfPropertyAndValueInteger</columns>
+      <ref-key>~.listofpropertyandvalueinteger.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="97" parent="21" name="fk_ValueOfIntegerProperties">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="98" parent="21" name="fk_ListOfPropertyAndValueInteger">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="99" parent="21" name="FK7yp69er0kfvnqbgc0ucq0p05p">
+      <columns>fk_ValueOfIntegerProperties</columns>
+      <desc-columns />
+    </index>
+    <index id="100" parent="21" name="FK97q8uyqtni9ir2ciixulxu1dl">
+      <columns>fk_ListOfPropertyAndValueInteger</columns>
+      <desc-columns />
+    </index>
+    <foreign-key id="101" parent="21" name="FK7yp69er0kfvnqbgc0ucq0p05p">
+      <columns>fk_ValueOfIntegerProperties</columns>
+      <ref-key>~.valueofintegerproperties.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="102" parent="21" name="FK97q8uyqtni9ir2ciixulxu1dl">
+      <columns>fk_ListOfPropertyAndValueInteger</columns>
+      <ref-key>~.listofpropertyandvalueinteger.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="103" parent="22" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <key id="104" parent="22" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="105" parent="23" name="fk_StringProperties">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="106" parent="23" name="fk_ListOfPropertyAndValueString">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="107" parent="23" name="FK4bsjvtl0i5liexqs0lx9a2nrc">
+      <columns>fk_ListOfPropertyAndValueString</columns>
+      <desc-columns />
+    </index>
+    <index id="108" parent="23" name="FKeqklu5xw3ocqarf8ln1j6rdg5">
+      <columns>fk_StringProperties</columns>
+      <desc-columns />
+    </index>
+    <foreign-key id="109" parent="23" name="FKeqklu5xw3ocqarf8ln1j6rdg5">
+      <columns>fk_StringProperties</columns>
+      <ref-key>~.stringproperties.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="110" parent="23" name="FK4bsjvtl0i5liexqs0lx9a2nrc">
+      <columns>fk_ListOfPropertyAndValueString</columns>
+      <ref-key>~.listofpropertyandvaluestring.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="111" parent="24" name="fk_ListOfPropertyAndValueString">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="112" parent="24" name="fk_ValueOfStringProperties">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="113" parent="24" name="FK97dy9mt74229mjuci5rkymcso">
+      <columns>fk_ValueOfStringProperties</columns>
+      <desc-columns />
+    </index>
+    <index id="114" parent="24" name="FKpg32u8erxyjldbv9w4wb8icej">
+      <columns>fk_ListOfPropertyAndValueString</columns>
+      <desc-columns />
+    </index>
+    <foreign-key id="115" parent="24" name="FKpg32u8erxyjldbv9w4wb8icej">
+      <columns>fk_ListOfPropertyAndValueString</columns>
+      <ref-key>~.listofpropertyandvaluestring.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="116" parent="24" name="FK97dy9mt74229mjuci5rkymcso">
+      <columns>fk_ValueOfStringProperties</columns>
+      <ref-key>~.valueofstringproperties.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="117" parent="25" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="118" parent="25" name="partNumber">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="119" parent="25" name="price">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="120" parent="25" name="productName">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="121" parent="25" name="brand_id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="122" parent="25" name="category_id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="123" parent="25" name="country_id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="124" parent="25" name="productProperty_id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="125" parent="25" name="FK9adpe88028gr1uex6saxo76em">
+      <columns>country_id</columns>
+      <desc-columns />
+    </index>
+    <index id="126" parent="25" name="FKcbnyvs2x321b8yw2vi398b26h">
+      <columns>brand_id</columns>
+      <desc-columns />
+    </index>
+    <index id="127" parent="25" name="FKexqqeaksnmmku5py194ywp140">
+      <columns>category_id</columns>
+      <desc-columns />
+    </index>
+    <index id="128" parent="25" name="FKfm4bonibu25wnbpg4df0rkooq">
+      <columns>productProperty_id</columns>
+      <desc-columns />
+    </index>
+    <key id="129" parent="25" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="130" parent="25" name="FKcbnyvs2x321b8yw2vi398b26h">
+      <columns>brand_id</columns>
+      <ref-key>~.brand.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="131" parent="25" name="FKexqqeaksnmmku5py194ywp140">
+      <columns>category_id</columns>
+      <ref-key>~.category.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="132" parent="25" name="FK9adpe88028gr1uex6saxo76em">
+      <columns>country_id</columns>
+      <ref-key>~.country.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="133" parent="25" name="FKfm4bonibu25wnbpg4df0rkooq">
+      <columns>productProperty_id</columns>
+      <ref-key>~.productproperty.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="134" parent="26" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <key id="135" parent="26" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="136" parent="27" name="fk_ProductProperty">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="137" parent="27" name="fk_ListOfPropertyAndValueInteger">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="138" parent="27" name="FK5imvc2w9x97ra18y0t5onjkt8">
+      <columns>fk_ListOfPropertyAndValueInteger</columns>
+      <desc-columns />
+    </index>
+    <index id="139" parent="27" name="FKqvsuxsg59b2jt8480k24ipolk">
+      <columns>fk_ProductProperty</columns>
+      <desc-columns />
+    </index>
+    <foreign-key id="140" parent="27" name="FKqvsuxsg59b2jt8480k24ipolk">
+      <columns>fk_ProductProperty</columns>
+      <ref-key>~.productproperty.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="141" parent="27" name="FK5imvc2w9x97ra18y0t5onjkt8">
+      <columns>fk_ListOfPropertyAndValueInteger</columns>
+      <ref-key>~.listofpropertyandvalueinteger.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="142" parent="28" name="fk_ProductProperty">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="143" parent="28" name="fk_ListOfPropertyAndValueString">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="144" parent="28" name="FKc85fn88rtdq1dmimput570n6y">
+      <columns>fk_ListOfPropertyAndValueString</columns>
+      <desc-columns />
+    </index>
+    <index id="145" parent="28" name="FKigm8dnvpeohl3f0ntw6iydc2q">
+      <columns>fk_ProductProperty</columns>
+      <desc-columns />
+    </index>
+    <foreign-key id="146" parent="28" name="FKigm8dnvpeohl3f0ntw6iydc2q">
+      <columns>fk_ProductProperty</columns>
+      <ref-key>~.productproperty.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="147" parent="28" name="FKc85fn88rtdq1dmimput570n6y">
+      <columns>fk_ListOfPropertyAndValueString</columns>
+      <ref-key>~.listofpropertyandvaluestring.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="148" parent="29" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="149" parent="29" name="propertyName">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <key id="150" parent="29" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="151" parent="30" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="152" parent="30" name="value">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <key id="153" parent="30" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="154" parent="31" name="valueOfIntegerProperties">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="155" parent="31" name="product">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="156" parent="32" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="157" parent="32" name="stringValue">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <key id="158" parent="32" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="159" parent="33" name="fk_product">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="160" parent="33" name="fk_valueOfStringProperties">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="161" parent="34" name="fk_stringProperties">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="162" parent="34" name="fk_valueOfStringProperties">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+  </database-model>
+</dataSource>
