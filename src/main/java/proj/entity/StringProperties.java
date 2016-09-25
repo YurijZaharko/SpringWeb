@@ -66,5 +66,26 @@ public class StringProperties {
         this.listOfPropertyAndValueStrings = listOfPropertyAndValueStrings;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof StringProperties)) return false;
 
+        StringProperties that = (StringProperties) o;
+
+        if (id != that.id) return false;
+        if (!propertyName.equals(that.propertyName)) return false;
+        if (!categoryList.equals(that.categoryList)) return false;
+        return listOfPropertyAndValueStrings.equals(that.listOfPropertyAndValueStrings);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id;
+        result = 31 * result + propertyName.hashCode();
+        result = 31 * result + categoryList.hashCode();
+        result = 31 * result + listOfPropertyAndValueStrings.hashCode();
+        return result;
+    }
 }

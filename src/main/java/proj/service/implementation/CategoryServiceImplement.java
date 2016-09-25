@@ -56,4 +56,9 @@ public class CategoryServiceImplement implements CategoryService {
             categoryRepository.save(category);
         }
     }
+
+    @Override
+    public List<Category> findAllWithProperty(int id) {
+        return categoryRepository.findAllWithProperty(id);
+    }
 }

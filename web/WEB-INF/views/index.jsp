@@ -18,6 +18,9 @@
   <security:authorize access="!isAuthenticated()">
     <a href="/registration">Register</a>
   </security:authorize>
+  <security:authorize access="!isAuthenticated()">
+    <a href="/login">Login</a>
+  </security:authorize>
   <security:authorize access="isAuthenticated() and hasRole('ROLE_ADMIN')">
     <a href="/admin">Admin panel</a>
   </security:authorize>

@@ -1,6 +1,7 @@
 package proj.service.implementation;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 import proj.entity.StringProperties;
 import proj.repository.StringPropertiesRepository;
@@ -50,4 +51,11 @@ public class StringPropertiesImplement implements StringPropertiesService {
     public void deleteById(int id) {
         stringPropertiesRepository.delete(id);
     }
+
+    @Override
+    public List<StringProperties> findByCategoryId(int id) {
+        return stringPropertiesRepository.findByCategoryId(id);
+    }
+
+
 }

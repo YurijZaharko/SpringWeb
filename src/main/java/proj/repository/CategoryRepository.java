@@ -7,6 +7,8 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 import proj.entity.Category;
 
+import java.util.List;
+
 /**
  * Created by SC on 10.08.2016.
  */
@@ -19,4 +21,7 @@ public interface CategoryRepository extends JpaRepository<Category, Integer> {
     @Transactional
     @Query("DELETE FROM Category category WHERE category.id=:id")
     void deleteById(@Param("id") int id);
+
+    @Query("SELECT c FROM Category c LEFT JOIN FETCH c.stringPropertiesList WHERE c.id=:id")
+    List<Category> findAllWithProperty(@Param("id") int id);
 }

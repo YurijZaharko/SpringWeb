@@ -20,8 +20,9 @@ public interface StringPropertiesService {
     StringProperties findById(int id);
 
     void save(StringProperties stringProperties);
-    @Modifying
-    @Transactional
-    @Query("DELETE FROM StringProperties stringProperties WHERE stringProperties.id=:id")
-    void deleteById(@Param("id") int id);
+
+
+    void deleteById(int id);
+
+    List<StringProperties> findByCategoryId(int id);
 }
