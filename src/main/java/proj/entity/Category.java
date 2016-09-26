@@ -108,19 +108,16 @@ public class Category {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Category)) return false;
+
         Category category = (Category) o;
-        return getId() == category.getId() &&
-                Objects.equals(getName(), category.getName()) &&
-                Objects.equals(getParentId(), category.getParentId()) &&
-                Objects.equals(getCategoryChild(), category.getCategoryChild()) &&
-                Objects.equals(getProductList(), category.getProductList()) &&
-                Objects.equals(getIntegerPropertiesList(), category.getIntegerPropertiesList()) &&
-                Objects.equals(getStringPropertiesList(), category.getStringPropertiesList());
+
+        return id == category.id;
+
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getName(), getParentId(), getCategoryChild(), getProductList(), getIntegerPropertiesList(), getStringPropertiesList());
+        return id;
     }
 }

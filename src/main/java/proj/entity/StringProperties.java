@@ -69,25 +69,16 @@ public class StringProperties {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof StringProperties)) return false;
 
         StringProperties that = (StringProperties) o;
 
-        if (getId() != that.getId()) return false;
-        if (getPropertyName() != null ? !getPropertyName().equals(that.getPropertyName()) : that.getPropertyName() != null)
-            return false;
-        if (getCategoryList() != null ? !getCategoryList().equals(that.getCategoryList()) : that.getCategoryList() != null)
-            return false;
-        return getListOfPropertyAndValueStrings() != null ? getListOfPropertyAndValueStrings().equals(that.getListOfPropertyAndValueStrings()) : that.getListOfPropertyAndValueStrings() == null;
+        return id == that.id;
 
     }
 
     @Override
     public int hashCode() {
-        int result = getId();
-        result = 31 * result + (getPropertyName() != null ? getPropertyName().hashCode() : 0);
-        result = 31 * result + (getCategoryList() != null ? getCategoryList().hashCode() : 0);
-        result = 31 * result + (getListOfPropertyAndValueStrings() != null ? getListOfPropertyAndValueStrings().hashCode() : 0);
-        return result;
+        return id;
     }
 }

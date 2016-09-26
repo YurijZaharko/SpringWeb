@@ -88,7 +88,7 @@ public class ProductController {
                        @PageableDefault(5) Pageable pageable,
                        @ModelAttribute(value = "productFilterForm") ProductFilterForm productFilterForm){
         if(bindingResult.hasErrors()){
-            add(model);
+            add(model, pageable, productFilterForm);
             return "adminProduct";
         }
         productService.save(productForm);
@@ -101,7 +101,7 @@ public class ProductController {
                          @PageableDefault(5) Pageable pageable,
                          @ModelAttribute(value = "productFilterForm") ProductFilterForm productFilterForm){
         model.addAttribute("productForm", productService.findForForm(id));
-        add(model);
+        add(model, pageable, productFilterForm);
         return "adminProduct";
     }
 
@@ -115,8 +115,8 @@ public class ProductController {
         return "redirect:/admin/adminProduct" + getParams(pageable, productFilterForm);
     }
 
-    private void add(Model model){
-        model.addAttribute("Products", productService.findAll());
+    private void add(Model model,Pageable pageable,ProductFilterForm productFilterForm){
+        model.addAttribute("Products", productService.findAll(pageable, productFilterForm));
         model.addAttribute("brands", brandService.findAll());
         model.addAttribute("countries", countryService.findAll());
         model.addAttribute("categories", categoryService.findAll());

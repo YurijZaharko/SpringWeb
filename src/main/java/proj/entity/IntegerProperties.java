@@ -65,4 +65,20 @@ public class IntegerProperties {
     public void setListOfPropertyAndValueInteger(List<ListOfPropertyAndValueInteger> listOfPropertyAndValueInteger) {
         this.listOfPropertyAndValueInteger = listOfPropertyAndValueInteger;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof IntegerProperties)) return false;
+
+        IntegerProperties that = (IntegerProperties) o;
+
+        return id == that.id;
+
+    }
+
+    @Override
+    public int hashCode() {
+        return id;
+    }
 }

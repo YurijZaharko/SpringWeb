@@ -39,15 +39,15 @@ public class CategoryController {
         return "adminCategory";
     }
 
-    @RequestMapping("/admin/adminCategory/categoryWithProperty/")
-    public String showCategoryWithStringProperty(Model model){
-        model.addAttribute("categoriesWithProperty", categoryService.findAllWithProperty());
+    @RequestMapping("/admin/adminCategory/categoryWithProperty/{id}")
+    public String showCategoryWithStringProperty(Model model, @PathVariable int id){
+        model.addAttribute("categoriesWithProperty", categoryService.findAllWithProperty(id));
         model.addAttribute("stringPropertiesList", stringPropertiesService.findAll());
         return "categoryWithProperty";
     }
 
     public String showCategoryWithIntegerProperty(){
-
+        return null;
     }
 
     @RequestMapping(value = "/admin/adminCategory/categoryWithProperty", method = RequestMethod.POST)
@@ -76,6 +76,4 @@ public class CategoryController {
         model.addAttribute("category", categoryService.findById(id));
         return "adminCategory";
     }
-
-
 }
