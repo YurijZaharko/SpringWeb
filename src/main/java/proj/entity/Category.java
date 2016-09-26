@@ -3,6 +3,7 @@ package proj.entity;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by SCIP on 26.07.2016.
@@ -104,5 +105,22 @@ public class Category {
         this.stringPropertiesList = stringPropertiesList;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Category category = (Category) o;
+        return getId() == category.getId() &&
+                Objects.equals(getName(), category.getName()) &&
+                Objects.equals(getParentId(), category.getParentId()) &&
+                Objects.equals(getCategoryChild(), category.getCategoryChild()) &&
+                Objects.equals(getProductList(), category.getProductList()) &&
+                Objects.equals(getIntegerPropertiesList(), category.getIntegerPropertiesList()) &&
+                Objects.equals(getStringPropertiesList(), category.getStringPropertiesList());
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getName(), getParentId(), getCategoryChild(), getProductList(), getIntegerPropertiesList(), getStringPropertiesList());
+    }
 }

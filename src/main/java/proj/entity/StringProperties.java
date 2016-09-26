@@ -69,23 +69,25 @@ public class StringProperties {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof StringProperties)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
 
         StringProperties that = (StringProperties) o;
 
-        if (id != that.id) return false;
-        if (!propertyName.equals(that.propertyName)) return false;
-        if (!categoryList.equals(that.categoryList)) return false;
-        return listOfPropertyAndValueStrings.equals(that.listOfPropertyAndValueStrings);
+        if (getId() != that.getId()) return false;
+        if (getPropertyName() != null ? !getPropertyName().equals(that.getPropertyName()) : that.getPropertyName() != null)
+            return false;
+        if (getCategoryList() != null ? !getCategoryList().equals(that.getCategoryList()) : that.getCategoryList() != null)
+            return false;
+        return getListOfPropertyAndValueStrings() != null ? getListOfPropertyAndValueStrings().equals(that.getListOfPropertyAndValueStrings()) : that.getListOfPropertyAndValueStrings() == null;
 
     }
 
     @Override
     public int hashCode() {
-        int result = id;
-        result = 31 * result + propertyName.hashCode();
-        result = 31 * result + categoryList.hashCode();
-        result = 31 * result + listOfPropertyAndValueStrings.hashCode();
+        int result = getId();
+        result = 31 * result + (getPropertyName() != null ? getPropertyName().hashCode() : 0);
+        result = 31 * result + (getCategoryList() != null ? getCategoryList().hashCode() : 0);
+        result = 31 * result + (getListOfPropertyAndValueStrings() != null ? getListOfPropertyAndValueStrings().hashCode() : 0);
         return result;
     }
 }
