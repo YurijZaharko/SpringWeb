@@ -31,4 +31,5 @@ public interface ProductService {
 
     Page<Product> findAll(Pageable pageable, ProductFilterForm productFilterForm);
 
+    List<Product> findAllWithValue(int id);
 }

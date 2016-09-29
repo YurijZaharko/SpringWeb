@@ -80,5 +80,10 @@
         <put-attribute name="header" value="/WEB-INF/layout/headerAdmin.jsp"/>
         <put-attribute name="body" value="/WEB-INF/views/categoryWithProperty.jsp"/>
     </definition>
+    <definition name="adminProductAddValue" extends="common">
+        <put-attribute name="title" value="adminProductAddValue"/>
+        <put-attribute name="header" value="/WEB-INF/layout/headerAdmin.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/views/adminProductAddValue.jsp"/>
+    </definition>
 
 </tiles-definitions>

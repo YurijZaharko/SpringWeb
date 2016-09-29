@@ -122,7 +122,7 @@
                     <td>${product.category.name}</td>
                     <td><a href="/admin/adminProduct/delete/${product.id}<custom:allParams/>" class="btn btn-danger">Delete</a> </td>
                     <td><a href="/admin/adminProduct/update/${product.id}<custom:allParams/>" class="btn btn-warning">Update</a> </td>
-                    <td><a href=""  class="btn btn-primary">Add value</a> </td>
+                    <td><a href="/admin/adminProduct/addValue/${product.id}"  class="btn btn-primary">Add value</a> </td>
                 </tr>
             </c:forEach>
         </table>

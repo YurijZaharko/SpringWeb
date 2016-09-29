@@ -69,6 +69,12 @@ public class ProductController {
         return "adminProduct";
     }
 
+    @RequestMapping("/admin/adminProduct/addValue/${id}")
+    public String showAddValue(@PathVariable("id") int id, Model model){
+        model.addAttribute("productAndValue", productService.findAllWithValue(id));
+        return "adminProductAddValue";
+    }
+
 
 //    @RequestMapping(value = "/admin/adminProduct", method = RequestMethod.POST)
 //    public String save(@RequestParam("price") int price,
