@@ -5,17 +5,16 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.*;
 import proj.entity.Category;
 
 import proj.entity.StringProperties;
 import proj.service.CategoryService;
+import proj.service.IntegerPropertiesService;
 import proj.service.StringPropertiesService;
-
-import java.util.List;
+import proj.service.implementation.editor.CategoryEditor;
+import proj.service.implementation.editor.StrPropEditor;
 
 /**
  * Created by SCIP on 16.08.2016.
@@ -28,9 +27,17 @@ public class CategoryController {
     @Autowired
     StringPropertiesService stringPropertiesService;
 
+    IntegerPropertiesService integerPropertiesService;
+
     @ModelAttribute("category")
     public Category getCategory(){
         return new Category();
+    }
+
+    @InitBinder("category")
+    protected void initBinder(WebDataBinder webDataBinder){
+        webDataBinder.registerCustomEditor(Category.class, new CategoryEditor(categoryService));
+        webDataBinder.registerCustomEditor(StringProperties.class, new StrPropEditor(stringPropertiesService));
     }
 
     @RequestMapping("/admin/adminCategory")
@@ -41,8 +48,8 @@ public class CategoryController {
 
     @RequestMapping("/admin/adminCategory/categoryWithProperty/{id}")
     public String showCategoryWithStringProperty(Model model, @PathVariable int id){
-        model.addAttribute("categoriesWithProperty", categoryService.findAllWithProperty(id));
-        model.addAttribute("stringPropertiesList", stringPropertiesService.findAll());
+        model.addAttribute("categoriesWithProperty", categoryService.findAll());
+        model.addAttribute("stringProperties", stringPropertiesService.findAll());
         return "categoryWithProperty";
     }
 
@@ -50,12 +57,20 @@ public class CategoryController {
         return null;
     }
 
+    @Transactional
     @RequestMapping(value = "/admin/adminCategory/categoryWithProperty", method = RequestMethod.POST)
     public String saveCategoryWithProperty(@ModelAttribute("category") Category category){
-        List<StringProperties> stringPropertiesList = category.getStringPropertiesList();
-        System.out.println(stringPropertiesList);
-        return "redirect:/admin/adminCategory/categoryWithProperty";
+        Category temp = categoryService.findById(Integer.valueOf(category.getName()));
+//        temp.getStringPropertiesList().addAll(category.getStringPropertiesList());
+//        for (StringProperties stringProperty : category.getStringPropertiesList()) {
+//            temp.getStringPropertiesList().add(stringPropertiesService.findById(stringProperty.getId()));
+//        }
+        categoryService.save(temp);
+
+        return "redirect:/admin/adminCategory/categoryWithProperty/" + category.getId();
     }
+
+
 
     @RequestMapping(value = "/admin/adminCategory", method = RequestMethod.POST)
     public String save(@ModelAttribute("category") Category category){

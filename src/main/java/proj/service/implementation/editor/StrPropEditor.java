@@ -8,10 +8,10 @@ import java.beans.PropertyEditorSupport;
 /**
  * Created by SCIP on 04.09.2016.
  */
-public class StringPropertiesEditor extends PropertyEditorSupport {
+public class StrPropEditor extends PropertyEditorSupport {
     private final StringPropertiesService stringPropertiesService;
 
-    public StringPropertiesEditor(StringPropertiesService stringPropertiesService) {
+    public StrPropEditor(StringPropertiesService stringPropertiesService) {
         this.stringPropertiesService = stringPropertiesService;
     }
 

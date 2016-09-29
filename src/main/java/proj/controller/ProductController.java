@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 import proj.entity.Brand;
 import proj.entity.Category;
 import proj.entity.Country;
-import proj.entity.Product;
 import proj.form.Filter.ProductFilterForm;
 import proj.form.ProductForm;
 import proj.service.BrandService;

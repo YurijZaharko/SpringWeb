@@ -27,8 +27,8 @@
                 <tr>
                     <td>${integerProperty.id}</td>
                     <td>${integerProperty.name}</td>
-                    <td><a href="/admin/adminProperties/deleteIntegerProperty/${integerProperty.id}" class="btn btn-danger">Delete</a> </td>
-                    <td><a href="/admin/adminProperties/updateIntegerProperty/${integerProperty.id}" class="btn btn-warning">Update</a> </td>
+                    <td><a href="/admin/adminIntegerProperties/delete/${integerProperty.id}" class="btn btn-danger">Delete</a> </td>
+                    <td><a href="/admin/adminIntegerProperties/update/${integerProperty.id}" class="btn btn-warning">Update</a> </td>
                 </tr>
             </c:forEach>
         </table>

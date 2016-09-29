@@ -3,6 +3,7 @@ package proj.entity;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by SCIP on 31.07.2016.
@@ -69,16 +70,13 @@ public class StringProperties {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof StringProperties)) return false;
-
+        if (o == null || getClass() != o.getClass()) return false;
         StringProperties that = (StringProperties) o;
-
         return id == that.id;
-
     }
 
     @Override
     public int hashCode() {
-        return id;
+        return Objects.hash(id);
     }
 }

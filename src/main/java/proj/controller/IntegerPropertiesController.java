@@ -5,6 +5,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import proj.entity.IntegerProperties;
 import proj.service.IntegerPropertiesService;
@@ -21,9 +22,10 @@ public class IntegerPropertiesController {
     @ModelAttribute("integerProperty")
     public IntegerProperties getIntegerProperties(){return new IntegerProperties();}
 
+
     @RequestMapping("/admin/adminIntegerProperties")
-    public String showProperties(Model model, @PageableDefault(5)Pageable pageable){
-        model.addAttribute("integerProperties", integerPropertiesService.findAll(pageable));
+    public String showProperties(Model model){
+        model.addAttribute("integerProperties", integerPropertiesService.findAll());
         return "adminIntegerProperties";
     }
 

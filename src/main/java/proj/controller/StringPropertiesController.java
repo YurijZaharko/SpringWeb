@@ -3,13 +3,9 @@ package proj.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
-import proj.entity.IntegerProperties;
 import proj.entity.StringProperties;
-import proj.service.IntegerPropertiesService;
 import proj.service.StringPropertiesService;
-import proj.service.implementation.editor.StringPropertiesEditor;
 
 /**
  * Created by SC on 04.09.2016.

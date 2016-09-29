@@ -14,6 +14,7 @@ public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     private String name;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -108,16 +109,13 @@ public class Category {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Category)) return false;
-
+        if (o == null || getClass() != o.getClass()) return false;
         Category category = (Category) o;
-
         return id == category.id;
-
     }
 
     @Override
     public int hashCode() {
-        return id;
+        return Objects.hash(id);
     }
 }

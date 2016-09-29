@@ -11,7 +11,6 @@ import java.beans.PropertyEditorSupport;
 public class ProductEditor extends PropertyEditorSupport {
     private final ProductService productService;
 
-
     public ProductEditor(ProductService productService) {
         this.productService = productService;
     }

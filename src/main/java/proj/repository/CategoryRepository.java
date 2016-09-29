@@ -24,4 +24,7 @@ public interface CategoryRepository extends JpaRepository<Category, Integer> {
 
     @Query("SELECT c FROM Category c LEFT JOIN FETCH c.stringPropertiesList WHERE c.id=:id")
     List<Category> findAllWithProperty(@Param("id") int id);
+
+    @Query("SELECT DISTINCT c FROM Category c LEFT JOIN FETCH c.stringPropertiesList")
+    List<Category> findAllWithProperty();
 }

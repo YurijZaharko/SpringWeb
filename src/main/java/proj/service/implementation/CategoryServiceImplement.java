@@ -61,4 +61,9 @@ public class CategoryServiceImplement implements CategoryService {
     public List<Category> findAllWithProperty(int id) {
         return categoryRepository.findAllWithProperty(id);
     }
+
+    @Override
+    public List<Category> findAllWithProperty() {
+        return categoryRepository.findAllWithProperty();
+    }
 }
