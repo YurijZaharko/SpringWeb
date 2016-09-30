@@ -13,9 +13,13 @@
         <div class="form-group">
             <input type="submit" class="btn btn-primary" placeholder="Add">
         </div>
-        <%--<form:hidden path="id"/>--%>
+        <form:hidden path="id"/>
+        <form:hidden path="parentId"/>
+        <form:hidden path="categoryChild"/>
+        <form:hidden path="productList"/>
+        <form:hidden path="integerPropertiesList"/>
         <div class="form-group">
-            <form:select path="name" items="${categoriesWithProperty}" class="form-control" itemLabel="name" itemValue="id"/>
+            <%--<form:select path="name" items="${categoriesWithProperty}" class="form-control" itemLabel="name" itemValue="id"/>--%>
         </div>
 
         <div class="form-group">

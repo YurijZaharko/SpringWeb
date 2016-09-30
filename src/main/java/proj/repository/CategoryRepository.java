@@ -15,7 +15,10 @@ import java.util.List;
 public interface CategoryRepository extends JpaRepository<Category, Integer> {
     Category findByName(String name);
 
+
     Category findById(int id);
+
+
 
     @Modifying
     @Transactional
@@ -27,4 +30,8 @@ public interface CategoryRepository extends JpaRepository<Category, Integer> {
 
     @Query("SELECT DISTINCT c FROM Category c LEFT JOIN FETCH c.stringPropertiesList")
     List<Category> findAllWithProperty();
+
+    @Query("SELECT DISTINCT c FROM Category c LEFT JOIN FETCH c.productList LEFT JOIN FETCH c.categoryChild LEFT JOIN FETCH " +
+            "c.stringPropertiesList WHERE c.id=:id")
+    Category findByIdWithAllFetch(int id);
 }

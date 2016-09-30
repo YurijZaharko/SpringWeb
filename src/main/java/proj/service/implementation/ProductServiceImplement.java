@@ -119,10 +119,10 @@ public class ProductServiceImplement implements ProductService {
         return productRepository.findAll(new ProductFilterAdapter(productFilterForm), pageable);
     }
 
-    @Override
-    public List<Product> findAllWithValue(int id) {
-        return productRepository.findAllWithValue(id);
-    }
+//    @Override
+//    public List<Product> findAllWithValue(int id) {
+//        return productRepository.findAllWithValue(id);
+//    }
 
 
 }
