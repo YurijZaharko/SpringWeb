@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48a5e6c2-c25f-4614-b027-9cbc4adf19f2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/service/FileWriter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/FileWriterImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/controller/CategoryController.class" afterPath="$PROJECT_DIR$/target/classes/proj/controller/CategoryController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/entity/Product.class" afterPath="$PROJECT_DIR$/target/classes/proj/entity/Product.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/entity/Product_.class" afterPath="$PROJECT_DIR$/target/classes/proj/entity/Product_.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/service/implementation/CategoryServiceImplement.class" afterPath="$PROJECT_DIR$/target/classes/proj/service/implementation/CategoryServiceImplement.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/service/implementation/ProductServiceImplement.class" afterPath="$PROJECT_DIR$/target/classes/proj/service/implementation/ProductServiceImplement.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/service/MailSender.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/controller/CategoryController.java" afterPath="$PROJECT_DIR$/src/main/java/proj/controller/CategoryController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/entity/Product.java" afterPath="$PROJECT_DIR$/src/main/java/proj/entity/Product.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/form/ProductForm.java" afterPath="$PROJECT_DIR$/src/main/java/proj/form/ProductForm.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/implementation/CategoryServiceImplement.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/CategoryServiceImplement.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/implementation/ProductServiceImplement.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/ProductServiceImplement.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/proj/entity/Product_.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/proj/entity/Product_.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/views/adminProduct.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/views/adminProduct.jsp" />
     </list>
     <ignored path="SpringWeb.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,11 +33,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ProductServiceImplement.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProductServiceImplement.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/implementation/ProductServiceImplement.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="118" column="53" selection-start-line="117" selection-start-column="6" selection-end-line="118" selection-end-column="53" />
+            <state relative-caret-position="354">
+              <caret line="113" column="55" selection-start-line="113" selection-start-column="55" selection-end-line="113" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -132,9 +119,23 @@
       <file leaf-file-name="adminProduct.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/adminProduct.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="120" column="84" selection-start-line="120" selection-start-column="84" selection-end-line="120" selection-end-column="84" />
+            <state relative-caret-position="239">
+              <caret line="91" column="76" selection-start-line="91" selection-start-column="76" selection-end-line="91" selection-end-column="76" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MailSender.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/MailSender.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="17" column="64" selection-start-line="17" selection-start-column="64" selection-end-line="17" selection-end-column="64" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1134#1357#0" expanded="true" />
+                <element signature="e#1356#1357#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -168,7 +169,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/proj/service/implementation/specification/ProductFilterAdapter.java" />
         <option value="$PROJECT_DIR$/src/main/java/proj/form/Filter/ProductFilterForm.java" />
         <option value="$PROJECT_DIR$/src/main/java/proj/entity/Role.java" />
         <option value="$PROJECT_DIR$/src/main/java/proj/service/UserService.java" />
@@ -219,6 +219,7 @@
         <option value="$PROJECT_DIR$/src/main/java/proj/form/ProductForm.java" />
         <option value="$PROJECT_DIR$/src/main/java/proj/service/implementation/ProductServiceImplement.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/views/adminProduct.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/proj/service/MailSender.java" />
       </list>
     </option>
   </component>
@@ -1203,7 +1204,7 @@
       <workItem from="1475141039561" duration="16042000" />
       <workItem from="1475165296653" duration="8261000" />
       <workItem from="1475305078068" duration="7992000" />
-      <workItem from="1475318495179" duration="8006000" />
+      <workItem from="1475318495179" duration="8839000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1472147761510</created>
@@ -1373,11 +1374,18 @@
       <option name="project" value="LOCAL" />
       <updated>1475216919709</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="1">
+      <created>1475326690627</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1475326690627</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="219302000" />
+    <option name="totallyTimeSpent" value="220135000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1390,7 +1398,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2973274" sideWeight="0.50429183" order="7" side_tool="true" content_ui="tabs" />
@@ -1410,7 +1418,7 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38084632" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3" sideWeight="0.49570817" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3" sideWeight="0.49570817" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850778" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -1471,7 +1479,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_77/jre/lib/rt.jar!/sun/reflect/DelegatingMethodAccessorImpl.class" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_77/src.zip!/java/util/concurrent/ThreadPoolExecutor.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_77/src.zip!/java/lang/Thread.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/proj/entity/StringProperties.java">
@@ -1785,19 +1792,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/adminProduct.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/implementation/ProductServiceImplement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="120" column="84" selection-start-line="120" selection-start-column="84" selection-end-line="120" selection-end-column="84" />
+        <state relative-caret-position="354">
+          <caret line="113" column="55" selection-start-line="113" selection-start-column="55" selection-end-line="113" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/implementation/ProductServiceImplement.java">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/adminProduct.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="118" column="53" selection-start-line="117" selection-start-column="6" selection-end-line="118" selection-end-column="53" />
+        <state relative-caret-position="239">
+          <caret line="91" column="76" selection-start-line="91" selection-start-column="76" selection-end-line="91" selection-end-column="76" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/MailSender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" column="64" selection-start-line="17" selection-start-column="64" selection-end-line="17" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1134#1357#0" expanded="true" />
+            <element signature="e#1356#1357#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
