@@ -23,4 +23,7 @@ public interface CategoryService{
     List<Category> findAllWithProperty();
 
     Category findByIdWithAllFetch(int id);
+
+
+    List<Category> findByIdWithCategoryChild(int id);
 }

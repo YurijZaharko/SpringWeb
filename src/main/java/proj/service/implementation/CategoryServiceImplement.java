@@ -71,4 +71,9 @@ public class CategoryServiceImplement implements CategoryService {
     public Category findByIdWithAllFetch(int id) {
         return categoryRepository.findByIdWithAllFetch(id);
     }
+
+    @Override
+    public List<Category> findByIdWithCategoryChild(int id) {
+        return categoryRepository.findByIdWithCategoryChild(id);
+    }
 }

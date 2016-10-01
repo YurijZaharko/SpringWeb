@@ -31,7 +31,9 @@ public interface CategoryRepository extends JpaRepository<Category, Integer> {
     @Query("SELECT DISTINCT c FROM Category c LEFT JOIN FETCH c.stringPropertiesList")
     List<Category> findAllWithProperty();
 
-    @Query("SELECT DISTINCT c FROM Category c LEFT JOIN FETCH c.productList LEFT JOIN FETCH c.categoryChild LEFT JOIN FETCH " +
-            "c.stringPropertiesList WHERE c.id=:id")
-    Category findByIdWithAllFetch(int id);
+    @Query("SELECT DISTINCT c FROM Category c LEFT JOIN FETCH c.stringPropertiesList WHERE c.id=:id")
+    Category findByIdWithAllFetch(@Param("id") int id);
+
+    @Query("SELECT DISTINCT c FROM Category c LEFT JOIN FETCH c.categoryChild WHERE c.id=:id")
+    List<Category> findByIdWithCategoryChild(@Param("id") int id);
 }

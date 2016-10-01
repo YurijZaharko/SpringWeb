@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: SCIP
@@ -14,10 +15,7 @@
             <input type="submit" class="btn btn-primary" placeholder="Add">
         </div>
         <form:hidden path="id"/>
-        <form:hidden path="parentId"/>
-        <form:hidden path="categoryChild"/>
-        <form:hidden path="productList"/>
-        <form:hidden path="integerPropertiesList"/>
+        <form:hidden path="name"/>
         <div class="form-group">
             <%--<form:select path="name" items="${categoriesWithProperty}" class="form-control" itemLabel="name" itemValue="id"/>--%>
         </div>
@@ -28,6 +26,12 @@
         <%--<div class="form-group">--%>
             <%--<form:select path="integerPropertiesList" items="${integerProperties}" itemLabel="name" itemValue="id"/>--%>
         <%--</div>--%>
+        <c:forEach items="${stringProperties}" var="stringProperty">
+            <tr>
+                <td>${stringProperty.id}</td>
+                <td>${stringProperty.propertyName}</td>
+            </tr>
+        </c:forEach>
     </form:form>
 
 

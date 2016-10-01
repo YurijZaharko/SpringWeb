@@ -49,6 +49,7 @@ public class CategoryController {
     @RequestMapping("/admin/adminCategory/categoryWithProperty/{id}")
     public String showCategoryWithStringProperty(Model model, @PathVariable int id){
         model.addAttribute("category", categoryService.findByIdWithAllFetch(id));
+//        model.addAllAttributes("categoryChild" , categoryService.findByIdWithCategoryChild(id));
         model.addAttribute("stringProperties", stringPropertiesService.findAll());
         return "categoryWithProperty";
     }

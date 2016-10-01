@@ -14,6 +14,7 @@ public class StringProperties {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     private String propertyName;
 
     @ManyToMany
