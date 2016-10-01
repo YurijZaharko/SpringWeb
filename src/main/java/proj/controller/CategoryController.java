@@ -16,6 +16,9 @@ import proj.service.StringPropertiesService;
 import proj.service.implementation.editor.CategoryEditor;
 import proj.service.implementation.editor.StrPropEditor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by SCIP on 16.08.2016.
  */
@@ -49,8 +52,13 @@ public class CategoryController {
     @RequestMapping("/admin/adminCategory/categoryWithProperty/{id}")
     public String showCategoryWithStringProperty(Model model, @PathVariable int id){
         model.addAttribute("category", categoryService.findByIdWithAllFetch(id));
-//        model.addAllAttributes("categoryChild" , categoryService.findByIdWithCategoryChild(id));
-        model.addAttribute("stringProperties", stringPropertiesService.findAll());
+// move to service
+        List<StringProperties> stringPropertiesList = categoryService.findByIdWithAllFetch(id).getStringPropertiesList();
+        List<StringProperties> temp = stringPropertiesService.findAll();
+        temp.removeAll(stringPropertiesList);
+        model.addAttribute("stringProperties", temp);
+
+
         return "categoryWithProperty";
     }
 
@@ -58,17 +66,28 @@ public class CategoryController {
         return null;
     }
 
+//    @Transactional
+//    @RequestMapping(value = "/admin/adminCategory/categoryWithProperty", method = RequestMethod.POST)
+//    public String saveCategoryWithProperty(@ModelAttribute("category") Category category){
+//        Category temp = categoryService.findById(category.getId());
+////        temp.getStringPropertiesList().addAll(category.getStringPropertiesList());
+////        for (StringProperties stringProperty : category.getStringPropertiesList()) {
+////            temp.getStringPropertiesList().add(stringPropertiesService.findById(stringProperty.getId()));
+////        }
+//        categoryService.save(temp);
+//
+//        return "redirect:/admin/adminCategory/categoryWithProperty/" + category.getId();
+//    }
     @Transactional
-    @RequestMapping(value = "/admin/adminCategory/categoryWithProperty", method = RequestMethod.POST)
-    public String saveCategoryWithProperty(@ModelAttribute("category") Category category){
-        Category temp = categoryService.findById(Integer.valueOf(category.getName()));
-//        temp.getStringPropertiesList().addAll(category.getStringPropertiesList());
-//        for (StringProperties stringProperty : category.getStringPropertiesList()) {
-//            temp.getStringPropertiesList().add(stringPropertiesService.findById(stringProperty.getId()));
-//        }
-        categoryService.save(temp);
-
-        return "redirect:/admin/adminCategory/categoryWithProperty/" + category.getId();
+    @RequestMapping(value = "/admin/adminCategory/categoryWithProperty/propertyId/{catId}/{id}")
+    public String savePropertyToCategory(@PathVariable("catId") int catId , @PathVariable("id") int id ){
+        // move to service
+        Category category = categoryService.findByIdWithAllFetch(catId);
+        List<StringProperties> stringPropertiesList = category.getStringPropertiesList();
+        stringPropertiesList.add(stringPropertiesService.findById(id));
+        category.setStringPropertiesList(stringPropertiesList);
+        categoryService.save(category);
+        return "redirect:/admin/adminCategory/categoryWithProperty/" + catId;
     }
 
 

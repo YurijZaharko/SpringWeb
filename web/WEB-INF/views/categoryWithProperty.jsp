@@ -11,28 +11,34 @@
 
 <div class="container">
     <form:form action="/admin/adminCategory/categoryWithProperty" method="post" modelAttribute="category">
-        <div class="form-group">
-            <input type="submit" class="btn btn-primary" placeholder="Add">
-        </div>
-        <form:hidden path="id"/>
-        <form:hidden path="name"/>
-        <div class="form-group">
-            <%--<form:select path="name" items="${categoriesWithProperty}" class="form-control" itemLabel="name" itemValue="id"/>--%>
-        </div>
+        <%--<div class="form-group">--%>
+            <%--<input type="submit" class="btn btn-primary" placeholder="Add">--%>
+        <%--</div>--%>
+        <%--<form:hidden path="id"/>--%>
+        <%--<form:hidden path="name"/>--%>
+        <%--<div class="form-group">--%>
+            <%--&lt;%&ndash;<form:select path="name" items="${categoriesWithProperty}" class="form-control" itemLabel="name" itemValue="id"/>&ndash;%&gt;--%>
+        <%--</div>--%>
 
-        <div class="form-group">
-            <form:select path="stringPropertiesList" items="${stringProperties}" itemLabel="propertyName" itemValue="id"/>
-        </div>
+        <%--<div class="form-group">--%>
+            <%--<form:select path="stringPropertiesList" items="${stringProperties}" itemLabel="propertyName" itemValue="id"/>--%>
+        <%--</div>--%>
         <%--<div class="form-group">--%>
             <%--<form:select path="integerPropertiesList" items="${integerProperties}" itemLabel="name" itemValue="id"/>--%>
         <%--</div>--%>
-        <c:forEach items="${stringProperties}" var="stringProperty">
+        <table class="table table-hover">
             <tr>
-                <td>${stringProperty.id}</td>
-                <td>${stringProperty.propertyName}</td>
+                <td>id</td>
+                <td>Name</td>
+                <td>Add</td>
             </tr>
-        </c:forEach>
+            <c:forEach items="${stringProperties}" var="stringProperty">
+                <tr>
+                    <td>${stringProperty.id}</td>
+                    <td>${stringProperty.propertyName}</td>
+                    <td><a href="/admin/adminCategory/categoryWithProperty/propertyId/${category.id}/${stringProperty.id}" class="btn btn-primary">Add</a> </td>
+                </tr>
+            </c:forEach>
+        </table>
     </form:form>
-
-
 </div>
