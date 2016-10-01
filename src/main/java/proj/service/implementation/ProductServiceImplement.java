@@ -11,10 +11,7 @@ import proj.entity.ProductProperty;
 import proj.form.Filter.ProductFilterForm;
 import proj.form.ProductForm;
 import proj.repository.*;
-import proj.service.BrandService;
-import proj.service.CategoryService;
-import proj.service.CountryService;
-import proj.service.ProductService;
+import proj.service.*;
 import proj.service.implementation.specification.ProductFilterAdapter;
 
 import java.math.BigDecimal;
@@ -36,6 +33,8 @@ public class ProductServiceImplement implements ProductService {
     CategoryRepository categoryRepository;
     @Autowired
     ProductPropertyRepository productPropertyRepository;
+    @Autowired
+    private FileWriter fileWriter;
 
 //    @Override
 //    public void save(BigDecimal price, String name, String partNumber, int brandId, int countryId, int categoryId) {
@@ -67,7 +66,17 @@ public class ProductServiceImplement implements ProductService {
 //        categoryRepository.save(productForm.getCategory());
 //        countryRepository.save(productForm.getCountry());
 //        productPropertyRepository.save(product.getProductProperty());
-        productRepository.save(product);
+
+        product.setPath(productForm.getPath());
+        product.setVersion(productForm.getVersion());
+        productRepository.saveAndFlush(product);
+        String extension = fileWriter.write(FileWriter.Folder.PRODUCT, productForm.getFile(), product.getId());
+        if(extension!=null){
+            product.setVersion(productForm.getVersion()+1);
+            product.setPath(extension);
+            productRepository.save(product);
+        }
+
     }
 
     @Override
@@ -106,6 +115,8 @@ public class ProductServiceImplement implements ProductService {
         productForm.setBrand(product.getBrand());
         productForm.setCountry(product.getCountry());
         productForm.setProductProperty(product.getProductProperty());
+        productForm.setPath(product.getPath());
+        productForm.setVersion(product.getVersion());
         return productForm;
     }
 

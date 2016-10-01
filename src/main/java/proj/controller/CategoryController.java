@@ -58,7 +58,6 @@ public class CategoryController {
         temp.removeAll(stringPropertiesList);
         model.addAttribute("stringProperties", temp);
 
-
         return "categoryWithProperty";
     }
 
@@ -83,14 +82,10 @@ public class CategoryController {
     public String savePropertyToCategory(@PathVariable("catId") int catId , @PathVariable("id") int id ){
         // move to service
         Category category = categoryService.findByIdWithAllFetch(catId);
-        List<StringProperties> stringPropertiesList = category.getStringPropertiesList();
-        stringPropertiesList.add(stringPropertiesService.findById(id));
-        category.setStringPropertiesList(stringPropertiesList);
+        category.getStringPropertiesList().add(stringPropertiesService.findById(id));
         categoryService.save(category);
         return "redirect:/admin/adminCategory/categoryWithProperty/" + catId;
     }
-
-
 
     @RequestMapping(value = "/admin/adminCategory", method = RequestMethod.POST)
     public String save(@ModelAttribute("category") Category category){

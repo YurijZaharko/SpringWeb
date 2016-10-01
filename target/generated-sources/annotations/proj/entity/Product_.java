@@ -9,12 +9,14 @@ import javax.persistence.metamodel.StaticMetamodel;
 @StaticMetamodel(Product.class)
 public abstract class Product_ {
 
+	public static volatile SingularAttribute<Product, String> path;
 	public static volatile SingularAttribute<Product, Country> country;
 	public static volatile SingularAttribute<Product, BigDecimal> price;
 	public static volatile SingularAttribute<Product, ProductProperty> productProperty;
 	public static volatile SingularAttribute<Product, String> partNumber;
 	public static volatile SingularAttribute<Product, Integer> id;
 	public static volatile SingularAttribute<Product, Category> category;
+	public static volatile SingularAttribute<Product, Integer> version;
 	public static volatile SingularAttribute<Product, Brand> brand;
 	public static volatile SingularAttribute<Product, String> productName;
 

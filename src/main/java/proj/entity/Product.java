@@ -19,6 +19,10 @@ public class Product {
 
     private String partNumber;
 
+    private int version;
+
+    private String path;
+
     @ManyToOne(fetch = FetchType.LAZY)
     private Category category;
 
@@ -101,5 +105,21 @@ public class Product {
 
     public void setProductProperty(ProductProperty productProperty) {
         this.productProperty = productProperty;
+    }
+
+    public int getVersion() {
+        return version;
+    }
+
+    public void setVersion(int version) {
+        this.version = version;
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
     }
 }

@@ -48,10 +48,12 @@
         </form:form>
     </div>
     <div class="col-md-9">
-        <form:form action="/admin/adminProduct" method="post" modelAttribute="productForm" class="form-inline">
+        <form:form action="/admin/adminProduct" method="post" modelAttribute="productForm" class="form-inline" enctype="multipart/form-data">
             <%--<form:errors path="*"/>--%>
             <form:hidden path="id"/>
             <div class="form-group">
+                <form:hidden path="version" />
+                <form:hidden path="path"/>
                 <form:errors path="productName"/>
                 <form:input path="productName" placeholder="Name"/>
 
@@ -98,12 +100,14 @@
                     <%--</c:choose>--%>
                     <%--</c:forEach>--%>
                 </form:select>
+                <label class="btn btn-default btn-file">Browse <input type="file" name="file" style="display: none;"></label>
                 <input type="submit" class="btn btn-primary" value="Create product">
             </div>
         </form:form>
         <table class="table table-hover">
             <tr>
                 <td>#</td>
+                <td>Image</td>
                 <td>Name</td>
                 <td>Part number</td>
                 <td>Price</td>
@@ -114,6 +118,7 @@
             <c:forEach items="${Products.content}" var="product">
                 <tr>
                     <td>${product.id}</td>
+                    <td><img class="img-thumbnail" width="100" src="/images/product/${product.id}${product.path}?version=${product.version}" /></td>
                     <td>${product.productName}</td>
                     <td>${product.partNumber}</td>
                     <td>${product.price}</td>

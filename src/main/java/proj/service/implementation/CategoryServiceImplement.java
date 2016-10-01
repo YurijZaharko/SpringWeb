@@ -52,9 +52,7 @@ public class CategoryServiceImplement implements CategoryService {
 
     @Override
     public void save(Category category) {
-        if (categoryRepository.findByName(category.getName()) == null){
-            categoryRepository.save(category);
-        }
+        categoryRepository.save(category);
     }
 
     @Override

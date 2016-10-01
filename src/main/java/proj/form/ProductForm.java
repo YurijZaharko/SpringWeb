@@ -1,5 +1,6 @@
 package proj.form;
 
+import org.springframework.web.multipart.MultipartFile;
 import proj.entity.Brand;
 import proj.entity.Category;
 import proj.entity.Country;
@@ -17,6 +18,10 @@ public class ProductForm{
 
     private String partNumber;
 
+    private int version;
+
+    private String path;
+
     private Category category;
 
     private Country country;
@@ -24,6 +29,8 @@ public class ProductForm{
     private Brand brand;
 
     private ProductProperty productProperty;
+
+    private MultipartFile file;
 
     public int getId() {
         return id;
@@ -87,5 +94,29 @@ public class ProductForm{
 
     public void setProductProperty(ProductProperty productProperty) {
         this.productProperty = productProperty;
+    }
+
+    public int getVersion() {
+        return version;
+    }
+
+    public void setVersion(int version) {
+        this.version = version;
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
+
+    public MultipartFile getFile() {
+        return file;
+    }
+
+    public void setFile(MultipartFile file) {
+        this.file = file;
     }
 }
