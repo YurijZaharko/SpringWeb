@@ -1,7 +1,7 @@
 package proj.service.implementation;
 
 import org.springframework.stereotype.Service;
-import proj.entity.ListOfPropertyAndValueInteger;
+import proj.entity.PropertyAndValueInteger;
 import proj.service.ListOfPropertyAndValueStringService;
 
 import java.util.List;
@@ -17,7 +17,7 @@ public class ListOfPropertyAndValueStringImplement implements ListOfPropertyAndV
     }
 
     @Override
-    public ListOfPropertyAndValueInteger findByCategoryName(String name) {
+    public PropertyAndValueInteger findByCategoryName(String name) {
         return null;
     }
 
@@ -27,7 +27,7 @@ public class ListOfPropertyAndValueStringImplement implements ListOfPropertyAndV
     }
 
     @Override
-    public List<ListOfPropertyAndValueInteger> findAll() {
+    public List<PropertyAndValueInteger> findAll() {
         return null;
     }
 }

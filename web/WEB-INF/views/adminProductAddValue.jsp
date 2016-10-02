@@ -16,12 +16,12 @@
             <td>${product.partNumber}</td>
             <c:forEach items="${product.category.integerPropertiesList}" var="propertyInt">
                 <tr>
-                    <td>${propertyInt.listOfPropertyAndValueInteger.valueOfIntegerPropertiesList.value}</td>
+                    <td>${propertyInt.propertyAndValueInteger.valueOfIntegerPropertiesList.value}</td>
                 </tr>
             </c:forEach>
             <c:forEach items="${product.category.stringPropertiesList}" var="propertyStr">
                 <tr>
-                    <td>${propertyStr.listOfPropertyAndValueStrings.valueOfStringPropertiesList.stringValue}</td>
+                    <td>${propertyStr.propertyAndValueStrings.valueOfStringPropertiesList.stringValue}</td>
                 </tr>
             </c:forEach>
         </tr>

@@ -50,9 +50,7 @@ public class CountryServiceImplement implements CountryService {
 
     @Override
     public void save(Country country) {
-        if (countryRepository.findByName(country.getName()) == null ){
-            countryRepository.save(country);
-        }
+        countryRepository.save(country);
     }
 
     @Override

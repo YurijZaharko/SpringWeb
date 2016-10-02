@@ -4,10 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import proj.entity.Brand;
 import proj.entity.Product;
-import proj.entity.ProductProperty;
+
 import proj.form.Filter.ProductFilterForm;
 import proj.form.ProductForm;
 import proj.repository.*;
@@ -31,8 +29,6 @@ public class ProductServiceImplement implements ProductService {
     CountryRepository countryRepository;
     @Autowired
     CategoryRepository categoryRepository;
-    @Autowired
-    ProductPropertyRepository productPropertyRepository;
     @Autowired
     private FileWriter fileWriter;
 
@@ -60,7 +56,8 @@ public class ProductServiceImplement implements ProductService {
 //        product.setCategory(categoryRepository.findById(Integer.valueOf(productForm.getCategory().getName())));
 //        product.setBrand(brandRepository.findById(Integer.valueOf(productForm.getBrand().getName())));
 //        product.setCountry(countryRepository.findById(Integer.valueOf(productForm.getCountry().getName())));
-        product.setProductProperty(productForm.getProductProperty());
+        product.setPropertyAndValueInteger(productForm.getPropertyAndValueInteger());
+        product.setPropertyAndValueString(productForm.getPropertyAndValueString());
         product.setId(productForm.getId());
 //        brandRepository.save(productForm.getBrand());
 //        categoryRepository.save(productForm.getCategory());
@@ -114,7 +111,8 @@ public class ProductServiceImplement implements ProductService {
         productForm.setCategory(product.getCategory());
         productForm.setBrand(product.getBrand());
         productForm.setCountry(product.getCountry());
-        productForm.setProductProperty(product.getProductProperty());
+        productForm.setPropertyAndValueString(product.getPropertyAndValueString());
+        productForm.setPropertyAndValueInteger(product.getPropertyAndValueInteger());
         productForm.setPath(product.getPath());
         productForm.setVersion(product.getVersion());
         return productForm;
@@ -130,10 +128,11 @@ public class ProductServiceImplement implements ProductService {
         return productRepository.findAll(new ProductFilterAdapter(productFilterForm), pageable);
     }
 
-//    @Override
-//    public List<Product> findAllWithValue(int id) {
-//        return productRepository.findAllWithValue(id);
-//    }
+    @Override
+    public Product findOneByIdWithValue(int id) {
+        return null;
+    }
+
 
 
 }

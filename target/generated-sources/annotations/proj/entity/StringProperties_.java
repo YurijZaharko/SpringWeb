@@ -12,7 +12,7 @@ public abstract class StringProperties_ {
 	public static volatile SingularAttribute<StringProperties, String> propertyName;
 	public static volatile ListAttribute<StringProperties, Category> categoryList;
 	public static volatile SingularAttribute<StringProperties, Integer> id;
-	public static volatile ListAttribute<StringProperties, ListOfPropertyAndValueString> listOfPropertyAndValueStrings;
+	public static volatile ListAttribute<StringProperties, PropertyAndValueString> listOfPropertyAndValueStrings;
 
 }
 

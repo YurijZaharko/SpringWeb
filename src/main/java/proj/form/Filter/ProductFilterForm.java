@@ -29,6 +29,8 @@ public class ProductFilterForm {
 
     private List<Integer> categoryId = new ArrayList<>();
 
+
+
     public String getMaxString() {
         return maxString;
     }

@@ -33,7 +33,10 @@ public class Product {
     private Country country;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private ProductProperty productProperty;
+    private PropertyAndValueInteger propertyAndValueInteger;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private PropertyAndValueString propertyAndValueString;
 
     public Product() {}
 
@@ -99,14 +102,6 @@ public class Product {
         this.country = country;
     }
 
-    public ProductProperty getProductProperty() {
-        return productProperty;
-    }
-
-    public void setProductProperty(ProductProperty productProperty) {
-        this.productProperty = productProperty;
-    }
-
     public int getVersion() {
         return version;
     }
@@ -121,5 +116,21 @@ public class Product {
 
     public void setPath(String path) {
         this.path = path;
+    }
+
+    public PropertyAndValueInteger getPropertyAndValueInteger() {
+        return propertyAndValueInteger;
+    }
+
+    public void setPropertyAndValueInteger(PropertyAndValueInteger propertyAndValueInteger) {
+        this.propertyAndValueInteger = propertyAndValueInteger;
+    }
+
+    public PropertyAndValueString getPropertyAndValueString() {
+        return propertyAndValueString;
+    }
+
+    public void setPropertyAndValueString(PropertyAndValueString propertyAndValueString) {
+        this.propertyAndValueString = propertyAndValueString;
     }
 }

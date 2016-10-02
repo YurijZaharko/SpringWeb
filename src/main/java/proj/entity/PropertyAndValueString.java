@@ -8,16 +8,13 @@ import java.util.List;
  * Created by SCIP on 31.07.2016.
  */
 @Entity
-public class ListOfPropertyAndValueString {
+public class PropertyAndValueString {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @ManyToMany
-    @JoinTable(name = "ProductProperty_ListOfPropertyAndValueString", joinColumns =
-    @JoinColumn(name = "fk_ListOfPropertyAndValueString"), inverseJoinColumns =
-    @JoinColumn(name = "fk_ProductProperty"))
-    private List<ProductProperty> productProperties = new ArrayList<>();
+    @OneToMany
+    private List<Product> products = new ArrayList<>();
 
     @ManyToMany
     @JoinTable(name = "ListOfPropertyAndValueString_StringProperties", joinColumns =
@@ -31,7 +28,7 @@ public class ListOfPropertyAndValueString {
     @JoinColumn(name = "fk_ValueOfStringProperties"))
     private List<ValueOfStringProperties> valueOfStringPropertiesList = new ArrayList<>();
 
-    public ListOfPropertyAndValueString() {
+    public PropertyAndValueString() {
     }
 
     public int getId() {
@@ -40,14 +37,6 @@ public class ListOfPropertyAndValueString {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public List<ProductProperty> getProductProperties() {
-        return productProperties;
-    }
-
-    public void setProductProperties(List<ProductProperty> productProperties) {
-        this.productProperties = productProperties;
     }
 
     public List<StringProperties> getStringPropertiesList() {
@@ -66,5 +55,11 @@ public class ListOfPropertyAndValueString {
         this.valueOfStringPropertiesList = valueOfStringPropertiesList;
     }
 
+    public List<Product> getProducts() {
+        return products;
+    }
 
+    public void setProducts(List<Product> products) {
+        this.products = products;
+    }
 }

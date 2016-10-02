@@ -2,7 +2,7 @@ package proj.service.implementation;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import proj.entity.ListOfPropertyAndValueInteger;
+import proj.entity.PropertyAndValueInteger;
 import proj.repository.CategoryRepository;
 import proj.repository.ListOfPropertyAndValueIntegerRepository;
 import proj.service.ListOfPropertyAndValueIntegerService;
@@ -25,7 +25,7 @@ public class ListOfPropertyAndValueIntegerImplement implements ListOfPropertyAnd
     }
 
     @Override
-    public ListOfPropertyAndValueInteger findByCategoryName(String name) {
+    public PropertyAndValueInteger findByCategoryName(String name) {
         return null;
     }
 
@@ -35,7 +35,7 @@ public class ListOfPropertyAndValueIntegerImplement implements ListOfPropertyAnd
     }
 
     @Override
-    public List<ListOfPropertyAndValueInteger> findAll() {
+    public List<PropertyAndValueInteger> findAll() {
         return null;
     }
 }

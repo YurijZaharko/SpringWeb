@@ -26,7 +26,7 @@ public class IntegerProperties {
     @JoinTable(name = "ListOfPropertyAndValueInteger_IntegerProperties", joinColumns =
     @JoinColumn(name = "fk_IntegerProperties"), inverseJoinColumns =
     @JoinColumn(name = "fk_ListOfPropertyAndValueInteger"))
-    private List<ListOfPropertyAndValueInteger> listOfPropertyAndValueInteger = new ArrayList<>();
+    private List<PropertyAndValueInteger> propertyAndValueInteger = new ArrayList<>();
 
     public IntegerProperties() {
     }
@@ -59,12 +59,12 @@ public class IntegerProperties {
         this.categoryList = categoryList;
     }
 
-    public List<ListOfPropertyAndValueInteger> getListOfPropertyAndValueInteger() {
-        return listOfPropertyAndValueInteger;
+    public List<PropertyAndValueInteger> getPropertyAndValueInteger() {
+        return propertyAndValueInteger;
     }
 
-    public void setListOfPropertyAndValueInteger(List<ListOfPropertyAndValueInteger> listOfPropertyAndValueInteger) {
-        this.listOfPropertyAndValueInteger = listOfPropertyAndValueInteger;
+    public void setPropertyAndValueInteger(List<PropertyAndValueInteger> propertyAndValueInteger) {
+        this.propertyAndValueInteger = propertyAndValueInteger;
     }
 
     @Override

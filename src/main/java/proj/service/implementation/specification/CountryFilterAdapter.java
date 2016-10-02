@@ -22,7 +22,7 @@ public class CountryFilterAdapter implements Specification<Country> {
 //        if (criteriaQuery.getResultType() != Long.class && criteriaQuery.getResultType() != long.class){
 //
 //        }
-        Expression<String> exp = root.get("name");
-        return criteriaBuilder.like(criteriaBuilder.upper(exp), search.toUpperCase() + "%");
+//        Expression<String> exp = root.get("name");
+        return criteriaBuilder.like(criteriaBuilder.upper(root.get("name")), search.toUpperCase() + "%");
     }
 }

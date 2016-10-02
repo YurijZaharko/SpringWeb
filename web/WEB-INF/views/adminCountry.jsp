@@ -11,13 +11,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <div class="container">
-    <div class="col-md-5">
+    <div class="col-md-6">
         <form:form action="/admin/adminCountry" method="post" class="form-inline" modelAttribute="country">
             <form:hidden path="id" />
             <custom:hiddenInputs excludeParams="name, id"/>
             <div class="form-group">
-                <label for="name"><form:errors path="name" /></label>
-                <form:input path="name" placeholder="country name"/>
+                <form:errors path="name"/>
+                <form:input path="name" placeholder="name"/>
                 <button type="submit" class="btn btn-primary">Create country</button>
             </div>
         </form:form>

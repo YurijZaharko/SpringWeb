@@ -19,7 +19,7 @@ public class ValueOfStringProperties {
     @JoinTable(name = "ListOfPropertyAndValueString_ValueOfStringProperties", joinColumns =
     @JoinColumn(name = "fk_ValueOfStringProperties"), inverseJoinColumns =
     @JoinColumn(name = "fk_ListOfPropertyAndValueString"))
-    private List<ListOfPropertyAndValueString> listOfPropertyAndValueStrings = new ArrayList<>();
+    private List<PropertyAndValueString> propertyAndValueStrings = new ArrayList<>();
 
     public ValueOfStringProperties() {
     }
@@ -44,11 +44,11 @@ public class ValueOfStringProperties {
         this.stringValue = stringValue;
     }
 
-    public List<ListOfPropertyAndValueString> getListOfPropertyAndValueStrings() {
-        return listOfPropertyAndValueStrings;
+    public List<PropertyAndValueString> getPropertyAndValueStrings() {
+        return propertyAndValueStrings;
     }
 
-    public void setListOfPropertyAndValueStrings(List<ListOfPropertyAndValueString> listOfPropertyAndValueStrings) {
-        this.listOfPropertyAndValueStrings = listOfPropertyAndValueStrings;
+    public void setPropertyAndValueStrings(List<PropertyAndValueString> propertyAndValueStrings) {
+        this.propertyAndValueStrings = propertyAndValueStrings;
     }
 }

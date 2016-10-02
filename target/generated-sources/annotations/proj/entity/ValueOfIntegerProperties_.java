@@ -9,7 +9,7 @@ import javax.persistence.metamodel.StaticMetamodel;
 @StaticMetamodel(ValueOfIntegerProperties.class)
 public abstract class ValueOfIntegerProperties_ {
 
-	public static volatile ListAttribute<ValueOfIntegerProperties, ListOfPropertyAndValueInteger> listOfPropertyAndValueInteger;
+	public static volatile ListAttribute<ValueOfIntegerProperties, PropertyAndValueInteger> propertyAndValueInteger;
 	public static volatile SingularAttribute<ValueOfIntegerProperties, Integer> id;
 	public static volatile SingularAttribute<ValueOfIntegerProperties, Integer> value;
 

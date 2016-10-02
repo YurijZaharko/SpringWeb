@@ -1,4 +1,4 @@
-package proj.service;
+package proj.service.implementation;
 
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;

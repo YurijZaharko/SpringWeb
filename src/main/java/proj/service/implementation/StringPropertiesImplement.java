@@ -1,9 +1,12 @@
 package proj.service.implementation;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 import proj.entity.StringProperties;
+import proj.form.Filter.CategoryFilterForm;
+import proj.repository.CategoryRepository;
 import proj.repository.StringPropertiesRepository;
 import proj.service.StringPropertiesService;
 
@@ -16,6 +19,9 @@ import java.util.List;
 public class StringPropertiesImplement implements StringPropertiesService {
     @Autowired
     StringPropertiesRepository stringPropertiesRepository;
+
+    @Autowired
+    CategoryRepository categoryRepository;
 
     @Override
     public void save(String name) {
@@ -57,5 +63,12 @@ public class StringPropertiesImplement implements StringPropertiesService {
         return stringPropertiesRepository.findByCategoryId(id);
     }
 
+    @Override
+    public List<StringProperties> findCategoryWithStringProperty(Pageable pageable, CategoryFilterForm categoryFilterForm, int id) {
+        List<StringProperties> stringPropertiesList = categoryRepository.findByIdWithAllFetch(id).getStringPropertiesList();
+        List<StringProperties> temp = stringPropertiesRepository.findAll();
+        temp.removeAll(stringPropertiesList);
+        return temp;
+    }
 
 }

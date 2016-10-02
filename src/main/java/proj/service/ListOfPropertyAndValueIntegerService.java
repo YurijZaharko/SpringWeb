@@ -1,6 +1,6 @@
 package proj.service;
 
-import proj.entity.ListOfPropertyAndValueInteger;
+import proj.entity.PropertyAndValueInteger;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface ListOfPropertyAndValueIntegerService {
     void save();
-    ListOfPropertyAndValueInteger findByCategoryName(String name);
+    PropertyAndValueInteger findByCategoryName(String name);
     void delete(String name);
-    List<ListOfPropertyAndValueInteger> findAll();
+    List<PropertyAndValueInteger> findAll();
 }

@@ -1,10 +1,8 @@
 package proj.form;
 
 import org.springframework.web.multipart.MultipartFile;
-import proj.entity.Brand;
-import proj.entity.Category;
-import proj.entity.Country;
-import proj.entity.ProductProperty;
+import proj.entity.*;
+
 
 /**
  * Created by SCIP on 03.09.2016.
@@ -28,7 +26,9 @@ public class ProductForm{
 
     private Brand brand;
 
-    private ProductProperty productProperty;
+    private PropertyAndValueInteger propertyAndValueInteger;
+
+    private PropertyAndValueString propertyAndValueString;
 
     private MultipartFile file;
 
@@ -88,14 +88,6 @@ public class ProductForm{
         this.brand = brand;
     }
 
-    public ProductProperty getProductProperty() {
-        return productProperty;
-    }
-
-    public void setProductProperty(ProductProperty productProperty) {
-        this.productProperty = productProperty;
-    }
-
     public int getVersion() {
         return version;
     }
@@ -118,5 +110,21 @@ public class ProductForm{
 
     public void setFile(MultipartFile file) {
         this.file = file;
+    }
+
+    public PropertyAndValueInteger getPropertyAndValueInteger() {
+        return propertyAndValueInteger;
+    }
+
+    public void setPropertyAndValueInteger(PropertyAndValueInteger propertyAndValueInteger) {
+        this.propertyAndValueInteger = propertyAndValueInteger;
+    }
+
+    public PropertyAndValueString getPropertyAndValueString() {
+        return propertyAndValueString;
+    }
+
+    public void setPropertyAndValueString(PropertyAndValueString propertyAndValueString) {
+        this.propertyAndValueString = propertyAndValueString;
     }
 }

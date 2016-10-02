@@ -11,8 +11,9 @@ public abstract class Product_ {
 
 	public static volatile SingularAttribute<Product, String> path;
 	public static volatile SingularAttribute<Product, Country> country;
+	public static volatile SingularAttribute<Product, PropertyAndValueString> listOfPropertyAndValueString;
 	public static volatile SingularAttribute<Product, BigDecimal> price;
-	public static volatile SingularAttribute<Product, ProductProperty> productProperty;
+	public static volatile SingularAttribute<Product, PropertyAndValueInteger> propertyAndValueInteger;
 	public static volatile SingularAttribute<Product, String> partNumber;
 	public static volatile SingularAttribute<Product, Integer> id;
 	public static volatile SingularAttribute<Product, Category> category;
