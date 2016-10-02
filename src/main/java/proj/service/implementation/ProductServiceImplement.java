@@ -130,6 +130,9 @@ public class ProductServiceImplement implements ProductService {
 
     @Override
     public Product findOneByIdWithValue(int id) {
+//        Product product =  productRepository.findById(id);
+//        product.setCategory(categoryRepository.);
+
         return null;
     }
 

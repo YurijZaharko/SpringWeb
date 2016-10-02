@@ -2,7 +2,7 @@ package proj.service.implementation;
 
 import org.springframework.stereotype.Service;
 import proj.entity.PropertyAndValueInteger;
-import proj.service.ListOfPropertyAndValueStringService;
+import proj.service.PropertyAndValueStringService;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ import java.util.List;
  * Created by SCIP on 19.08.2016.
  */
 @Service
-public class ListOfPropertyAndValueStringImplement implements ListOfPropertyAndValueStringService {
+public class PropertyAndValueStringImplement implements PropertyAndValueStringService {
     @Override
     public void save() {
 
@@ -30,4 +30,6 @@ public class ListOfPropertyAndValueStringImplement implements ListOfPropertyAndV
     public List<PropertyAndValueInteger> findAll() {
         return null;
     }
+
+
 }

@@ -46,6 +46,7 @@ public interface ProductRepository extends JpaRepository<Product,Integer>, JpaSp
             countQuery = "SELECT count(p.id) FROM Product p")
     Page<Product> findAll(Pageable pageable);
 
+
 //    @Query("SELECT DISTINCT p FROM Product p LEFT JOIN FETCH p.category category LEFT JOIN FETCH category.integerPropertiesList integerPropertiesList LEFT JOIN FETCH" +
 //            "integerPropertiesList.listOfPropertyAndValueInteger listOfPropertyAndValueInteger LEFT JOIN FETCH listOfPropertyAndValueInteger.valueOfIntegerPropertiesList" +
 //            "WHERE product.id=:id"

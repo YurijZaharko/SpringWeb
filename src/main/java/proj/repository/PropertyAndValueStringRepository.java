@@ -6,5 +6,5 @@ import proj.entity.PropertyAndValueString;
 /**
  * Created by SC on 10.08.2016.
  */
-public interface ListOfPropertyAndValueStringRepository extends JpaRepository<PropertyAndValueString, Integer> {
+public interface PropertyAndValueStringRepository extends JpaRepository<PropertyAndValueString, Integer> {
 }

@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import proj.entity.PropertyAndValueInteger;
 import proj.repository.CategoryRepository;
-import proj.repository.ListOfPropertyAndValueIntegerRepository;
-import proj.service.ListOfPropertyAndValueIntegerService;
+import proj.repository.PropertyAndValueIntegerRepository;
+import proj.service.PropertyAndValueIntegerService;
 
 import java.util.List;
 
@@ -13,9 +13,9 @@ import java.util.List;
  * Created by SCIP on 12.08.2016.
  */
 @Service
-public class ListOfPropertyAndValueIntegerImplement implements ListOfPropertyAndValueIntegerService {
+public class PropertyAndValueIntegerImplement implements PropertyAndValueIntegerService {
     @Autowired
-    ListOfPropertyAndValueIntegerRepository listOfPropertyAndValueIntegerRepository;
+    PropertyAndValueIntegerRepository propertyAndValueIntegerRepository;
     @Autowired
     CategoryRepository categoryRepository;
 

@@ -6,6 +6,6 @@ import proj.entity.PropertyAndValueInteger;
 /**
  * Created by SC on 10.08.2016.
  */
-public interface ListOfPropertyAndValueIntegerRepository extends JpaRepository<PropertyAndValueInteger, Integer> {
+public interface PropertyAndValueIntegerRepository extends JpaRepository<PropertyAndValueInteger, Integer> {
 
 }

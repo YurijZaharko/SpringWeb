@@ -33,4 +33,6 @@ public interface StringPropertiesService {
 
     List<StringProperties> findCategoryWithStringProperty(Pageable pageable, CategoryFilterForm categoryFilterForm, int id);
 
+    List<StringProperties> findByProductId(int id);
+
 }

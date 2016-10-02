@@ -71,4 +71,10 @@ public class StringPropertiesImplement implements StringPropertiesService {
         return temp;
     }
 
+    @Override
+    public List<StringProperties> findByProductId(int id) {
+//        stringPropertiesRepository.findByProductId(id);
+        return null;
+    }
+
 }

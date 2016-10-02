@@ -11,7 +11,7 @@ public abstract class ValueOfStringProperties_ {
 
 	public static volatile SingularAttribute<ValueOfStringProperties, String> stringValue;
 	public static volatile SingularAttribute<ValueOfStringProperties, Integer> id;
-	public static volatile ListAttribute<ValueOfStringProperties, PropertyAndValueString> listOfPropertyAndValueStrings;
+	public static volatile ListAttribute<ValueOfStringProperties, PropertyAndValueString> propertyAndValueStrings;
 
 }
 
