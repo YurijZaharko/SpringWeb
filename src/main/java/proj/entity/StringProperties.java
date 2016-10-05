@@ -19,8 +19,8 @@ public class StringProperties {
 
     @ManyToMany
     @JoinTable(name = "Category_StringProperties",joinColumns =
-    @JoinColumn(name = "fk_Category"), inverseJoinColumns =
-    @JoinColumn(name = "fk_StringProperties"))
+    @JoinColumn(name = "fk_StringProperties"), inverseJoinColumns =
+    @JoinColumn(name = "fk_Category"))
     private List<Category> categoryList = new ArrayList<>();
 
     @ManyToMany

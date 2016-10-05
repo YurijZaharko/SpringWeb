@@ -28,14 +28,14 @@ public class Category {
     @OneToMany(mappedBy = "category")
     private List<Product> productList = new ArrayList<>();
 
-    @BatchSize(size = 50)
+
     @ManyToMany
     @JoinTable(name = "Category_IntegerProperties", joinColumns =
     @JoinColumn(name = "fk_Category"), inverseJoinColumns =
     @JoinColumn(name = "fk_IntegerProperties"))
     private List<IntegerProperties> integerPropertiesList = new ArrayList<>();
 
-    @BatchSize(size = 50)
+
     @ManyToMany
     @JoinTable(name = "Category_StringProperties",joinColumns =
     @JoinColumn(name = "fk_Category"), inverseJoinColumns =

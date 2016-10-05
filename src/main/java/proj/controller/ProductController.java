@@ -14,12 +14,10 @@ import org.springframework.web.bind.annotation.*;
 import proj.entity.Brand;
 import proj.entity.Category;
 import proj.entity.Country;
+import proj.entity.StringProperties;
 import proj.form.Filter.ProductFilterForm;
 import proj.form.ProductForm;
-import proj.service.BrandService;
-import proj.service.CategoryService;
-import proj.service.CountryService;
-import proj.service.ProductService;
+import proj.service.*;
 import proj.service.implementation.editor.BrandEditor;
 import proj.service.implementation.editor.CategoryEditor;
 import proj.service.implementation.editor.CountryEditor;
@@ -27,6 +25,7 @@ import proj.service.implementation.editor.ProductEditor;
 import proj.service.implementation.validator.ProductFormValidator;
 
 import javax.validation.Valid;
+import java.util.List;
 
 /**
  * Created by SCIP on 16.08.2016.
@@ -41,6 +40,8 @@ public class ProductController {
     CountryService countryService;
     @Autowired
     CategoryService categoryService;
+    @Autowired
+    StringPropertiesService stringPropertiesService;
 
     @ModelAttribute("productForm")
     public ProductForm getProductForm(){
@@ -69,9 +70,13 @@ public class ProductController {
         return "adminProduct";
     }
 
-    @RequestMapping("/admin/adminProduct/addValue/${id}")
+    @RequestMapping("/admin/adminProduct/addValue/{id}")
     public String showAddValue(@PathVariable("id") int id, Model model){
-        model.addAttribute("productAndValue", productService.findOneByIdWithValue(id));
+        model.addAttribute("oneProduct", productService.findById(id));
+        List<StringProperties> stringPropertiesList = stringPropertiesService.findByProductId(id);
+        List<StringProperties> stringPropertiesListSecond = stringPropertiesService.findStringPropertiesByProductId(id);
+        model.addAttribute("properties", stringPropertiesService.findByProductId(id));
+
         return "adminProductAddValue";
     }
 

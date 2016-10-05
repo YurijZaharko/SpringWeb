@@ -35,4 +35,6 @@ public interface StringPropertiesService {
 
     List<StringProperties> findByProductId(int id);
 
+    List<StringProperties> findStringPropertiesByProductId(int id);
+
 }

@@ -29,6 +29,10 @@ public interface StringPropertiesRepository extends JpaRepository<StringProperti
     @Query("SELECT s FROM StringProperties s LEFT JOIN FETCH s.categoryList WHERE s.id=:id")
     List<StringProperties> findByCategoryId(@Param("id") int id);
 
-    @Query("SELECT DISTINCT sp FROM Product p JOIN p.category c JOIN c.stringPropertiesList sp LEFT JOIN FETCH sp.propertyAndValueStrings WHERE p.id=:id")
+    @Query("SELECT DISTINCT sp FROM Product p JOIN p.category c JOIN c.stringPropertiesList sp" +
+            " LEFT JOIN FETCH sp.propertyAndValueStrings WHERE p.id=:id")
     List<StringProperties> findByProductId(@Param("id") int id);
+
+    @Query("SELECT DISTINCT sp FROM Product p JOIN p.category c JOIN c.stringPropertiesList sp WHERE p.id=:id")
+    List<StringProperties> findStringPropertiesByProductId(@Param("id") int id);
 }

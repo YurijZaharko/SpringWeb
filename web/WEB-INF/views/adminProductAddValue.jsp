@@ -8,22 +8,22 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<form:form action="/admin/adminProduct/addValue" method="get" modelAttribute="productAndValue">
-    <c:forEach items="${productAndValue.content}" var="product">
+<form:form action="/admin/adminProduct/addValue" method="post" modelAttribute="oneProduct">
+    <table class="table table-hover">
         <tr>
-            <td>${product.id}</td>
-            <td>${product.productName}</td>
-            <td>${product.partNumber}</td>
-            <c:forEach items="${product.category.integerPropertiesList}" var="propertyInt">
-                <tr>
-                    <td>${propertyInt.propertyAndValueInteger.valueOfIntegerPropertiesList.value}</td>
-                </tr>
-            </c:forEach>
-            <c:forEach items="${product.category.stringPropertiesList}" var="propertyStr">
-                <tr>
-                    <td>${propertyStr.propertyAndValueStrings.valueOfStringPropertiesList.stringValue}</td>
-                </tr>
+            <td>Product id</td>
+            <td>Product name</td>
+            <td>Product property</td>
+            <td>Product value</td>
+        </tr>
+        <tr>
+            <td>${oneProduct.id}</td>
+            <td>${oneProduct.productName}</td>
+            <td>${oneProduct.partNumber}</td>
+            <c:forEach items="${properties}" var="propert">
+                <td>${propert.name}</td>
             </c:forEach>
         </tr>
-    </c:forEach>
+    </table>
+
 </form:form>

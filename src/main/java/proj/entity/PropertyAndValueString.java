@@ -13,7 +13,7 @@ public class PropertyAndValueString {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @OneToMany
+    @OneToMany(mappedBy = "propertyAndValueString")
     private List<Product> products = new ArrayList<>();
 
     @ManyToMany
