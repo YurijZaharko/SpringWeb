@@ -24,9 +24,9 @@ public class StringProperties {
     private List<Category> categoryList = new ArrayList<>();
 
     @ManyToMany
-    @JoinTable(name = "ListOfPropertyAndValueString_StringProperties", joinColumns =
+    @JoinTable(name = "PropertyAndValueString_StringProperties", joinColumns =
     @JoinColumn(name = "fk_StringProperties"), inverseJoinColumns =
-    @JoinColumn(name = "fk_ListOfPropertyAndValueString"))
+    @JoinColumn(name = "fk_PropertyAndValueString"))
     private List<PropertyAndValueString> propertyAndValueStrings = new ArrayList<>();
 
     public StringProperties() {

@@ -13,17 +13,28 @@
         <tr>
             <td>Product id</td>
             <td>Product name</td>
-            <td>Product property</td>
-            <td>Product value</td>
+            <td>Part number</td>
+
         </tr>
         <tr>
             <td>${oneProduct.id}</td>
             <td>${oneProduct.productName}</td>
             <td>${oneProduct.partNumber}</td>
-            <c:forEach items="${properties}" var="propert">
-                <td>${propert.name}</td>
-            </c:forEach>
         </tr>
+    </table>
+    <table>
+        <tr>
+            <td>Property name</td>
+            <td>Property value</td>
+        </tr>
+        <c:forEach items="${properties}" var="propert">
+            <tr>
+                <td>${propert.propertyName}</td>
+                <td></td>
+            </tr>
+
+        </c:forEach>
+
     </table>
 
 </form:form>

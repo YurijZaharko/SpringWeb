@@ -17,14 +17,14 @@ public class PropertyAndValueString {
     private List<Product> products = new ArrayList<>();
 
     @ManyToMany
-    @JoinTable(name = "ListOfPropertyAndValueString_StringProperties", joinColumns =
-    @JoinColumn(name = "fk_ListOfPropertyAndValueString"), inverseJoinColumns =
+    @JoinTable(name = "PropertyAndValueString_StringProperties", joinColumns =
+    @JoinColumn(name = "fk_PropertyAndValueString"), inverseJoinColumns =
     @JoinColumn(name = "fk_StringProperties"))
     private List<StringProperties> stringPropertiesList = new ArrayList<>();
 
     @ManyToMany
-    @JoinTable(name = "ListOfPropertyAndValueString_ValueOfStringProperties", joinColumns =
-    @JoinColumn(name = "fk_ListOfPropertyAndValueString"), inverseJoinColumns =
+    @JoinTable(name = "PropertyAndValueString_ValueOfStringProperties", joinColumns =
+    @JoinColumn(name = "fk_PropertyAndValueString"), inverseJoinColumns =
     @JoinColumn(name = "fk_ValueOfStringProperties"))
     private List<ValueOfStringProperties> valueOfStringPropertiesList = new ArrayList<>();
 

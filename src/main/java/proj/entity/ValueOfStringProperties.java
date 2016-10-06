@@ -16,16 +16,12 @@ public class ValueOfStringProperties {
     private String stringValue;
 
     @ManyToMany
-    @JoinTable(name = "ListOfPropertyAndValueString_ValueOfStringProperties", joinColumns =
+    @JoinTable(name = "PropertyAndValueString_ValueOfStringProperties", joinColumns =
     @JoinColumn(name = "fk_ValueOfStringProperties"), inverseJoinColumns =
-    @JoinColumn(name = "fk_ListOfPropertyAndValueString"))
+    @JoinColumn(name = "fk_PropertyAndValueString"))
     private List<PropertyAndValueString> propertyAndValueStrings = new ArrayList<>();
 
     public ValueOfStringProperties() {
-    }
-
-    public ValueOfStringProperties(String stringValue) {
-
     }
 
     public int getId() {
