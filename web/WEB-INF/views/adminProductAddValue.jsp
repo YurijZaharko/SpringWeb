@@ -10,7 +10,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <form:form action="/admin/adminProduct/addValue" method="post" modelAttribute="oneProduct">
     <table class="table table-hover">
-        <tr>
+        <tr class="active">
             <td>Product id</td>
             <td>Product name</td>
             <td>Part number</td>
@@ -22,15 +22,18 @@
             <td>${oneProduct.partNumber}</td>
         </tr>
     </table>
-    <table>
-        <tr>
+    <br>
+    <table class="table table-hover">
+        <tr class="active">
             <td>Property name</td>
             <td>Property value</td>
         </tr>
         <c:forEach items="${properties}" var="propert">
             <tr>
                 <td>${propert.propertyName}</td>
-                <td></td>
+                <td>
+
+                </td>
             </tr>
 
         </c:forEach>

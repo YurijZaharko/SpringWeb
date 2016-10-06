@@ -22,8 +22,18 @@ public class ValueOfStringPropertiesImplement implements ValueOfStringProperties
     }
 
     @Override
+    public void save(ValueOfStringProperties valueOfStringProperties) {
+        valueOfStringPropertiesRepository.save(valueOfStringProperties);
+    }
+
+    @Override
     public ValueOfStringProperties findByStringValue(String stringValue) {
         return valueOfStringPropertiesRepository.findByStringValue(stringValue);
+    }
+
+    @Override
+    public ValueOfStringProperties findById(int id) {
+        return valueOfStringPropertiesRepository.findById(id);
     }
 
     @Override

@@ -9,4 +9,5 @@ import proj.entity.ValueOfStringProperties;
 public interface ValueOfStringPropertiesRepository extends JpaRepository<ValueOfStringProperties, Integer> {
     ValueOfStringProperties findByStringValue(String stringValue);
 
+    ValueOfStringProperties findById(int id);
 }

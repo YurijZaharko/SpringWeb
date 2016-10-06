@@ -24,6 +24,10 @@ public class ValueOfStringProperties {
     public ValueOfStringProperties() {
     }
 
+    public ValueOfStringProperties(String stringValue) {
+        this.stringValue = stringValue;
+    }
+
     public int getId() {
         return id;
     }
