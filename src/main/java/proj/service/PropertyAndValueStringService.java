@@ -1,6 +1,7 @@
 package proj.service;
 
 import proj.entity.PropertyAndValueInteger;
+import proj.entity.PropertyAndValueString;
 
 import java.util.List;
 
@@ -12,4 +13,8 @@ public interface PropertyAndValueStringService {
     PropertyAndValueInteger findByCategoryName(String name);
     void delete(String name);
     List<PropertyAndValueInteger> findAll();
+
+    PropertyAndValueString findById(int id);
+
+    PropertyAndValueString findByIdWithValue(int id);
 }

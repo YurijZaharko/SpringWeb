@@ -11,10 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
-import proj.entity.Brand;
-import proj.entity.Category;
-import proj.entity.Country;
-import proj.entity.StringProperties;
+import proj.entity.*;
 import proj.form.Filter.ProductFilterForm;
 import proj.form.ProductForm;
 import proj.service.*;
@@ -42,6 +39,8 @@ public class ProductController {
     CategoryService categoryService;
     @Autowired
     StringPropertiesService stringPropertiesService;
+    @Autowired
+    PropertyAndValueStringService propertyAndValueStringService;
 
     @ModelAttribute("productForm")
     public ProductForm getProductForm(){
@@ -75,6 +74,7 @@ public class ProductController {
         model.addAttribute("oneProduct", productService.findById(id));
         List<StringProperties> stringPropertiesList = stringPropertiesService.findByProductId(id);
         List<StringProperties> stringPropertiesListSecond = stringPropertiesService.findStringPropertiesByProductId(id);
+        PropertyAndValueString propertyAndValueStringList = propertyAndValueStringService.findByIdWithValue(id);
         model.addAttribute("properties", stringPropertiesService.findByProductId(id));
 
         return "adminProductAddValue";

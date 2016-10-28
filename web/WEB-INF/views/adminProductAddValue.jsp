@@ -28,12 +28,10 @@
             <td>Property name</td>
             <td>Property value</td>
         </tr>
-        <c:forEach items="${properties}" var="propert">
+        <c:forEach items="${properties}" var="property">
             <tr>
-                <td>${propert.propertyName}</td>
-                <td>
-
-                </td>
+                <td>${property.propertyName}</td>
+                <td>${property.propertyAndValueStrings}</td>
             </tr>
 
         </c:forEach>

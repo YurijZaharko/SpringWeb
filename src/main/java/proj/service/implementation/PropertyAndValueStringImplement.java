@@ -1,7 +1,10 @@
 package proj.service.implementation;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import proj.entity.PropertyAndValueInteger;
+import proj.entity.PropertyAndValueString;
+import proj.repository.PropertyAndValueStringRepository;
 import proj.service.PropertyAndValueStringService;
 
 import java.util.List;
@@ -11,6 +14,9 @@ import java.util.List;
  */
 @Service
 public class PropertyAndValueStringImplement implements PropertyAndValueStringService {
+    @Autowired
+    PropertyAndValueStringRepository propertyAndValueStringRepository;
+
     @Override
     public void save() {
 
@@ -29,6 +35,16 @@ public class PropertyAndValueStringImplement implements PropertyAndValueStringSe
     @Override
     public List<PropertyAndValueInteger> findAll() {
         return null;
+    }
+
+    @Override
+    public PropertyAndValueString findById(int id) {
+        return propertyAndValueStringRepository.findById(id);
+    }
+
+    @Override
+    public PropertyAndValueString findByIdWithValue(int id) {
+        return propertyAndValueStringRepository.findByIdWithValue(id);
     }
 
 
