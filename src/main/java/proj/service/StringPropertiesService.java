@@ -7,6 +7,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 import proj.entity.StringProperties;
 import proj.form.Filter.CategoryFilterForm;
+import proj.form.PropertyAndValueStringsForm;
 
 import java.util.List;
 

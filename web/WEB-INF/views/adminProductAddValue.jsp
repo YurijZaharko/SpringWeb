@@ -31,11 +31,20 @@
         <c:forEach items="${properties}" var="property">
             <tr>
                 <td>${property.propertyName}</td>
-                <td>${property.propertyAndValueStrings}</td>
+                <td>
+                    <c:forEach items="${property.propertyAndValueStrings}" var="propertyAndValueStrings">
+                        <c:forEach items="${propertyAndValueStrings.valueOfStringPropertiesList}" var="valueOfStringPropertiesList">
+                            ${valueOfStringPropertiesList.stringValue}
+                        </c:forEach>
+                    </c:forEach>
+                </td>
+                <td></td>
+
             </tr>
 
         </c:forEach>
-
     </table>
+
+
 
 </form:form>

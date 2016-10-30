@@ -7,6 +7,7 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import proj.entity.StringProperties;
 import proj.entity.ValueOfStringProperties;
+import proj.form.PropertyAndValueStringsForm;
 import proj.service.StringPropertiesService;
 import proj.service.ValueOfStringPropertiesService;
 import proj.service.implementation.editor.ValueOfStringPropertiesEditor;
@@ -26,6 +27,8 @@ public class StringPropertiesController {
     protected void inBinder(WebDataBinder webDataBinder){
        webDataBinder.registerCustomEditor(ValueOfStringProperties.class, new ValueOfStringPropertiesEditor(valueOfStringPropertiesService));
     }
+
+
 
     @ModelAttribute("stringProperty")
     public StringProperties getStringProperties(){

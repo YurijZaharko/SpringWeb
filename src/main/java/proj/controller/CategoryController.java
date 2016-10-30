@@ -119,7 +119,7 @@ public class CategoryController {
     @Modifying
     @Transactional
     @RequestMapping("/admin/adminCategory/delete/{id}")
-    public String deleteBrand(@PathVariable int id,
+    public String deleteCategory(@PathVariable int id,
                               @PageableDefault(5) Pageable pageable,
                               @ModelAttribute("filter") CategoryFilterForm categoryFilterForm){
         categoryService.deleteById(id);

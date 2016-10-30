@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import proj.entity.*;
 import proj.form.Filter.ProductFilterForm;
 import proj.form.ProductForm;
+import proj.form.PropertyAndValueStringsForm;
 import proj.service.*;
 import proj.service.implementation.editor.BrandEditor;
 import proj.service.implementation.editor.CategoryEditor;
@@ -50,6 +51,9 @@ public class ProductController {
     @ModelAttribute("productFilterForm")
     public ProductFilterForm getProductFilterForm(){return new ProductFilterForm();}
 
+    @ModelAttribute("propertyAndValueStringsForm")
+    public PropertyAndValueStringsForm getPropertyAndValueStringsForm(){return new PropertyAndValueStringsForm();}
+
     @InitBinder("productForm")
     protected void initBinder(WebDataBinder webDataBinder){
         webDataBinder.registerCustomEditor(Brand.class, new BrandEditor(brandService));
@@ -72,13 +76,15 @@ public class ProductController {
     @RequestMapping("/admin/adminProduct/addValue/{id}")
     public String showAddValue(@PathVariable("id") int id, Model model){
         model.addAttribute("oneProduct", productService.findById(id));
-        List<StringProperties> stringPropertiesList = stringPropertiesService.findByProductId(id);
-        List<StringProperties> stringPropertiesListSecond = stringPropertiesService.findStringPropertiesByProductId(id);
-        PropertyAndValueString propertyAndValueStringList = propertyAndValueStringService.findByIdWithValue(id);
-        model.addAttribute("properties", stringPropertiesService.findByProductId(id));
+//        List<StringProperties> stringPropertiesList = stringPropertiesService.findByProductId(id);
+//        List<StringProperties> stringPropertiesListSecond = stringPropertiesService.findStringPropertiesByProductId(id);
+//        PropertyAndValueString propertyAndValueStringList = propertyAndValueStringService.findByIdWithValue(id);
 
+        model.addAttribute("properties", stringPropertiesService.findByProductId(id));
         return "adminProductAddValue";
     }
+
+
 
 
 //    @RequestMapping(value = "/admin/adminProduct", method = RequestMethod.POST)

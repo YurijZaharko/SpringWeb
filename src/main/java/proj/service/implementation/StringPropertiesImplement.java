@@ -4,13 +4,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
+import proj.entity.PropertyAndValueString;
 import proj.entity.StringProperties;
 import proj.form.Filter.CategoryFilterForm;
+import proj.form.PropertyAndValueStringsForm;
 import proj.repository.CategoryRepository;
+import proj.repository.PropertyAndValueStringRepository;
 import proj.repository.StringPropertiesRepository;
 import proj.service.StringPropertiesService;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by SCIP on 12.08.2016.
@@ -22,6 +26,9 @@ public class StringPropertiesImplement implements StringPropertiesService {
 
     @Autowired
     CategoryRepository categoryRepository;
+
+    @Autowired
+    PropertyAndValueStringRepository propertyAndValueStringRepository;
 
     @Override
     public void save(String name) {
@@ -73,12 +80,22 @@ public class StringPropertiesImplement implements StringPropertiesService {
 
     @Override
     public List<StringProperties> findByProductId(int id) {
-        return stringPropertiesRepository.findByProductId(id);
+        List<StringProperties> stringPropertiesList = stringPropertiesRepository.findByProductId(id);
+        for (StringProperties sp : stringPropertiesList) {
+            List<PropertyAndValueString> propertyAndValueStrings =  sp.getPropertyAndValueStrings();
+            if (!propertyAndValueStrings.isEmpty()){
+                int propId = propertyAndValueStrings.get(0).getId();
+                PropertyAndValueString propertyAndValueStringList = propertyAndValueStringRepository.findByIdWithValue(propId);
+                propertyAndValueStrings.set(0, propertyAndValueStringList);
+            }
+        }
+        return stringPropertiesList;
     }
 
     @Override
     public List<StringProperties> findStringPropertiesByProductId(int id) {
         return stringPropertiesRepository.findStringPropertiesByProductId(id);
     }
+
 
 }
