@@ -1,5 +1,8 @@
 package proj.form;
 
+import proj.entity.StringProperties;
+import proj.entity.ValueOfStringProperties;
+
 import java.util.*;
 
 /**
@@ -8,9 +11,11 @@ import java.util.*;
 public class PropertyAndValueStringsForm {
     private int id;
 
-    private List<Integer> stringPropertiesId = new LinkedList<>();
+    private String name;
 
-    private List<Integer> stringValueId = new LinkedList<>();
+    private String partNumber;
+
+    private Map<StringProperties, ValueOfStringProperties> propertyAndValue = new HashMap<>();
 
     public PropertyAndValueStringsForm() {}
 
@@ -22,20 +27,27 @@ public class PropertyAndValueStringsForm {
         this.id = id;
     }
 
-    public List<Integer> getStringPropertiesId() {
-        return stringPropertiesId;
+    public String getName() {
+        return name;
     }
 
-    public void setStringPropertiesId(List<Integer> stringPropertiesId) {
-        this.stringPropertiesId = stringPropertiesId;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public List<Integer> getStringValueId() {
-        return stringValueId;
+    public String getPartNumber() {
+        return partNumber;
     }
 
-    public void setStringValueId(List<Integer> stringValueId) {
-        this.stringValueId = stringValueId;
+    public void setPartNumber(String partNumber) {
+        this.partNumber = partNumber;
     }
 
+    public Map<StringProperties, ValueOfStringProperties> getPropertyAndValue() {
+        return propertyAndValue;
+    }
+
+    public void setPropertyAndValue(Map<StringProperties, ValueOfStringProperties> propertyAndValue) {
+        this.propertyAndValue = propertyAndValue;
+    }
 }

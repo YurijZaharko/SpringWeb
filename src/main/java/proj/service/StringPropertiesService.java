@@ -38,4 +38,7 @@ public interface StringPropertiesService {
 
     List<StringProperties> findStringPropertiesByProductId(int id);
 
+    PropertyAndValueStringsForm findForForm(int id);
+
+    PropertyAndValueStringsForm findForFormMap(int id);
 }

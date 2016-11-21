@@ -4,15 +4,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
+import proj.entity.Product;
 import proj.entity.PropertyAndValueString;
 import proj.entity.StringProperties;
+import proj.entity.ValueOfStringProperties;
 import proj.form.Filter.CategoryFilterForm;
 import proj.form.PropertyAndValueStringsForm;
 import proj.repository.CategoryRepository;
+import proj.repository.ProductRepository;
 import proj.repository.PropertyAndValueStringRepository;
 import proj.repository.StringPropertiesRepository;
 import proj.service.StringPropertiesService;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -29,6 +33,9 @@ public class StringPropertiesImplement implements StringPropertiesService {
 
     @Autowired
     PropertyAndValueStringRepository propertyAndValueStringRepository;
+
+    @Autowired
+    ProductRepository productRepository;
 
     @Override
     public void save(String name) {
@@ -95,6 +102,43 @@ public class StringPropertiesImplement implements StringPropertiesService {
     @Override
     public List<StringProperties> findStringPropertiesByProductId(int id) {
         return stringPropertiesRepository.findStringPropertiesByProductId(id);
+    }
+
+    @Override
+    public PropertyAndValueStringsForm findForForm(int id) {
+
+
+        return null;
+    }
+
+    @Override
+    public PropertyAndValueStringsForm findForFormMap(int id) {
+        PropertyAndValueStringsForm propertyAndValueStringsForm = new PropertyAndValueStringsForm();
+
+        propertyAndValueStringsForm.setId(id);
+
+        Product product = productRepository.findById(id);
+        propertyAndValueStringsForm.setName(product.getProductName());
+        propertyAndValueStringsForm.setPartNumber(product.getPartNumber());
+
+        Map<StringProperties, ValueOfStringProperties> propertyAndValue = propertyAndValueStringsForm.getPropertyAndValue();
+
+        List<StringProperties> stringPropertiesList = stringPropertiesRepository.findByProductId(id);
+        for (StringProperties stringProperty: stringPropertiesList) {
+            if (!stringProperty.getPropertyAndValueStrings().isEmpty()) {
+                PropertyAndValueString propertyAndValueString = stringProperty.getPropertyAndValueStrings().get(0);
+
+                int propertyAndValueStringID = propertyAndValueString.getId();
+                PropertyAndValueString propertyAndValueStringTemp = propertyAndValueStringRepository.findByIdWithValue(propertyAndValueStringID);
+
+                ValueOfStringProperties valueOfStringProperties = propertyAndValueStringTemp.getValueOfStringPropertiesList().get(0);
+                propertyAndValue.put(stringProperty, valueOfStringProperties);
+
+            }else {
+                propertyAndValue.put(stringProperty, null);
+            }
+        }
+        return propertyAndValueStringsForm;
     }
 
 

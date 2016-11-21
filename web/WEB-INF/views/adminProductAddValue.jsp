@@ -8,7 +8,47 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<form:form action="/admin/adminProduct/addValue" method="post" modelAttribute="oneProduct">
+<%--<form:form action="/admin/adminProduct/addValue" method="post" modelAttribute="oneProduct">--%>
+    <%--<table class="table table-hover">--%>
+        <%--<tr class="active">--%>
+            <%--<td>Product id</td>--%>
+            <%--<td>Product name</td>--%>
+            <%--<td>Part number</td>--%>
+
+        <%--</tr>--%>
+        <%--<tr>--%>
+            <%--<td>${oneProduct.id}</td>--%>
+            <%--<td>${oneProduct.productName}</td>--%>
+            <%--<td>${oneProduct.partNumber}</td>--%>
+        <%--</tr>--%>
+    <%--</table>--%>
+    <%--<br>--%>
+    <%--<table class="table table-hover">--%>
+        <%--<tr class="active">--%>
+            <%--<td>Property name</td>--%>
+            <%--<td>Property value</td>--%>
+        <%--</tr>--%>
+        <%--<c:forEach items="${properties}" var="property">--%>
+            <%--<tr>--%>
+                <%--<td>${property.propertyName}</td>--%>
+                <%--<td>--%>
+                    <%--<c:forEach items="${property.propertyAndValueStrings}" var="propertyAndValueStrings">--%>
+                        <%--<c:forEach items="${propertyAndValueStrings.valueOfStringPropertiesList}" var="valueOfStringPropertiesList">--%>
+                            <%--${valueOfStringPropertiesList.stringValue}--%>
+                        <%--</c:forEach>--%>
+                    <%--</c:forEach>--%>
+                <%--</td>--%>
+                <%--<td></td>--%>
+
+            <%--</tr>--%>
+
+        <%--</c:forEach>--%>
+
+    <%--</table>--%>
+
+<%--</form:form>--%>
+
+<form:form action="/admin/adminProduct/addValue/test" method="post" modelAttribute="propertyAndValueStringsForm">
     <table class="table table-hover">
         <tr class="active">
             <td>Product id</td>
@@ -17,9 +57,9 @@
 
         </tr>
         <tr>
-            <td>${oneProduct.id}</td>
-            <td>${oneProduct.productName}</td>
-            <td>${oneProduct.partNumber}</td>
+            <td>${propertyAndValueStringsForm.id}</td>
+            <td>${propertyAndValueStringsForm.name}</td>
+            <td>${propertyAndValueStringsForm.partNumber}</td>
         </tr>
     </table>
     <br>
@@ -28,23 +68,13 @@
             <td>Property name</td>
             <td>Property value</td>
         </tr>
-        <c:forEach items="${properties}" var="property">
+        <c:forEach items="${propertyAndValueStringsForm.propertyAndValue}" var="map">
             <tr>
-                <td>${property.propertyName}</td>
-                <td>
-                    <c:forEach items="${property.propertyAndValueStrings}" var="propertyAndValueStrings">
-                        <c:forEach items="${propertyAndValueStrings.valueOfStringPropertiesList}" var="valueOfStringPropertiesList">
-                            ${valueOfStringPropertiesList.stringValue}
-                        </c:forEach>
-                    </c:forEach>
-                </td>
-                <td></td>
-
+                <td>${map.key.propertyName} </td>
+                <td><input name="map['${map.key.propertyName}']" value="${map.value.stringValue}"/></td>
             </tr>
-
         </c:forEach>
+
+
     </table>
-
-
-
 </form:form>

@@ -81,6 +81,13 @@ public class ProductController {
 //        PropertyAndValueString propertyAndValueStringList = propertyAndValueStringService.findByIdWithValue(id);
 
         model.addAttribute("properties", stringPropertiesService.findByProductId(id));
+        model.addAttribute("propertyAndValueStringsForm", stringPropertiesService.findForForm(id));
+        return "adminProductAddValue";
+    }
+
+    @RequestMapping("/admin/adminProduct/addValue/test/{id}")
+    public String showValue(@PathVariable("id") int id, Model model){
+        model.addAttribute("propertyAndValueStringsForm", stringPropertiesService.findForFormMap(id));
         return "adminProductAddValue";
     }
 
