@@ -72,7 +72,6 @@ public class CategoryController {
                                                  @ModelAttribute("filter") CategoryFilterForm categoryFilterForm){
         model.addAttribute("category", categoryService.findByIdWithAllFetch(id));
         model.addAttribute("stringProperties", stringPropertiesService.findCategoryWithStringProperty(pageable, categoryFilterForm, id));
-
         return "categoryWithProperty";
     }
 
@@ -95,6 +94,16 @@ public class CategoryController {
     @Transactional
     @RequestMapping(value = "/admin/adminCategory/categoryWithProperty/propertyId/{catId}/{id}")
     public String savePropertyToCategory(@PathVariable("catId") int catId ,
+                                         @PathVariable("id") int id,
+                                         @PageableDefault(5) Pageable pageable,
+                                         @ModelAttribute("filter") CategoryFilterForm categoryFilterForm){
+        categoryService.savePropertyToCategory(pageable, categoryFilterForm, catId, id);
+        return "redirect:/admin/adminCategory/categoryWithProperty/" + catId + CommonMethod.getParams(pageable, categoryFilterForm);
+    }
+
+    @Transactional
+    @RequestMapping(value = "/admin/adminCategory/categoryWithProperty/removePropertyId/{catId}/{id}")
+    public String removePropertyToCategory(@PathVariable("catId") int catId ,
                                          @PathVariable("id") int id,
                                          @PageableDefault(5) Pageable pageable,
                                          @ModelAttribute("filter") CategoryFilterForm categoryFilterForm){

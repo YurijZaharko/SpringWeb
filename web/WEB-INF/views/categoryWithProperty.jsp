@@ -26,19 +26,40 @@
         <%--<div class="form-group">--%>
             <%--<form:select path="integerPropertiesList" items="${integerProperties}" itemLabel="name" itemValue="id"/>--%>
         <%--</div>--%>
-        <table class="table table-hover">
-            <tr>
-                <td>id</td>
-                <td>Name</td>
-                <td>Add</td>
-            </tr>
-            <c:forEach items="${stringProperties}" var="stringProperty">
+        <div class="col-md-6">
+            <table class="table table-hover">
                 <tr>
-                    <td>${stringProperty.id}</td>
-                    <td>${stringProperty.propertyName}</td>
-                    <td><a href="/admin/adminCategory/categoryWithProperty/propertyId/${category.id}/${stringProperty.id}" class="btn btn-primary">Add</a> </td>
+                    <td>id</td>
+                    <td>Name</td>
+                    <td>Add</td>
                 </tr>
-            </c:forEach>
-        </table>
+                <c:forEach items="${stringProperties}" var="stringProperty">
+                    <tr>
+                        <td>${stringProperty.id}</td>
+                        <td>${stringProperty.propertyName}</td>
+                        <td><a href="/admin/adminCategory/categoryWithProperty/propertyId/${category.id}/${stringProperty.id}" class="btn btn-primary">Add</a> </td>
+                    </tr>
+                </c:forEach>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <table class="table table-hover">
+                <tr>
+                    <td>id</td>
+                    <td>Name</td>
+                    <td>Remove</td>
+                </tr>
+                <c:forEach items="${category.stringPropertiesList}" var="stringPropertiesList">
+                    <tr>
+                        <td>${stringPropertiesList.id}</td>
+                        <td>${stringPropertiesList.propertyName}</td>
+                        <td><a href="/admin/adminCategory/categoryWithProperty/propertyId/${category.id}/${stringPropertiesList.id}" class="btn btn-danger">Remove</a> </td>
+                    </tr>
+                </c:forEach>
+            </table>
+        </div>
+
+
+
     </form:form>
 </div>

@@ -54,7 +54,6 @@
             <td>Product id</td>
             <td>Product name</td>
             <td>Part number</td>
-
         </tr>
         <tr>
             <td>${propertyAndValueStringsForm.id}</td>
@@ -74,7 +73,5 @@
                 <td><input name="map['${map.key.propertyName}']" value="${map.value.stringValue}"/></td>
             </tr>
         </c:forEach>
-
-
     </table>
 </form:form>
