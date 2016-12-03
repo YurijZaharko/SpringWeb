@@ -133,13 +133,10 @@ public class StringPropertiesImplement implements StringPropertiesService {
 
                 ValueOfStringProperties valueOfStringProperties = propertyAndValueStringTemp.getValueOfStringPropertiesList().get(0);
                 propertyAndValue.put(stringProperty, valueOfStringProperties);
-
             }else {
                 propertyAndValue.put(stringProperty, null);
             }
         }
         return propertyAndValueStringsForm;
     }
-
-
 }
