@@ -53,7 +53,7 @@
                     <tr>
                         <td>${stringPropertiesList.id}</td>
                         <td>${stringPropertiesList.propertyName}</td>
-                        <td><a href="/admin/adminCategory/categoryWithProperty/propertyId/${category.id}/${stringPropertiesList.id}" class="btn btn-danger">Remove</a> </td>
+                        <td><a href="/admin/adminCategory/categoryWithProperty/removePropertyId/${category.id}/${stringPropertiesList.id}" class="btn btn-danger">Remove</a> </td>
                     </tr>
                 </c:forEach>
             </table>
