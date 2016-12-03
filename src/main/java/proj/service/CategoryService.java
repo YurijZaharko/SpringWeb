@@ -22,6 +22,7 @@ public interface CategoryService{
     Category findById(int id);
 
     void deleteById(int id);
+
     List<Category> findAll();
 
     void save(Category category);
@@ -32,10 +33,12 @@ public interface CategoryService{
 
     Category findByIdWithAllFetch(int id);
 
-
     List<Category> findByIdWithCategoryChild(int id);
 
     Page<Category> findAll(Pageable pageable, CategoryFilterForm categoryFilterForm);
 
     void savePropertyToCategory(Pageable pageable, CategoryFilterForm categoryFilterForm, int catId, int id);
+
+    void removePropertyFromCategory(Pageable pageable, CategoryFilterForm categoryFilterForm, int catId, int id);
+
 }
