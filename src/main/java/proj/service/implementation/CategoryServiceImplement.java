@@ -97,4 +97,12 @@ public class CategoryServiceImplement implements CategoryService {
         categoryRepository.save(category);
     }
 
+    @Override
+    public void removePropertyFromCategory(Pageable pageable, CategoryFilterForm categoryFilterForm, int catId, int id) {
+        Category category = categoryRepository.findByIdWithAllFetch(catId);
+        StringProperties stringProperties = stringPropertiesRepository.findById(id);
+        category.getStringPropertiesList().remove(stringProperties);
+        categoryRepository.save(category);
+    }
+
 }
