@@ -15,6 +15,7 @@ import java.util.List;
  * Created by SCIP on 12.08.2016.
  */
 public interface StringPropertiesService {
+
     void save(String name);
 
     StringProperties findByPropertyName(String name);
@@ -26,7 +27,6 @@ public interface StringPropertiesService {
     StringProperties findById(int id);
 
     void save(StringProperties stringProperties);
-
 
     void deleteById(int id);
 
