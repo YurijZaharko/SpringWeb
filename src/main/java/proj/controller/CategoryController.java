@@ -103,11 +103,11 @@ public class CategoryController {
 
     @Transactional
     @RequestMapping(value = "/admin/adminCategory/categoryWithProperty/removePropertyId/{catId}/{id}")
-    public String removePropertyToCategory(@PathVariable("catId") int catId ,
+    public String removePropertyFromCategory(@PathVariable("catId") int catId ,
                                          @PathVariable("id") int id,
                                          @PageableDefault(5) Pageable pageable,
                                          @ModelAttribute("filter") CategoryFilterForm categoryFilterForm){
-        categoryService.savePropertyToCategory(pageable, categoryFilterForm, catId, id);
+        categoryService.removePropertyFromCategory(pageable, categoryFilterForm, catId, id);
         return "redirect:/admin/adminCategory/categoryWithProperty/" + catId + CommonMethod.getParams(pageable, categoryFilterForm);
     }
 
