@@ -1,18 +1,22 @@
 package proj.repository;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 import proj.entity.StringProperties;
+import proj.service.implementation.specification.StringPropertyFilterAdapter;
 
 import java.util.List;
 
 /**
  * Created by SC on 10.08.2016.
  */
-public interface StringPropertiesRepository extends JpaRepository<StringProperties, Integer> {
+public interface StringPropertiesRepository extends JpaRepository<StringProperties, Integer>, JpaSpecificationExecutor<StringProperties> {
     StringProperties findByPropertyName(String name);
 
     @Modifying
@@ -35,4 +39,6 @@ public interface StringPropertiesRepository extends JpaRepository<StringProperti
 
     @Query("SELECT DISTINCT sp FROM Product p JOIN p.category c JOIN c.stringPropertiesList sp WHERE p.id=:id")
     List<StringProperties> findStringPropertiesByProductId(@Param("id") int id);
+
+
 }

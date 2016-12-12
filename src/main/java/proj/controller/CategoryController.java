@@ -56,7 +56,6 @@ public class CategoryController {
         webDataBinder.registerCustomEditor(StringProperties.class, new StrPropEditor(stringPropertiesService));
     }
 
-
     @RequestMapping("/admin/adminCategory")
     public String showCategory(Model model,
                                @PageableDefault(5) Pageable pageable,

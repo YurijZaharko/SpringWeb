@@ -1,12 +1,10 @@
 package proj.service;
 
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
-import org.springframework.transaction.annotation.Transactional;
 import proj.entity.StringProperties;
 import proj.form.Filter.CategoryFilterForm;
+import proj.form.Filter.StringPropertiesFilterForm;
 import proj.form.PropertyAndValueStringsForm;
 
 import java.util.List;
@@ -41,4 +39,6 @@ public interface StringPropertiesService {
     PropertyAndValueStringsForm findForForm(int id);
 
     PropertyAndValueStringsForm findForFormMap(int id);
+
+    Page<StringProperties> findAll(Pageable pageable, StringPropertiesFilterForm stringPropertiesFilterForm);
 }

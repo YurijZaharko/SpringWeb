@@ -10,7 +10,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="custom" uri="/WEB-INF/custom.tld" %>
 <div class="container">
-    <div class="col-md-6">
+    <div class="col-md-3">
         <form:form action="/admin/adminCategory" method="post" class="form-inline" modelAttribute="category">
             <form:hidden path="id"/>
             <custom:hiddenInputs excludeParams="name, id"/>
@@ -21,6 +21,8 @@
                     <button type="submit" class="btn btn-primary">Create</button>
             </div>
         </form:form>
+    </div>
+    <div class="col-md-3">
         <form:form action="/admin/adminCategory" method="get" modelAttribute="filter" cssClass="form-inline">
             <custom:hiddenInputs excludeParams="search"/>
             <div class="form-group">
@@ -31,8 +33,7 @@
     </div>
     <div class="col-md-1">
         <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Sort ID <span class="caret"></span>
-            </button>
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Sort ID <span class="caret"></span></button>
             <ul class="dropdown-menu">
                 <custom:sort innerHtml="ID asc" paramValue="id"/>
                 <custom:sort innerHtml="ID desc" paramValue="id,desc"/>
@@ -40,9 +41,7 @@
         </div>
     </div>
     <div class="col-md-1">
-        <div class="container">
-            <custom:size posibleSizes="1,2,5,10" size="${categories.size}" title="Page size"/>
-        </div>
+        <custom:size posibleSizes="1,2,5,10" size="${categories.size}" title="Page size"/>
     </div>
 
     <table class="table table-hover">

@@ -1,6 +1,7 @@
 package proj.service.implementation;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
@@ -9,12 +10,14 @@ import proj.entity.PropertyAndValueString;
 import proj.entity.StringProperties;
 import proj.entity.ValueOfStringProperties;
 import proj.form.Filter.CategoryFilterForm;
+import proj.form.Filter.StringPropertiesFilterForm;
 import proj.form.PropertyAndValueStringsForm;
 import proj.repository.CategoryRepository;
 import proj.repository.ProductRepository;
 import proj.repository.PropertyAndValueStringRepository;
 import proj.repository.StringPropertiesRepository;
 import proj.service.StringPropertiesService;
+import proj.service.implementation.specification.StringPropertyFilterAdapter;
 
 import java.util.HashMap;
 import java.util.List;
@@ -138,5 +141,10 @@ public class StringPropertiesImplement implements StringPropertiesService {
             }
         }
         return propertyAndValueStringsForm;
+    }
+
+    @Override
+    public Page<StringProperties> findAll(Pageable pageable, StringPropertiesFilterForm stringPropertiesFilterForm) {
+        return stringPropertiesRepository.findAll(new StringPropertyFilterAdapter(stringPropertiesFilterForm), pageable);
     }
 }

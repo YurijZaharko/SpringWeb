@@ -12,9 +12,6 @@ import proj.service.CategoryService;
  */
 @Controller
 public class IndexController {
-    @Autowired
-    CategoryService categoryService;
-
     @RequestMapping("/")
     public String showIndex(){return  "index";}
 
