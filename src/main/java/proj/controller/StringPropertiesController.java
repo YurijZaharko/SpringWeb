@@ -64,16 +64,16 @@ public class StringPropertiesController {
                                        @PageableDefault(5)Pageable pageable,
                                        @ModelAttribute("filter") StringPropertiesFilterForm stringPropertiesFilterForm){
         stringPropertiesService.deleteById(id);
-        return "redirect:/admin/adminProperties" + CommonMethod.getParams(pageable, stringPropertiesFilterForm);
+        return "redirect:/admin/adminStringProperties" + CommonMethod.getParams(pageable, stringPropertiesFilterForm);
     }
 
-    @RequestMapping("/admin/adminStringProperties/updateStringProperty/{id}")
+    @RequestMapping("/admin/adminProperties/updateStringProperty/{id}")
     public String updateStringProperty(@PathVariable("id") int id, Model model,
                                        @PageableDefault(5)Pageable pageable,
                                        @ModelAttribute("filter") StringPropertiesFilterForm stringPropertiesFilterForm){
         model.addAttribute("stringProperty", stringPropertiesService.findById(id));
         model.addAttribute("stringProperties", stringPropertiesService.findAll(pageable, stringPropertiesFilterForm));
-        return "redirect:/admin/adminStringProperties" + CommonMethod.getParams(pageable, stringPropertiesFilterForm);
+        return "adminStringProperties";
     }
 
 

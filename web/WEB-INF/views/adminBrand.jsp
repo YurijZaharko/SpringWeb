@@ -10,7 +10,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="container">
-    <div class="col-md-4">
+    <div class="col-md-3">
         <form:form action="/admin/adminBrand" method="post"  modelAttribute="brand">
             <form:hidden path="id"/>
             <div class="form-group">
@@ -19,11 +19,15 @@
                     <form:input path="name"/>
                     <button type="submit" class="btn btn-primary">Create</button>
             </div>
+    </div>
+    <div class="col-md-3">
         </form:form>
         <form:form action="/admin/adminBrand" method="get" modelAttribute="brandFilterForm" cssClass="form-group">
             <form:input path="search"/><button type="submit" class="btn btn-primary">Search</button>
         </form:form>
     </div>
+
+
     <div class="col-md-1">
         <div class="dropdown">
             <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Sort ID <span class="caret"></span>

@@ -2,23 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48a5e6c2-c25f-4614-b027-9cbc4adf19f2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/specification/StringPropertyFilterAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/controller/CategoryController.class" afterPath="$PROJECT_DIR$/target/classes/proj/controller/CategoryController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/controller/IndexController.class" afterPath="$PROJECT_DIR$/target/classes/proj/controller/IndexController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/service/CategoryService.class" afterPath="$PROJECT_DIR$/target/classes/proj/service/CategoryService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/service/implementation/CategoryServiceImplement.class" afterPath="$PROJECT_DIR$/target/classes/proj/service/implementation/CategoryServiceImplement.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/service/implementation/StringPropertiesImplement.class" afterPath="$PROJECT_DIR$/target/classes/proj/service/implementation/StringPropertiesImplement.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/repository/StringPropertiesRepository.class" afterPath="$PROJECT_DIR$/target/classes/proj/repository/StringPropertiesRepository.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/service/StringPropertiesService.class" afterPath="$PROJECT_DIR$/target/classes/proj/service/StringPropertiesService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/controller/CategoryController.java" afterPath="$PROJECT_DIR$/src/main/java/proj/controller/CategoryController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/controller/IndexController.java" afterPath="$PROJECT_DIR$/src/main/java/proj/controller/IndexController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/controller/StringPropertiesController.java" afterPath="$PROJECT_DIR$/src/main/java/proj/controller/StringPropertiesController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/repository/StringPropertiesRepository.java" afterPath="$PROJECT_DIR$/src/main/java/proj/repository/StringPropertiesRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/CategoryService.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/CategoryService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/StringPropertiesService.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/StringPropertiesService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/implementation/StringPropertiesImplement.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/StringPropertiesImplement.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/security.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/security.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/views/adminCategory.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/views/adminCategory.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/views/adminStringProperties.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/views/adminStringProperties.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/views/adminBrand.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/views/adminBrand.jsp" />
     </list>
     <ignored path="SpringWeb.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -58,11 +46,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="adminCategory.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="adminCategory.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/adminCategory.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="487">
-              <caret line="52" column="46" lean-forward="false" selection-start-line="52" selection-start-column="38" selection-end-line="52" selection-end-column="46" />
+            <state relative-caret-position="866">
+              <caret line="52" column="62" lean-forward="false" selection-start-line="52" selection-start-column="54" selection-end-line="52" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -71,8 +59,18 @@
       <file leaf-file-name="adminStringProperties.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/adminStringProperties.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="53" column="80" lean-forward="true" selection-start-line="53" selection-start-column="80" selection-end-line="53" selection-end-column="80" />
+            <state relative-caret-position="759">
+              <caret line="55" column="40" lean-forward="false" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StringPropertiesImplement.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/implementation/StringPropertiesImplement.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="691">
+              <caret line="147" column="121" lean-forward="true" selection-start-line="147" selection-start-column="121" selection-end-line="147" selection-end-column="121" />
               <folding />
             </state>
           </provider>
@@ -81,8 +79,8 @@
       <file leaf-file-name="CategoryController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/proj/controller/CategoryController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="62" column="61" lean-forward="false" selection-start-line="62" selection-start-column="61" selection-end-line="62" selection-end-column="61" />
+            <state relative-caret-position="657">
+              <caret line="140" column="36" lean-forward="false" selection-start-line="140" selection-start-column="28" selection-end-line="140" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -90,33 +88,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StringPropertiesController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="StringPropertiesController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/proj/controller/StringPropertiesController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="49" column="74" lean-forward="false" selection-start-line="49" selection-start-column="74" selection-end-line="49" selection-end-column="74" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StringPropertiesService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/StringPropertiesService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="24" column="38" lean-forward="true" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CategoryService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/CategoryService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="918">
+              <caret line="70" column="79" lean-forward="true" selection-start-line="70" selection-start-column="79" selection-end-line="70" selection-end-column="79" />
               <folding />
             </state>
           </provider>
@@ -145,6 +121,9 @@
       <find>/admin/adminCategory</find>
       <find>/admin/adminStringProperties</find>
       <find>items</find>
+      <find>category</find>
+      <find>stringProperty</find>
+      <find>/admin/adminProperties/updateStringProperty/</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -164,7 +143,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/proj/entity/ListOfPropertyAndValueString.java" />
         <option value="$PROJECT_DIR$/src/main/java/proj/form/ProductForm.java" />
         <option value="$PROJECT_DIR$/src/main/java/proj/repository/ProductPropertyRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/proj/service/implementation/editor/ProductPropertyEditor.java" />
@@ -211,10 +189,11 @@
         <option value="$PROJECT_DIR$/src/main/java/proj/service/implementation/StringPropertiesImplement.java" />
         <option value="$PROJECT_DIR$/src/main/java/proj/repository/StringPropertiesRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/proj/service/implementation/specification/StringPropertyFilterAdapter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/proj/controller/StringPropertiesController.java" />
         <option value="$PROJECT_DIR$/src/main/java/proj/service/StringPropertiesService.java" />
         <option value="$PROJECT_DIR$/src/main/java/proj/service/CategoryService.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/views/adminStringProperties.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/views/adminBrand.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/proj/controller/StringPropertiesController.java" />
       </list>
     </option>
   </component>
@@ -1363,7 +1342,7 @@
       <workItem from="1480844162061" duration="272000" />
       <workItem from="1481056292861" duration="2812000" />
       <workItem from="1481381504397" duration="4467000" />
-      <workItem from="1481563561908" duration="4610000" />
+      <workItem from="1481563561908" duration="6079000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1472147761510</created>
@@ -1638,11 +1617,18 @@
       <option name="project" value="LOCAL" />
       <updated>1481383231567</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Add &quot;Search&quot;, sort method and page size  to String properties">
+      <created>1481568291691</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1481568291691</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="349368000" />
+    <option name="totallyTimeSpent" value="350837000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1658,7 +1644,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1680,7 +1666,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32739422" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37973273" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37973273" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34632516" sideWeight="0.49570817" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32739422" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32739422" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -1740,18 +1726,11 @@
     <MESSAGE value="-" />
     <MESSAGE value="Create class StringPropertiesForm" />
     <MESSAGE value="Create class StringPropertiesFilterForm" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create class StringPropertiesFilterForm" />
+    <MESSAGE value="Add &quot;Search&quot;, sort method and page size  to String properties" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add &quot;Search&quot;, sort method and page size  to String properties" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/proj/controller/StringPropertiesController.java</url>
-          <line>47</line>
-          <properties />
-          <option name="timeStamp" value="58" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="59" />
     </breakpoint-manager>
     <watches-manager>
@@ -1845,13 +1824,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="104" column="23" lean-forward="false" selection-start-line="104" selection-start-column="23" selection-end-line="104" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/adminBrand.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-108">
-          <caret line="19" column="81" lean-forward="false" selection-start-line="19" selection-start-column="81" selection-end-line="19" selection-end-column="81" />
         </state>
       </provider>
     </entry>
@@ -2103,14 +2075,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/implementation/StringPropertiesImplement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="147" column="121" lean-forward="true" selection-start-line="147" selection-start-column="121" selection-end-line="147" selection-end-column="121" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/proj/entity/StringProperties.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -2145,11 +2109,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/proj/controller/StringPropertiesController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/StringPropertiesService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="49" column="74" lean-forward="false" selection-start-line="49" selection-start-column="74" selection-end-line="49" selection-end-column="74" />
-          <folding />
+        <state relative-caret-position="402">
+          <caret line="24" column="38" lean-forward="true" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2161,38 +2127,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/StringPropertiesService.java">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/adminBrand.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="24" column="38" lean-forward="true" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/proj/controller/CategoryController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="62" column="61" lean-forward="false" selection-start-line="62" selection-start-column="61" selection-end-line="62" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/adminStringProperties.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="53" column="80" lean-forward="true" selection-start-line="53" selection-start-column="80" selection-end-line="53" selection-end-column="80" />
+        <state relative-caret-position="-102">
+          <caret line="12" column="24" lean-forward="false" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/adminCategory.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="52" column="46" lean-forward="false" selection-start-line="52" selection-start-column="38" selection-end-line="52" selection-end-column="46" />
+        <state relative-caret-position="866">
+          <caret line="52" column="62" lean-forward="false" selection-start-line="52" selection-start-column="54" selection-end-line="52" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/proj/controller/CategoryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="657">
+          <caret line="140" column="36" lean-forward="false" selection-start-line="140" selection-start-column="28" selection-end-line="140" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/implementation/StringPropertiesImplement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="691">
+          <caret line="147" column="121" lean-forward="true" selection-start-line="147" selection-start-column="121" selection-end-line="147" selection-end-column="121" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/adminStringProperties.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="759">
+          <caret line="55" column="40" lean-forward="false" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/proj/controller/StringPropertiesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="70" column="79" lean-forward="true" selection-start-line="70" selection-start-column="79" selection-end-line="70" selection-end-column="79" />
           <folding />
         </state>
       </provider>
