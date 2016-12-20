@@ -20,8 +20,6 @@ public class User implements UserDetails{
 
     private String login;
 
-    private String mail;
-
     private String password;
 
     @Enumerated
@@ -54,10 +52,6 @@ public class User implements UserDetails{
         this.login = login;
     }
 
-    public void setMail(String mail) {
-        this.mail = mail;
-    }
-
     public void setRole(Role role) {
         this.role = role;
     }
@@ -68,10 +62,6 @@ public class User implements UserDetails{
 
     public String getLogin() {
         return login;
-    }
-
-    public String getMail() {
-        return mail;
     }
 
     public Role getRole() {
