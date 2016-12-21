@@ -5,6 +5,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -18,14 +19,23 @@ public class User implements UserDetails{
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
+    @Enumerated
+    private Role role;
+
     private String login;
 
     private String password;
 
-    @Enumerated
-    private Role role;
+    private String name;
+
+    private String surname;
+
+    private String phoneNumber;
+
+    private final SimpleDateFormat registrationDate;
 
     public User() {
+        registrationDate = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss");
     }
 
     @Override
@@ -93,5 +103,7 @@ public class User implements UserDetails{
         return true;
     }
 
-
+    public SimpleDateFormat getRegistrationDate() {
+        return registrationDate;
+    }
 }
