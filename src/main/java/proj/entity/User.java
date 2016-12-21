@@ -106,4 +106,12 @@ public class User implements UserDetails{
     public SimpleDateFormat getRegistrationDate() {
         return registrationDate;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
