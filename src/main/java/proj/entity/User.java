@@ -5,6 +5,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -32,10 +33,12 @@ public class User implements UserDetails{
 
     private String phoneNumber;
 
-    private final SimpleDateFormat registrationDate;
+    private final String registrationDate;
 
     public User() {
-        registrationDate = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss");
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        registrationDate = simpleDateFormat.format(timestamp);
     }
 
     @Override
@@ -103,7 +106,7 @@ public class User implements UserDetails{
         return true;
     }
 
-    public SimpleDateFormat getRegistrationDate() {
+    public String getRegistrationDate() {
         return registrationDate;
     }
 
@@ -113,5 +116,21 @@ public class User implements UserDetails{
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 }
