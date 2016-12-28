@@ -13,9 +13,11 @@ public class Brand {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     private String name;
+
     @OneToMany(mappedBy = "brand")
-    List<Product> productList = new ArrayList<Product>();
+    private List<Product> productList = new ArrayList<Product>();
 
     public Brand() {
     }
@@ -40,4 +42,11 @@ public class Brand {
         this.name = brandName;
     }
 
+    public List<Product> getProductList() {
+        return productList;
+    }
+
+    public void setProductList(List<Product> productList) {
+        this.productList = productList;
+    }
 }
