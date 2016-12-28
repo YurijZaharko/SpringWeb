@@ -14,7 +14,7 @@ import proj.service.UserService;
 @ControllerAdvice
 public class GlobalController {
     @Autowired
-    UserService userService;
+    private UserService userService;
 
     @ModelAttribute("authUser")
     public User getUser(){
