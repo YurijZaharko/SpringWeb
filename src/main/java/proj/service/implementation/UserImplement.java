@@ -58,6 +58,7 @@ public class UserImplement implements UserService, UserDetailsService {
             user.setPassword(bCryptPasswordEncoder.encode("admin"));
             user.setLogin("scipgames@gmail.com");
             user.setId(1);
+            user.setRegistrationDate();
             userRepository.save(user);
         }
     }
