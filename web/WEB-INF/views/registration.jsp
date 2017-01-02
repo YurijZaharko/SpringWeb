@@ -10,12 +10,25 @@
             </div>
         </c:if>
         <form:form action="/registration" class="form-group" method="post" modelAttribute="user">
+            <form:hidden path="id"/>
             <div class="form-group">
-                <input name="login" placeholder="Login" class="form-control" />
-                <input name="mail" placeholder="E-mail" class="form-control" />
-                <input name="password" type="password" placeholder="Some like ***" class="form-control" />
-                <button type="submit" class="btn btn-primary">Ok</button>
+                <form:errors path="login"/>
+                <form:input path="login" placeholder="login" cssClass="form-control"/>
             </div>
+            <div class="form-group">
+                <input name="password" type="password" placeholder="Some like ***" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input name="name" placeholder="Name" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input name="surname" placeholder="Surname" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input name="phoneNumber" placeholder="Phone number" class="form-control" />
+            </div>
+            <form:hidden path="registrationDate"/>
+            <button type="submit" class="btn btn-primary">Ok</button>
         </form:form>
     </div>
 </div>

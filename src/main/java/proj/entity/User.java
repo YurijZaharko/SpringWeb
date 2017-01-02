@@ -10,6 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by SCIP on 14.08.2016.
@@ -33,12 +34,9 @@ public class User implements UserDetails{
 
     private String phoneNumber;
 
-    private final String registrationDate;
+    private String registrationDate;
 
     public User() {
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss");
-        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-        registrationDate = simpleDateFormat.format(timestamp);
     }
 
     @Override
@@ -110,6 +108,12 @@ public class User implements UserDetails{
         return registrationDate;
     }
 
+    public void setRegistrationDate() {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss");
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        registrationDate = simpleDateFormat.format(timestamp);
+    }
+
     public String getName() {
         return name;
     }
@@ -132,5 +136,27 @@ public class User implements UserDetails{
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof User)) return false;
+
+        User user = (User) o;
+
+        if (login != null ? !login.equals(user.login) : user.login != null) return false;
+        if (name != null ? !name.equals(user.name) : user.name != null) return false;
+        if (surname != null ? !surname.equals(user.surname) : user.surname != null) return false;
+        return phoneNumber != null ? phoneNumber.equals(user.phoneNumber) : user.phoneNumber == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = login != null ? login.hashCode() : 0;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (surname != null ? surname.hashCode() : 0);
+        result = 31 * result + (phoneNumber != null ? phoneNumber.hashCode() : 0);
+        return result;
     }
 }

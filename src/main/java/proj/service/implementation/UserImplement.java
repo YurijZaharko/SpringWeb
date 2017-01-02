@@ -37,7 +37,9 @@ public class UserImplement implements UserService, UserDetailsService {
 
     @Override
     public final void save(User user) {
-        user.setRole(Role.ROLE_USER);
+        if (user.getRole() == null){
+            user.setRole(Role.ROLE_USER);
+        }
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         userRepository.save(user);
     }
