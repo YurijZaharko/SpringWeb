@@ -41,6 +41,7 @@ public class UserImplement implements UserService, UserDetailsService {
             user.setRole(Role.ROLE_USER);
         }
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+        user.setRegistrationDate();
         userRepository.save(user);
     }
 
