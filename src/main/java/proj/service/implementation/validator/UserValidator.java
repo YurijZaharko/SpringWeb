@@ -17,9 +17,9 @@ public class UserValidator implements Validator {
 
     private final static Pattern EMAIL_PATTERN = Pattern.compile(".+@.+\\.[a-z]+");
 
-    private final static Pattern NAME_PATTERN = Pattern.compile("^[a-zA-Z0-9_+*/-]$");
+    private final static Pattern NAME_PATTERN = Pattern.compile("^[a-zA-Z0-9._-]{3,15}$");
 
-    private final static Pattern PHONE_PATTERN = Pattern.compile("\\\\(\\\\d{3}\\\\)\\\\d{3}-\\\\d{4}");
+    private final static Pattern PHONE_PATTERN = Pattern.compile("^\\(\\d{3}\\)\\d{3}-\\d{4}$");
 
     public UserValidator(UserService userService) {
         this.userService = userService;
@@ -43,7 +43,7 @@ public class UserValidator implements Validator {
             errors.rejectValue("name", "", "Name must contain only a-z A-Z 0-9 _ + * / -");
         }
 
-        if (!NAME_PATTERN.matcher(form.getSurname()).matches()){
+        if(!NAME_PATTERN.matcher(form.getSurname()).matches()){
             errors.rejectValue("surname", "", "Surname must contain only a-z A-Z 0-9 _ + * / -");
         }
 
