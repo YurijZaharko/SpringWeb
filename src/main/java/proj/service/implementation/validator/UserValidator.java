@@ -6,12 +6,20 @@ import org.springframework.validation.Validator;
 import proj.entity.User;
 import proj.service.UserService;
 
+import java.util.regex.Pattern;
+
 /**
  * Created by SC on 29.12.2016.
  */
 public class UserValidator implements Validator {
 
-    private  final UserService userService;
+    private final UserService userService;
+
+    private final static Pattern EMAIL_PATTERN = Pattern.compile(".+@.+\\.[a-z]+");
+
+    private final static Pattern NAME_PATTERN = Pattern.compile("^[a-zA-Z0-9_+*/-]$");
+
+    private final static Pattern PHONE_PATTERN = Pattern.compile("\\\\(\\\\d{3}\\\\)\\\\d{3}-\\\\d{4}");
 
     public UserValidator(UserService userService) {
         this.userService = userService;
@@ -27,7 +35,22 @@ public class UserValidator implements Validator {
         User form = (User) o;
         if (form.getId()==0)if (userService.findByLogin(form.getLogin())!=null){
             errors.rejectValue("login", "", "User already registered");
+        } else if (!EMAIL_PATTERN.matcher(form.getLogin()).matches()){
+            errors.rejectValue("login", "", "Email incorrect");
         }
+
+        if(!NAME_PATTERN.matcher(form.getName()).matches()){
+            errors.rejectValue("name", "", "Name must contain only a-z A-Z 0-9 _ + * / -");
+        }
+
+        if (!NAME_PATTERN.matcher(form.getSurname()).matches()){
+            errors.rejectValue("surname", "", "Surname must contain only a-z A-Z 0-9 _ + * / -");
+        }
+
+        if(!PHONE_PATTERN.matcher(form.getPhoneNumber()).matches()){
+            errors.rejectValue("phoneNumber", "", "Phone number must be enter in form (123)456-7890");
+        }
+
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "login", "", "Field Login can't be empty");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password", "", "Field password can't be empty");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name", "", "Field name can't be empty");
