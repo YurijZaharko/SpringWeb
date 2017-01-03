@@ -23,7 +23,7 @@
                     <form:label path="password" cssClass="col-sm-4 control-label">Password</form:label>
                     <div class="col-sm-8">
                         <form:errors path="password" cssClass="alert-danger"/>
-                        <form:input path="password" placeholder="Password" cssClass="form-control"/>
+                        <form:input path="password" placeholder="Password" cssClass="form-control" type="password"/>
                     </div>
                 </div>
                 <div class="form-group">
