@@ -34,10 +34,10 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <form:label path="surname" cssClass="col-sm-4 control-label">Second name</form:label>
+                    <form:label path="surname" cssClass="col-sm-4 control-label">Surname</form:label>
                     <div class="col-sm-8">
                         <form:errors path="surname"/>
-                        <form:input path="surname" placeholder="Second name" cssClass="form-control"/>
+                        <form:input path="surname" placeholder="Surname" cssClass="form-control"/>
                     </div>
                 </div>
                 <div class="form-group">
