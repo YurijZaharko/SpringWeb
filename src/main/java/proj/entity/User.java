@@ -109,7 +109,7 @@ public class User implements UserDetails{
     }
 
     public void setRegistrationDate() {
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         registrationDate = simpleDateFormat.format(timestamp);
     }
