@@ -2,16 +2,15 @@ package proj.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import proj.entity.Role;
 import proj.entity.User;
 import proj.service.UserService;
+import proj.service.implementation.MailSender;
 import proj.service.implementation.validator.UserValidator;
 
 import javax.validation.Valid;
@@ -23,6 +22,9 @@ import javax.validation.Valid;
 public class UserController {
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private MailSender mailSender;
 
     @ModelAttribute("user")
     public User getForm(){
@@ -46,6 +48,7 @@ public class UserController {
             return "registration";
         }
         userService.save(user);
+        mailSender.sendMail("Registration mail", user.getLogin(), "Registration success! Thank you for registering");
         return "redirect:/login";
     }
 }
