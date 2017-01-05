@@ -85,5 +85,9 @@
         <put-attribute name="header" value="/WEB-INF/layout/headerAdmin.jsp"/>
         <put-attribute name="body" value="/WEB-INF/views/adminProductAddValue.jsp"/>
     </definition>
-
+    <definition name="users" extends="common">
+        <put-attribute name="title" value="users"/>
+        <put-attribute name="header" value="/WEB-INF/layout/headerAdmin.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/views/users.jsp"/>
+    </definition>
 </tiles-definitions>
