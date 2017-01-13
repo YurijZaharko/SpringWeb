@@ -12,6 +12,7 @@
         <div class="col-md-4 col-md-offset-4">
             <form:form action="/registration" class="form-horizontal" method="post" modelAttribute="user">
                 <form:hidden path="id"/>
+                <form:hidden path="role"/>
                 <div class="form-group">
                     <form:label path="login" cssClass="col-sm-4 control-label">Login</form:label>
                     <div class="col-sm-8">
