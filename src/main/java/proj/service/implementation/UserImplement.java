@@ -1,6 +1,8 @@
 package proj.service.implementation;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -8,8 +10,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import proj.entity.Role;
 import proj.entity.User;
+import proj.form.Filter.UserFilterForm;
 import proj.repository.UserRepository;
 import proj.service.UserService;
+import proj.service.implementation.specification.UserFilterAdapter;
 
 import javax.annotation.PostConstruct;
 
@@ -33,6 +37,11 @@ public class UserImplement implements UserService, UserDetailsService {
     @Override
     public final User findById(int id) {
         return userRepository.findOne(id);
+    }
+
+    @Override
+    public Page<User> findAll(Pageable pageable, UserFilterForm userFilterForm) {
+        return userRepository.findAll(new UserFilterAdapter(userFilterForm), pageable);
     }
 
     @Override
