@@ -1,7 +1,10 @@
 package proj.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
@@ -9,11 +12,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import proj.entity.User;
+import proj.form.Filter.UserFilterForm;
 import proj.service.UserService;
 import proj.service.implementation.MailSender;
 import proj.service.implementation.validator.UserValidator;
 
 import javax.validation.Valid;
+
 
 /**
  * Created by SCIP on 20.09.2016.
@@ -30,6 +35,9 @@ public class UserController {
     public User getForm(){
         return new User();
     }
+
+    @ModelAttribute("filter")
+    public UserFilterForm userFilterForm(){return new UserFilterForm();}
 
     @InitBinder("user")
     protected void initBinder(WebDataBinder webDataBinder){
@@ -50,5 +58,13 @@ public class UserController {
         userService.save(user);
         mailSender.sendMail("Registration mail", user.getLogin(), "Registration success! Thank you for registering");
         return "redirect:/login";
+    }
+
+    @RequestMapping("/admin/users")
+    public String showUsers(Model model,
+                            @PageableDefault(20)Pageable pageable,
+                            @ModelAttribute("filter") UserFilterForm userFilterForm){
+        model.addAttribute("allUsers", userService.findAll(pageable, userFilterForm));
+        return "users";
     }
 }
