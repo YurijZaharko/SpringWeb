@@ -50,7 +50,7 @@
                 <security:authorize access="isAuthenticated() and hasRole('ROLE_ADMIN')" >
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manager<span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Users<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="/admin/users">Users list</a></li>
                             </ul>
