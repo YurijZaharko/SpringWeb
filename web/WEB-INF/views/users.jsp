@@ -37,7 +37,8 @@
         <div class="col-md-12">
             <form:form action="/admin/users" method="post" class="form-inline" modelAttribute="user">
                 <form:hidden path="id"/>
-                <form:hidden path="role"/>
+
+                <form:hidden path="registrationDate"/>
                 <custom:hiddenInputs excludeParams="name, id"/>
                 <div class="form-group">
                     <form:errors path="login"/>
@@ -45,7 +46,7 @@
                 </div>
                 <div class="form-group">
                     <form:errors path="password"/>
-                    <form:input path="password" placeholder="Password"/>
+                    <form:input path="password" placeholder="Password" type="password"/>
                 </div>
                 <div class="form-group">
                     <form:errors path="name"/>
@@ -59,10 +60,14 @@
                     <form:errors path="phoneNumber"/>
                     <form:input path="phoneNumber" placeholder="Phone Number"/>
                 </div>
-                <form:hidden path="registrationDate"/>
+                <div class="form-group">
+                    <form:select path="role">
+                        <form:options/>
+                    </form:select>
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Create</button>
+                </div>
                 </div>
             </form:form>
         </div>
@@ -73,6 +78,10 @@
         <tr>
             <td>#</td>
             <td>Name</td>
+            <td>Surname</td>
+            <td>Phone number</td>
+            <td>Registration date</td>
+            <td>Role</td>
         </tr>
         <c:forEach items="${allUsers.content}" var="oneUser">
             <tr>
@@ -84,6 +93,7 @@
                 <td>${oneUser.role}</td>
                 <td><a href="/admin/users/delete/${oneUser.id}<custom:allParams/>" class="btn btn-danger">Delete</a> </td>
                 <td><a href="/admin/users/update/${oneUser.id}<custom:allParams/>" class="btn btn-warning">Update</a></td>
+
             </tr>
         </c:forEach>
     </table>
