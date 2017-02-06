@@ -7,10 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
+import proj.controller.staticMethod.CommonMethod;
 import proj.entity.User;
 import proj.form.Filter.UserFilterForm;
 import proj.service.UserService;
@@ -60,10 +58,32 @@ public class UserController {
         return "redirect:/login";
     }
 
+    @RequestMapping(value = "/admin/users", method = RequestMethod.POST)
+    public String save(@ModelAttribute("user") @Valid User user,
+                       BindingResult bindingResult,
+                       @PageableDefault(20) Pageable pageable,
+                       @ModelAttribute("filter") UserFilterForm userFilterForm,
+                       Model model){
+        if (bindingResult.hasErrors()){
+            return "users";
+        }
+        userService.save(user);
+        return "redirect:/admin/users"  + CommonMethod.getParams(pageable, userFilterForm);
+    }
+
     @RequestMapping("/admin/users")
     public String showUsers(Model model,
                             @PageableDefault(20)Pageable pageable,
                             @ModelAttribute("filter") UserFilterForm userFilterForm){
+        model.addAttribute("allUsers", userService.findAll(pageable, userFilterForm));
+        return "users";
+    }
+
+    @RequestMapping("/admin/users/update/{id}")
+    public String updateUsers(@PathVariable("id") int id, Model model,
+                              @PageableDefault(20) Pageable pageable,
+                              @ModelAttribute(value = "filter")  UserFilterForm userFilterForm){
+        model.addAttribute("user", userService.findById(id));
         model.addAttribute("allUsers", userService.findAll(pageable, userFilterForm));
         return "users";
     }
