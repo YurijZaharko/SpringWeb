@@ -15,6 +15,8 @@ public class Product {
 
     private BigDecimal price;
 
+    private BigDecimal enterPrice;
+
     private String productName;
 
     private String partNumber;
