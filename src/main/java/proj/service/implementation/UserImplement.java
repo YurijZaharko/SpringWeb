@@ -50,7 +50,9 @@ public class UserImplement implements UserService, UserDetailsService {
             user.setRole(Role.ROLE_USER);
         }
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        user.setRegistrationDate();
+        if(user.getRegistrationDate() == null){
+            user.createRegistrationDate();
+        }
         userRepository.save(user);
     }
 
@@ -68,7 +70,7 @@ public class UserImplement implements UserService, UserDetailsService {
             user.setPassword(bCryptPasswordEncoder.encode("admin"));
             user.setLogin("scipgames@gmail.com");
             user.setId(1);
-            user.setRegistrationDate();
+            user.createRegistrationDate();
             userRepository.save(user);
         }
     }
