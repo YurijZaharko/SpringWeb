@@ -36,6 +36,7 @@ public class User implements UserDetails{
     private String registrationDate;
 
     public User() {
+
     }
 
     @Override
@@ -107,7 +108,11 @@ public class User implements UserDetails{
         return registrationDate;
     }
 
-    public void setRegistrationDate() {
+    public void setRegistrationDate(String registrationDate) {
+        this.registrationDate = registrationDate;
+    }
+
+    public void createRegistrationDate() {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         registrationDate = simpleDateFormat.format(timestamp);
