@@ -2,6 +2,8 @@ package proj.entity;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by SCIP on 26.07.2016.
@@ -14,8 +16,6 @@ public class Product {
     private int id;
 
     private BigDecimal price;
-
-    private BigDecimal enterPrice;
 
     private String productName;
 
@@ -39,6 +39,9 @@ public class Product {
 
     @ManyToOne(fetch = FetchType.LAZY)
     private PropertyAndValueString propertyAndValueString;
+
+    @OneToMany(mappedBy = "product")
+    private List<OrderField> orderFields = new ArrayList<>();
 
     public Product() {}
 
@@ -134,5 +137,13 @@ public class Product {
 
     public void setPropertyAndValueString(PropertyAndValueString propertyAndValueString) {
         this.propertyAndValueString = propertyAndValueString;
+    }
+
+    public List<OrderField> getOrderFields() {
+        return orderFields;
+    }
+
+    public void setOrderFields(List<OrderField> orderFields) {
+        this.orderFields = orderFields;
     }
 }
