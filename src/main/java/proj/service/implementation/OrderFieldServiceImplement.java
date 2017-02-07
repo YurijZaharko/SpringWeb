@@ -13,7 +13,7 @@ import proj.service.OrderFieldService;
 public class OrderFieldServiceImplement implements OrderFieldService{
 
     @Autowired
-    OrderFieldRepository orderFieldRepository;
+    private OrderFieldRepository orderFieldRepository;
 
     @Override
     public OrderField findById(int id) {
