@@ -17,7 +17,7 @@ import java.util.List;
 @Entity
 public class User implements UserDetails{
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Enumerated
@@ -34,6 +34,9 @@ public class User implements UserDetails{
     private String phoneNumber;
 
     private String registrationDate;
+
+    @OneToMany(mappedBy = "user")
+    private List<UserOrder> userOrders = new ArrayList<>();
 
     public User() {
 
@@ -140,6 +143,14 @@ public class User implements UserDetails{
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public List<UserOrder> getUserOrders() {
+        return userOrders;
+    }
+
+    public void setUserOrders(List<UserOrder> userOrders) {
+        this.userOrders = userOrders;
     }
 
     @Override
