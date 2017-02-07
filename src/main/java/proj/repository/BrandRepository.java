@@ -20,8 +20,5 @@ public interface BrandRepository extends JpaRepository<Brand,Integer>, JpaSpecif
     @Query("DELETE FROM Brand brand WHERE brand.id=:id" )
     void deleteById(@Param("id") int id);
 
-
     Brand findById(int id);
-
-
 }
