@@ -17,7 +17,7 @@ public class Brand {
     private String name;
 
     @OneToMany(mappedBy = "brand")
-    private List<Product> productList = new ArrayList<Product>();
+    private List<Product> productList = new ArrayList<>();
 
     public Brand() {
     }
