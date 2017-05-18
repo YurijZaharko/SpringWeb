@@ -10,16 +10,36 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="custom" uri="/WEB-INF/custom.tld" %>
 <div class="container">
-    <div class="col-md-3">
+    <div class="col-md-12">
         <form:form action="/admin/adminCategory" method="post" class="form-inline" modelAttribute="category">
             <form:hidden path="id"/>
             <custom:hiddenInputs excludeParams="name, id"/>
             <div class="form-group">
-                <%--<input name="name" placeholder="Name">--%>
+                <label for="name">Name</label>
+                <form:input path="name" placeholder="name" id="name" />
                 <form:errors path="name"/>
-                <form:input path="name" placeholder="name"/>
-                    <button type="submit" class="btn btn-primary">Create</button>
             </div>
+            <div class="form-group">
+                <label for="rootCategory">Root category</label>
+                <form:checkbox path="rootCategory" id="rootCategory" />
+            </div>
+            <c:choose>
+                <c:when test="${category.rootCategory == false}">
+                    <form:select path="parentId" items="${rootCategories}" itemLabel="name" itemValue="id">
+                        <form:options/>
+                    </form:select>
+                </c:when>
+                <c:when test="${category.rootCategory == true}">
+                    <form:select path="parentId" items="${rootCategories}" itemLabel="name" itemValue="id" disabled="true">
+                        <form:options/>
+                    </form:select>
+                </c:when>
+            </c:choose>
+
+            <div class="form-group">
+
+            </div>
+            <button type="submit" class="btn btn-primary">Create</button>
         </form:form>
     </div>
     <div class="col-md-3">
@@ -45,17 +65,18 @@
     </div>
 
     <table class="table table-hover">
-
-        <tr>
+        <tr class="active">
             <td>#</td>
             <td>Name</td>
+            <td>Add property</td>
+            <td>Delete</td>
+            <td>Update</td>
         </tr>
         <c:forEach items="${categories.content}" var="category">
             <tr>
                 <td>${category.id}</td>
                 <td>${category.name}</td>
                 <td><a href="/admin/adminCategory/categoryWithProperty/${category.id}" class="btn btn-primary">Add String Property</a></td>
-                <td><a href="" class="btn btn-primary">Add Integer Property</a></td>
                 <td><a href="/admin/adminCategory/delete/${category.id}<custom:allParams/>" class="btn btn-danger">Delete</a> </td>
                 <td><a href="/admin/adminCategory/update/${category.id}<custom:allParams/>" class="btn btn-warning">Update</a></td>
             </tr>

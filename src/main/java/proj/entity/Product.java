@@ -17,6 +17,8 @@ public class Product {
 
     private BigDecimal price;
 
+    private BigDecimal sellPrice;
+
     private String productName;
 
     private String partNumber;
@@ -34,16 +36,13 @@ public class Product {
     @ManyToOne(fetch = FetchType.LAZY)
     private Country country;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    private PropertyAndValueInteger propertyAndValueInteger;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    private PropertyAndValueString propertyAndValueString;
+    @OneToMany(mappedBy = "product")
+    private List<PropertyAndValueString> propertyAndValueStringList;
 
     @OneToMany(mappedBy = "product")
     private List<OrderField> orderFields = new ArrayList<>();
 
-    public Product() {}
+    public Product(){}
 
     public Product(BigDecimal price, String productName, String partNumber) {
         this.price = price;
@@ -123,20 +122,12 @@ public class Product {
         this.path = path;
     }
 
-    public PropertyAndValueInteger getPropertyAndValueInteger() {
-        return propertyAndValueInteger;
+    public List<PropertyAndValueString> getPropertyAndValueStringList() {
+        return propertyAndValueStringList;
     }
 
-    public void setPropertyAndValueInteger(PropertyAndValueInteger propertyAndValueInteger) {
-        this.propertyAndValueInteger = propertyAndValueInteger;
-    }
-
-    public PropertyAndValueString getPropertyAndValueString() {
-        return propertyAndValueString;
-    }
-
-    public void setPropertyAndValueString(PropertyAndValueString propertyAndValueString) {
-        this.propertyAndValueString = propertyAndValueString;
+    public void setPropertyAndValueStringList(List<PropertyAndValueString> propertyAndValueStringList) {
+        this.propertyAndValueStringList = propertyAndValueStringList;
     }
 
     public List<OrderField> getOrderFields() {
@@ -145,5 +136,13 @@ public class Product {
 
     public void setOrderFields(List<OrderField> orderFields) {
         this.orderFields = orderFields;
+    }
+
+    public BigDecimal getSellPrice() {
+        return sellPrice;
+    }
+
+    public void setSellPrice(BigDecimal sellPrice) {
+        this.sellPrice = sellPrice;
     }
 }

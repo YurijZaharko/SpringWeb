@@ -1,5 +1,7 @@
 package proj.entity;
 
+import org.hibernate.annotations.BatchSize;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 
@@ -8,7 +10,8 @@ import java.math.BigDecimal;
  */
 
 @Entity
-@Table(indexes = {@Index(columnList = "outPrice")})
+@BatchSize(size = 50)
+@Table(indexes = {@Index(columnList = "outPrice"), @Index(columnList = "inPrice")})
 public class OrderField {
 
     @Id
@@ -20,13 +23,14 @@ public class OrderField {
 
     private int quantity;
 
+    private BigDecimal inPrice;
+
     private BigDecimal outPrice;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private UserOrder userOrder;
 
-    public OrderField() {
-    }
+    public OrderField() {}
 
     public int getId() {
         return id;
@@ -56,7 +60,7 @@ public class OrderField {
         return outPrice;
     }
 
-    public void setOutPrice(BigDecimal outPrice) {
+    public void setSellPrice(BigDecimal outPrice) {
         this.outPrice = outPrice;
     }
 
@@ -66,5 +70,13 @@ public class OrderField {
 
     public void setUserOrder(UserOrder userOrder) {
         this.userOrder = userOrder;
+    }
+
+    public BigDecimal getInPrice() {
+        return inPrice;
+    }
+
+    public void setInPrice(BigDecimal inPrice) {
+        this.inPrice = inPrice;
     }
 }

@@ -1,7 +1,5 @@
 package proj.entity;
 
-import org.hibernate.annotations.BatchSize;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,22 +17,16 @@ public class Category {
 
     private String name;
 
+    private boolean rootCategory;
+
     @ManyToOne(fetch = FetchType.LAZY)
     private Category parentId;
 
-    @OneToMany
+    @OneToMany(mappedBy = "parentId")
     private List<Category> categoryChild = new ArrayList<>();
 
     @OneToMany(mappedBy = "category")
     private List<Product> productList = new ArrayList<>();
-
-
-    @ManyToMany
-    @JoinTable(name = "Category_IntegerProperties", joinColumns =
-    @JoinColumn(name = "fk_Category"), inverseJoinColumns =
-    @JoinColumn(name = "fk_IntegerProperties"))
-    private List<IntegerProperties> integerPropertiesList = new ArrayList<>();
-
 
     @ManyToMany
     @JoinTable(name = "Category_StringProperties",joinColumns =
@@ -70,6 +62,14 @@ public class Category {
         this.name = name;
     }
 
+    public boolean isRootCategory() {
+        return rootCategory;
+    }
+
+    public void setRootCategory(boolean rootCategory) {
+        this.rootCategory = rootCategory;
+    }
+
     public Category getParentId() {
         return parentId;
     }
@@ -92,14 +92,6 @@ public class Category {
 
     public void setProductList(List<Product> productList) {
         this.productList = productList;
-    }
-
-    public List<IntegerProperties> getIntegerPropertiesList() {
-        return integerPropertiesList;
-    }
-
-    public void setIntegerPropertiesList(List<IntegerProperties> integerPropertiesList) {
-        this.integerPropertiesList = integerPropertiesList;
     }
 
     public List<StringProperties> getStringPropertiesList() {

@@ -1,4 +1,6 @@
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: SCIP
@@ -8,26 +10,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<![endif]-->
-<html>
+<div class="container">
 
-  <body>
+</div>
 
-  <div class="container">
-    <div class="form-inline">
-      <security:authorize access="!isAuthenticated()">
-        <a href="/registration" class="btn btn-primary">Register</a>
-      </security:authorize>
-
-      <security:authorize access="!isAuthenticated()">
-        <a href="/login" class="btn btn-primary">Login</a>
-      </security:authorize>
-
-      <security:authorize access="isAuthenticated() and hasRole('ROLE_ADMIN')">
-        <a href="/admin" class="btn btn-primary">Admin panel</a>
-      </security:authorize>
-    </div>
-  </div>
-
-  </body>
-</html>

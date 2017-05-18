@@ -32,7 +32,6 @@
                         <ul class="dropdown-menu">
                             <li><a href="/admin/adminCategory">Create Category</a></li>
                             <li><a href="/admin/adminStringProperties">Create string Properties</a></li>
-                            <li><a href="/admin/adminIntegerProperties">Create Integer Property</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -42,7 +41,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manager<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="/admin/manager">Second</a></li>
+                                <li><a href="/admin/manager/orderList">Orders</a></li>
                             </ul>
                         </li>
                     </ul>

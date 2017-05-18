@@ -36,11 +36,9 @@ public class User implements UserDetails{
     private String registrationDate;
 
     @OneToMany(mappedBy = "user")
-    private List<UserOrder> userOrders = new ArrayList<>();
+    private List<UserOrder> userOrderList = new ArrayList<>();
 
-    public User() {
-
-    }
+    public User() {}
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -145,12 +143,12 @@ public class User implements UserDetails{
         this.phoneNumber = phoneNumber;
     }
 
-    public List<UserOrder> getUserOrders() {
-        return userOrders;
+    public List<UserOrder> getUserOrderList() {
+        return userOrderList;
     }
 
-    public void setUserOrders(List<UserOrder> userOrders) {
-        this.userOrders = userOrders;
+    public void setUserOrderList(List<UserOrder> userOrders) {
+        this.userOrderList = userOrders;
     }
 
     @Override

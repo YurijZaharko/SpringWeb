@@ -9,4 +9,6 @@ import proj.entity.User;
  */
 public interface UserRepository extends JpaRepository<User, Integer>, JpaSpecificationExecutor<User> {
     User findByLogin(String login);
+
+    User findByPhoneNumber(String phoneNumber);
 }

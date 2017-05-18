@@ -1,5 +1,7 @@
 package proj.entity;
 
+import org.hibernate.annotations.BatchSize;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +11,7 @@ import java.util.List;
  */
 
 @Entity
+@BatchSize(size = 20)
 public class UserOrder {
 
     @Id
@@ -18,13 +21,16 @@ public class UserOrder {
     @ManyToOne(fetch = FetchType.LAZY)
     private User user;
 
-    private boolean delivery;
+    @Enumerated(EnumType.STRING)
+    private OrderDelivery orderDelivery;
+
+    @Enumerated(EnumType.STRING)
+    private OrderStatus orderStatus;
 
     @OneToMany(mappedBy = "userOrder")
     private List<OrderField> orderFields = new ArrayList<>();
 
-    public UserOrder() {
-    }
+    public UserOrder() {}
 
     public int getId() {
         return id;
@@ -42,19 +48,27 @@ public class UserOrder {
         this.user = user;
     }
 
-    public Boolean getDelivery() {
-        return delivery;
-    }
-
-    public void setDelivery(Boolean delivery) {
-        this.delivery = delivery;
-    }
-
     public List<OrderField> getOrderFields() {
         return orderFields;
     }
 
     public void setOrderFields(List<OrderField> orderFields) {
         this.orderFields = orderFields;
+    }
+
+    public OrderDelivery getOrderDelivery() {
+        return orderDelivery;
+    }
+
+    public void setOrderDelivery(OrderDelivery orderDelivery) {
+        this.orderDelivery = orderDelivery;
+    }
+
+    public OrderStatus getOrderStatus() {
+        return orderStatus;
+    }
+
+    public void setOrderStatus(OrderStatus orderStatus) {
+        this.orderStatus = orderStatus;
     }
 }

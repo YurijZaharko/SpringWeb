@@ -4,6 +4,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import proj.form.FilterForm;
 
+import java.math.BigDecimal;
+
 /**
  * Created by SCIP on 16.09.2016.
  */
@@ -26,5 +28,9 @@ public class CommonMethod {
         buffer.append("&search=");
         buffer.append(form.getSearch());
         return buffer.toString();
+    }
+
+    public static BigDecimal calculatePrice(BigDecimal plus, BigDecimal multiply, BigDecimal entryPrice) {
+        return (entryPrice.add(plus).multiply(multiply));
     }
 }

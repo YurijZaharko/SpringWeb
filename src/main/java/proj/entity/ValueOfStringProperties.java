@@ -13,16 +13,13 @@ public class ValueOfStringProperties {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     private String stringValue;
 
-    @ManyToMany
-    @JoinTable(name = "PropertyAndValueString_ValueOfStringProperties", joinColumns =
-    @JoinColumn(name = "fk_ValueOfStringProperties"), inverseJoinColumns =
-    @JoinColumn(name = "fk_PropertyAndValueString"))
+    @OneToMany(mappedBy = "valueOfStringProperties")
     private List<PropertyAndValueString> propertyAndValueStrings = new ArrayList<>();
 
-    public ValueOfStringProperties() {
-    }
+    public ValueOfStringProperties() {}
 
     public ValueOfStringProperties(String stringValue) {
         this.stringValue = stringValue;
@@ -50,5 +47,20 @@ public class ValueOfStringProperties {
 
     public void setPropertyAndValueStrings(List<PropertyAndValueString> propertyAndValueStrings) {
         this.propertyAndValueStrings = propertyAndValueStrings;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof ValueOfStringProperties)) return false;
+
+        ValueOfStringProperties that = (ValueOfStringProperties) o;
+
+        return stringValue != null ? stringValue.equals(that.stringValue) : that.stringValue == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return stringValue != null ? stringValue.hashCode() : 0;
     }
 }
