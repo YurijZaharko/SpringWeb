@@ -5,12 +5,15 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import proj.entity.Product;
-
 import proj.form.Filter.ProductFilterForm;
+import proj.form.Filter.ProductFrontFilterForm;
 import proj.form.ProductForm;
-import proj.repository.*;
-import proj.service.*;
+import proj.repository.CategoryRepository;
+import proj.repository.ProductRepository;
+import proj.service.FileWriter;
+import proj.service.ProductService;
 import proj.service.implementation.specification.ProductFilterAdapter;
+import proj.service.implementation.specification.ProductFrontFilterAdapter;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -23,26 +26,12 @@ public class ProductServiceImplement implements ProductService {
 
     @Autowired
     ProductRepository productRepository;
-    @Autowired
-    BrandRepository brandRepository;
-    @Autowired
-    CountryRepository countryRepository;
+
     @Autowired
     CategoryRepository categoryRepository;
+
     @Autowired
     private FileWriter fileWriter;
-
-//    @Override
-//    public void save(BigDecimal price, String name, String partNumber, int brandId, int countryId, int categoryId) {
-//        if (productRepository.findByProductName(name) == null && productRepository.findByPartNumber(partNumber) == null){
-//            Product product = new Product(price, name, partNumber);
-//            product.setBrand(brandService.findById(brandId));
-//            product.setCountry(countryService.findById(categoryId));
-//            product.setCategory(categoryService.findById(categoryId));
-//            productRepository.save(product);
-//        }
-//    }
-
 
     @Override
     public void save(ProductForm productForm) {
@@ -56,8 +45,8 @@ public class ProductServiceImplement implements ProductService {
 //        product.setCategory(categoryRepository.findById(Integer.valueOf(productForm.getCategory().getName())));
 //        product.setBrand(brandRepository.findById(Integer.valueOf(productForm.getBrand().getName())));
 //        product.setCountry(countryRepository.findById(Integer.valueOf(productForm.getCountry().getName())));
-        product.setPropertyAndValueInteger(productForm.getPropertyAndValueInteger());
-        product.setPropertyAndValueString(productForm.getPropertyAndValueString());
+//        product.setPropertyAndValueInteger(productForm.getPropertyAndValueInteger());
+        product.setPropertyAndValueStringList(productForm.getPropertyAndValueStringList());
         product.setId(productForm.getId());
 //        brandRepository.save(productForm.getBrand());
 //        categoryRepository.save(productForm.getCategory());
@@ -111,16 +100,10 @@ public class ProductServiceImplement implements ProductService {
         productForm.setCategory(product.getCategory());
         productForm.setBrand(product.getBrand());
         productForm.setCountry(product.getCountry());
-        productForm.setPropertyAndValueString(product.getPropertyAndValueString());
-        productForm.setPropertyAndValueInteger(product.getPropertyAndValueInteger());
+        productForm.setPropertyAndValueStringList(product.getPropertyAndValueStringList());
         productForm.setPath(product.getPath());
         productForm.setVersion(product.getVersion());
         return productForm;
-    }
-
-    @Override
-    public Page<Product> findAll(Pageable pageable) {
-        return productRepository.findAll(pageable);
     }
 
     @Override
@@ -129,13 +112,15 @@ public class ProductServiceImplement implements ProductService {
     }
 
     @Override
-    public Product findOneByIdWithValue(int id) {
-//        Product product =  productRepository.findById(id);
-//        product.setCategory(categoryRepository.);
-
+    public Page<Product> findProduct(Pageable pageable, ProductFrontFilterForm productFrontFilterForm) {
         return null;
     }
 
-
+    @Override
+    public Page<Product> findProductByCategoryId(Pageable pageable, ProductFrontFilterForm productFrontFilterForm, int id) {
+        productFrontFilterForm.setCategoryId(id);
+        productFrontFilterForm.setCategoryName(categoryRepository.findById(id).getName());
+        return productRepository.findAll(new ProductFrontFilterAdapter(productFrontFilterForm), pageable);
+    }
 
 }

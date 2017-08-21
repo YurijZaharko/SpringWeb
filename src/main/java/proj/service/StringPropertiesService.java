@@ -8,6 +8,7 @@ import proj.form.Filter.StringPropertiesFilterForm;
 import proj.form.PropertyAndValueStringsForm;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by SCIP on 12.08.2016.
@@ -41,4 +42,8 @@ public interface StringPropertiesService {
     PropertyAndValueStringsForm findForFormMap(int id);
 
     Page<StringProperties> findAll(Pageable pageable, StringPropertiesFilterForm stringPropertiesFilterForm);
+
+    Map<Integer, List<Integer>> findPropertyAndValueByCategoryId(int id);
+
+    void saveValueFromForm(PropertyAndValueStringsForm propertyAndValueStringsForm);
 }

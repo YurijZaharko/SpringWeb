@@ -6,9 +6,6 @@ import org.springframework.validation.Validator;
 import proj.form.ProductForm;
 import proj.service.ProductService;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 
 /**
  * Created by SC on 05.09.2016.

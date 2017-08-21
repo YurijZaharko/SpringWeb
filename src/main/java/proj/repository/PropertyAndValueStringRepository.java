@@ -13,6 +13,10 @@ import java.util.List;
 public interface PropertyAndValueStringRepository extends JpaRepository<PropertyAndValueString, Integer> {
     PropertyAndValueString findById(int id);
 
-    @Query("SELECT pvs FROM PropertyAndValueString pvs LEFT JOIN FETCH pvs.valueOfStringPropertiesList WHERE pvs.id=:id")
+    @Query("SELECT pvs FROM PropertyAndValueString pvs LEFT JOIN FETCH pvs.valueOfStringProperties WHERE pvs.id=:id")
     PropertyAndValueString findByIdWithValue(@Param("id") int id);
+
+    @Query("SELECT pvs FROM PropertyAndValueString pvs LEFT JOIN FETCH pvs.valueOfStringProperties " +
+            "LEFT JOIN FETCH pvs.stringProperties sp LEFT JOIN FETCH sp.categoryList c WHERE c.id=:id")
+    List<PropertyAndValueString> findByCategoryId(@Param("id") int id);
 }

@@ -40,4 +40,9 @@ public interface CategoryService{
 
     void removePropertyFromCategory(Pageable pageable, CategoryFilterForm categoryFilterForm, int catId, int id);
 
+    List<Category> findByRootCategoryTrue();
+
+    Category findByIdFetchParentId(int id);
+
+    List<Category> findByRootCategoryTrueFetchChild();
 }

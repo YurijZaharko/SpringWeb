@@ -14,7 +14,9 @@ public class Country {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     private String name;
+
     @OneToMany(mappedBy = "country")
     private List<Product> productList = new ArrayList<Product>();
 

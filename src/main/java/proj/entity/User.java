@@ -5,6 +5,8 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -15,20 +17,28 @@ import java.util.List;
 @Entity
 public class User implements UserDetails{
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
-    private String login;
-
-    private String mail;
-
-    private String password;
 
     @Enumerated
     private Role role;
 
-    public User() {
-    }
+    private String login;
+
+    private String password;
+
+    private String name;
+
+    private String surname;
+
+    private String phoneNumber;
+
+    private String registrationDate;
+
+    @OneToMany(mappedBy = "user")
+    private List<UserOrder> userOrderList = new ArrayList<>();
+
+    public User() {}
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -54,10 +64,6 @@ public class User implements UserDetails{
         this.login = login;
     }
 
-    public void setMail(String mail) {
-        this.mail = mail;
-    }
-
     public void setRole(Role role) {
         this.role = role;
     }
@@ -68,10 +74,6 @@ public class User implements UserDetails{
 
     public String getLogin() {
         return login;
-    }
-
-    public String getMail() {
-        return mail;
     }
 
     public Role getRole() {
@@ -103,5 +105,71 @@ public class User implements UserDetails{
         return true;
     }
 
+    public String getRegistrationDate() {
+        return registrationDate;
+    }
 
+    public void setRegistrationDate(String registrationDate) {
+        this.registrationDate = registrationDate;
+    }
+
+    public void createRegistrationDate() {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        registrationDate = simpleDateFormat.format(timestamp);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public List<UserOrder> getUserOrderList() {
+        return userOrderList;
+    }
+
+    public void setUserOrderList(List<UserOrder> userOrders) {
+        this.userOrderList = userOrders;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof User)) return false;
+
+        User user = (User) o;
+
+        if (login != null ? !login.equals(user.login) : user.login != null) return false;
+        if (name != null ? !name.equals(user.name) : user.name != null) return false;
+        if (surname != null ? !surname.equals(user.surname) : user.surname != null) return false;
+        return phoneNumber != null ? phoneNumber.equals(user.phoneNumber) : user.phoneNumber == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = login != null ? login.hashCode() : 0;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (surname != null ? surname.hashCode() : 0);
+        result = 31 * result + (phoneNumber != null ? phoneNumber.hashCode() : 0);
+        return result;
+    }
 }

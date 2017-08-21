@@ -1,7 +1,5 @@
 package proj.repository;
 
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Modifying;
@@ -9,7 +7,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 import proj.entity.Category;
-import proj.form.Filter.CategoryFilterForm;
 
 import java.util.List;
 
@@ -38,4 +35,11 @@ public interface CategoryRepository extends JpaRepository<Category, Integer>, Jp
     @Query("SELECT DISTINCT c FROM Category c LEFT JOIN FETCH c.categoryChild WHERE c.id=:id")
     List<Category> findByIdWithCategoryChild(@Param("id") int id);
 
+    List<Category> findByRootCategoryTrue();
+
+    @Query("SELECT c FROM Category c LEFT JOIN FETCH c.parentId WHERE c.id=:id")
+    Category findByIdFetchParentId(@Param("id") int id);
+
+    @Query("SELECT DISTINCT c FROM Category c LEFT JOIN FETCH c.categoryChild cc WHERE c.rootCategory = TRUE")
+    List<Category> findByRootCategoryTrueFetchChild();
 }

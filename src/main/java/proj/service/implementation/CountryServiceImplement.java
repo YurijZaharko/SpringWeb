@@ -18,8 +18,13 @@ import java.util.List;
 @Service
 public class CountryServiceImplement implements CountryService {
 
+    private final CountryRepository countryRepository;
+
     @Autowired
-    CountryRepository countryRepository;
+    public CountryServiceImplement(CountryRepository countryRepository) {
+        this.countryRepository = countryRepository;
+    }
+
     @Override
     public void save(String name) {
         if(countryRepository.findByName(name) == null){

@@ -4,9 +4,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import proj.entity.Product;
 import proj.form.Filter.ProductFilterForm;
+import proj.form.Filter.ProductFrontFilterForm;
 import proj.form.ProductForm;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -27,11 +27,9 @@ public interface ProductService {
 
     ProductForm findForForm(int id);
 
-    Page<Product> findAll(Pageable pageable);
-
     Page<Product> findAll(Pageable pageable, ProductFilterForm productFilterForm);
 
-    Product findOneByIdWithValue(int id);
+    Page findProduct(Pageable pageable, ProductFrontFilterForm productFrontFilterForm);
 
-//    List<Product> findAllWithValue(int id);
+    Page<Product> findProductByCategoryId(Pageable pageable, ProductFrontFilterForm productFrontFilterForm, int id);
 }

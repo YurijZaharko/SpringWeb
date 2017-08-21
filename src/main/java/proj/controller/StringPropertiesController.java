@@ -11,7 +11,6 @@ import proj.controller.staticMethod.CommonMethod;
 import proj.entity.StringProperties;
 import proj.entity.ValueOfStringProperties;
 import proj.form.Filter.StringPropertiesFilterForm;
-import proj.form.PropertyAndValueStringsForm;
 import proj.service.StringPropertiesService;
 import proj.service.ValueOfStringPropertiesService;
 import proj.service.implementation.editor.ValueOfStringPropertiesEditor;
@@ -22,10 +21,10 @@ import proj.service.implementation.editor.ValueOfStringPropertiesEditor;
 @Controller
 public class StringPropertiesController {
     @Autowired
-    StringPropertiesService stringPropertiesService;
+    private StringPropertiesService stringPropertiesService;
 
     @Autowired
-    ValueOfStringPropertiesService valueOfStringPropertiesService;
+    private ValueOfStringPropertiesService valueOfStringPropertiesService;
 
     @InitBinder("valueOfStringProperties")
     protected void inBinder(WebDataBinder webDataBinder){
