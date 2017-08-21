@@ -13,6 +13,7 @@ import proj.entity.Brand;
  */
 
 public interface BrandRepository extends JpaRepository<Brand,Integer>, JpaSpecificationExecutor<Brand> {
+
     Brand findByName(String name);
 
     @Modifying

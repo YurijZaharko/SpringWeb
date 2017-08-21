@@ -22,8 +22,12 @@ public class CategoryServiceImplement implements CategoryService {
     @Autowired
     private CategoryRepository categoryRepository;
 
+    private final StringPropertiesRepository stringPropertiesRepository;
+
     @Autowired
-    private StringPropertiesRepository stringPropertiesRepository;
+    public CategoryServiceImplement(StringPropertiesRepository stringPropertiesRepository) {
+        this.stringPropertiesRepository = stringPropertiesRepository;
+    }
 
     @Override
     public void save(String name) {
