@@ -22,13 +22,22 @@ import javax.validation.Valid;
  * Created by SCIP on 25.08.2016.
  */
 @Controller
+@RequestMapping("/admin")
 public class BrandController {
+    
+    private final BrandService brandService;
+    
+    private static final String ADMIN_BRAND = "adminBrand";
+    private static final String REDIRECT = "redirect:/admin/adminBrand";
+    private static final String SEPERATOR = "/";
+    
     @Autowired
-    BrandService brandService;
+    public BrandController(BrandService brandService) {
+        this.brandService = brandService;
+    }
 
     @InitBinder("brand")
     protected void initBinder(WebDataBinder webDataBinder){
-//        webDataBinder.registerCustomEditor(Brand.class, new BrandEditor(brandService));
         webDataBinder.setValidator(new BrandValidator(brandService));
     }
 
@@ -42,42 +51,42 @@ public class BrandController {
         return new BrandFilterForm();
     }
 
-    @RequestMapping("/admin/adminBrand")
+    @RequestMapping(SEPERATOR + ADMIN_BRAND)
     public String showBrand(Model model,
                             @PageableDefault(5) Pageable pageable,
                             @ModelAttribute(value = "brandFilterForm") BrandFilterForm brandFilterForm){
         model.addAttribute("page", brandService.findAll(pageable, brandFilterForm));
-        return "adminBrand";
+        return ADMIN_BRAND;
     }
 
     @Modifying
     @Transactional
-    @RequestMapping("/admin/adminBrand/delete/{id}")
+    @RequestMapping("/adminBrand/delete/{id}")
     public String deleteBrand(@PathVariable int id,
                               @PageableDefault(5) Pageable pageable,
                               @ModelAttribute(value = "brandFilterForm") BrandFilterForm brandFilterForm){
         brandService.delete(id);
-        return "redirect:/admin/adminBrand" + CommonMethod.getParams(pageable, brandFilterForm);
+        return REDIRECT  + CommonMethod.getParams(pageable, brandFilterForm);
     }
 
-    @RequestMapping("/admin/adminBrand/update/{id}")
+    @RequestMapping("/adminBrand/update/{id}")
     public String updateBrand(@PathVariable int id, Model model,
                               @PageableDefault(5) Pageable pageable,
                               @ModelAttribute(value = "brandFilterForm") BrandFilterForm brandFilterForm){
         model.addAttribute("brand", brandService.findById(id));
         model.addAttribute("page", brandService.findAll(pageable, brandFilterForm));
-        return "adminBrand";
+        return ADMIN_BRAND;
     }
 
-    @RequestMapping(value = "/admin/adminBrand", method = RequestMethod.POST)
+    @RequestMapping(value = SEPERATOR + ADMIN_BRAND, method = RequestMethod.POST)
     public String save(@ModelAttribute("brand") @Valid Brand brand, BindingResult bindingResult, Model model,
                        @PageableDefault(5) Pageable pageable,
                        @ModelAttribute(value = "brandFilterForm") BrandFilterForm brandFilterForm){
         if (bindingResult.hasErrors()){
             model.addAttribute("page", brandService.findAll(pageable, brandFilterForm));
-            return "adminBrand";
+            return ADMIN_BRAND;
         }
         brandService.save(brand);
-        return "redirect:/admin/adminBrand" + CommonMethod.getParams(pageable, brandFilterForm);
+        return REDIRECT + CommonMethod.getParams(pageable, brandFilterForm);
     }
 }
