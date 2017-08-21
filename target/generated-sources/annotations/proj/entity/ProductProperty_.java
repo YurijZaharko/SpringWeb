@@ -9,10 +9,10 @@ import javax.persistence.metamodel.StaticMetamodel;
 @StaticMetamodel(ProductProperty.class)
 public abstract class ProductProperty_ {
 
-	public static volatile ListAttribute<ProductProperty, ListOfPropertyAndValueInteger> listOfPropertyAndValueIntegers;
+	public static volatile ListAttribute<ProductProperty, PropertyAndValueInteger> listOfPropertyAndValueIntegers;
 	public static volatile SingularAttribute<ProductProperty, Integer> id;
 	public static volatile ListAttribute<ProductProperty, Product> productList;
-	public static volatile ListAttribute<ProductProperty, ListOfPropertyAndValueString> listOfPropertyAndValueStrings;
+	public static volatile ListAttribute<ProductProperty, PropertyAndValueString> listOfPropertyAndValueStrings;
 
 }
 

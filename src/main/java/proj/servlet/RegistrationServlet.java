@@ -2,7 +2,7 @@ package proj.servlet;
 
 
 
-import proj.user.User;
+import proj.entity.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -29,11 +29,11 @@ public class RegistrationServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        name = req.getParameter("name");
-        eMail = req.getParameter("eMail");
-        pass = req.getParameter("pass");
-        user = new User(name, eMail, pass);
-        IndexServlet.setUser(user);
+//        name = req.getParameter("name");
+//        eMail = req.getParameter("eMail");
+//        pass = req.getParameter("pass");
+//        user = new User(name, eMail, pass);
+//        IndexServlet.setUser(user);
         resp.sendRedirect("/index");
     }
 }

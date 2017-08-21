@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript</title>
+</head>
+<body>
+<script>
+    function man(age, name){
+    var obj = {a:age, n:name};
+    return obj;
+}
+console.log(man(10, "Yurij"))
+
+    var array = [];
+    array = [man(15, "test1"), man(20, "test5"), man(40, "test20")];
+    array.sort(function (e1, e2) {
+        return e1.name > e2.name;
+    })
+</script>
+</body>
+</html>

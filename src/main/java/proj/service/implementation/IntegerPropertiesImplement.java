@@ -1,6 +1,8 @@
 package proj.service.implementation;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import proj.entity.IntegerProperties;
 import proj.repository.IntegerPropertiesRepository;
@@ -35,4 +37,26 @@ public class IntegerPropertiesImplement implements IntegerPropertiesService {
     public List<IntegerProperties> findAll() {
         return integerPropertiesRepository.findAll();
     }
+
+    @Override
+    public void deleteById(int id) {
+        integerPropertiesRepository.delete(id);
+    }
+
+    @Override
+    public IntegerProperties findById(int id) {
+        return integerPropertiesRepository.findOne(id);
+    }
+
+    @Override
+    public void save(IntegerProperties integerProperties) {
+        integerPropertiesRepository.save(integerProperties);
+    }
+
+    @Override
+    public Page<IntegerProperties> findAll(Pageable pageable) {
+        return null;
+    }
+
+
 }

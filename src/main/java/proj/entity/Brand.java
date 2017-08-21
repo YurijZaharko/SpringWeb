@@ -8,6 +8,7 @@ import java.util.List;
  * Created by SCIP on 26.07.2016.
  */
 @Entity
+@Table(indexes = {@Index(columnList = "name")})
 public class Brand {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,11 +40,4 @@ public class Brand {
         this.name = brandName;
     }
 
-    @Override
-    public String toString() {
-        return "Brand{" +
-                "id=" + id +
-                ", brandName='" + name + '\'' +
-                '}';
-    }
 }

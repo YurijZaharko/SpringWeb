@@ -1,22 +1,22 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: SCIP
-  Date: 14.08.2016
-  Time: 13:29
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Registration</title>
-</head>
-<body>
-    <h3>${message}</h3>
-    <form action="/registration" method="post">
-        <p>User Name: <input name="name" placeholder="Enter you name" >
-        <p>Your Email: <input name="eMail" placeholder="Enter you mail">
-        <p>Enter your password <input name="pass" placeholder="Enter you pass">
-        <p><input type="submit" value="Реєстрація "/>
-    </form>
-</body>
-</html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<div class="container">
+    <div class="row">
+        <c:if test="${param.fail}">
+            <div class="col-md-12 col-xs-12">
+                <p style="color: red;">Fail</p>
+            </div>
+        </c:if>
+        <form:form action="/registration" class="form-group" method="post" modelAttribute="user">
+            <div class="form-group">
+                <input name="login" placeholder="Login" class="form-control" />
+                <input name="mail" placeholder="E-mail" class="form-control" />
+                <input name="password" type="password" placeholder="Some like ***" class="form-control" />
+                <button type="submit" class="btn btn-primary">Ok</button>
+            </div>
+        </form:form>
+    </div>
+</div>
+

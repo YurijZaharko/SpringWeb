@@ -9,7 +9,14 @@ import java.util.List;
  */
 public interface ValueOfStringPropertiesService {
     void save(String stringValue);
+
+    void save(ValueOfStringProperties valueOfStringProperties);
+
     ValueOfStringProperties findByStringValue(String stringValue);
+
+    ValueOfStringProperties findById(int id);
+
     void delete(String stringValue);
+
     List<ValueOfStringProperties> findAll();
 }

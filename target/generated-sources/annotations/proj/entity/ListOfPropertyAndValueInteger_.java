@@ -6,13 +6,13 @@ import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
 @Generated(value = "org.hibernate.jpamodelgen.JPAMetaModelEntityProcessor")
-@StaticMetamodel(ListOfPropertyAndValueInteger.class)
+@StaticMetamodel(PropertyAndValueInteger.class)
 public abstract class ListOfPropertyAndValueInteger_ {
 
-	public static volatile ListAttribute<ListOfPropertyAndValueInteger, IntegerProperties> integerPropertiesList;
-	public static volatile ListAttribute<ListOfPropertyAndValueInteger, ValueOfIntegerProperties> valueOfIntegerPropertiesList;
-	public static volatile SingularAttribute<ListOfPropertyAndValueInteger, Integer> id;
-	public static volatile ListAttribute<ListOfPropertyAndValueInteger, ProductProperty> productPropertyList;
+	public static volatile ListAttribute<PropertyAndValueInteger, IntegerProperties> integerPropertiesList;
+	public static volatile ListAttribute<PropertyAndValueInteger, ValueOfIntegerProperties> valueOfIntegerPropertiesList;
+	public static volatile SingularAttribute<PropertyAndValueInteger, Integer> id;
+	public static volatile ListAttribute<PropertyAndValueInteger, Product> products;
 
 }
 

@@ -1,3 +1,4 @@
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: SCIP
@@ -11,12 +12,22 @@
 <html>
 
   <body>
-  <p><a href="payment">Payment</a></p>
-  <p><a href="registration">Registration</a></p>
-  <p><a href="contact">Contacts</a></p>
-  <p><a href="category">Category</a></p>
-  <p><a href="admin">Admin</a></p>
 
+  <div class="container">
+    <div class="form-inline">
+      <security:authorize access="!isAuthenticated()">
+        <a href="/registration" class="btn btn-primary">Register</a>
+      </security:authorize>
+
+      <security:authorize access="!isAuthenticated()">
+        <a href="/login" class="btn btn-primary">Login</a>
+      </security:authorize>
+
+      <security:authorize access="isAuthenticated() and hasRole('ROLE_ADMIN')">
+        <a href="/admin" class="btn btn-primary">Admin panel</a>
+      </security:authorize>
+    </div>
+  </div>
 
   </body>
 </html>

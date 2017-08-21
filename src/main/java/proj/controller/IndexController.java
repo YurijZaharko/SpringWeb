@@ -12,31 +12,15 @@ import proj.service.CategoryService;
  */
 @Controller
 public class IndexController {
-    @Autowired
-    CategoryService categoryService;
-
     @RequestMapping("/")
     public String showIndex(){return  "index";}
 
     @RequestMapping("/admin")
     public String showAdmin(){return "admin";}
 
-    @RequestMapping("/payment")
-    public String showPayment(){
-        return "payment";
+    @RequestMapping("/login")
+    public String showLogin() {
+        return "login";
     }
-
-    @RequestMapping("/registration")
-    public String showRegistration(){return "registration";}
-
-    @RequestMapping("/contact")
-    public String showContact(){return "contact";}
-
-    @RequestMapping("/category")
-    public String showCategory(Model model){
-        model.addAttribute("categories", categoryService.findAll());
-        return "category";
-    }
-
 
 }

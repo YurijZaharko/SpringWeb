@@ -1,10 +1,14 @@
 package proj.service.implementation;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import proj.entity.Country;
+import proj.form.Filter.CountryFilterForm;
 import proj.repository.CountryRepository;
 import proj.service.CountryService;
+import proj.service.implementation.specification.CountryFilterAdapter;
 
 import java.util.List;
 
@@ -42,5 +46,20 @@ public class CountryServiceImplement implements CountryService {
     @Override
     public Country findById(int id) {
         return countryRepository.findById(id);
+    }
+
+    @Override
+    public void save(Country country) {
+        countryRepository.save(country);
+    }
+
+    @Override
+    public Page<Country> findAll(Pageable pageable) {
+        return countryRepository.findAll(pageable);
+    }
+
+    @Override
+    public Page<Country> findAll(Pageable pageable, CountryFilterForm countryFilterForm) {
+        return countryRepository.findAll(new CountryFilterAdapter(countryFilterForm), pageable);
     }
 }

@@ -1,10 +1,17 @@
 package proj.service.implementation;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import proj.entity.Category;
+import proj.entity.StringProperties;
+import proj.form.Filter.CategoryFilterForm;
 import proj.repository.CategoryRepository;
+import proj.repository.StringPropertiesRepository;
 import proj.service.CategoryService;
+import proj.service.implementation.specification.CategoryFilterAdapter;
 
 import java.util.List;
 
@@ -15,6 +22,9 @@ import java.util.List;
 public class CategoryServiceImplement implements CategoryService {
     @Autowired
     CategoryRepository categoryRepository;
+
+    @Autowired
+    StringPropertiesRepository stringPropertiesRepository;
 
     @Override
     public void save(String name) {
@@ -49,4 +59,50 @@ public class CategoryServiceImplement implements CategoryService {
     public List<Category> findAll() {
         return categoryRepository.findAll();
     }
+
+    @Override
+    public void save(Category category) {
+        categoryRepository.save(category);
+    }
+
+    @Override
+    public List<Category> findAllWithProperty(int id) {
+        return categoryRepository.findAllWithProperty(id);
+    }
+
+    @Override
+    public List<Category> findAllWithProperty() {
+        return categoryRepository.findAllWithProperty();
+    }
+
+    @Override
+    public Category findByIdWithAllFetch(int id) {
+        return categoryRepository.findByIdWithAllFetch(id);
+    }
+
+    @Override
+    public List<Category> findByIdWithCategoryChild(int id) {
+        return categoryRepository.findByIdWithCategoryChild(id);
+    }
+
+    @Override
+    public Page<Category> findAll(Pageable pageable, CategoryFilterForm categoryFilterForm) {
+        return categoryRepository.findAll(new CategoryFilterAdapter(categoryFilterForm), pageable);
+    }
+
+    @Override
+    public void savePropertyToCategory(Pageable pageable, CategoryFilterForm categoryFilterForm, int catId, int id) {
+        Category category = categoryRepository.findByIdWithAllFetch(catId);
+        category.getStringPropertiesList().add(stringPropertiesRepository.findById(id));
+        categoryRepository.save(category);
+    }
+
+    @Override
+    public void removePropertyFromCategory(Pageable pageable, CategoryFilterForm categoryFilterForm, int catId, int id) {
+        Category category = categoryRepository.findByIdWithAllFetch(catId);
+        StringProperties stringProperties = stringPropertiesRepository.findById(id);
+        category.getStringPropertiesList().remove(stringProperties);
+        categoryRepository.save(category);
+    }
+
 }

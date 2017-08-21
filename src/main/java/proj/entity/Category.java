@@ -1,17 +1,22 @@
 package proj.entity;
 
+import org.hibernate.annotations.BatchSize;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by SCIP on 26.07.2016.
  */
 @Entity
+@Table(indexes = {@Index(columnList = "name")})
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     private String name;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -21,13 +26,15 @@ public class Category {
     private List<Category> categoryChild = new ArrayList<>();
 
     @OneToMany(mappedBy = "category")
-    private List<Product> productList = new ArrayList<Product>();
+    private List<Product> productList = new ArrayList<>();
+
 
     @ManyToMany
     @JoinTable(name = "Category_IntegerProperties", joinColumns =
     @JoinColumn(name = "fk_Category"), inverseJoinColumns =
     @JoinColumn(name = "fk_IntegerProperties"))
     private List<IntegerProperties> integerPropertiesList = new ArrayList<>();
+
 
     @ManyToMany
     @JoinTable(name = "Category_StringProperties",joinColumns =
@@ -104,15 +111,15 @@ public class Category {
     }
 
     @Override
-    public String toString() {
-        return "Category{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", parentId=" + parentId +
-                ", categoryChild=" + categoryChild +
-                ", productList=" + productList +
-                ", integerPropertiesList=" + integerPropertiesList +
-                ", stringPropertiesList=" + stringPropertiesList +
-                '}';
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Category category = (Category) o;
+        return id == category.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }

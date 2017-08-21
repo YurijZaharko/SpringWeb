@@ -1,5 +1,8 @@
 package proj.service;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import proj.entity.Category;
 import proj.entity.IntegerProperties;
 
 import java.util.List;
@@ -9,7 +12,19 @@ import java.util.List;
  */
 public interface IntegerPropertiesService {
     void save(String name);
+
     IntegerProperties findByName(String name);
+
     void delete(String name);
+
     List<IntegerProperties> findAll();
+
+    void deleteById(int id);
+
+    IntegerProperties findById(int id);
+
+    void save(IntegerProperties integerProperties);
+
+    Page<IntegerProperties> findAll(Pageable pageable);
+
 }
