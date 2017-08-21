@@ -33,9 +33,6 @@ public class Product {
     private Country country;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private PropertyAndValueInteger propertyAndValueInteger;
-
-    @ManyToOne(fetch = FetchType.LAZY)
     private PropertyAndValueString propertyAndValueString;
 
     public Product() {}
@@ -116,14 +113,6 @@ public class Product {
 
     public void setPath(String path) {
         this.path = path;
-    }
-
-    public PropertyAndValueInteger getPropertyAndValueInteger() {
-        return propertyAndValueInteger;
-    }
-
-    public void setPropertyAndValueInteger(PropertyAndValueInteger propertyAndValueInteger) {
-        this.propertyAndValueInteger = propertyAndValueInteger;
     }
 
     public PropertyAndValueString getPropertyAndValueString() {

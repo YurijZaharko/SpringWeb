@@ -28,14 +28,6 @@ public class Category {
     @OneToMany(mappedBy = "category")
     private List<Product> productList = new ArrayList<>();
 
-
-    @ManyToMany
-    @JoinTable(name = "Category_IntegerProperties", joinColumns =
-    @JoinColumn(name = "fk_Category"), inverseJoinColumns =
-    @JoinColumn(name = "fk_IntegerProperties"))
-    private List<IntegerProperties> integerPropertiesList = new ArrayList<>();
-
-
     @ManyToMany
     @JoinTable(name = "Category_StringProperties",joinColumns =
     @JoinColumn(name = "fk_Category"), inverseJoinColumns =
@@ -92,14 +84,6 @@ public class Category {
 
     public void setProductList(List<Product> productList) {
         this.productList = productList;
-    }
-
-    public List<IntegerProperties> getIntegerPropertiesList() {
-        return integerPropertiesList;
-    }
-
-    public void setIntegerPropertiesList(List<IntegerProperties> integerPropertiesList) {
-        this.integerPropertiesList = integerPropertiesList;
     }
 
     public List<StringProperties> getStringPropertiesList() {

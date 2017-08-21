@@ -6,7 +6,6 @@ import proj.entity.Product;
 import proj.form.Filter.ProductFilterForm;
 import proj.form.ProductForm;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -31,7 +30,4 @@ public interface ProductService {
 
     Page<Product> findAll(Pageable pageable, ProductFilterForm productFilterForm);
 
-    Product findOneByIdWithValue(int id);
-
-//    List<Product> findAllWithValue(int id);
 }

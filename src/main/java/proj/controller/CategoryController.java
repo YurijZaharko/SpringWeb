@@ -12,19 +12,15 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import proj.controller.staticMethod.CommonMethod;
 import proj.entity.Category;
-
 import proj.entity.StringProperties;
 import proj.form.Filter.CategoryFilterForm;
 import proj.service.CategoryService;
-import proj.service.IntegerPropertiesService;
 import proj.service.StringPropertiesService;
 import proj.service.implementation.editor.CategoryEditor;
 import proj.service.implementation.editor.StrPropEditor;
 import proj.service.implementation.validator.CategoryValidator;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by SCIP on 16.08.2016.
@@ -36,8 +32,6 @@ public class CategoryController {
 
     @Autowired
     StringPropertiesService stringPropertiesService;
-
-    IntegerPropertiesService integerPropertiesService;
 
     @ModelAttribute("category")
     public Category getCategory(){
@@ -74,22 +68,6 @@ public class CategoryController {
         return "categoryWithProperty";
     }
 
-    public String showCategoryWithIntegerProperty(){
-        return null;
-}
-
-//    @Transactional
-//    @RequestMapping(value = "/admin/adminCategory/categoryWithProperty", method = RequestMethod.POST)
-//    public String saveCategoryWithProperty(@ModelAttribute("category") Category category){
-//        Category temp = categoryService.findById(category.getId());
-////        temp.getStringPropertiesList().addAll(category.getStringPropertiesList());
-////        for (StringProperties stringProperty : category.getStringPropertiesList()) {
-////            temp.getStringPropertiesList().add(stringPropertiesService.findById(stringProperty.getId()));
-////        }
-//        categoryService.save(temp);
-//
-//        return "redirect:/admin/adminCategory/categoryWithProperty/" + category.getId();
-//    }
     @Transactional
     @RequestMapping(value = "/admin/adminCategory/categoryWithProperty/propertyId/{catId}/{id}")
     public String savePropertyToCategory(@PathVariable("catId") int catId ,

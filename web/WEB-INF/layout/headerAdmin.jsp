@@ -27,7 +27,6 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Brand<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="/admin/adminBrand">Create Brand</a></li>
-                            <li><a href="">Second</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -37,7 +36,6 @@
                         <ul class="dropdown-menu">
                             <li><a href="/admin/adminCategory">Create Category</a></li>
                             <li><a href="/admin/adminStringProperties">Create string Properties</a></li>
-                            <li><a href="/admin/adminIntegerProperties">Create Integer Property</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -46,7 +44,6 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Country <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="/admin/adminCountry">Create Country</a></li>
-                            <li><a href="">Second</a></li>
                         </ul>
                     </li>
                 </ul>

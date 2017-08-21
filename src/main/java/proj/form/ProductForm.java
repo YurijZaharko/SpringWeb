@@ -26,8 +26,6 @@ public class ProductForm{
 
     private Brand brand;
 
-    private PropertyAndValueInteger propertyAndValueInteger;
-
     private PropertyAndValueString propertyAndValueString;
 
     private MultipartFile file;
@@ -110,14 +108,6 @@ public class ProductForm{
 
     public void setFile(MultipartFile file) {
         this.file = file;
-    }
-
-    public PropertyAndValueInteger getPropertyAndValueInteger() {
-        return propertyAndValueInteger;
-    }
-
-    public void setPropertyAndValueInteger(PropertyAndValueInteger propertyAndValueInteger) {
-        this.propertyAndValueInteger = propertyAndValueInteger;
     }
 
     public PropertyAndValueString getPropertyAndValueString() {
