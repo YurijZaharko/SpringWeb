@@ -7,20 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="48a5e6c2-c25f-4614-b027-9cbc4adf19f2" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/control/Control.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/control/Scann.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/dao/IntegerPropertiesDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/dao/ValueOfIntegerPropertiesDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/dao/implementation/IntegerPropertiesDaoImplementation.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/dao/implementation/ValueOfIntegerPropertiesDaoImplement.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/entity/IntegerProperties.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/entity/ValueOfIntegerProperties.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/repository/IntegerPropertiesRepository.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/repository/ValueOfIntegerPropertiesRepository.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/service/IntegerPropertiesService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/service/ValueOfIntegerPropertiesService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/service/implementation/IntegerPropertiesImplement.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/service/implementation/ValueOfIntegerPropertiesImplement.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/controller/CategoryController.class" afterPath="$PROJECT_DIR$/target/classes/proj/controller/CategoryController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/controller/ProductController.class" afterPath="$PROJECT_DIR$/target/classes/proj/controller/ProductController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/entity/Category.class" afterPath="$PROJECT_DIR$/target/classes/proj/entity/Category.class" />
@@ -31,23 +17,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/service/ProductService.class" afterPath="$PROJECT_DIR$/target/classes/proj/service/ProductService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/service/implementation/ProductServiceImplement.class" afterPath="$PROJECT_DIR$/target/classes/proj/service/implementation/ProductServiceImplement.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sq.iml" afterPath="$PROJECT_DIR$/sq.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/controller/CategoryController.java" afterPath="$PROJECT_DIR$/src/main/java/proj/controller/CategoryController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/entity/Category.java" afterPath="$PROJECT_DIR$/src/main/java/proj/entity/Category.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/entity/Product.java" afterPath="$PROJECT_DIR$/src/main/java/proj/entity/Product.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/form/ProductForm.java" afterPath="$PROJECT_DIR$/src/main/java/proj/form/ProductForm.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/repository/BrandRepository.java" afterPath="$PROJECT_DIR$/src/main/java/proj/repository/BrandRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/repository/ProductRepository.java" afterPath="$PROJECT_DIR$/src/main/java/proj/repository/ProductRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/BrandService.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/BrandService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/CategoryService.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/CategoryService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/ProductService.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/ProductService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/PropertyAndValueStringService.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/PropertyAndValueStringService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/implementation/ProductServiceImplement.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/ProductServiceImplement.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/implementation/PropertyAndValueStringImplement.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/PropertyAndValueStringImplement.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/proj/entity/Category_.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/proj/entity/Category_.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/proj/entity/Product_.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/proj/entity/Product_.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/defs/general.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/defs/general.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/layout/headerAdmin.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/layout/headerAdmin.jsp" />
     </list>
     <ignored path="SpringWeb.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -352,6 +323,7 @@
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="TODO_SCOPE" value="Project Files" />
     <property name="js.eslint.eslintPackage" value="" />
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -1011,7 +983,7 @@
       <workItem from="1481056292861" duration="2812000" />
       <workItem from="1481381504397" duration="4467000" />
       <workItem from="1481563561908" duration="6079000" />
-      <workItem from="1503302803134" duration="1703000" />
+      <workItem from="1503302803134" duration="1758000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1472147761510</created>
@@ -1293,11 +1265,18 @@
       <option name="project" value="LOCAL" />
       <updated>1481568291691</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Refactoring">
+      <created>1503304555957</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1503304555957</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="352540000" />
+    <option name="totallyTimeSpent" value="352595000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1397,7 +1376,8 @@
     <MESSAGE value="Create class StringPropertiesForm" />
     <MESSAGE value="Create class StringPropertiesFilterForm" />
     <MESSAGE value="Add &quot;Search&quot;, sort method and page size  to String properties" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add &quot;Search&quot;, sort method and page size  to String properties" />
+    <MESSAGE value="Refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
