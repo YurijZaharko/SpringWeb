@@ -6,161 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c89581bb-44c4-4d13-b2ec-39655e33ba2d" name="Default" comment="Refactoring">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/controller/UserOrderSaveController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/controller/UserOrdersController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/controller/staticMethod/StaticPatterns.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/entity/OrderDelivery.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/entity/OrderField.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/entity/OrderStatus.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/entity/UserOrder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/form/Filter/ProductFrontFilterForm.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/form/Filter/UserFilterForm.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/form/Filter/UserOrderFilterForm.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/form/OrderFieldForm.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/form/UsersOrdersForm.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/repository/OrderFieldRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/repository/UserOrderRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/service/OrderFieldService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/service/UserOrderService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/OrderFieldServiceImplement.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/UserOrderServiceImplement.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/editor/UserEditor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/editor/UserOrderEditor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/specification/ProductFrontFilterAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/specification/UserFilterAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/specification/UserOrderFilterAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/validator/UserValidator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/validator/UsersOrdersFormSaveValidator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/validator/UsersOrdersFormValidator.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/proj/dao/BrandDao.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/proj/dao/CategoryDao.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/proj/dao/CountryDao.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/proj/dao/GenericDao.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/proj/dao/ProductDao.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/proj/dao/StringPropertiesDao.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/proj/dao/ValueOfStringPropertiesDao.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/proj/dao/implementation/BrandDaoImplementation.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/proj/dao/implementation/CategoryDaoImplementation.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/proj/dao/implementation/CountryDaoImplementation.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/proj/dao/implementation/GenericDaoImplementation.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/proj/dao/implementation/ProductDaoImplementation.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/proj/dao/implementation/StringPropertiesDaoImplementation.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/proj/dao/implementation/ValueOfStringPropertiesDaoImplement.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/dao/BrandDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/dao/CategoryDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/dao/CountryDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/dao/GenericDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/dao/ProductDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/dao/StringPropertiesDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/dao/ValueOfStringPropertiesDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/dao/implementation/BrandDaoImplementation.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/dao/implementation/CategoryDaoImplementation.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/dao/implementation/CountryDaoImplementation.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/dao/implementation/GenericDaoImplementation.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/dao/implementation/ProductDaoImplementation.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/dao/implementation/StringPropertiesDaoImplementation.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/dao/implementation/ValueOfStringPropertiesDaoImplement.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/servlet/IndexServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/servlet/RegistrationServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/applicationContext.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/custom.tld" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/db.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/defs/general.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/dispatcher-servlet.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/layout/adminClassic.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/layout/classic.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/layout/footer.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/layout/frontClassic.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/layout/header.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/layout/headerAdmin.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/layout/null.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/resources/css/chosen.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/security.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/views/admin.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/views/adminBrand.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/views/adminCategory.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/views/adminCountry.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/views/adminProduct.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/views/adminProductAddValue.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/views/adminStringProperties.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/views/categoryWithProperty.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/views/index.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/views/login.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/views/payment.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/views/product.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/views/registration.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/controller/CategoryController.class" afterPath="$PROJECT_DIR$/target/classes/proj/controller/CategoryController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/controller/IndexController.class" afterPath="$PROJECT_DIR$/target/classes/proj/controller/IndexController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/controller/ProductController.class" afterPath="$PROJECT_DIR$/target/classes/proj/controller/ProductController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/entity/Brand.class" afterPath="$PROJECT_DIR$/target/classes/proj/entity/Brand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/entity/Category.class" afterPath="$PROJECT_DIR$/target/classes/proj/entity/Category.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/entity/Category_.class" afterPath="$PROJECT_DIR$/target/classes/proj/entity/Category_.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/entity/Country.class" afterPath="$PROJECT_DIR$/target/classes/proj/entity/Country.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/entity/Product.class" afterPath="$PROJECT_DIR$/target/classes/proj/entity/Product.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/entity/Product_.class" afterPath="$PROJECT_DIR$/target/classes/proj/entity/Product_.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/entity/StringProperties.class" afterPath="$PROJECT_DIR$/target/classes/proj/entity/StringProperties.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/entity/ValueOfStringProperties.class" afterPath="$PROJECT_DIR$/target/classes/proj/entity/ValueOfStringProperties.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/repository/CategoryRepository.class" afterPath="$PROJECT_DIR$/target/classes/proj/repository/CategoryRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/repository/ProductRepository.class" afterPath="$PROJECT_DIR$/target/classes/proj/repository/ProductRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/repository/ValueOfStringPropertiesRepository.class" afterPath="$PROJECT_DIR$/target/classes/proj/repository/ValueOfStringPropertiesRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/service/CategoryService.class" afterPath="$PROJECT_DIR$/target/classes/proj/service/CategoryService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/service/ProductService.class" afterPath="$PROJECT_DIR$/target/classes/proj/service/ProductService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/service/StringPropertiesService.class" afterPath="$PROJECT_DIR$/target/classes/proj/service/StringPropertiesService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/service/implementation/CategoryServiceImplement.class" afterPath="$PROJECT_DIR$/target/classes/proj/service/implementation/CategoryServiceImplement.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/service/implementation/CountryServiceImplement.class" afterPath="$PROJECT_DIR$/target/classes/proj/service/implementation/CountryServiceImplement.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/service/implementation/ProductServiceImplement.class" afterPath="$PROJECT_DIR$/target/classes/proj/service/implementation/ProductServiceImplement.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/service/implementation/StringPropertiesImplement.class" afterPath="$PROJECT_DIR$/target/classes/proj/service/implementation/StringPropertiesImplement.class" />
+    <list default="true" id="c89581bb-44c4-4d13-b2ec-39655e33ba2d" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SpringWeb" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sq.iml" afterPath="$PROJECT_DIR$/sq.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/controller/CategoryController.java" afterPath="$PROJECT_DIR$/src/main/java/proj/controller/CategoryController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/controller/GlobalController.java" afterPath="$PROJECT_DIR$/src/main/java/proj/controller/GlobalController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/controller/IndexController.java" afterPath="$PROJECT_DIR$/src/main/java/proj/controller/IndexController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/controller/ProductController.java" afterPath="$PROJECT_DIR$/src/main/java/proj/controller/ProductController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/controller/StringPropertiesController.java" afterPath="$PROJECT_DIR$/src/main/java/proj/controller/StringPropertiesController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/proj/controller/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/controller/staticMethod/CommonMethod.java" afterPath="$PROJECT_DIR$/src/main/java/proj/controller/staticMethod/CommonMethod.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/entity/Brand.java" afterPath="$PROJECT_DIR$/src/main/java/proj/entity/Brand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/entity/Category.java" afterPath="$PROJECT_DIR$/src/main/java/proj/entity/Category.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/entity/Country.java" afterPath="$PROJECT_DIR$/src/main/java/proj/entity/Country.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/entity/Product.java" afterPath="$PROJECT_DIR$/src/main/java/proj/entity/Product.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/entity/PropertyAndValueString.java" afterPath="$PROJECT_DIR$/src/main/java/proj/entity/PropertyAndValueString.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/entity/Role.java" afterPath="$PROJECT_DIR$/src/main/java/proj/entity/Role.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/entity/StringProperties.java" afterPath="$PROJECT_DIR$/src/main/java/proj/entity/StringProperties.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/entity/User.java" afterPath="$PROJECT_DIR$/src/main/java/proj/entity/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/entity/ValueOfStringProperties.java" afterPath="$PROJECT_DIR$/src/main/java/proj/entity/ValueOfStringProperties.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/form/Filter/ProductFilterForm.java" afterPath="$PROJECT_DIR$/src/main/java/proj/form/Filter/ProductFilterForm.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/form/ProductForm.java" afterPath="$PROJECT_DIR$/src/main/java/proj/form/ProductForm.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/form/PropertyAndValueStringsForm.java" afterPath="$PROJECT_DIR$/src/main/java/proj/form/PropertyAndValueStringsForm.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/repository/BrandRepository.java" afterPath="$PROJECT_DIR$/src/main/java/proj/repository/BrandRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/repository/CategoryRepository.java" afterPath="$PROJECT_DIR$/src/main/java/proj/repository/CategoryRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/repository/CountryRepository.java" afterPath="$PROJECT_DIR$/src/main/java/proj/repository/CountryRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/repository/ProductRepository.java" afterPath="$PROJECT_DIR$/src/main/java/proj/repository/ProductRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/repository/PropertyAndValueStringRepository.java" afterPath="$PROJECT_DIR$/src/main/java/proj/repository/PropertyAndValueStringRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/repository/StringPropertiesRepository.java" afterPath="$PROJECT_DIR$/src/main/java/proj/repository/StringPropertiesRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/repository/UserRepository.java" afterPath="$PROJECT_DIR$/src/main/java/proj/repository/UserRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/repository/ValueOfStringPropertiesRepository.java" afterPath="$PROJECT_DIR$/src/main/java/proj/repository/ValueOfStringPropertiesRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/BrandService.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/BrandService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/CategoryService.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/CategoryService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/FileWriter.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/FileWriter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/ProductService.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/ProductService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/PropertyAndValueStringService.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/PropertyAndValueStringService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/StringPropertiesService.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/StringPropertiesService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/UserService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/implementation/CategoryServiceImplement.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/CategoryServiceImplement.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/implementation/CountryServiceImplement.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/CountryServiceImplement.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/implementation/ProductPropertyImplement.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/ProductPropertyImplement.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/implementation/ProductServiceImplement.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/ProductServiceImplement.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/implementation/PropertyAndValueStringImplement.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/PropertyAndValueStringImplement.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/implementation/StringPropertiesImplement.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/StringPropertiesImplement.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/implementation/UserImplement.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/UserImplement.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/implementation/editor/ProductPropertyEditor.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/editor/ProductPropertyEditor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/implementation/specification/CountryFilterAdapter.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/specification/CountryFilterAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/implementation/validator/BrandValidator.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/validator/BrandValidator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/implementation/validator/ProductFormValidator.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/validator/ProductFormValidator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/proj/entity/Category_.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/proj/entity/Category_.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/proj/entity/Product_.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/proj/entity/Product_.java" />
     </list>
     <ignored path="SpringWeb.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -203,8 +51,8 @@
       <file leaf-file-name="PropertyAndValueStringService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/PropertyAndValueStringService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="255">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -433,45 +281,6 @@
             <path>
               <item name="SpringWeb" type="b2602c69:ProjectViewProjectNode" />
               <item name="SpringWeb" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpringWeb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpringWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpringWeb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpringWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpringWeb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpringWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpringWeb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpringWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="proj" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpringWeb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpringWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpringWeb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpringWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SpringWeb" type="b2602c69:ProjectViewProjectNode" />
@@ -1177,7 +986,7 @@
       <workItem from="1503309773950" duration="715000" />
       <workItem from="1503310514835" duration="82000" />
       <workItem from="1503310659233" duration="29000" />
-      <workItem from="1503310713729" duration="97000" />
+      <workItem from="1503310713729" duration="264000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1472147761510</created>
@@ -1466,11 +1275,25 @@
       <option name="project" value="LOCAL" />
       <updated>1503304555957</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Refactoring">
+      <created>1503310877274</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1503310877275</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Refactoring">
+      <created>1503310933907</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1503310933907</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="354151000" />
+    <option name="totallyTimeSpent" value="354318000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1505,7 +1328,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32739422" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37973273" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37973273" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34632516" sideWeight="0.49570817" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32739422" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32739422" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -1786,13 +1609,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/PropertyAndValueStringService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="255">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>

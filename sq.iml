@@ -125,5 +125,8 @@
     <orderEntry type="library" name="Maven: javax.servlet.jsp:jsp-api:2.2" level="project" />
     <orderEntry type="library" name="Maven: org.webjars:bootstrap:3.3.6" level="project" />
     <orderEntry type="library" name="Maven: org.webjars:jquery:1.9.1" level="project" />
+    <orderEntry type="library" name="Maven: org.junit.jupiter:junit-jupiter-api:5.0.0-RC2" level="project" />
+    <orderEntry type="library" name="Maven: org.opentest4j:opentest4j:1.0.0-RC1" level="project" />
+    <orderEntry type="library" name="Maven: org.junit.platform:junit-platform-commons:1.0.0-RC2" level="project" />
   </component>
 </module>
