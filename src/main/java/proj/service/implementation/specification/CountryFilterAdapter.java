@@ -4,7 +4,10 @@ import org.springframework.data.jpa.domain.Specification;
 import proj.entity.Country;
 import proj.form.Filter.CountryFilterForm;
 
-import javax.persistence.criteria.*;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
 
 /**
  * Created by SC on 12.09.2016.

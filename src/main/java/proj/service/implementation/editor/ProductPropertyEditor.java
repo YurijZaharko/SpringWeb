@@ -1,4 +1,4 @@
-//package proj.service.implementation.editor;
+package proj.service.implementation.editor;//package proj.service.implementation.editor;
 //
 //import proj.entity.ProductProperty;
 //import proj.service.ProductPropertyService;

@@ -1,7 +1,5 @@
 package proj.entity;
 
-import org.hibernate.annotations.BatchSize;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,10 +17,12 @@ public class Category {
 
     private String name;
 
+    private boolean rootCategory;
+
     @ManyToOne(fetch = FetchType.LAZY)
     private Category parentId;
 
-    @OneToMany
+    @OneToMany(mappedBy = "parentId")
     private List<Category> categoryChild = new ArrayList<>();
 
     @OneToMany(mappedBy = "category")
@@ -60,6 +60,14 @@ public class Category {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public boolean isRootCategory() {
+        return rootCategory;
+    }
+
+    public void setRootCategory(boolean rootCategory) {
+        this.rootCategory = rootCategory;
     }
 
     public Category getParentId() {

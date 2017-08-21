@@ -16,14 +16,10 @@ import proj.form.Filter.ProductFilterForm;
 import proj.form.ProductForm;
 import proj.form.PropertyAndValueStringsForm;
 import proj.service.*;
-import proj.service.implementation.editor.BrandEditor;
-import proj.service.implementation.editor.CategoryEditor;
-import proj.service.implementation.editor.CountryEditor;
-import proj.service.implementation.editor.ProductEditor;
+import proj.service.implementation.editor.*;
 import proj.service.implementation.validator.ProductFormValidator;
 
 import javax.validation.Valid;
-import java.util.List;
 
 /**
  * Created by SCIP on 16.08.2016.
@@ -31,17 +27,17 @@ import java.util.List;
 @Controller
 public class ProductController {
     @Autowired
-    ProductService productService;
+    private ProductService productService;
     @Autowired
-    BrandService brandService;
+    private BrandService brandService;
     @Autowired
-    CountryService countryService;
+    private CountryService countryService;
     @Autowired
-    CategoryService categoryService;
+    private CategoryService categoryService;
     @Autowired
-    StringPropertiesService stringPropertiesService;
+    private StringPropertiesService stringPropertiesService;
     @Autowired
-    PropertyAndValueStringService propertyAndValueStringService;
+    private ValueOfStringPropertiesService valueOfStringPropertiesService;
 
     @ModelAttribute("productForm")
     public ProductForm getProductForm(){
@@ -60,6 +56,11 @@ public class ProductController {
         webDataBinder.registerCustomEditor(Category.class, new CategoryEditor(categoryService));
         webDataBinder.registerCustomEditor(Country.class, new CountryEditor(countryService));
         webDataBinder.setValidator(new ProductFormValidator(productService));
+    }
+
+    protected void initBinderSecond(WebDataBinder webDataBinder){
+        webDataBinder.registerCustomEditor(StringProperties.class, new StrPropEditor(stringPropertiesService));
+        webDataBinder.registerCustomEditor(ValueOfStringProperties.class, new ValueOfStringPropertiesEditor(valueOfStringPropertiesService));
     }
 
     @RequestMapping("/admin/adminProduct")
@@ -85,26 +86,17 @@ public class ProductController {
         return "adminProductAddValue";
     }
 
-    @RequestMapping("/admin/adminProduct/addValue/test/{id}")
+    @RequestMapping(value = "/admin/adminProduct/addValue/show/{id}")
     public String showValue(@PathVariable("id") int id, Model model){
         model.addAttribute("propertyAndValueStringsForm", stringPropertiesService.findForFormMap(id));
         return "adminProductAddValue";
     }
 
-
-
-
-//    @RequestMapping(value = "/admin/adminProduct", method = RequestMethod.POST)
-//    public String save(@RequestParam("price") int price,
-//                       @RequestParam("name") String productName,
-//                       @RequestParam("partNumber") String partNumber,
-//                       @RequestParam("brandId") int brandId,
-//                       @RequestParam("countryId") int countryId,
-//                       @RequestParam("categoryId") int categoryId){
-//        productService.save(price, productName, partNumber, brandId, countryId, categoryId);
-//
-//        return "redirect:/admin/adminProduct";
-//    }
+    @RequestMapping(value = "/admin/adminProduct/addValue/show", method = RequestMethod.POST)
+    public String saveValueAndProperty(@ModelAttribute(value = "propertyAndValueStringsForm") PropertyAndValueStringsForm propertyAndValueStringsForm){
+        stringPropertiesService.saveValueFromForm(propertyAndValueStringsForm);
+        return "redirect:/admin/adminProduct/addValue/show/" + propertyAndValueStringsForm.getId();
+    }
 
     @RequestMapping(value = "/admin/adminProduct", method = RequestMethod.POST)
     public String save(@ModelAttribute("productForm") @Valid ProductForm productForm, BindingResult bindingResult, Model model,

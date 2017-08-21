@@ -6,17 +6,159 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48a5e6c2-c25f-4614-b027-9cbc4adf19f2" name="Default" comment="">
+    <list default="true" id="c89581bb-44c4-4d13-b2ec-39655e33ba2d" name="Default" comment="Refactoring">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/controller/UserOrderSaveController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/controller/UserOrdersController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/controller/staticMethod/StaticPatterns.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/entity/OrderDelivery.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/entity/OrderField.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/entity/OrderStatus.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/entity/UserOrder.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/form/Filter/ProductFrontFilterForm.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/form/Filter/UserFilterForm.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/form/Filter/UserOrderFilterForm.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/form/OrderFieldForm.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/form/UsersOrdersForm.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/repository/OrderFieldRepository.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/repository/UserOrderRepository.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/service/OrderFieldService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/service/UserOrderService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/OrderFieldServiceImplement.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/UserOrderServiceImplement.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/editor/UserEditor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/editor/UserOrderEditor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/specification/ProductFrontFilterAdapter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/specification/UserFilterAdapter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/specification/UserOrderFilterAdapter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/validator/UserValidator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/validator/UsersOrdersFormSaveValidator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/validator/UsersOrdersFormValidator.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/proj/dao/BrandDao.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/proj/dao/CategoryDao.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/proj/dao/CountryDao.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/proj/dao/GenericDao.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/proj/dao/ProductDao.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/proj/dao/StringPropertiesDao.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/proj/dao/ValueOfStringPropertiesDao.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/proj/dao/implementation/BrandDaoImplementation.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/proj/dao/implementation/CategoryDaoImplementation.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/proj/dao/implementation/CountryDaoImplementation.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/proj/dao/implementation/GenericDaoImplementation.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/proj/dao/implementation/ProductDaoImplementation.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/proj/dao/implementation/StringPropertiesDaoImplementation.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/proj/dao/implementation/ValueOfStringPropertiesDaoImplement.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/dao/BrandDao.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/dao/CategoryDao.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/dao/CountryDao.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/dao/GenericDao.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/dao/ProductDao.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/dao/StringPropertiesDao.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/dao/ValueOfStringPropertiesDao.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/dao/implementation/BrandDaoImplementation.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/dao/implementation/CategoryDaoImplementation.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/dao/implementation/CountryDaoImplementation.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/dao/implementation/GenericDaoImplementation.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/dao/implementation/ProductDaoImplementation.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/dao/implementation/StringPropertiesDaoImplementation.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/dao/implementation/ValueOfStringPropertiesDaoImplement.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/servlet/IndexServlet.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/proj/servlet/RegistrationServlet.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/applicationContext.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/custom.tld" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/db.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/defs/general.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/dispatcher-servlet.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/layout/adminClassic.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/layout/classic.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/layout/footer.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/layout/frontClassic.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/layout/header.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/layout/headerAdmin.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/layout/null.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/resources/css/chosen.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/security.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/views/admin.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/views/adminBrand.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/views/adminCategory.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/views/adminCountry.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/views/adminProduct.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/views/adminProductAddValue.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/views/adminStringProperties.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/views/categoryWithProperty.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/views/index.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/views/login.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/views/payment.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/views/product.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/views/registration.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/controller/CategoryController.class" afterPath="$PROJECT_DIR$/target/classes/proj/controller/CategoryController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/controller/IndexController.class" afterPath="$PROJECT_DIR$/target/classes/proj/controller/IndexController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/controller/ProductController.class" afterPath="$PROJECT_DIR$/target/classes/proj/controller/ProductController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/entity/Brand.class" afterPath="$PROJECT_DIR$/target/classes/proj/entity/Brand.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/entity/Category.class" afterPath="$PROJECT_DIR$/target/classes/proj/entity/Category.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/entity/Category_.class" afterPath="$PROJECT_DIR$/target/classes/proj/entity/Category_.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/entity/Country.class" afterPath="$PROJECT_DIR$/target/classes/proj/entity/Country.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/entity/Product.class" afterPath="$PROJECT_DIR$/target/classes/proj/entity/Product.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/entity/Product_.class" afterPath="$PROJECT_DIR$/target/classes/proj/entity/Product_.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/entity/StringProperties.class" afterPath="$PROJECT_DIR$/target/classes/proj/entity/StringProperties.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/entity/ValueOfStringProperties.class" afterPath="$PROJECT_DIR$/target/classes/proj/entity/ValueOfStringProperties.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/repository/CategoryRepository.class" afterPath="$PROJECT_DIR$/target/classes/proj/repository/CategoryRepository.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/repository/ProductRepository.class" afterPath="$PROJECT_DIR$/target/classes/proj/repository/ProductRepository.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/repository/ValueOfStringPropertiesRepository.class" afterPath="$PROJECT_DIR$/target/classes/proj/repository/ValueOfStringPropertiesRepository.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/service/CategoryService.class" afterPath="$PROJECT_DIR$/target/classes/proj/service/CategoryService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/service/ProductService.class" afterPath="$PROJECT_DIR$/target/classes/proj/service/ProductService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/service/StringPropertiesService.class" afterPath="$PROJECT_DIR$/target/classes/proj/service/StringPropertiesService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/service/implementation/CategoryServiceImplement.class" afterPath="$PROJECT_DIR$/target/classes/proj/service/implementation/CategoryServiceImplement.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/service/implementation/CountryServiceImplement.class" afterPath="$PROJECT_DIR$/target/classes/proj/service/implementation/CountryServiceImplement.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/service/implementation/ProductServiceImplement.class" afterPath="$PROJECT_DIR$/target/classes/proj/service/implementation/ProductServiceImplement.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/proj/service/implementation/StringPropertiesImplement.class" afterPath="$PROJECT_DIR$/target/classes/proj/service/implementation/StringPropertiesImplement.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sq.iml" afterPath="$PROJECT_DIR$/sq.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/controller/CategoryController.java" afterPath="$PROJECT_DIR$/src/main/java/proj/controller/CategoryController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/controller/GlobalController.java" afterPath="$PROJECT_DIR$/src/main/java/proj/controller/GlobalController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/controller/IndexController.java" afterPath="$PROJECT_DIR$/src/main/java/proj/controller/IndexController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/controller/ProductController.java" afterPath="$PROJECT_DIR$/src/main/java/proj/controller/ProductController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/controller/StringPropertiesController.java" afterPath="$PROJECT_DIR$/src/main/java/proj/controller/StringPropertiesController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/proj/controller/UserController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/controller/staticMethod/CommonMethod.java" afterPath="$PROJECT_DIR$/src/main/java/proj/controller/staticMethod/CommonMethod.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/entity/Brand.java" afterPath="$PROJECT_DIR$/src/main/java/proj/entity/Brand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/entity/Category.java" afterPath="$PROJECT_DIR$/src/main/java/proj/entity/Category.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/entity/Country.java" afterPath="$PROJECT_DIR$/src/main/java/proj/entity/Country.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/entity/Product.java" afterPath="$PROJECT_DIR$/src/main/java/proj/entity/Product.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/entity/PropertyAndValueString.java" afterPath="$PROJECT_DIR$/src/main/java/proj/entity/PropertyAndValueString.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/entity/Role.java" afterPath="$PROJECT_DIR$/src/main/java/proj/entity/Role.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/entity/StringProperties.java" afterPath="$PROJECT_DIR$/src/main/java/proj/entity/StringProperties.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/entity/User.java" afterPath="$PROJECT_DIR$/src/main/java/proj/entity/User.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/entity/ValueOfStringProperties.java" afterPath="$PROJECT_DIR$/src/main/java/proj/entity/ValueOfStringProperties.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/form/Filter/ProductFilterForm.java" afterPath="$PROJECT_DIR$/src/main/java/proj/form/Filter/ProductFilterForm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/form/ProductForm.java" afterPath="$PROJECT_DIR$/src/main/java/proj/form/ProductForm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/form/PropertyAndValueStringsForm.java" afterPath="$PROJECT_DIR$/src/main/java/proj/form/PropertyAndValueStringsForm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/repository/BrandRepository.java" afterPath="$PROJECT_DIR$/src/main/java/proj/repository/BrandRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/repository/CategoryRepository.java" afterPath="$PROJECT_DIR$/src/main/java/proj/repository/CategoryRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/repository/CountryRepository.java" afterPath="$PROJECT_DIR$/src/main/java/proj/repository/CountryRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/repository/ProductRepository.java" afterPath="$PROJECT_DIR$/src/main/java/proj/repository/ProductRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/repository/PropertyAndValueStringRepository.java" afterPath="$PROJECT_DIR$/src/main/java/proj/repository/PropertyAndValueStringRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/repository/StringPropertiesRepository.java" afterPath="$PROJECT_DIR$/src/main/java/proj/repository/StringPropertiesRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/repository/UserRepository.java" afterPath="$PROJECT_DIR$/src/main/java/proj/repository/UserRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/repository/ValueOfStringPropertiesRepository.java" afterPath="$PROJECT_DIR$/src/main/java/proj/repository/ValueOfStringPropertiesRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/BrandService.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/BrandService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/CategoryService.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/CategoryService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/FileWriter.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/FileWriter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/ProductService.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/ProductService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/PropertyAndValueStringService.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/PropertyAndValueStringService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/StringPropertiesService.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/StringPropertiesService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/UserService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/implementation/CategoryServiceImplement.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/CategoryServiceImplement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/implementation/CountryServiceImplement.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/CountryServiceImplement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/implementation/ProductPropertyImplement.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/ProductPropertyImplement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/implementation/ProductServiceImplement.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/ProductServiceImplement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/implementation/PropertyAndValueStringImplement.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/PropertyAndValueStringImplement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/implementation/StringPropertiesImplement.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/StringPropertiesImplement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/implementation/UserImplement.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/UserImplement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/implementation/editor/ProductPropertyEditor.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/editor/ProductPropertyEditor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/implementation/specification/CountryFilterAdapter.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/specification/CountryFilterAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/implementation/validator/BrandValidator.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/validator/BrandValidator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/proj/service/implementation/validator/ProductFormValidator.java" afterPath="$PROJECT_DIR$/src/main/java/proj/service/implementation/validator/ProductFormValidator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/proj/entity/Category_.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/proj/entity/Category_.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/proj/entity/Product_.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/proj/entity/Product_.java" />
     </list>
@@ -58,41 +200,81 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="adminCountry.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/adminCountry.jsp">
+      <file leaf-file-name="PropertyAndValueStringService.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/PropertyAndValueStringService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-408">
+            <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="adminProduct.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/adminProduct.jsp">
+      <file leaf-file-name="ProductPropertyEditor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/implementation/editor/ProductPropertyEditor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-289">
-              <caret line="49" column="26" lean-forward="false" selection-start-line="49" selection-start-column="26" selection-end-line="49" selection-end-column="26" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="adminProductAddValue.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/adminProductAddValue.jsp">
+      <file leaf-file-name="BrandFilterAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/implementation/specification/BrandFilterAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="635">
-              <caret line="68" column="13" lean-forward="false" selection-start-line="68" selection-start-column="13" selection-end-line="68" selection-end-column="13" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="headerAdmin.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/layout/headerAdmin.jsp">
+      <file leaf-file-name="PageableTag.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/implementation/tag/PageableTag.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="46" column="29" lean-forward="true" selection-start-line="46" selection-start-column="29" selection-end-line="46" selection-end-column="29" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommonMethod.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/proj/controller/staticMethod/CommonMethod.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GlobalController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/proj/controller/GlobalController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/UserService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ValueOfStringPropertiesImplement.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/implementation/ValueOfStringPropertiesImplement.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="20" column="64" lean-forward="false" selection-start-line="20" selection-start-column="64" selection-end-line="20" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -143,7 +325,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/proj/service/ListOfPropertyAndValueIntegerService.java" />
         <option value="$PROJECT_DIR$/src/main/java/proj/service/PropertyAndValueIntegerService.java" />
         <option value="$PROJECT_DIR$/src/main/java/proj/service/ListOfPropertyAndValueStringService.java" />
         <option value="$PROJECT_DIR$/src/main/java/proj/repository/ListOfPropertyAndValueIntegerRepository.java" />
@@ -165,9 +346,7 @@
         <option value="$PROJECT_DIR$/web/WEB-INF/views/adminProduct.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/proj/form/PropertyAndValueStringsForm.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/views/adminProductAddValue.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/proj/service/implementation/CategoryServiceImplement.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/views/categoryWithProperty.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/proj/controller/IndexController.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/security.xml" />
         <option value="$PROJECT_DIR$/src/main/java/proj/form/Filter/StringProperties.java" />
         <option value="$PROJECT_DIR$/src/main/java/proj/form/Filter/StringPropertiesForm.java" />
@@ -182,18 +361,21 @@
         <option value="$PROJECT_DIR$/src/main/java/proj/controller/CategoryController.java" />
         <option value="$PROJECT_DIR$/src/main/java/proj/repository/IntegerPropertiesRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/proj/entity/Category.java" />
-        <option value="$PROJECT_DIR$/src/main/java/proj/entity/Product.java" />
         <option value="$PROJECT_DIR$/src/main/java/proj/form/ProductForm.java" />
         <option value="$PROJECT_DIR$/src/main/java/proj/service/PropertyAndValueStringService.java" />
         <option value="$PROJECT_DIR$/src/main/java/proj/service/implementation/PropertyAndValueStringImplement.java" />
-        <option value="$PROJECT_DIR$/src/main/java/proj/service/implementation/ProductServiceImplement.java" />
-        <option value="$PROJECT_DIR$/src/main/java/proj/service/ProductService.java" />
         <option value="$PROJECT_DIR$/src/main/java/proj/service/BrandService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/proj/service/CategoryService.java" />
         <option value="$PROJECT_DIR$/src/main/java/proj/repository/ProductRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/proj/repository/BrandRepository.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/defs/general.xml" />
         <option value="$PROJECT_DIR$/web/WEB-INF/layout/headerAdmin.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/layout/frontClassic.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/proj/controller/IndexController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/proj/service/CategoryService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/proj/service/implementation/CategoryServiceImplement.java" />
+        <option value="$PROJECT_DIR$/src/main/java/proj/service/ProductService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/proj/service/implementation/ProductServiceImplement.java" />
+        <option value="$PROJECT_DIR$/src/main/java/proj/entity/Product.java" />
       </list>
     </option>
   </component>
@@ -221,12 +403,12 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="51" />
-    <option name="y" value="182" />
+    <option name="x" value="21" />
+    <option name="y" value="90" />
     <option name="width" value="1918" />
     <option name="height" value="1038" />
   </component>
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
@@ -244,7 +426,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -281,6 +463,19 @@
             <path>
               <item name="SpringWeb" type="b2602c69:ProjectViewProjectNode" />
               <item name="SpringWeb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SpringWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SpringWeb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SpringWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SpringWeb" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -288,27 +483,13 @@
               <item name="SpringWeb" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpringWeb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpringWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpringWeb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpringWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -316,7 +497,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
-    <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/GitHub/PortableGit_d7effa1a4a322478cd29c826b52a0c118ad3db11/cmd/git.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Backup/SpringWeb210817" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.3908046" />
@@ -326,15 +507,23 @@
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="proj.entity" />
-    </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="proj.controller.editor" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\SCIPER\GitHub\SpringWeb\web\WEB-INF\layout" />
       <recent name="E:\SCIPER\GitHub\SpringWeb\web\WEB-INF" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="proj.entity" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\SCIPER\GitHub\SpringWeb\web\WEB-INF" />
+      <recent name="E:\SCIPER\GitHub\SpringWeb\web" />
+      <recent name="E:\SCIPER\GitHub\SpringWeb\src\main\java" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="proj.form.Filter" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="proj.controller.editor" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -897,7 +1086,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="48a5e6c2-c25f-4614-b027-9cbc4adf19f2" name="Default" comment="" />
+      <changelist id="c89581bb-44c4-4d13-b2ec-39655e33ba2d" name="Default" comment="" />
       <created>1472147284060</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -984,6 +1173,11 @@
       <workItem from="1481381504397" duration="4467000" />
       <workItem from="1481563561908" duration="6079000" />
       <workItem from="1503302803134" duration="1758000" />
+      <workItem from="1503307298091" duration="623000" />
+      <workItem from="1503309773950" duration="715000" />
+      <workItem from="1503310514835" duration="82000" />
+      <workItem from="1503310659233" duration="29000" />
+      <workItem from="1503310713729" duration="97000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1472147761510</created>
@@ -1276,7 +1470,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="352595000" />
+    <option name="totallyTimeSpent" value="354151000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1292,7 +1486,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2951002" sideWeight="0.50429183" order="15" side_tool="false" content_ui="tabs" />
@@ -1312,16 +1505,15 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32739422" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37973273" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34632516" sideWeight="0.49570817" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37973273" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32739422" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32739422" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22927879" sideWeight="0.51022726" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24946696" sideWeight="0.48977274" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26279318" sideWeight="0.48977274" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22925532" sideWeight="0.51022726" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="SonarLint" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850778" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22927879" sideWeight="0.51022726" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1332,6 +1524,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850778" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1399,180 +1592,21 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/IntegerPropertiesService.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/proj/form/FilterForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/proj/form/PropertyAndValueStringsForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="35" column="5" lean-forward="false" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
-          <folding>
-            <element signature="e#635#636#0" expanded="false" />
-            <element signature="e#667#668#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final/hibernate-jpa-2.1-api-1.0.0.Final.jar!/javax/persistence/criteria/Root.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="4" column="25" lean-forward="false" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/proj/form/Filter/CategoryFilterForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/proj/form/Filter/StringPropertiesFilterForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" column="42" lean-forward="true" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/implementation/specification/CategoryFilterAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="105" lean-forward="true" selection-start-line="22" selection-start-column="105" selection-end-line="22" selection-end-column="105" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/proj/entity/StringProperties.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="17" column="31" lean-forward="false" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/implementation/CategoryServiceImplement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="89" column="99" lean-forward="true" selection-start-line="89" selection-start-column="99" selection-end-line="89" selection-end-column="99" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/proj/controller/staticMethod/CommonMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/implementation/specification/StringPropertyFilterAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="113" lean-forward="true" selection-start-line="22" selection-start-column="113" selection-end-line="22" selection-end-column="113" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/StringPropertiesService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="24" column="38" lean-forward="true" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/adminBrand.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-102">
-          <caret line="12" column="24" lean-forward="false" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/df">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/proj/controller/StringPropertiesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
-          <caret line="71" column="76" lean-forward="false" selection-start-line="71" selection-start-column="76" selection-end-line="71" selection-end-column="76" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/implementation/StringPropertiesImplement.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
           <caret line="146" column="105" lean-forward="false" selection-start-line="146" selection-start-column="105" selection-end-line="146" selection-end-column="105" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/adminStringProperties.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="759">
-          <caret line="55" column="40" lean-forward="false" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/adminCategory.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="32" column="10" lean-forward="false" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
-          <folding>
-            <marker date="1503302778801" expanded="true" signature="2468:2767" ph="..." />
-            <marker date="1503302778801" expanded="true" signature="2468:2788" ph="..." />
-            <marker date="1503302778801" expanded="true" signature="2468:2801" ph="..." />
-            <marker date="1503302778801" expanded="true" signature="2841:2959" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/proj/dao/implementation/ValueOfIntegerPropertiesDaoImplement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/FileWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/adminStringProperties.jsp" />
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/adminCategory.jsp" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/proj/dao/implementation/ValueOfIntegerPropertiesDaoImplement.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/FileWriter.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/CountryService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1580,41 +1614,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="782">
           <caret line="70" column="4" lean-forward="false" selection-start-line="70" selection-start-column="4" selection-end-line="70" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/proj/repository/IntegerPropertiesRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="46" lean-forward="true" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/proj/repository/IntegerPropertiesRepository.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/implementation/BrandServiceImplement.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/ProductService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/CategoryService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1622,47 +1629,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/implementation/ProductServiceImplement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="24" column="52" lean-forward="true" selection-start-line="24" selection-start-column="52" selection-end-line="24" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/implementation/PropertyAndValueStringImplement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="21" column="38" lean-forward="false" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/PropertyAndValueStringService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="4" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/implementation/PropertyAndValueStringImplement.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/proj/form/ProductForm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-17">
           <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/proj/entity/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="117" column="4" lean-forward="false" selection-start-line="117" selection-start-column="4" selection-end-line="117" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1670,7 +1644,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="983">
           <caret line="88" column="4" lean-forward="false" selection-start-line="88" selection-start-column="4" selection-end-line="88" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1678,9 +1651,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="43" column="4" lean-forward="false" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
-          <folding>
-            <marker date="1503304071092" expanded="true" signature="1532:1565" ph="SELECT count... Product" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1688,39 +1658,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/proj/repository/UserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/proj/repository/UserRepository.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/proj/repository/StringPropertiesRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="17" column="3" lean-forward="true" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/proj/repository/PropertyAndValueStringRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/proj/repository/PropertyAndValueStringRepository.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-jpa/1.10.1.RELEASE/spring-data-jpa-1.10.1.RELEASE.jar!/org/springframework/data/jpa/repository/JpaSpecificationExecutor.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1728,7 +1681,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="17" column="36" lean-forward="true" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1736,7 +1688,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="35" column="13" lean-forward="false" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1744,7 +1695,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="16" column="4" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1752,7 +1702,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1760,7 +1709,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1768,11 +1716,80 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="158">
           <caret line="62" column="4" lean-forward="false" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/adminIntegerProperties.jsp">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/adminIntegerProperties.jsp" />
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/adminCountry.jsp" />
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/adminProduct.jsp" />
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/adminProductAddValue.jsp" />
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/layout/headerAdmin.jsp" />
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/layout/classic.jsp" />
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/layout/adminClassic.jsp" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/proj/form/Filter/ProductFrontFilterForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/CategoryService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/implementation/CategoryServiceImplement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="125" column="0" lean-forward="false" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/proj/controller/IndexController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="24" column="18" lean-forward="false" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/ProductService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/implementation/ProductServiceImplement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="48" column="28" lean-forward="false" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/proj/entity/Product.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1547">
+          <caret line="132" column="19" lean-forward="false" selection-start-line="132" selection-start-column="19" selection-end-line="132" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/implementation/editor/ProductEditor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/implementation/validator/BrandValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/PropertyAndValueStringService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1780,35 +1797,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/adminCountry.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/implementation/editor/ProductPropertyEditor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-408">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/adminProduct.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/implementation/specification/BrandFilterAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-289">
-          <caret line="49" column="26" lean-forward="false" selection-start-line="49" selection-start-column="26" selection-end-line="49" selection-end-column="26" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/adminProductAddValue.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/implementation/tag/PageableTag.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="635">
-          <caret line="68" column="13" lean-forward="false" selection-start-line="68" selection-start-column="13" selection-end-line="68" selection-end-column="13" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/layout/headerAdmin.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/proj/controller/staticMethod/CommonMethod.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="46" column="29" lean-forward="true" selection-start-line="46" selection-start-column="29" selection-end-line="46" selection-end-column="29" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/proj/controller/GlobalController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/proj/service/implementation/ValueOfStringPropertiesImplement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="20" column="64" lean-forward="false" selection-start-line="20" selection-start-column="64" selection-end-line="20" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/layout/frontClassic.jsp" />
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>

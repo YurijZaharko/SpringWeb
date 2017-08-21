@@ -1,7 +1,12 @@
 package proj.form;
 
 import org.springframework.web.multipart.MultipartFile;
-import proj.entity.*;
+import proj.entity.Brand;
+import proj.entity.Category;
+import proj.entity.Country;
+import proj.entity.PropertyAndValueString;
+
+import java.util.List;
 
 
 /**
@@ -26,7 +31,7 @@ public class ProductForm{
 
     private Brand brand;
 
-    private PropertyAndValueString propertyAndValueString;
+    private List<PropertyAndValueString> propertyAndValueStringList;
 
     private MultipartFile file;
 
@@ -110,11 +115,11 @@ public class ProductForm{
         this.file = file;
     }
 
-    public PropertyAndValueString getPropertyAndValueString() {
-        return propertyAndValueString;
+    public List<PropertyAndValueString> getPropertyAndValueStringList() {
+        return propertyAndValueStringList;
     }
 
-    public void setPropertyAndValueString(PropertyAndValueString propertyAndValueString) {
-        this.propertyAndValueString = propertyAndValueString;
+    public void setPropertyAndValueStringList(List<PropertyAndValueString> propertyAndValueStringList) {
+        this.propertyAndValueStringList = propertyAndValueStringList;
     }
 }

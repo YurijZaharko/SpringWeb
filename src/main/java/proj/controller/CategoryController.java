@@ -28,10 +28,10 @@ import javax.validation.Valid;
 @Controller
 public class CategoryController {
     @Autowired
-    CategoryService categoryService;
+    private CategoryService categoryService;
 
     @Autowired
-    StringPropertiesService stringPropertiesService;
+    private StringPropertiesService stringPropertiesService;
 
     @ModelAttribute("category")
     public Category getCategory(){
@@ -55,6 +55,7 @@ public class CategoryController {
                                @PageableDefault(5) Pageable pageable,
                                @ModelAttribute("filter") CategoryFilterForm categoryFilterForm){
         model.addAttribute("categories", categoryService.findAll(pageable, categoryFilterForm));
+        model.addAttribute("rootCategories", categoryService.findByRootCategoryTrue());
         return "adminCategory";
     }
 
@@ -67,6 +68,7 @@ public class CategoryController {
         model.addAttribute("stringProperties", stringPropertiesService.findCategoryWithStringProperty(pageable, categoryFilterForm, id));
         return "categoryWithProperty";
     }
+
 
     @Transactional
     @RequestMapping(value = "/admin/adminCategory/categoryWithProperty/propertyId/{catId}/{id}")
@@ -116,8 +118,9 @@ public class CategoryController {
     public String updateCategory(@PathVariable int id, Model model,
                                  @PageableDefault(5) Pageable pageable,
                                  @ModelAttribute("filter") CategoryFilterForm categoryFilterForm){
-        model.addAttribute("category", categoryService.findById(id));
+        model.addAttribute("category", categoryService.findByIdFetchParentId(id));
         model.addAttribute("categories", categoryService.findAll(pageable, categoryFilterForm));
+        model.addAttribute("rootCategories", categoryService.findByRootCategoryTrue());
         return "adminCategory";
     }
 }

@@ -48,7 +48,7 @@
 
 <%--</form:form>--%>
 
-<form:form action="/admin/adminProduct/addValue/test" method="post" modelAttribute="propertyAndValueStringsForm">
+<form:form action="/admin/adminProduct/addValue/show" method="post" modelAttribute="propertyAndValueStringsForm">
     <table class="table table-hover">
         <tr class="active">
             <td>Product id</td>
@@ -56,21 +56,22 @@
             <td>Part number</td>
         </tr>
         <tr>
-            <td>${propertyAndValueStringsForm.id}</td>
-            <td>${propertyAndValueStringsForm.name}</td>
-            <td>${propertyAndValueStringsForm.partNumber}</td>
+            <td><form:hidden path="id" />${propertyAndValueStringsForm.id}</td>
+            <td><form:hidden path="name"/>${propertyAndValueStringsForm.name}</td>
+            <td><form:hidden path="partNumber"/>${propertyAndValueStringsForm.partNumber}</td>
         </tr>
     </table>
-    <br>
+    <br> <button type="submit" class="btn-lg btn-primary">Save</button>
     <table class="table table-hover">
         <tr class="active">
             <td>Property name</td>
             <td>Property value</td>
         </tr>
-        <c:forEach items="${propertyAndValueStringsForm.propertyAndValue}" var="map">
+        <c:forEach items="${propertyAndValueStringsForm.propertyAndValue}" var="myMap" varStatus="status">
             <tr>
-                <td>${map.key.propertyName} </td>
-                <td><input name="map['${map.key.propertyName}']" value="${map.value.stringValue}"/></td>
+                <%--<td><form:hidden path="${myMap.key}"/>${myMap.key.propertyName}</td>--%>
+                <td><input name="" value="${myMap.key.propertyName}" readonly></td>
+                <td><input name="propertyAndValue[${myMap.key}]" value="${myMap.value.stringValue}"/></td>
             </tr>
         </c:forEach>
     </table>

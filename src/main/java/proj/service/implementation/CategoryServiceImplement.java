@@ -3,7 +3,6 @@ package proj.service.implementation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import proj.entity.Category;
 import proj.entity.StringProperties;
@@ -21,10 +20,14 @@ import java.util.List;
 @Service
 public class CategoryServiceImplement implements CategoryService {
     @Autowired
-    CategoryRepository categoryRepository;
+    private CategoryRepository categoryRepository;
+
+    private final StringPropertiesRepository stringPropertiesRepository;
 
     @Autowired
-    StringPropertiesRepository stringPropertiesRepository;
+    public CategoryServiceImplement(StringPropertiesRepository stringPropertiesRepository) {
+        this.stringPropertiesRepository = stringPropertiesRepository;
+    }
 
     @Override
     public void save(String name) {
@@ -105,4 +108,18 @@ public class CategoryServiceImplement implements CategoryService {
         categoryRepository.save(category);
     }
 
+    @Override
+    public List<Category> findByRootCategoryTrue() {
+        return categoryRepository.findByRootCategoryTrue();
+    }
+
+    @Override
+    public Category findByIdFetchParentId(int id) {
+        return categoryRepository.findByIdFetchParentId(id);
+    }
+
+    @Override
+    public List<Category> findByRootCategoryTrueFetchChild() {
+        return categoryRepository.findByRootCategoryTrueFetchChild();
+    }
 }

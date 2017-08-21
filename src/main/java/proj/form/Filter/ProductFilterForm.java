@@ -1,9 +1,6 @@
 package proj.form.Filter;
 
 
-import proj.entity.Brand;
-import proj.entity.Country;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;

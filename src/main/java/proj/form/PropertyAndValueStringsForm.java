@@ -1,9 +1,8 @@
 package proj.form;
 
-import proj.entity.StringProperties;
-import proj.entity.ValueOfStringProperties;
+import proj.entity.PropertyAndValueString;
 
-import java.util.*;
+import java.util.List;
 
 /**
  * Created by SCIP on 30.10.2016.
@@ -15,7 +14,7 @@ public class PropertyAndValueStringsForm {
 
     private String partNumber;
 
-    private Map<StringProperties, ValueOfStringProperties> propertyAndValue = new HashMap<>();
+    private List<PropertyAndValueString> propertyAndValueStringList;
 
     public PropertyAndValueStringsForm() {}
 
@@ -43,11 +42,11 @@ public class PropertyAndValueStringsForm {
         this.partNumber = partNumber;
     }
 
-    public Map<StringProperties, ValueOfStringProperties> getPropertyAndValue() {
-        return propertyAndValue;
+    public List<PropertyAndValueString> getPropertyAndValueStringList() {
+        return propertyAndValueStringList;
     }
 
-    public void setPropertyAndValue(Map<StringProperties, ValueOfStringProperties> propertyAndValue) {
-        this.propertyAndValue = propertyAndValue;
+    public void setPropertyAndValueStringList(List<PropertyAndValueString> propertyAndValueStringList) {
+        this.propertyAndValueStringList = propertyAndValueStringList;
     }
 }

@@ -10,7 +10,7 @@
 
     <definition name="index" extends="common">
         <put-attribute name="title" value="index" />
-        <put-attribute name="header" value="/WEB-INF/layout/null.jsp" />
+        <put-attribute name="header" value="/WEB-INF/layout/frontClassic.jsp" />
         <put-attribute name="body" value="/WEB-INF/views/index.jsp" />
     </definition>
     <definition name="category" extends="common">
@@ -80,5 +80,24 @@
         <put-attribute name="header" value="/WEB-INF/layout/headerAdmin.jsp"/>
         <put-attribute name="body" value="/WEB-INF/views/adminProductAddValue.jsp"/>
     </definition>
-
+    <definition name="users" extends="common">
+        <put-attribute name="title" value="users"/>
+        <put-attribute name="header" value="/WEB-INF/layout/headerAdmin.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/views/users.jsp"/>
+    </definition>
+    <definition name="orderList" extends="common">
+        <put-attribute name="title" value="orderList"/>
+        <put-attribute name="header" value="/WEB-INF/layout/headerAdmin.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/views/orderList.jsp"/>
+    </definition>
+    <definition name="createOrder" extends="common">
+        <put-attribute name="title" value="createOrder"/>
+        <put-attribute name="header" value="/WEB-INF/layout/headerAdmin.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/views/createOrder.jsp"/>
+    </definition>
+    <definition name="indexProduct" extends="common">
+        <put-attribute name="title" value="indexProduct"/>
+        <put-attribute name="header" value="/WEB-INF/layout/frontClassic.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/views/indexProduct.jsp"/>
+    </definition>
 </tiles-definitions>

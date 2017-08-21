@@ -12,14 +12,10 @@ import proj.service.PropertyAndValueStringService;
 @Service
 public class PropertyAndValueStringImplement implements PropertyAndValueStringService {
     @Autowired
-    PropertyAndValueStringRepository propertyAndValueStringRepository;
+    private PropertyAndValueStringRepository propertyAndValueStringRepository;
 
     @Override
-    public void save() { }
-
-
-    @Override
-    public void delete(String name) { }
+    public void save() {}
 
     @Override
     public PropertyAndValueString findById(int id) {

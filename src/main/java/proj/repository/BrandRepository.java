@@ -12,13 +12,13 @@ import proj.entity.Brand;
  * Created by SC on 10.08.2016.
  */
 
-public interface BrandRepository extends JpaRepository<Brand, Integer>, JpaSpecificationExecutor<Brand> {
+public interface BrandRepository extends JpaRepository<Brand,Integer>, JpaSpecificationExecutor<Brand> {
 
     Brand findByName(String name);
 
     @Modifying
     @Transactional
-    @Query("DELETE FROM Brand brand WHERE brand.id=:id")
+    @Query("DELETE FROM Brand brand WHERE brand.id=:id" )
     void deleteById(@Param("id") int id);
 
     Brand findById(int id);

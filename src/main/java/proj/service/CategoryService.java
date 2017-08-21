@@ -11,7 +11,7 @@ import java.util.List;
  * Created by SCIP on 11.08.2016.
  */
 
-public interface CategoryService {
+public interface CategoryService{
     void save(String name);
 
     void save(String name, String parentName);
@@ -40,4 +40,9 @@ public interface CategoryService {
 
     void removePropertyFromCategory(Pageable pageable, CategoryFilterForm categoryFilterForm, int catId, int id);
 
+    List<Category> findByRootCategoryTrue();
+
+    Category findByIdFetchParentId(int id);
+
+    List<Category> findByRootCategoryTrueFetchChild();
 }

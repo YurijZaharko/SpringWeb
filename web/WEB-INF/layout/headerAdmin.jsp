@@ -13,23 +13,19 @@
         <div class="container">
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Product <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/admin/adminProduct">Create product</a></li>
-                            <li><a href="">Load product from xls</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Brand<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/admin/adminBrand">Create Brand</a></li>
-                        </ul>
-                    </li>
-                </ul>
+                <security:authorize access="isAuthenticated() and hasRole('ROLE_ADMIN')">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Product <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/admin/adminProduct">Create product</a></li>
+                                <li><a href="/admin/adminBrand">Create Brand</a></li>
+                                <li><a href="/admin/adminCountry">Create Country</a></li>
+                                <li><a href="">Load product from xls</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Category <span class="caret"></span></a>
@@ -39,15 +35,30 @@
                         </ul>
                     </li>
                 </ul>
-                <ul class="nav navbar-nav">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Country <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/admin/adminCountry">Create Country</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav col-md-3 col-md-offset-3">
+                </security:authorize>
+                <security:authorize access="isAuthenticated() and (hasRole('ROLE_MANAGER') or hasRole('ROLE_ADMIN'))" >
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manager<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/admin/manager/orderList">Orders</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </security:authorize>
+                <security:authorize access="isAuthenticated() and hasRole('ROLE_ADMIN')" >
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Users<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/admin/users">Users list</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </security:authorize>
+
+
+                <ul class="nav navbar-nav col-md-3 col-md-offset-4">
                     <%--     <security:authentication property="principal.password"/> --%>
                     <li><a>${authUser.login}</a></li>
                     <security:authorize access="isAuthenticated()">

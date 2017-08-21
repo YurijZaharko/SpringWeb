@@ -30,7 +30,7 @@
                 <h4>Brand</h4>
             </div>
             <div class="form-group">
-                <form:checkboxes path="brandId" items="${brands}" itemLabel="name" itemValue="id"/>
+                <form:checkboxes path="brandId" items="${brands}" itemLabel="name" itemValue="id" />
             </div>
             <div class="form-group">
                 <h4>Country</h4>
@@ -127,12 +127,15 @@
                     <td>${product.category.name}</td>
                     <td><a href="/admin/adminProduct/delete/${product.id}<custom:allParams/>" class="btn btn-danger">Delete</a> </td>
                     <td><a href="/admin/adminProduct/update/${product.id}<custom:allParams/>" class="btn btn-warning">Update</a> </td>
-                    <td><a href="/admin/adminProduct/addValue/test/${product.id}"class="btn btn-primary">Add value</a> </td>
+                    <td><a href="/admin/adminProduct/addValue/show/${product.id}" class="btn btn-primary">Add value</a> </td>
                 </tr>
             </c:forEach>
         </table>
         <div class="col-md-6">
             <custom:size posibleSizes="1,2,5,10" size="${Products.size}" title="Розмір сторінки"/>
+        </div>
+        <div class="col-md-12 text-center">
+            <custom:pageable page="${Products}" cell="<li></li>" container="<ul class='pagination'></ul>" />
         </div>
     </div>
 </div>

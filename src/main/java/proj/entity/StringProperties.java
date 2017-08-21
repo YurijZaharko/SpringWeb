@@ -23,10 +23,7 @@ public class StringProperties {
     @JoinColumn(name = "fk_Category"))
     private List<Category> categoryList = new ArrayList<>();
 
-    @ManyToMany
-    @JoinTable(name = "PropertyAndValueString_StringProperties", joinColumns =
-    @JoinColumn(name = "fk_StringProperties"), inverseJoinColumns =
-    @JoinColumn(name = "fk_PropertyAndValueString"))
+    @OneToMany(mappedBy = "stringProperties")
     private List<PropertyAndValueString> propertyAndValueStrings = new ArrayList<>();
 
     public StringProperties() {

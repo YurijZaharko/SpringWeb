@@ -6,8 +6,6 @@ import org.springframework.validation.Validator;
 import proj.entity.Brand;
 import proj.service.BrandService;
 
-import javax.validation.Validation;
-
 /**
  * Created by SCIP on 07.09.2016.
  */

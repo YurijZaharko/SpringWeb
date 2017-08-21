@@ -1,7 +1,5 @@
 package proj.repository;
 
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Modifying;
@@ -15,7 +13,8 @@ import java.util.List;
 /**
  * Created by SC on 10.08.2016.
  */
-public interface ProductRepository extends JpaRepository<Product, Integer>, JpaSpecificationExecutor<Product> {
+public interface ProductRepository extends JpaRepository<Product,Integer>, JpaSpecificationExecutor<Product> {
+
     Product findByProductName(String name);
 
     Product findByPartNumber(String partNumber);
@@ -24,7 +23,6 @@ public interface ProductRepository extends JpaRepository<Product, Integer>, JpaS
     @Transactional
     @Query("DELETE FROM Product product WHERE product.id=:id")
     void deleteById(@Param("id") int id);
-
 
     @Query("SELECT product FROM Product product LEFT JOIN FETCH product.brand " +
             "LEFT JOIN FETCH product.country LEFT JOIN FETCH product.category")
@@ -37,9 +35,6 @@ public interface ProductRepository extends JpaRepository<Product, Integer>, JpaS
             "LEFT JOIN FETCH p.category WHERE p.id=:id")
     Product findByIdInitAll(@Param("id") int id);
 
-    @Query(value = "SELECT p FROM Product p LEFT JOIN FETCH p.brand LEFT JOIN FETCH p.country " +
-            "LEFT JOIN FETCH p.category WHERE p.id=:id",
-            countQuery = "SELECT count(p.id) FROM Product p")
-    Page<Product> findAll(Pageable pageable);
-
+    @Query("SELECT p FROM Product p LEFT JOIN FETCH p.category WHERE p.id=:id")
+    Product findByIdJoinCategory(@Param("id") int id);
 }

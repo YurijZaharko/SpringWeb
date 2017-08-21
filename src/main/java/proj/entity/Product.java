@@ -2,6 +2,8 @@ package proj.entity;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by SCIP on 26.07.2016.
@@ -14,6 +16,8 @@ public class Product {
     private int id;
 
     private BigDecimal price;
+
+    private BigDecimal sellPrice;
 
     private String productName;
 
@@ -32,10 +36,13 @@ public class Product {
     @ManyToOne(fetch = FetchType.LAZY)
     private Country country;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    private PropertyAndValueString propertyAndValueString;
+    @OneToMany(mappedBy = "product")
+    private List<PropertyAndValueString> propertyAndValueStringList;
 
-    public Product() {}
+    @OneToMany(mappedBy = "product")
+    private List<OrderField> orderFields = new ArrayList<>();
+
+    public Product(){}
 
     public Product(BigDecimal price, String productName, String partNumber) {
         this.price = price;
@@ -115,11 +122,27 @@ public class Product {
         this.path = path;
     }
 
-    public PropertyAndValueString getPropertyAndValueString() {
-        return propertyAndValueString;
+    public List<PropertyAndValueString> getPropertyAndValueStringList() {
+        return propertyAndValueStringList;
     }
 
-    public void setPropertyAndValueString(PropertyAndValueString propertyAndValueString) {
-        this.propertyAndValueString = propertyAndValueString;
+    public void setPropertyAndValueStringList(List<PropertyAndValueString> propertyAndValueStringList) {
+        this.propertyAndValueStringList = propertyAndValueStringList;
+    }
+
+    public List<OrderField> getOrderFields() {
+        return orderFields;
+    }
+
+    public void setOrderFields(List<OrderField> orderFields) {
+        this.orderFields = orderFields;
+    }
+
+    public BigDecimal getSellPrice() {
+        return sellPrice;
+    }
+
+    public void setSellPrice(BigDecimal sellPrice) {
+        this.sellPrice = sellPrice;
     }
 }

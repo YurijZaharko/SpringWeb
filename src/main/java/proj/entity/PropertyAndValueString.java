@@ -1,8 +1,6 @@
 package proj.entity;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by SCIP on 31.07.2016.
@@ -13,20 +11,14 @@ public class PropertyAndValueString {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @OneToMany(mappedBy = "propertyAndValueString")
-    private List<Product> products = new ArrayList<>();
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Product product;
 
-    @ManyToMany
-    @JoinTable(name = "PropertyAndValueString_StringProperties", joinColumns =
-    @JoinColumn(name = "fk_PropertyAndValueString"), inverseJoinColumns =
-    @JoinColumn(name = "fk_StringProperties"))
-    private List<StringProperties> stringPropertiesList = new ArrayList<>();
+    @ManyToOne(fetch = FetchType.LAZY)
+    private StringProperties stringProperties;
 
-    @ManyToMany
-    @JoinTable(name = "PropertyAndValueString_ValueOfStringProperties", joinColumns =
-    @JoinColumn(name = "fk_PropertyAndValueString"), inverseJoinColumns =
-    @JoinColumn(name = "fk_ValueOfStringProperties"))
-    private List<ValueOfStringProperties> valueOfStringPropertiesList = new ArrayList<>();
+    @ManyToOne(fetch = FetchType.LAZY)
+    private ValueOfStringProperties valueOfStringProperties;
 
     public PropertyAndValueString() {
     }
@@ -39,27 +31,27 @@ public class PropertyAndValueString {
         this.id = id;
     }
 
-    public List<StringProperties> getStringPropertiesList() {
-        return stringPropertiesList;
+    public StringProperties getStringProperties() {
+        return stringProperties;
     }
 
-    public void setStringPropertiesList(List<StringProperties> stringPropertiesList) {
-        this.stringPropertiesList = stringPropertiesList;
+    public void setStringProperties(StringProperties stringProperties) {
+        this.stringProperties = stringProperties;
     }
 
-    public List<ValueOfStringProperties> getValueOfStringPropertiesList() {
-        return valueOfStringPropertiesList;
+    public ValueOfStringProperties getValueOfStringProperties() {
+        return valueOfStringProperties;
     }
 
-    public void setValueOfStringPropertiesList(List<ValueOfStringProperties> valueOfStringPropertiesList) {
-        this.valueOfStringPropertiesList = valueOfStringPropertiesList;
+    public void setValueOfStringProperties(ValueOfStringProperties valueOfStringProperties) {
+        this.valueOfStringProperties = valueOfStringProperties;
     }
 
-    public List<Product> getProducts() {
-        return products;
+    public Product getProduct() {
+        return product;
     }
 
-    public void setProducts(List<Product> products) {
-        this.products = products;
+    public void setProduct(Product product) {
+        this.product = product;
     }
 }
